@@ -1,0 +1,570 @@
+meta:
+  keyboard: &keyboard_name Chuck
+  author: chad@transtrum.net
+  version: &version v1.0
+  repository: &repo https://github.com/ctranstrum/chuck
+
+  # Depending on where you are ordering from, uncomment or edit one of these:
+  # order_num_template: &order_text JLCJLCJLCJLC   # for ordering from JLCpcb.com
+  # order_num_template: &order_text WayWayWay    # for ordering from PCBway.com
+  order_num_template: &order_text "" # remove the order number text completely
+
+units:
+  dx: u
+  dy: u
+
+  hdx: dx / 2
+  hdy: dy / 2
+
+  mirrored_distance: 1.5 dx
+
+points:
+  zones:
+    matrix:
+      # Shift the PCB down and to the right to get it on the sheet in kicad
+      anchor.shift: [50, -100]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+      key:
+        tags: [key, switch]
+        autobind: .5
+      columns:
+        pinky:
+          key:
+            colpin: P8
+            splay: -10
+          rows:
+            bottom:
+              rowpin: P1
+              bind: [0, 45, 0, 0]
+              tags: [key, switch, low_bumper]
+            home:
+              rowpin: P2
+            top:
+              orient: -5
+              shift: [3, 3]
+              rowpin: P3
+              tags: [key, switch, high_bumper]
+              bind: [0, 4]
+        ring:
+          key:
+            stagger: 2/3 dx
+            spread: 1.05 dx
+            splay: -5
+            colpin: P6
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              rowpin: P3
+            top:
+              rowpin: P10
+        middle:
+          key:
+            stagger: hdx
+            spread: 1.04 dx
+            splay: -5
+            colpin: P9
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              rowpin: P3
+            top:
+              rowpin: P10
+              tags: [key, switch, high_bumper]
+              bind: [0, 4]
+        index:
+          key:
+            stagger: -hdx
+            splay: -2.5
+            colpin: P7
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              rowpin: P3
+            top:
+              rowpin: P10
+        inner:
+          key:
+            stagger: 2/3 hdx
+            colpin: P5
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              rowpin: P3
+
+    thumbs:
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+      anchor: matrix_index_bottom
+      columns.thumb.rows.spot:
+        tags: [thumb, switch]
+        splay: -20
+        shift: [39.5, -10.5]
+        bind: [7, 0, 0, 25]
+
+    encoder:
+      anchor:
+        aggregate.parts: [thumbs_thumb_spot, mirror_thumbs_thumb_spot]
+        shift: [0, dx]
+      key:
+        tags: [encoder]
+        bind: [25, 6, 25.3, 6]
+
+    mcu:
+      anchor:
+        # top middle left
+        aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
+        shift: [-21, 7.45]
+      key.tags: [mcu]
+
+    power:
+      anchor:
+        aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
+        shift: [28, 15.8]
+      key.tags: [power]
+
+    reset:
+      anchor:
+        ref: matrix_ring_top
+        shift: [hdx / 2, hdy]
+      key.tags: [reset]
+
+    battery:
+      anchor:
+        aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
+        shift: [4, -8]
+      key.tags: [battery]
+
+    palm_bumper:
+      key.tags: [bumper]
+      anchor:
+        ref: matrix_index_bottom
+        shift: [0, -17]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    thumb_bumper:
+      key.tags: [bumper]
+      anchor:
+        ref: encoder
+        shift: [0, -1.7 dy]
+
+    center_bumper:
+      key.tags: [bumper]
+      anchor:
+        ref: encoder
+        shift: [0, 1.9 dy]
+
+    pinky_screw:
+      key.tags: [screw]
+      anchor:
+        ref: matrix_pinky_home
+        shift: [-hdx / 2, hdy + 1.6]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    low_screw:
+      key.tags: [screw]
+      anchor:
+        ref: matrix_pinky_bottom
+        shift: [hdy + 2, -hdy + 2]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    middle_home_screw:
+      key.tags: [screw]
+      anchor:
+        ref: matrix_middle_home
+        shift: [-hdx - 1.5, hdy]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    middle_top_screw:
+      key.tags: [screw]
+      anchor:
+        ref: matrix_middle_top
+        shift: [0, hdy + 4]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    thumb_screw:
+      key.tags: [screw]
+      anchor:
+        ref: thumbs_thumb_spot
+        shift: [-hdx - 2, -hdy + 3]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    center_bottom_screw:
+      key.tags: [screw]
+      anchor:
+        ref: encoder
+        shift: [0, -1.3 dy]
+
+    center_top_screw:
+      key.tags: [screw]
+      anchor:
+        ref: battery
+        shift: [-4, 21]
+
+outlines:
+  _top_bridge:
+    - what: rectangle
+      where:
+        aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
+        shift: [0, -7.05]
+      size: [95, 50]
+
+  _keys_surround:
+    - what: rectangle
+      where: [key, encoder]
+      bound: true
+      size: [dx + 4, dy + 4]
+      corner: 2
+      fillet: 2
+
+  _thumbs_surround:
+    - what: rectangle
+      where: thumb
+      bound: true
+      size: [1.5 dx + 4, dy + 4]
+      corner: 4
+      fillet: 2
+
+  outline_shapes_builder:
+    - _top_bridge
+    - ^_keys_surround
+    - ^_thumbs_surround
+
+  _basic_outline_shape:
+    - _top_bridge
+    - _keys_surround
+    - _thumbs_surround
+
+  board_outline:
+    - what: outline
+      name: _basic_outline_shape
+      fillet: 2
+
+  _xiao_visualizer:
+    - what: rectangle
+      where: mcu
+      size: [17.8, 21]
+      corner: 2
+    - what: rectangle
+      where: mcu
+      size: [8, 2]
+      adjust.shift: [0, 11.5]
+
+  _xiao_light_guide:
+    - what: circle
+      where: mcu
+      radius: 1.05
+      adjust.shift: [6, 7.5]
+
+  _xiao_cutout:
+    - what: rectangle
+      where: mcu
+      size: [14, 22]
+      corner: 1
+
+  _power_visualizer:
+    - what: rectangle
+      where: power
+      size: [8, 3.9]
+    - what: rectangle
+      where: power
+      size: 1.3
+      adjust.shift: [1.5, 2.6]
+
+  _power_cutout:
+    - what: rectangle
+      where: power
+      size: [9, 4.6]
+      adjust.shift: [0, -0.2]
+
+  _reset_visualizer:
+    - what: rectangle
+      where: reset
+      size: [6.3, 3.6]
+    - what: rectangle
+      where: reset
+      size: [2.55, 0.9]
+      adjust.shift: [0, 2.05]
+
+  _reset_cutout:
+    - what: rectangle
+      where: reset
+      size: [7.3, 4.1]
+      adjust.shift: [0, -0.25]
+
+  _battery_cutout:
+    - what: rectangle
+      where: battery
+      size: [23, 33]
+      corner: 1
+
+  _battery_wire_cutout:
+    - what: circle
+      where: battery
+      radius: 7.5
+      adjust.shift: [11, 11]
+
+  _keycaps:
+    - what: rectangle
+      where: key
+      size: 18
+      corner: 1
+    - what: rectangle
+      where: thumb
+      size: [27, 18]
+      corner: 1
+    - what: circle
+      where: encoder
+      radius: 12.5
+
+  top_down_view:
+    - board_outline
+    - _xiao_visualizer
+    - _power_visualizer
+    - _reset_visualizer
+    - -_keycaps
+    - -_xiao_light_guide
+
+  _encoder_plate_cutout:
+    - what: rectangle
+      where: encoder
+      size: [12.4, 13.2]
+    - what: rectangle
+      where: encoder
+      size: [14, 2]
+    - what: rectangle
+      where: encoder
+      size: [6.1, 1.2]
+      adjust.shift: [0, -7.2]
+
+  _diode:
+    - what: rectangle
+      size: [1.65, 2.7]
+    - what: rectangle
+      size: [0.6, 3.9]
+
+  _diodes:
+    - what: outline
+      name: _diode
+      where: switch
+      adjust.shift: [5, -1]
+
+  _diodes_cutout:
+    - what: rectangle
+      where: switch
+      size: [2.2, 5.2]
+      adjust.shift: [5, -1]
+
+  _switches_plate_cutout:
+    - what: rectangle
+      where: switch
+      size: 14
+      corner: 1
+    - _encoder_plate_cutout
+
+  _switches_clip_cutout:
+    - what: rectangle
+      where: switch
+      size: [14.7, 14]
+      corner: 1
+
+  # Ugh, I don't have exact measurements, so this is maybe close-ish?
+  _glp_socket:
+    - what: rectangle
+      size: [4.04, 4.35]
+      adjust.shift: [4.8, 4.7]
+    - what: rectangle
+      size: [1.75, 1.74]
+      adjust.shift: [7.65, 4.7]
+    - what: rectangle
+      size: [5.94, 4.35]
+      adjust.shift: [-1.85, 5.75]
+    - what: rectangle
+      size: [1.75, 1.74]
+      adjust.shift: [-5.65, 5.75]
+    - what: rectangle
+      size: [4.2, 3.8]
+      adjust:
+        rotate: -30
+        shift: [1.95, 5.2]
+    - what: rectangle
+      size: 1.5
+      adjust.shift: [0, 8]
+      operation: subtract
+
+  _socket_visualizer:
+    - what: outline
+      name: _glp_socket
+      where: switch
+      adjust.resist: true
+
+  # This is only needed for visualization of the pcb_outline
+  _socket_pcb_holes:
+    - what: circle
+      where: switch
+      radius: 2.55
+    - what: circle
+      where: switch
+      radius: 1.5
+      adjust:
+        resist: true
+        shift: [-2.6, 5.75]
+    - what: circle
+      where: switch
+      radius: 1.5
+      adjust:
+        resist: true
+        shift: [4.4, 4.7]
+
+  _encoder_pcb_holes:
+    - what: circle
+      where: encoder
+      radius: 1.1
+      adjust.shift: [-5.6, 0]
+    - what: circle
+      where: encoder
+      radius: 1.1
+      adjust.shift: [5.6, 0]
+    - what: circle
+      where: encoder
+      radius: 0.6
+      adjust.shift: [-2.5, -7.5]
+    - what: circle
+      where: encoder
+      radius: 0.6
+      adjust.shift: [0, -7.5]
+    - what: circle
+      where: encoder
+      radius: 0.6
+      adjust.shift: [2.5, -7.5]
+
+  _screw_shaft:
+    - what: circle
+      where: screw
+      radius: 1.2
+
+  # This is just to visualize the PCB, KiCad will do the hard work
+  pcb_outline:
+    - board_outline
+    - -_xiao_cutout
+    - -_battery_cutout
+    - -_socket_pcb_holes
+    - -_encoder_pcb_holes
+    - -_screw_shaft
+
+  _hex_nut_angle:
+    - what: rectangle
+      size: [2.45, 4.25]
+
+  _hex_nut:
+    - _hex_nut_angle
+    - what: outline
+      name: _hex_nut_angle
+      adjust.rotate: 60
+    - what: outline
+      name: _hex_nut_angle
+      adjust.rotate: -60
+
+  _hex_nuts:
+    - what: outline
+      name: _hex_nut
+      where: screw
+
+  _bumper:
+    - what: circle
+      radius: 3.1
+
+  _low_bumper:
+    - what: outline
+      name: _bumper
+      where: low_bumper
+      adjust.shift: [-7, -7]
+
+  _high_bumper:
+    - what: outline
+      name: _bumper
+      where: high_bumper
+      adjust.shift: [-7, 11]
+
+  _bumpers:
+    - what: outline
+      name: _bumper
+      where: bumper
+
+  _all_bumpers:
+    - _low_bumper
+    - _high_bumper
+    - _bumpers
+
+  plate:
+    - board_outline
+    - -_switches_plate_cutout
+    - -_battery_cutout
+    - -_xiao_light_guide
+    - ^_hex_nuts
+
+  component_visualization:
+    - pcb_outline
+    - ^_switches_plate_cutout
+    - ^_switches_clip_cutout
+    - ^_socket_visualizer
+    - ^_keycaps
+    - ^_xiao_visualizer
+    - ^_xiao_light_guide
+    - ^_power_visualizer
+    - ^_power_cutout
+    - ^_reset_visualizer
+    - ^_reset_cutout
+    - ^_battery_wire_cutout
+    - ^_hex_nuts
+    - ^_screw_shaft
+    - ^_all_bumpers
+    - ^_diodes
+    - ^_diodes_cutout
+
+cases:
+  mock_pcb:
+    - what: outline
+      name: pcb_outline
+      extrude: 1.6
+
+pcbs:
+  chuck:
+    template: kicad8
+    outlines:
+      main:
+        outline: board_outline
+    params:
+      name: *keyboard_name
+      paper: A4
+
+    footprints:
+      hotswap_sockets:
+        what: ks33
+        where: key
+        params:
+          from: "{{colpin}}"
+          to: "{{colrow}}"
+          keycaps: true
+          reverse: true
+          hotswap: true
+          vias: true
+        adjust.rotate: 180

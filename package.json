@@ -1,0 +1,32 @@
+{
+  "name": "chuck",
+  "version": "1.0.0",
+  "description": "Chuck Keyboard Design",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run ergo && npm run stl",
+    "clean-all": "rm -rf output/*",
+    "clean-cases": "rm -rf output/cases/*",
+    "clean-outlines": "rm -rf output/outlines/*",
+    "clean-pcbs": "rm -rf output/pcbs/*",
+    "copy-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py -b copy-traces pcb/lintilla.kicad_pcb output/pcbs/lintilla.kicad_pcb",
+    "lock-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py lock-traces",
+    "save-pcb": "cp output/pcbs/* pcb",
+    "save-cases": "cp output/cases/*.stl cases",
+    "ergo": "ergogen .",
+    "stl": "for i in output/cases/*.jscad; do npx @jscad/cli@1 \"$i\" -of stla; done",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xiao",
+    "charlieplex",
+    "encoder",
+    "30"
+  ],
+  "author": "chad@transtrum.net",
+  "license": "CERN-OHL-P-2.0",
+  "devDependencies": {
+    "ergogen": "^4.1.0",
+    "prettier": "^3.4.2"
+  }
+}
