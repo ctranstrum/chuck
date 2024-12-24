@@ -18,10 +18,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "xiao",
+    "30 keys",
     "charlieplex",
     "encoder",
-    "30"
+    "gateron low profile",
+    "xiao",
+    "zmk"
   ],
   "author": "chad@transtrum.net",
   "license": "CERN-OHL-P-2.0",
