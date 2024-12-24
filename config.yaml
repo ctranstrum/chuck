@@ -1,13 +1,13 @@
 meta:
-  keyboard: &keyboard_name Chuck
+  keyboard: &keyboard_name One Up Chuck
   author: chad@transtrum.net
   version: &version v1.0
   repository: &repo https://github.com/ctranstrum/chuck
 
   # Depending on where you are ordering from, uncomment or edit one of these:
-  # order_num_template: &order_text JLCJLCJLCJLC   # for ordering from JLCpcb.com
+  order_num_template: &order_text JLCJLCJLCJLC # for ordering from JLCpcb.com
   # order_num_template: &order_text WayWayWay    # for ordering from PCBway.com
-  order_num_template: &order_text "" # remove the order number text completely
+  # order_num_template: &order_text "" # remove the order number text completely
 
 units:
   dx: u
@@ -27,75 +27,109 @@ points:
         ref: matrix_inner_home
         distance: mirrored_distance
       key:
-        tags: [key, switch]
         autobind: .5
+        tags: [key, switch]
       columns:
         pinky:
           key:
-            colpin: P8
+            cpdst: CP0
             splay: -10
+            mirror.cpdst: CP5
           rows:
             bottom:
-              rowpin: P1
+              cpsrc: CP1
               bind: [0, 45, 0, 0]
               tags: [key, switch, low_bumper]
             home:
-              rowpin: P2
+              cpsrc: CP2
+              tags: [key, switch, triode, common_cathode]
+              shared: pinky_bottom
+              mirror.shared: mirror_pinky_bottom
             top:
               orient: -5
               shift: [3, 3]
-              rowpin: P3
-              tags: [key, switch, high_bumper]
+              cpsrc: CP3
+              tags: [key, switch, diode, high_bumper]
               bind: [0, 4]
         ring:
           key:
             stagger: 2/3 dx
             spread: 1.05 dx
             splay: -5
-            colpin: P6
+            cpdst: CP0
+            mirror.cpdst: CP5
           rows:
             bottom:
-              rowpin: P2
+              cpsrc: CP4
+              tags: [key, switch, triode, common_anode]
             home:
-              rowpin: P3
+              cpsrc: CP5
+              tags: [key, switch, triode, common_cathode]
+              shared: ring_bottom
+              mirror:
+                cpsrc: CP0
+                shared: mirror_ring_bottom
             top:
-              rowpin: P10
+              cpdst: CP1
+              cpsrc: CP0
+              mirror.cpdst: CP4
+              tags: [key, switch, diode]
         middle:
           key:
             stagger: hdx
             spread: 1.04 dx
             splay: -5
-            colpin: P9
+            cpdst: CP1
+            mirror.cpdst: CP4
           rows:
             bottom:
-              rowpin: P2
+              cpsrc: CP2
+              tags: [key, switch, triode, common_cathode, common_anode]
+              shared: index_bottom
+              mirror.shared: mirror_index_bottom
             home:
-              rowpin: P3
+              cpsrc: CP3
             top:
-              rowpin: P10
-              tags: [key, switch, high_bumper]
+              cpsrc: CP4
+              tags: [key, switch, high_bumper, triode, common_cathode]
               bind: [0, 4]
+              shared: middle_home
+              mirror:
+                cpscrc: CP1
+                shared: mirror_middle_home
         index:
           key:
             stagger: -hdx
             splay: -2.5
-            colpin: P7
+            cpdst: CP2
+            mirror.cpdst: CP3
           rows:
             bottom:
-              rowpin: P2
+              cpdst: CP1
+              cpsrc: CP5
+              mirror.cpdst: CP4
             home:
-              rowpin: P3
+              cpsrc: CP0
             top:
-              rowpin: P10
+              cpsrc: CP1
+              tags: [key, switch, triode, common_cathode]
+              shared: index_home
+              mirror.shared: mirror_index_home
         inner:
           key:
             stagger: 2/3 hdx
-            colpin: P5
+            cpdst: CP2
+            mirror.cpdst: CP3
           rows:
             bottom:
-              rowpin: P2
+              cpsrc: CP3
+              mirror.cpsrc: CP2
+              tags: [key, switch, triode, common_anode]
             home:
-              rowpin: P3
+              cpsrc: CP4
+              tags: [key, switch, triode, common_cathode]
+              shared: inner_bottom
+              mirror.shared: mirror_inner_bottom
 
     thumbs:
       mirror:
@@ -103,10 +137,13 @@ points:
         distance: mirrored_distance
       anchor: matrix_index_bottom
       columns.thumb.rows.spot:
-        tags: [thumb, switch]
+        tags: [thumb, switch, diode]
         splay: -20
         shift: [39.5, -10.5]
         bind: [7, 0, 0, 25]
+        cpdst: CP2
+        cpsrc: CP5
+        mirror.cpdst: CP3
 
     encoder:
       anchor:
@@ -117,29 +154,72 @@ points:
         bind: [25, 6, 25.3, 6]
 
     mcu:
+      key.tags: [mcu]
       anchor:
         # top middle left
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
         shift: [-21, 7.45]
-      key.tags: [mcu]
 
     power:
+      key.tags: [power]
       anchor:
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
         shift: [28, 15.8]
-      key.tags: [power]
 
     reset:
+      key:
+        tags: [reset]
+        asym: clone
       anchor:
-        ref: matrix_ring_top
-        shift: [hdx / 2, hdy]
-      key.tags: [reset]
+        ref: matrix_pinky_top
+        shift: [hdx / 3, hdy + 4]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
 
     battery:
       anchor:
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
         shift: [4, -8]
       key.tags: [battery]
+
+    # triodes:
+    #   anchor:
+    #     ref: encoder
+    #     shift: [-3, 15]
+    #   key:
+    #     padding: 5
+    #     spread: 6
+    #     tags: [triode, common_anode]
+    #   columns:
+    #     column1:
+    #       key:
+    #         triodeA: CP_INT
+    #         label_side: left
+    #       rows:
+    #         triode1:
+    #           triodeB: CP1
+    #           triodeC: D_CP1
+    #         triode2:
+    #           triodeB: CP0
+    #           triodeC: D_CP0
+    #         triode3:
+    #           triodeB: CP2
+    #           triodeC: D_CP2
+    #     column2:
+    #       key:
+    #         triodeB: CP_INT
+    #         label_side: right
+    #       rows:
+    #         triode4:
+    #           triodeA: CP3
+    #           triodeC: D_CP3
+    #         triode5:
+    #           triodeA: CP4
+    #           triodeC: D_CP4
+    #         triode6:
+    #           triodeA: CP5
+    #           triodeC: D_CP5
 
     palm_bumper:
       key.tags: [bumper]
@@ -217,7 +297,7 @@ points:
       key.tags: [screw]
       anchor:
         ref: battery
-        shift: [-4, 21]
+        shift: [-4, 22]
 
 outlines:
   _top_bridge:
@@ -299,16 +379,21 @@ outlines:
     - what: rectangle
       where: reset
       size: [6.3, 3.6]
+      adjust.resist: true
     - what: rectangle
       where: reset
       size: [2.55, 0.9]
-      adjust.shift: [0, 2.05]
+      adjust:
+        shift: [0, 2.05]
+        resist: true
 
   _reset_cutout:
     - what: rectangle
       where: reset
       size: [7.3, 4.1]
-      adjust.shift: [0, -0.25]
+      adjust:
+        resist: true
+        shift: [0, -0.25]
 
   _battery_cutout:
     - what: rectangle
@@ -355,6 +440,49 @@ outlines:
       size: [6.1, 1.2]
       adjust.shift: [0, -7.2]
 
+  _triode:
+    - what: rectangle
+      size: [2.9, 1.3]
+    - what: rectangle
+      size: [0.4, 0.55]
+      adjust.shift: [0, 0.925]
+    - what: rectangle
+      size: [0.4, 0.55]
+      adjust.shift: [-0.95, -0.925]
+    - what: rectangle
+      size: [0.4, 0.55]
+      adjust.shift: [0.95, -0.925]
+
+  _triodes_anodes:
+    - what: outline
+      name: _triode
+      where: common_anode
+      adjust:
+        shift: [0, -0.75 dy]
+        rotate: 180
+
+  _triodes_cathodes:
+    - what: outline
+      name: _triode
+      where: common_cathode
+      adjust:
+        shift: [6, -1.5]
+        rotate: 270
+
+  _triodes:
+    - _triodes_anodes
+    - _triodes_cathodes
+
+  _triodes_cutout:
+    - what: rectangle
+      where: common_anode
+      size: 3.5
+      adjust.shift: [0, -0.75 dy]
+    - what: rectangle
+      where: common_cathode
+      size: 3.5
+      adjust.shift: [6, -1.5]
+
   _diode:
     - what: rectangle
       size: [1.65, 2.7]
@@ -364,12 +492,12 @@ outlines:
   _diodes:
     - what: outline
       name: _diode
-      where: switch
+      where: diode
       adjust.shift: [5, -1]
 
   _diodes_cutout:
     - what: rectangle
-      where: switch
+      where: diode
       size: [2.2, 5.2]
       adjust.shift: [5, -1]
 
@@ -461,14 +589,10 @@ outlines:
       where: screw
       radius: 1.2
 
-  # This is just to visualize the PCB, KiCad will do the hard work
   pcb_outline:
     - board_outline
     - -_xiao_cutout
     - -_battery_cutout
-    - -_socket_pcb_holes
-    - -_encoder_pcb_holes
-    - -_screw_shaft
 
   _hex_nut_angle:
     - what: rectangle
@@ -526,6 +650,7 @@ outlines:
     - ^_switches_plate_cutout
     - ^_switches_clip_cutout
     - ^_socket_visualizer
+    - ^_socket_pcb_holes
     - ^_keycaps
     - ^_xiao_visualizer
     - ^_xiao_light_guide
@@ -539,6 +664,8 @@ outlines:
     - ^_all_bumpers
     - ^_diodes
     - ^_diodes_cutout
+    - ^_triodes
+    - ^_triodes_cutout
 
 cases:
   mock_pcb:
@@ -551,7 +678,7 @@ pcbs:
     template: kicad8
     outlines:
       main:
-        outline: board_outline
+        outline: pcb_outline
     params:
       name: *keyboard_name
       paper: A4
@@ -559,12 +686,300 @@ pcbs:
     footprints:
       hotswap_sockets:
         what: ks33
-        where: key
+        where: switch
         params:
-          from: "{{colpin}}"
+          from: "{{cpsrc}}"
           to: "{{colrow}}"
-          keycaps: true
-          reverse: true
-          hotswap: true
-          vias: true
+          include_keycap: true
+          include_corner_marks: true
+          include_socket_silks: true
         adjust.rotate: 180
+
+      diodes:
+        what: sod123
+        where: [[diode, /^matrix|^thumbs/]]
+        adjust:
+          shift: [5, -1]
+          rotate: 90
+        params:
+          side: B
+          designator: SW
+          from: "{{colrow}}"
+          to: "D_{{cpdst}}"
+          smd: true
+          via: "pad"
+          labels: true
+          label_rotation: 90
+
+      mirror_diodes:
+        what: sod123
+        where: [[diode, /^mirror/]]
+        adjust:
+          shift: [5, -1]
+          rotate: 270
+        params:
+          side: B
+          designator: SW
+          from: "{{colrow}}"
+          to: "D_{{cpdst}}"
+          smd: true
+          via: "pad"
+          labels: true
+          label_rotation: 90
+
+      triode_cathodes:
+        what: sot23
+        where: [[common_cathode, /^matrix|^thumbs/]]
+        adjust:
+          shift: [6, -1.5]
+          rotate: 270
+        params:
+          side: B
+          A: "{{colrow}}"
+          B: "{{shared}}"
+          C: "D_{{cpdst}}"
+          via: true
+          common: cathode
+          designator: DC
+          labels: true
+          label_side: left
+          label_rotation: 90
+
+      mirror_triode_cathodes:
+        what: sot23
+        where: [[common_cathode, /^mirror/]]
+        adjust:
+          shift: [6, -1.5]
+          rotate: 270
+        params:
+          side: B
+          A: "{{colrow}}"
+          B: "{{shared}}"
+          C: "D_{{cpdst}}"
+          via: true
+          common: cathode
+          designator: DC
+          labels: true
+          label_side: right
+          label_rotation: 90
+
+      triode_anodes:
+        what: sot23
+        where: common_anode
+        adjust:
+          shift: [0, -0.75 dy]
+          rotate: 180
+        params:
+          side: B
+          A: CP_INT
+          B: "{{cpdst}}"
+          C: "D_{{cpdst}}"
+          via: true
+          common: anode
+          designator: DA
+          labels: true
+          label_side: right
+
+      encoder:
+        what: encoder
+        where: encoder
+        params:
+          include_plate_hole_marking: true
+
+      xiao_mcu:
+        what: xiao
+        where: mcu
+        params:
+          side: B
+          orientation: down
+          VUSB: none
+          VCC: none
+          P0: none
+          P1: CP0
+          P2: CP1
+          P3: CP2
+          P4: CP3
+          P5: none
+          P6: CP4
+          P7: CP_INT
+          P8: ENC_B
+          P9: ENC_A
+          P10: CP5
+
+      xiao_note:
+        what: text
+        where: mcu
+        adjust.shift: [0, -12]
+        params:
+          side: B
+          text: XIAO BLE FACE DOWN
+
+      xiao_bat_pos:
+        what: pad
+        where: mcu
+        adjust.shift: [-4, -13.75]
+        params:
+          side: B
+          net: BAT+
+          text: BAT+
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      xiao_reset:
+        what: pad
+        where:
+          ref: mcu
+          shift: [4, -13.75]
+        params:
+          side: B
+          net: RST
+          text: RST
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      battery_wire_guide:
+        what: arc
+        where: battery
+        adjust.shift: [11, 11]
+        params.side: B
+
+      battery_note:
+        what: text
+        where: battery
+        adjust.shift: [0, 18]
+        params:
+          text: BATTERY 5 x 20 x 30 mm
+          side: B
+
+      battery_raw_pos:
+        what: pad
+        where: battery
+        adjust:
+          rotate: 270
+          shift: [13, 6]
+        params:
+          side: B
+          net: RAW
+          text: +
+          shape: circle
+          width: 2
+          height: 2
+
+      battery_raw_neg:
+        what: pad
+        where: battery
+        adjust.shift: [16.5, 11]
+        params:
+          side: B
+          net: GND
+          text: "-"
+          width: 2
+          height: 2
+
+      reset_button:
+        what: evqpuc
+        where: reset
+        params:
+          side: B
+          from: GND
+          to: RST
+
+      reset_note:
+        what: text
+        where: reset
+        adjust:
+          shift: [-4, 0.6]
+        params:
+          side: B
+          text: RESET
+          justify: left
+
+      power_slider:
+        what: trislider
+        where: power
+        params:
+          side: B
+          posts: true
+          vias: true
+          COM: RAW
+          A: BAT+
+
+      power_label:
+        what: text
+        where: power
+        adjust.shift: [-4.5, 0.6]
+        params:
+          side: B
+          text: POWER
+          justify: right
+
+      power_on:
+        what: text
+        where: power
+        adjust.shift: [-4.5, -0.8]
+        params:
+          side: B
+          text: ON
+          justify: right
+
+      power_off:
+        what: text
+        where: power
+        adjust.shift: [4.5, 0.6]
+        params:
+          side: B
+          text: OFF
+          justify: left
+
+      mounting_holes:
+        what: mountinghole
+        where: screw
+
+      keyboard_name:
+        what: text
+        where: matrix_pinky_bottom
+        adjust.shift: [dx - 4.5, -0.85 hdy]
+        params:
+          side: F
+          text: *keyboard_name
+          layer: Cu
+          size: 3
+          thickness: 0.5
+          justify: left
+
+      board_version:
+        what: text
+        where.aggregate.parts: [thumbs_thumb_spot, mirror_thumbs_thumb_spot]
+        adjust.shift: [0, -0.7 dy]
+        params:
+          text: *version
+          side: F
+
+      board_repo:
+        what: text
+        where.aggregate.parts: [thumbs_thumb_spot, mirror_thumbs_thumb_spot]
+        adjust.shift: [0, -0.85 dy]
+        params:
+          side: F
+          text: *repo
+
+      license_note:
+        what: text
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [0.75 dx, -hdy]
+        params:
+          side: F
+          text: Licensed under CERN-OHL-P v2
+          justify: right
+
+      order_number:
+        what: text
+        where: encoder
+        adjust.shift: [0, hdy - 2.75]
+        params:
+          side: F
+          text: *order_text

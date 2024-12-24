@@ -104,10 +104,10 @@
 
 module.exports = {
   params: {
-    designator: 'S',
-    side: 'B',
+    designator: "S",
+    side: "B",
     reversible: false,
-    solder: true,
+    solder: false,
     hotswap: true,
     keycap_width: 18,
     keycap_height: 18,
@@ -122,23 +122,23 @@ module.exports = {
     allow_soldermask_bridges: true,
     outer_pad_width_front: 2.6,
     outer_pad_width_back: 2.6,
-    switch_3dmodel_filename: '',
+    switch_3dmodel_filename: "",
     switch_3dmodel_xyz_offset: [0, 0, 0],
     switch_3dmodel_xyz_rotation: [0, 0, 0],
     switch_3dmodel_xyz_scale: [1, 1, 1],
-    hotswap_3dmodel_filename: '',
+    hotswap_3dmodel_filename: "",
     hotswap_3dmodel_xyz_offset: [0, 0, 0],
     hotswap_3dmodel_xyz_rotation: [0, 0, 0],
     hotswap_3dmodel_xyz_scale: [1, 1, 1],
-    keycap_3dmodel_filename: '',
+    keycap_3dmodel_filename: "",
     keycap_3dmodel_xyz_offset: [0, 0, 0],
     keycap_3dmodel_xyz_rotation: [0, 0, 0],
     keycap_3dmodel_xyz_scale: [1, 1, 1],
     from: undefined,
     to: undefined,
-    CENTERHOLE: { type: 'net', value: 'GND' },
+    CENTERHOLE: { type: "net", value: "GND" },
   },
-  body: p => {
+  body: (p) => {
     const common_top = `
   (footprint "ceoloide:switch_gateron_ks27_ks33"
     (layer "${p.side}.Cu")
@@ -149,14 +149,14 @@ module.exports = {
       ${p.ref_hide}
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (attr exclude_from_pos_files exclude_from_bom${p.allow_soldermask_bridges ? ' allow_soldermask_bridges' : ''})
+    (attr exclude_from_pos_files exclude_from_bom${p.allow_soldermask_bridges ? " allow_soldermask_bridges" : ""})
 
-    ${''/* middle shaft hole */}
-    (pad "" thru_hole circle (at 0 0 ${p.r}) (size 5.6 5.6) (drill 5.1) (layers "*.Cu" "*.Mask") ${p.include_centerhole_net ? p.CENTERHOLE : ''})
-    `
+    ${"" /* middle shaft hole */}
+    (pad "" thru_hole circle (at 0 0 ${p.r}) (size 5.6 5.6) (drill 5.1) (layers "*.Cu" "*.Mask") ${p.include_centerhole_net ? p.CENTERHOLE : ""})
+    `;
 
     const corner_marks = `
-    ${''/* corner marks - front */}
+    ${"" /* corner marks - front */}
     (fp_line (start -7 -6) (end -7 -7) (stroke (width 0.15) (type solid)) (layer "Dwgs.User"))
     (fp_line (start -7 7) (end -7 6) (stroke (width 0.15) (type solid)) (layer "Dwgs.User"))
     (fp_line (start -7 7) (end -6 7) (stroke (width 0.15) (type solid)) (layer "Dwgs.User"))
@@ -165,34 +165,37 @@ module.exports = {
     (fp_line (start 7 -7) (end 6 -7) (stroke (width 0.15) (type solid)) (layer "Dwgs.User"))
     (fp_line (start 7 -7) (end 7 -6) (stroke (width 0.15) (type solid)) (layer "Dwgs.User"))
     (fp_line (start 7 6) (end 7 7) (stroke (width 0.15) (type solid)) (layer "Dwgs.User"))
-    `
+    `;
 
     const led_outline = `
-    ${''/* led outline - front */}
-    ${p.side == 'B' ? `
+    ${"" /* led outline - front */}
+    ${
+      p.side == "B"
+        ? `
     (fp_rect (start -3.2 -6.3) (end 1.8 -4.05) (stroke (width 0.15) (type solid)) (fill none) (layer "Dwgs.User"))
-    `:`
-    (fp_rect (start -1.8 -6.3) (end 3.2 -4.05) (stroke (width 0.15) (type solid)) (fill none) (layer "Dwgs.User"))
-    `}
     `
+        : `
+    (fp_rect (start -1.8 -6.3) (end 3.2 -4.05) (stroke (width 0.15) (type solid)) (fill none) (layer "Dwgs.User"))
+    `
+    }
+    `;
 
     const stem_outline = `
-    ${''/* stem outline - front */}
+    ${"" /* stem outline - front */}
     (fp_poly (pts (xy -0.525791 -3.207186) (xy -0.869467 -3.131537) (xy -1.202949 -3.019174) (xy -1.522327 -2.871414) (xy -1.823858 -2.689989) (xy -2.104005 -2.477027) (xy -2.359485 -2.235023) (xy -2.389234 -2.2) (xy -4.7 -2.2) (xy -4.7 2.2) (xy -2.389234 2.2) (xy -2.359485 2.235023) (xy -2.104005 2.477027) (xy -1.823858 2.689989) (xy -1.522327 2.871414) (xy -1.202949 3.019174) (xy -0.869467 3.131537) (xy -0.525791 3.207186) (xy -0.175951 3.245234) (xy 0 3.245234) (xy 0 2.845178) (xy -0.165713 2.845178) (xy -0.494897 2.806702) (xy -0.817389 2.73027) (xy -1.128827 2.616916) (xy -1.425 2.468172) (xy -1.701902 2.286051) (xy -1.955789 2.073015) (xy -2.183227 1.831945) (xy -2.38114 1.566101) (xy -2.546853 1.279078) (xy -2.678124 0.974757) (xy -2.773178 0.657255) (xy -2.830729 0.330865) (xy -2.85 0) (xy -2.830729 -0.330865) (xy -2.773178 -0.657255) (xy -2.678124 -0.974757) (xy -2.546853 -1.279078) (xy -2.38114 -1.566101) (xy -2.183227 -1.831945) (xy -1.955789 -2.073015) (xy -1.701902 -2.286051) (xy -1.425 -2.468172) (xy -1.128827 -2.616916) (xy -0.817389 -2.73027) (xy -0.494897 -2.806702) (xy -0.165713 -2.845178) (xy 0 -2.845178) (xy 0 -3.245234) (xy -0.175951 -3.245234)) (stroke (width 0.001) (type solid)) (fill solid) (layer "Dwgs.User"))
     (fp_poly (pts (xy 0.525791 -3.207186) (xy 0.869467 -3.131537) (xy 1.202949 -3.019174) (xy 1.522327 -2.871414) (xy 1.823858 -2.689989) (xy 2.104005 -2.477027) (xy 2.359485 -2.235023) (xy 2.389234 -2.2) (xy 4.7 -2.2) (xy 4.7 2.2) (xy 2.389234 2.2) (xy 2.359485 2.235023) (xy 2.104005 2.477027) (xy 1.823858 2.689989) (xy 1.522327 2.871414) (xy 1.202949 3.019174) (xy 0.869467 3.131537) (xy 0.525791 3.207186) (xy 0.175951 3.245234) (xy 0 3.245234) (xy 0 2.845178) (xy 0.165713 2.845178) (xy 0.494897 2.806702) (xy 0.817389 2.73027) (xy 1.128827 2.616916) (xy 1.425 2.468172) (xy 1.701902 2.286051) (xy 1.955789 2.073015) (xy 2.183227 1.831945) (xy 2.38114 1.566101) (xy 2.546853 1.279078) (xy 2.678124 0.974757) (xy 2.773178 0.657255) (xy 2.830729 0.330865) (xy 2.85 0) (xy 2.830729 -0.330865) (xy 2.773178 -0.657255) (xy 2.678124 -0.974757) (xy 2.546853 -1.279078) (xy 2.38114 -1.566101) (xy 2.183227 -1.831945) (xy 1.955789 -2.073015) (xy 1.701902 -2.286051) (xy 1.425 -2.468172) (xy 1.128827 -2.616916) (xy 0.817389 -2.73027) (xy 0.494897 -2.806702) (xy 0.165713 -2.845178) (xy 0 -2.845178) (xy 0 -3.245234) (xy 0.175951 -3.245234)) (stroke (width 0.001) (type solid)) (fill solid) (layer "Dwgs.User"))
-    `
+    `;
 
     const stem_cross_outline = `
-    ${''/* stem outline cross - front */}
+    ${"" /* stem outline cross - front */}
     (fp_poly (pts (xy -0.55 -0.55) (xy -0.55 -2) (xy 0.55 -2) (xy 0.55 -0.55) (xy 2 -0.55) (xy 2 0.55) (xy 0.55 0.55) (xy 0.55 2) (xy -0.55 2) (xy -0.55 0.55) (xy -2 0.55) (xy -2 -0.55)) (stroke (width 0) (type solid)) (fill solid) (layer "Dwgs.User"))
-    `
+    `;
 
-
-    const keycap_xo = 0.5 * p.keycap_width
-    const keycap_yo = 0.5 * p.keycap_height
+    const keycap_xo = 0.5 * p.keycap_width;
+    const keycap_yo = 0.5 * p.keycap_height;
     const keycap_marks = `
     (fp_rect (start ${keycap_xo} ${keycap_yo}) (end ${-keycap_xo} ${-keycap_yo}) (layer "Dwgs.User") (stroke (width 0.15) (type solid)) (fill none))
-    `
+    `;
 
     const hotswap_fab_front = `
     (fp_line (start -6.65 6.525) (end -6.65 4.975) (stroke (width 0.001) (type solid)) (layer "F.Fab"))
@@ -235,7 +238,7 @@ module.exports = {
     (fp_arc (start 8.45 5.475) (mid 8.420711 5.545711) (end 8.35 5.575) (stroke (width 0.001) (type solid)) (layer "F.Fab"))
     (fp_circle (center -2.6 5.75) (end -1.1 5.75) (stroke (width 0.001) (type solid)) (fill none) (layer "F.Fab"))
     (fp_circle (center 4.4 4.7) (end 5.9 4.7) (stroke (width 0.001) (type solid)) (fill none) (layer "F.Fab"))
-    `
+    `;
 
     const hotswap_fab_back = `
     (fp_line (start -8.45 5.475) (end -8.45 3.925) (stroke (width 0.001) (type solid)) (layer "B.Fab"))
@@ -278,7 +281,7 @@ module.exports = {
     (fp_arc (start 6.65 6.525) (mid 6.620711 6.595711) (end 6.55 6.625) (stroke (width 0.001) (type solid)) (layer "B.Fab"))
     (fp_circle (center -4.4 4.7) (end -2.85 4.7) (stroke (width 0.001) (type solid)) (fill none) (layer "B.Fab"))
     (fp_circle (center 2.6 5.75) (end 4.15 5.75) (stroke (width 0.001) (type solid)) (fill none) (layer "B.Fab"))
-    `
+    `;
 
     const hotswap_silk_front = `
     (fp_line (start -5.025 7.825) (end -5.025 7.225) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
@@ -296,12 +299,16 @@ module.exports = {
     (fp_arc (start 6.725 2.525) (mid 6.795711 2.554289) (end 6.825 2.625) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
     (fp_arc (start 6.825 6.775) (mid 6.795711 6.845711) (end 6.725 6.875) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
 
-    ${p.reversible ? `` : `
+    ${
+      p.reversible
+        ? ``
+        : `
     (fp_arc (start -5.025 3.675) (mid -4.995711 3.604289) (end -4.925 3.575) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
     (fp_line (start -5.025 4.275) (end -5.025 3.675) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
     (fp_line (start -4.325 3.575) (end -4.925 3.575) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
-    `}
     `
+    }
+    `;
 
     const hotswap_silk_back = `
     (fp_line (start -6.825 2.625) (end -6.825 3.225) (stroke (width 0.15) (type solid)) (layer "B.SilkS"))
@@ -319,22 +326,26 @@ module.exports = {
     (fp_arc (start -0.788397 3.575) (mid -1.047216 3.540926) (end -1.288397 3.441026) (stroke (width 0.15) (type solid)) (layer "B.SilkS"))
     (fp_arc (start 5.025 7.825) (mid 4.995711 7.895711) (end 4.925 7.925) (stroke (width 0.15) (type solid)) (layer "B.SilkS"))
 
-    ${p.reversible ? `` : `
+    ${
+      p.reversible
+        ? ``
+        : `
     (fp_arc (start 4.925 3.575) (mid 4.995711 3.604289) (end 5.025 3.675) (stroke (width 0.15) (type solid)) (layer "B.SilkS"))
     (fp_line (start 5.025 3.675) (end 5.025 4.275) (stroke (width 0.15) (type solid)) (layer "B.SilkS"))
     (fp_line (start 4.925 3.575) (end 4.325 3.575) (stroke (width 0.15) (type solid)) (layer "B.SilkS"))
-    `}
     `
+    }
+    `;
 
     const hotswap_front_full = `
     (pad "1" smd roundrect (at -5.55 5.75 ${p.r}) (size 4 2.5) (layers "F.Cu") (roundrect_rratio 0.1) ${p.from.str})
     (pad "" smd roundrect (at -6.25 5.75 ${p.r}) (size 2.6 2.5) (layers "F.Paste" "F.Mask") (roundrect_rratio 0.1))
-    `
+    `;
 
     const hotswap_back_full = `
     (pad "2" smd roundrect (at 5.55 5.75 ${p.r}) (size 4 2.5) (layers "B.Cu") (roundrect_rratio 0.1) ${p.to.str})
     (pad "" smd roundrect (at 6.25 5.75 ${p.r}) (size 2.6 2.5) (layers "B.Paste" "B.Mask") (roundrect_rratio 0.1))
-    `
+    `;
 
     const hotswap_front = `
     (pad ${p.reversible ? '""' : '"1"'} thru_hole circle (at -2.6 5.75 ${p.r}) (size 3.5 3.5) (drill 3) (layers "*.Cu" "*.Mask") ${p.from.str})
@@ -343,9 +354,12 @@ module.exports = {
     (pad "2" smd roundrect (at ${7.35 - (2.6 - p.outer_pad_width_front) / 2} 4.7 ${p.r}) (size ${p.outer_pad_width_front + 1.4} 2.5) (layers "F.Cu") (roundrect_rratio 0.1) ${p.to.str})
     (pad "" smd roundrect (at ${8.05 - (2.6 - p.outer_pad_width_front) / 2} 4.7 ${p.r}) (size ${p.outer_pad_width_front} 2.5) (layers "F.Paste" "F.Mask") (roundrect_rratio 0.1))
 
-    ${!p.reversible ? hotswap_front_full
-        : `(pad "1" smd roundrect (at -6.25 5.75 ${p.r}) (size 2.6 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) ${p.from.str})`}
-    `
+    ${
+      !p.reversible
+        ? hotswap_front_full
+        : `(pad "1" smd roundrect (at -6.25 5.75 ${p.r}) (size 2.6 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) ${p.from.str})`
+    }
+    `;
 
     const hotswap_back = `
     (pad "1" thru_hole circle (at -4.4 4.7 ${p.r}) (size 3.5 3.5) (drill 3) (layers "*.Cu" "*.Mask") ${p.from.str})
@@ -353,12 +367,14 @@ module.exports = {
 
 
     (pad "1" smd roundrect (at ${-7.35 + (2.6 - p.outer_pad_width_back) / 2} 4.7 ${p.r}) (size ${p.outer_pad_width_back + 1.4} 2.5) (layers "B.Cu") (roundrect_rratio 0.1) ${p.from.str})
-    (pad "" smd roundrect (at ${-8.05 + (2.6 - p.outer_pad_width_back) / 2} 4.7 ${p.r}) (size ${p.outer_pad_width_back} 2.5) (layers "B.Paste" "B.Mask") (roundrect_rratio ${(2.5 / p.outer_pad_width_back) <= 1 ? 0.1 : 0.1 * (2.5 / p.outer_pad_width_back)}))
+    (pad "" smd roundrect (at ${-8.05 + (2.6 - p.outer_pad_width_back) / 2} 4.7 ${p.r}) (size ${p.outer_pad_width_back} 2.5) (layers "B.Paste" "B.Mask") (roundrect_rratio ${2.5 / p.outer_pad_width_back <= 1 ? 0.1 : 0.1 * (2.5 / p.outer_pad_width_back)}))
 
-    ${!p.reversible ? hotswap_back_full
-        : `(pad "2" smd roundrect (at 6.25 5.75 ${p.r}) (size 2.6 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) ${p.to.str})`}
-    `
-
+    ${
+      !p.reversible
+        ? hotswap_back_full
+        : `(pad "2" smd roundrect (at 6.25 5.75 ${p.r}) (size 2.6 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) ${p.to.str})`
+    }
+    `;
 
     // If both hotswap and solder are enabled, move the solder holes
     // "down" to the opposite side of the switch.
@@ -366,22 +382,22 @@ module.exports = {
     // problem as long as we switch the side the holes are on.
     //let solder_offset_x_front = ''
     //let solder_offset_x_back = ''
-    let solder_offset_y = ''
+    let solder_offset_y = "";
     if (p.hotswap && p.solder) {
       //solder_offset_x_front = ''
       //solder_offset_x_back = ''
-      solder_offset_y = '-'
+      solder_offset_y = "-";
     }
 
     const solder_back = `
     (pad "1" thru_hole circle (at -2.6 ${solder_offset_y}5.75 ${p.r}) (size 2.1 2.1) (drill 1.25) (layers "*.Cu" "*.Mask") ${p.from.str})
     (pad "2" thru_hole circle (at 4.4 ${solder_offset_y}4.7 ${p.r}) (size 2.1 2.1) (drill 1.25) (layers "*.Cu" "*.Mask") ${p.to.str})
-    `
+    `;
 
     const solder_front = `
     (pad "1" thru_hole circle (at -4.4 ${solder_offset_y}4.7 ${p.r}) (size 2.1 2.1) (drill 1.25) (layers "*.Cu" "*.Mask") ${p.from.str})
     (pad "2" thru_hole circle (at 2.6 ${solder_offset_y}5.75 ${p.r}) (size 2.1 2.1) (drill 1.25) (layers "*.Cu" "*.Mask") ${p.to.str})
-    `
+    `;
 
     const solder_custom_reversible_top = `
     (pad "" thru_hole circle (at -4.4 -4.7) (size 1.8 1.8) (drill 1.25) (layers "*.Cu" "*.Mask") ${p.from.str})
@@ -402,7 +418,7 @@ module.exports = {
       (primitives (gr_poly (pts (xy 0.19509 -0.980785) (xy 0.382683 -0.92388) (xy 0.55557 -0.83147) (xy 2.35557 0.21853) (xy 2.507107 0.342893) (xy 2.63147 0.49443) (xy 2.72388 0.667317) (xy 2.780785 0.85491) (xy 2.8 1.05) (xy 2.780785 1.24509) (xy 2.72388 1.432683) (xy 2.63147 1.60557) (xy 2.507107 1.757107) (xy 2.35557 1.88147) (xy 2.182683 1.97388) (xy 1.99509 2.030785) (xy 1.8 2.05) (xy 1.60491 2.030785) (xy 1.417317 1.97388) (xy 1.24443 1.88147) (xy -0.55557 0.83147) (xy -0.707107 0.707107) (xy -0.83147 0.55557) (xy -0.92388 0.382683) (xy -0.980785 0.19509) (xy -1 0) (xy -0.980785 -0.19509) (xy -0.92388 -0.382683) (xy -0.83147 -0.55557) (xy -0.707107 -0.707107) (xy -0.55557 -0.83147) (xy -0.382683 -0.92388) (xy -0.19509 -0.980785) (xy 0 -1)) (width 0.1) (fill yes)))
       ${p.to.str})
 
-    `
+    `;
 
     const solder_custom_reversible_bottom = `
     (pad "" thru_hole circle (at -4.4 4.7) (size 1.8 1.8) (drill 1.25) (layers "*.Cu" "*.Mask") ${p.from.str})
@@ -422,7 +438,7 @@ module.exports = {
     (pad "2" smd custom (at 4.4 4.7) (size 1 1) (layers "B.Cu") (thermal_bridge_angle 90) (options (clearance outline) (anchor circle))
       (primitives (gr_poly (pts (xy -0.19509 -0.980785) (xy -0.382683 -0.92388) (xy -0.55557 -0.83147) (xy -2.35557 0.21853) (xy -2.507107 0.342893) (xy -2.63147 0.49443) (xy -2.72388 0.667317) (xy -2.780785 0.85491) (xy -2.8 1.05) (xy -2.780785 1.24509) (xy -2.72388 1.432683) (xy -2.63147 1.60557) (xy -2.507107 1.757107) (xy -2.35557 1.88147) (xy -2.182683 1.97388) (xy -1.99509 2.030785) (xy -1.8 2.05) (xy -1.60491 2.030785) (xy -1.417317 1.97388) (xy -1.24443 1.88147) (xy 0.55557 0.83147) (xy 0.707107 0.707107) (xy 0.83147 0.55557) (xy 0.92388 0.382683) (xy 0.980785 0.19509) (xy 1 0) (xy 0.980785 -0.19509) (xy 0.92388 -0.382683) (xy 0.83147 -0.55557) (xy 0.707107 -0.707107) (xy 0.55557 -0.83147) (xy 0.382683 -0.92388) (xy 0.19509 -0.980785) (xy 0 -1)) (width 0.1) (fill yes)))
       ${p.to.str})
-    `
+    `;
 
     const switch_3dmodel = `
     (model ${p.switch_3dmodel_filename}
@@ -430,7 +446,7 @@ module.exports = {
       (scale (xyz ${p.switch_3dmodel_xyz_scale[0]} ${p.switch_3dmodel_xyz_scale[1]} ${p.switch_3dmodel_xyz_scale[2]}))
       (rotate (xyz ${p.switch_3dmodel_xyz_rotation[0]} ${p.switch_3dmodel_xyz_rotation[1]} ${p.switch_3dmodel_xyz_rotation[2]}))
     )
-    `
+    `;
 
     const hotswap_3dmodel = `
     (model ${p.hotswap_3dmodel_filename}
@@ -438,7 +454,7 @@ module.exports = {
       (scale (xyz ${p.hotswap_3dmodel_xyz_scale[0]} ${p.hotswap_3dmodel_xyz_scale[1]} ${p.hotswap_3dmodel_xyz_scale[2]}))
       (rotate (xyz ${p.hotswap_3dmodel_xyz_rotation[0]} ${p.hotswap_3dmodel_xyz_rotation[1]} ${p.hotswap_3dmodel_xyz_rotation[2]}))
     )
-	  `
+	  `;
 
     const keycap_3dmodel = `
     (model ${p.keycap_3dmodel_filename}
@@ -446,88 +462,88 @@ module.exports = {
       (scale (xyz ${p.keycap_3dmodel_xyz_scale[0]} ${p.keycap_3dmodel_xyz_scale[1]} ${p.keycap_3dmodel_xyz_scale[2]}))
       (rotate (xyz ${p.keycap_3dmodel_xyz_rotation[0]} ${p.keycap_3dmodel_xyz_rotation[1]} ${p.keycap_3dmodel_xyz_rotation[2]}))
     )
-	  `
+	  `;
 
     const common_bottom = `
   )
-    `
+    `;
 
-    let final = common_top
+    let final = common_top;
 
     if (p.include_corner_marks) {
       final += corner_marks;
     }
 
     if (p.include_keycap) {
-      final += keycap_marks
+      final += keycap_marks;
     }
 
     if (p.include_led_outline) {
-      final += led_outline
+      final += led_outline;
     }
 
     if (p.include_stem_outline) {
-      final += stem_outline
-      final += stem_cross_outline
+      final += stem_outline;
+      final += stem_cross_outline;
     }
 
     if (p.hotswap) {
       if (p.reversible || p.side == "F") {
-        final += hotswap_front
+        final += hotswap_front;
 
         if (p.include_socket_silks) {
-          final += hotswap_silk_front
+          final += hotswap_silk_front;
         }
 
         if (p.include_socket_fabs) {
-          final += hotswap_fab_front
+          final += hotswap_fab_front;
         }
       }
 
       if (p.reversible || p.side == "B") {
-        final += hotswap_back
+        final += hotswap_back;
 
         if (p.include_socket_silks) {
-          final += hotswap_silk_back
+          final += hotswap_silk_back;
         }
 
         if (p.include_socket_fabs) {
-          final += hotswap_fab_back
+          final += hotswap_fab_back;
         }
       }
 
       if (p.hotswap_3dmodel_filename) {
-        final += hotswap_3dmodel
+        final += hotswap_3dmodel;
       }
     }
 
     if (p.solder) {
       if (p.reversible && p.include_custom_solder_pads) {
         if (p.hotswap) {
-          final += solder_custom_reversible_top
+          final += solder_custom_reversible_top;
         } else {
-          final += solder_custom_reversible_bottom
+          final += solder_custom_reversible_bottom;
         }
       } else {
         if (p.reversible || p.side == "F") {
-          final += solder_front
+          final += solder_front;
         }
 
         if (p.reversible || p.side == "B") {
-          final += solder_back
+          final += solder_back;
         }
       }
     }
 
     if (p.switch_3dmodel_filename) {
-      final += switch_3dmodel
+      final += switch_3dmodel;
     }
 
     if (p.keycap_3dmodel_filename) {
-      final += keycap_3dmodel
+      final += keycap_3dmodel;
     }
 
-    final += common_bottom
-    return final
-  }
-}
+    final += common_bottom;
+    return final;
+  },
+};
