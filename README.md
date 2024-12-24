@@ -9,4 +9,4 @@ the One Up Chuck.
 
 Still in its infancy, but the [Build Guide][guide] is started.
 
-[guide][BUILD.md]
+[guide]: BUILD.md
