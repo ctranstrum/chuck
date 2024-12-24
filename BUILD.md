@@ -17,7 +17,7 @@ building the One Up Chuck.
 | ---- | --------------------------------------------------------------------------------------------------- |
 | 1    | [One Up Chuck PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])       |
 | 2    | [3D printed cases][case], top and bottom (not yet ready)                                            |
-| 1    | [XIAO BLE][xiao] processor                                                                          |
+| 1    | [XIAO][xiao] board of your choice, as long as it is supported by [ZMK][zmk-xiao]                    |
 | 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                 |
 | 1    | [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                                   |
 | 1    | [3.7v 250mAh 502030 rechargeable LiPo battery][battery] (max internal space: 5.3x22x32mm)           |
@@ -97,6 +97,7 @@ sure to understand and follow the diagrams on the silkscreen.
 [switches]: https://nuphy.com/collections/switches/products/nuphy-wisteria-t55-low-profile-switches
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk]: https://zmk.dev/
+[zmk-xiao]: https://zmk.dev/docs/hardware#seeed_xiao
 [zmkdocs]: https://zmk.dev/docs
 [zmkrepo]: https://zmk.dev/docs/user-setup
 [zmkstudio]: https://zmk.studio/
