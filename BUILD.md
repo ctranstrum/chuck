@@ -13,25 +13,31 @@ building the One Up Chuck.
 
 ## Bill of materials
 
-| Qty  | Description                                                                                         |
-| ---- | --------------------------------------------------------------------------------------------------- |
-| 1    | [One Up Chuck PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])       |
-| 2    | [3D printed cases][case], top and bottom (not yet ready)                                            |
-| 1    | [XIAO][xiao] board of your choice, as long as it is supported by [ZMK][zmk-xiao]                    |
-| 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                 |
-| 1    | [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                                   |
-| 1    | [3.7v 250mAh 502030 rechargeable LiPo battery][battery] (max internal space: 5.3x22x32mm)           |
-| 6    | SOD-123 [1N4148W SMD diodes][sod123]                                                                |
-| 6    | SOT-23 [BAS40-06 common anode diodes][sot23-anode]                                                  |
-| 12   | SOT-23 [BAS40-05 common cathode diodes][sot23-cathode]                                              |
-| 30   | [Gateron Low Profile hot swap sockets][sockets]                                                     |
-| 30   | [Gateron KS-33 Low Profile switches][switches] of your choice                                       |
-| 30   | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)         |
-| 1    | Bourns [PES12-40S][encoder] or [PES12-42S][detents] EC12 encoder with a [knob][knob] of your choice |
-| 12   | [M2 hex nuts][hexnuts]                                                                              |
-| 12   | [M2 x 6mm countersunk screws][screws]                                                               |
-| 10   | [6mm x 1.5mm bumpons][bumpons]                                                                      |
-| ~3mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide            |
+| Qty  | Description                                                                                              |
+| ---- | -------------------------------------------------------------------------------------------------------- |
+| 1    | [One Up Chuck PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])            |
+| 2    | [3D printed cases][case], top and bottom (not yet ready)                                                 |
+| 1    | [XIAO][xiao] board of your choice, as long as it is supported by [ZMK][zmk-xiao]                         |
+| 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                      |
+| 1    | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                         |
+| 1    | wireless only: [3.7v 250mAh 502030 rechargeable LiPo battery][battery] (max internal space: 5.3x22x32mm) |
+| 6    | SOD-123 [1N4148W SMD diodes][sod123]                                                                     |
+| 6    | SOT-23 [BAS40-06 common anode diodes][sot23-anode]                                                       |
+| 12   | SOT-23 [BAS40-05 common cathode diodes][sot23-cathode]                                                   |
+| 30   | [Gateron Low Profile hot swap sockets][sockets]                                                          |
+| 30   | [Gateron KS-33 Low Profile switches][switches] of your choice                                            |
+| 30   | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)              |
+| 1    | Bourns [PES12-42S][detents]\* EC12 encoder with a [knob][knob] of your choice                            |
+| 12   | [M2 hex nuts][hexnuts]                                                                                   |
+| 12   | [M2 x 6mm countersunk screws][screws]                                                                    |
+| 10   | [6mm x 1.5mm bumpons][bumpons]                                                                           |
+| ~3mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide                 |
+
+\* You could also use a Bourns [PES12-40S][encoder] EC12 detentless encoder,
+or an encoder from another manufacturer,
+but the Bourns encoder is designed to have its detents with both A and B set to low,
+so another option is likely to draw more power,
+and thus isn't the best choice for a wireless build.
 
 ## Useful equipment
 
