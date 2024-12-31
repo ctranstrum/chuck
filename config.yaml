@@ -183,44 +183,6 @@ points:
         shift: [4, -8]
       key.tags: [battery]
 
-    # triodes:
-    #   anchor:
-    #     ref: encoder
-    #     shift: [-3, 15]
-    #   key:
-    #     padding: 5
-    #     spread: 6
-    #     tags: [triode, common_anode]
-    #   columns:
-    #     column1:
-    #       key:
-    #         triodeA: CP_INT
-    #         label_side: left
-    #       rows:
-    #         triode1:
-    #           triodeB: CP1
-    #           triodeC: D_CP1
-    #         triode2:
-    #           triodeB: CP0
-    #           triodeC: D_CP0
-    #         triode3:
-    #           triodeB: CP2
-    #           triodeC: D_CP2
-    #     column2:
-    #       key:
-    #         triodeB: CP_INT
-    #         label_side: right
-    #       rows:
-    #         triode4:
-    #           triodeA: CP3
-    #           triodeC: D_CP3
-    #         triode5:
-    #           triodeA: CP4
-    #           triodeC: D_CP4
-    #         triode6:
-    #           triodeA: CP5
-    #           triodeC: D_CP5
-
     palm_bumper:
       key.tags: [bumper]
       anchor:
@@ -360,6 +322,28 @@ outlines:
       size: [14, 22]
       corner: 1
 
+  _xiao_usb:
+    - what: rectangle
+      where: mcu
+      size: [9.5, 6.5]
+      adjust.shift: [0, 7.25]
+
+  _xiao_chip:
+    - what: rectangle
+      where: mcu
+      size: [13, 12]
+      adjust.shift: [0, -2]
+
+  _power_pcb_holes:
+    - what: circle
+      where: power
+      radius: 0.45
+      adjust.shift: [-1.5, 0]
+    - what: circle
+      where: power
+      radius: 0.45
+      adjust.shift: [1.5, 0]
+
   _power_visualizer:
     - what: rectangle
       where: power
@@ -368,12 +352,23 @@ outlines:
       where: power
       size: 1.3
       adjust.shift: [1.5, 2.6]
+    - -_power_pcb_holes
 
   _power_cutout:
     - what: rectangle
       where: power
       size: [9, 4.6]
       adjust.shift: [0, -0.2]
+
+  _reset_pcb_holes:
+    - what: circle
+      where: reset
+      radius: 0.375
+      adjust.shift: [0, 1.375]
+    - what: circle
+      where: reset
+      radius: 0.375
+      adjust.shift: [0, -1.375]
 
   _reset_visualizer:
     - what: rectangle
@@ -386,6 +381,7 @@ outlines:
       adjust:
         shift: [0, 2.05]
         resist: true
+    - -_reset_pcb_holes
 
   _reset_cutout:
     - what: rectangle
@@ -402,6 +398,7 @@ outlines:
       corner: 1
 
   _battery_wire_cutout:
+    - _battery_cutout
     - what: circle
       where: battery
       radius: 7.5
@@ -439,6 +436,11 @@ outlines:
       where: encoder
       size: [6.1, 1.2]
       adjust.shift: [0, -7.2]
+
+  _encoder_plate_cutout_expanded:
+    - what: outline
+      name: _encoder_plate_cutout
+      expand: 1
 
   _triode:
     - what: rectangle
@@ -563,25 +565,26 @@ outlines:
         shift: [4.4, 4.7]
 
   _encoder_pcb_holes:
+    # This is just an approximation of the encoder mounting holes
     - what: circle
       where: encoder
-      radius: 1.1
+      radius: 1.15
       adjust.shift: [-5.6, 0]
     - what: circle
       where: encoder
-      radius: 1.1
+      radius: 1.15
       adjust.shift: [5.6, 0]
     - what: circle
       where: encoder
-      radius: 0.6
+      radius: 0.8
       adjust.shift: [-2.5, -7.5]
     - what: circle
       where: encoder
-      radius: 0.6
+      radius: 0.8
       adjust.shift: [0, -7.5]
     - what: circle
       where: encoder
-      radius: 0.6
+      radius: 0.8
       adjust.shift: [2.5, -7.5]
 
   _screw_shaft:
@@ -638,15 +641,20 @@ outlines:
     - _high_bumper
     - _bumpers
 
-  plate:
+  top_plate:
     - board_outline
     - -_switches_plate_cutout
-    - -_battery_cutout
+    - ^_switches_clip_cutout
+    - ^_encoder_plate_cutout_expanded
+    - ^_battery_cutout
     - -_xiao_light_guide
+    - ^_xiao_usb
+    - ^_xiao_chip
     - ^_hex_nuts
 
   component_visualization:
-    - pcb_outline
+    - board_outline
+    - ^_xiao_cutout
     - ^_switches_plate_cutout
     - ^_switches_clip_cutout
     - ^_socket_visualizer
@@ -668,10 +676,67 @@ outlines:
     - ^_triodes_cutout
 
 cases:
+  top_case:
+    - what: outline
+      name: board_outline
+      extrude: 2.5
+    - what: outline
+      name: _xiao_light_guide
+      extrude: 2.5
+      operation: subtract
+    - what: outline
+      name: _switches_plate_cutout
+      extrude: 2.5
+      operation: subtract
+    - what: outline
+      name: _encoder_plate_cutout_expanded
+      extrude: 1.25
+      operation: subtract
+    - what: outline
+      name: _switches_clip_cutout
+      extrude: 1.3
+      operation: subtract
+    - what: outline
+      name: _hex_nuts
+      extrude: 1.8
+      operation: subtract
+    - what: outline
+      name: _battery_cutout
+      extrude: 1.7
+      operation: subtract
+    - what: outline
+      name: _xiao_usb
+      extrude: 1.7
+      operation: subtract
+    - what: outline
+      name: _xiao_chip
+      extrude: 0.2
+      operation: subtract
+
   mock_pcb:
     - what: outline
       name: pcb_outline
       extrude: 1.6
+    - what: outline
+      name: _socket_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _screw_shaft
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _power_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _reset_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _encoder_pcb_holes
+      extrude: 1.6
+      operation: subtract
 
 pcbs:
   chuck:
