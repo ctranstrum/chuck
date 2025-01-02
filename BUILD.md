@@ -16,7 +16,7 @@ building the One Up Chuck.
 | Qty  | Description                                                                                              |
 | ---- | -------------------------------------------------------------------------------------------------------- |
 | 1    | [One Up Chuck PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])            |
-| 2    | [3D printed cases][case], top and bottom (not yet ready)                                                 |
+| 2    | [3D printed cases][case], top and bottom                                                                 |
 | 1    | [XIAO][xiao] board of your choice, as long as it is supported by [ZMK][zmk-xiao]                         |
 | 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                      |
 | 1    | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                         |
@@ -36,7 +36,7 @@ building the One Up Chuck.
 \* You could also use a Bourns [PES12-40S][encoder] EC12 detentless encoder,
 or an encoder from another manufacturer,
 but the Bourns encoder is designed to have its detents with both A and B set to low,
-so another option is likely to draw more power,
+so a different option is likely to draw more power,
 and thus isn't the best choice for a wireless build.
 
 ## Useful equipment

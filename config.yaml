@@ -322,6 +322,18 @@ outlines:
       size: [14, 22]
       corner: 1
 
+  _xiao_bottom_cutout:
+    - what: rectangle
+      where: mcu
+      size: [14, 25]
+      adjust.shift: [0, -4]
+
+  _xiao_cutout_wall:
+    - what: rectangle
+      where: mcu
+      size: [19, 21.5]
+      corner: 1
+
   _xiao_usb:
     - what: rectangle
       where: mcu
@@ -357,7 +369,7 @@ outlines:
   _power_cutout:
     - what: rectangle
       where: power
-      size: [9, 4.6]
+      size: [9, 4.7]
       adjust.shift: [0, -0.2]
 
   _reset_pcb_holes:
@@ -386,7 +398,7 @@ outlines:
   _reset_cutout:
     - what: rectangle
       where: reset
-      size: [7.3, 4.1]
+      size: [7.3, 4.5]
       adjust:
         resist: true
         shift: [0, -0.25]
@@ -429,9 +441,9 @@ outlines:
     - what: rectangle
       where: encoder
       size: [12.4, 13.2]
-    - what: rectangle
-      where: encoder
-      size: [14, 2]
+    # - what: rectangle
+    #   where: encoder
+    #   size: [14, 2]
     - what: rectangle
       where: encoder
       size: [6.1, 1.2]
@@ -540,17 +552,31 @@ outlines:
       adjust.shift: [0, 8]
       operation: subtract
 
+  _glp_socket_expanded:
+    - what: outline
+      name: _glp_socket
+      expand: 1
+
   _socket_visualizer:
     - what: outline
       name: _glp_socket
       where: switch
       adjust.resist: true
 
-  # This is only needed for visualization of the pcb_outline
-  _socket_pcb_holes:
+  _socket_cutout:
+    - what: outline
+      name: _glp_socket_expanded
+      where: switch
+      adjust.resist: true
+
+  _socket_post_holes:
     - what: circle
       where: switch
       radius: 2.55
+
+  # This is only needed for visualization of the pcb_outline
+  _socket_pcb_holes:
+    - _socket_post_holes
     - what: circle
       where: switch
       radius: 1.5
@@ -587,10 +613,49 @@ outlines:
       radius: 0.8
       adjust.shift: [2.5, -7.5]
 
+  _encoder_bottom_cutout:
+    - what: circle
+      where: encoder
+      radius: 1.5
+      adjust.shift: [-5.6, 0]
+    - what: circle
+      where: encoder
+      radius: 1.5
+      adjust.shift: [5.6, 0]
+    - what: rectangle
+      where: encoder
+      size: [8, 2]
+      adjust.shift: [0, -7.2]
+
   _screw_shaft:
     - what: circle
       where: screw
       radius: 1.2
+
+  _countersink1:
+    - what: outline
+      name: _screw_shaft
+      expand: 1
+
+  _countersink2:
+    - what: outline
+      name: _screw_shaft
+      expand: 0.8
+
+  _countersink3:
+    - what: outline
+      name: _screw_shaft
+      expand: 0.6
+
+  _countersink4:
+    - what: outline
+      name: _screw_shaft
+      expand: 0.4
+
+  _countersink5:
+    - what: outline
+      name: _screw_shaft
+      expand: 0.2
 
   pcb_outline:
     - board_outline
@@ -676,6 +741,91 @@ outlines:
     - ^_triodes_cutout
 
 cases:
+  _countersunk_screw:
+    - what: outline
+      name: _countersink1
+      extrude: 0.2
+    - what: outline
+      name: _countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _countersink5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _screw_shaft
+      extrude: 2
+      shift: [0, 0, 1]
+
+  bottom_case:
+    - what: outline
+      name: board_outline
+      extrude: 3
+    - what: outline
+      name: _socket_post_holes
+      extrude: 1.8
+      shift: [0, 0, 1.2]
+      operation: subtract
+    - what: outline
+      name: _socket_cutout
+      extrude: 2
+      shift: [0, 0, 1]
+      operation: subtract
+    - what: outline
+      name: _encoder_bottom_cutout
+      extrude: 2
+      shift: [0, 0, 1]
+      operation: subtract
+    - what: outline
+      name: _all_bumpers
+      extrude: 0.5
+      operation: subtract
+    - what: outline
+      name: _diodes_cutout
+      extrude: 1.4
+      shift: [0, 0, 1.6]
+      operation: subtract
+    - what: outline
+      name: _triodes_cutout
+      extrude: 1.2
+      shift: [0, 0, 1.8]
+      operation: subtract
+    - what: outline
+      name: _xiao_bottom_cutout
+      extrude: 2.5
+      shift: [0, 0, 0.5]
+      operation: subtract
+    - what: outline
+      name: _xiao_cutout_wall
+      extrude: 1.2
+      shift: [0, 0, 1.8]
+      operation: subtract
+    - what: outline
+      name: _battery_wire_cutout
+      extrude: 2.1
+      shift: [0, 0, 0.9]
+      operation: subtract
+    - what: outline
+      name: _reset_cutout
+      extrude: 1.8
+      shift: [0, 0, 1.2]
+      operation: subtract
+    - what: outline
+      name: _power_cutout
+      extrude: 1.6
+      shift: [0, 0, 1.4]
+      operation: subtract
+    - -_countersunk_screw
+
   top_case:
     - what: outline
       name: board_outline
@@ -690,7 +840,7 @@ cases:
       operation: subtract
     - what: outline
       name: _encoder_plate_cutout_expanded
-      extrude: 1.25
+      extrude: 1.2
       operation: subtract
     - what: outline
       name: _switches_clip_cutout
@@ -702,7 +852,7 @@ cases:
       operation: subtract
     - what: outline
       name: _battery_cutout
-      extrude: 1.7
+      extrude: 1.6
       operation: subtract
     - what: outline
       name: _xiao_usb
@@ -713,7 +863,8 @@ cases:
       extrude: 0.2
       operation: subtract
 
-  mock_pcb:
+  # Remove the underscore to print out the mock PCB if you want to check for fit
+  _mock_pcb:
     - what: outline
       name: pcb_outline
       extrude: 1.6
