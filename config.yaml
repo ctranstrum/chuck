@@ -616,15 +616,15 @@ outlines:
   _encoder_bottom_cutout:
     - what: circle
       where: encoder
-      radius: 1.5
+      radius: 2
       adjust.shift: [-5.6, 0]
     - what: circle
       where: encoder
-      radius: 1.5
+      radius: 2
       adjust.shift: [5.6, 0]
     - what: rectangle
       where: encoder
-      size: [8, 2]
+      size: [9, 4]
       adjust.shift: [0, -7.2]
 
   _screw_shaft:
