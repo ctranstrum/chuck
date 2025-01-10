@@ -4,7 +4,7 @@
     };
 
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-charlieplix";
+        compatible = "zmk,kscan-gpio-charlieplex";
 
         gpios
             = <&xiao_d 1 GPIO_ACTIVE_HIGH>
