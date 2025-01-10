@@ -120,8 +120,8 @@
         // put the central into bootloder mode
         combo_flash {
             key-positions = <12 13>;
-            bindings = <&flash 4>;
-            layers = <3>;
+            bindings = <&flash 4>;  // The layer number of the flash layer
+            layers = <3>;  // The layer number of the layer where this combo is active
         };
     };
 
