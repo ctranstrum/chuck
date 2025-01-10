@@ -8,16 +8,16 @@ layers:
   - U
   - Y
   - ''''
-  - {t: A, h: Shift}
-  - {t: R, h: LCTRL}
-  - {t: S, h: Opt}
-  - {t: T, h: Cmd}
+  - {t: A, h: ⇧}
+  - {t: R, h: ^}
+  - {t: S, h: ⌥}
+  - {t: T, h: ⌘}
   - {t: G, h: Alt}
   - {t: M, h: Alt}
-  - {t: N, h: Cmd}
-  - {t: E, h: Opt}
-  - {t: I, h: LCTRL}
-  - {t: O, h: Shift}
+  - {t: N, h: ⌘}
+  - {t: E, h: ⌥}
+  - {t: I, h: ^}
+  - {t: O, h: ⇧}
   - Z
   - X
   - C
@@ -29,7 +29,7 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: LSHIFT, h: numpad, s: caps word}
-  - {t: SPC, h: sym / nav}
+  - {t: ␣, h: sym / nav}
   numpad:
   - Esc
   - ''
@@ -39,21 +39,21 @@ layers:
   - '8'
   - '9'
   - '-'
-  - Cmd A
-  - Ctrl
-  - Opt
-  - {t: Tab, h: Cmd}
-  - {t: return, h: Alt}
+  - ⌘A
+  - ^
+  - ⌥
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: Alt}
   - /
   - '4'
   - '5'
   - '6'
   - +
-  - Cmd Z
-  - Cmd X
-  - Cmd C
-  - Ctrl D
-  - Cmd V
+  - ⌘Z
+  - ⌘X
+  - ⌘C
+  - ^D
+  - ⌘V
   - '*'
   - '1'
   - '2'
@@ -66,30 +66,30 @@ layers:
   - '#'
   - '%'
   - '*'
-  - Ctrl L
-  - Ctrl U
+  - ^L
+  - ^U
   - ''
-  - BSPC
-  - {t: ^, h: Shift}
-  - {t: '@', h: LCTRL}
-  - {t: '!', h: Opt}
-  - {t: '=', h: Cmd}
+  - ⌫
+  - {t: ^, h: ⇧}
+  - {t: '@', h: ^}
+  - {t: '!', h: ⌥}
+  - {t: '=', h: ⌘}
   - {t: $, h: Alt}
-  - {t: PG UP, h: Alt}
-  - {t: LEFT, h: Cmd}
-  - {t: UP, h: Opt}
-  - {t: RIGHT, h: LCTRL}
-  - DEL
+  - {t: PgUp, h: Alt}
+  - {t: ←, h: ⌘}
+  - {t: ↑, h: ⌥}
+  - {t: →, h: ^}
+  - ⌦
   - '~'
   - '|'
   - '&'
   - _
   - '?'
-  - PG DN
-  - HOME
-  - DOWN
-  - END
-  - return
+  - PgDn
+  - Home
+  - ↓
+  - End
+  - ↵
   - {t: '-', h: numpad}
   - {type: held}
   keybd / func:
@@ -101,10 +101,10 @@ layers:
   - F8
   - F9
   - F12
-  - {t: CAPS, h: Shift}
-  - {t: PREV, h: LCTRL}
-  - {t: PP, h: Opt}
-  - {t: NEXT, h: Cmd}
+  - {t: Caps 🔒, h: ⇧}
+  - {t: ⏮, h: ^}
+  - {t: ⏯, h: ⌥}
+  - {t: ⏭, h: ⌘}
   - {t: BT 5, h: clear 5}
   - USB
   - F4
@@ -115,7 +115,7 @@ layers:
   - MUTE
   - ''
   - ''
-  - KP NUM
+  - Num 🔒
   - ZMK Studio
   - F1
   - F2
@@ -136,11 +136,11 @@ combos:
   l: [Colemak]
   a: top
 - p: [4, 5, 6]
-  k: BSPC
+  k: ⌫
   l: [Colemak]
   a: top
 - p: [14, 15, 16]
-  k: return
+  k: ↵
   l: [Colemak]
   a: top
 - p: [2, 3]
