@@ -319,10 +319,10 @@ Sft CARET Ctl AT Opt EXCL Cmd EQUAL Alt DLLR        Alt PG_UP Cmd LEFT Opt UP Ct
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 // ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃                          ┃  F7   ┃  F8   ┃  F9   ┃  F12  ┃
-     BT_(0)  BT_(1)  BT_(3)  BT_(4)                            &kp F7  &kp F8  &kp F9  &kp F12
+     BT_(0)  BT_(1)  BT_(2)  BT_(3)                            &kp F7  &kp F8  &kp F9  &kp F12
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃caps lk┃ prev  ┃ play  ┃ next  ┃  BT5  ┃          ┃  USB  ┃  F4   ┃  F5   ┃  F6   ┃  F11  ┃
-Sft CAPS Ctl C_PREV Opt C_PP Cmd C_NEXT BT_(5)        &usb_sel &kp F4  &kp F5  &kp F6  &kp F11
+Sft CAPS Ctl C_PREV Opt C_PP Cmd C_NEXT BT_(4)        &usb_sel &kp F4  &kp F5  &kp F6  &kp F11
 // ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃       ┃          ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ lock  ┃ mute  ┃       ┃       ┃numlock┃          ┃studio ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
