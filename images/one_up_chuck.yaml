@@ -28,18 +28,18 @@ layers:
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - {t: /, s: \}
-  - {t: LSHIFT, h: numpad, s: '&caps_word'}
+  - {t: LSHIFT, h: numpad, s: caps word}
   - {t: SPC, h: sym / nav}
   numpad:
   - ESC
   - ''
-  - Cmd+Sft+4
-  - Cmd+Ctl+Sft+4
+  - Cmd+Sft 4
+  - Cmd+Ctrl+Sft 4
   - '7'
   - '8'
   - '9'
   - '-'
-  - {t: Ctl+A, h: LSHFT}
+  - Cmd A
   - LCTL
   - LALT
   - {t: TAB, h: LGUI}
@@ -49,11 +49,11 @@ layers:
   - '5'
   - '6'
   - +
-  - Cmd+Z
-  - Cmd+X
-  - Cmd+C
-  - Ctl+D
-  - Cmd+V
+  - Cmd Z
+  - Cmd X
+  - Cmd C
+  - Ctrl D
+  - Cmd V
   - '*'
   - '1'
   - '2'
@@ -66,8 +66,8 @@ layers:
   - '#'
   - '%'
   - '*'
-  - Ctl+L
-  - Ctl+U
+  - Ctrl L
+  - Ctrl U
   - ''
   - BSPC
   - {t: ^, h: LSHFT}
@@ -93,10 +93,10 @@ layers:
   - {t: '-', h: numpad}
   - {type: held}
   keybd / func:
-  - {t: '&bt_sel', h: '&bt_clr'}
-  - {t: '&bt_sel 1', h: '&bt_clr 1'}
-  - {t: '&bt_sel 2', h: '&bt_clr 2'}
-  - {t: '&bt_sel 3', h: '&bt_clr 3'}
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - {t: BT 4, h: clear 4}
   - F7
   - F8
   - F9
@@ -105,18 +105,18 @@ layers:
   - {t: PREV, h: LCTRL}
   - {t: PP, h: LALT}
   - {t: NEXT, h: LGUI}
-  - {t: '&bt_sel 4', h: '&bt_clr 4'}
-  - '&usb_sel'
+  - {t: BT 5, h: clear 5}
+  - USB
   - F4
   - F5
   - F6
   - F11
-  - Cmd+Ctl+Q
+  - lock screen
   - MUTE
   - ''
   - ''
   - KP NUM
-  - '&studio_unlock'
+  - ZMK Studio
   - F1
   - F2
   - F3
