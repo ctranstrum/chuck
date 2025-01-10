@@ -1,13 +1,12 @@
 parse_config:
   modifier_fn_map:
-    left_alt: Opt
+    left_shift: ⇧
+    left_alt: ⌥
     right_alt: Alt
-    left_ctrl: Ctrl
-    right_ctrl: Ctrl
-    left_gui: Cmd
-    right_gui: Cmd
-    keycode_combiner: "{mods} {key}"
-    mod_combiner: "{mod_1}-{mod_2}"
+    left_ctrl: ^
+    left_gui: ⌘
+    keycode_combiner: "{mods}{key}"
+    mod_combiner: "{mod_1}{mod_2}"
   raw_binding_map:
     "&bt_sel 0": BT 1
     "&bt_sel 1": BT 2
@@ -20,15 +19,32 @@ parse_config:
     "&bt_clr 3": clear 4
     "&bt_clr 4": clear 5
     "&caps_word": caps word
-    "&flash 4": "flash"
+    "&flash 4": flash
+    "&kp BSPC": ⌫
+    "&kp DEL": ⌦
     "&kp ESC": Esc
-    "&kp RET": return
-    "&kp TAB": Tab
-    "&kp LALT": Opt
+    "&kp RET": ↵
+    "&kp TAB": ⇥
+    "&kp UP": ↑
+    "&kp DOWN": ↓
+    "&kp LEFT": ←
+    "&kp RIGHT": →
+    "&kp HOME": Home
+    "&kp END": End
+    "&kp PG_UP": PgUp
+    "&kp PG_DN": PgDn
+    "&kp LALT": ⌥
     "&kp RALT": Alt
-    "&kp LCTL": Ctrl
-    "&kp LGUI": Cmd
-    "&kp LSHFT": Shift
+    "&kp LCTL": ^
+    "&kp LCTRL": ^
+    "&kp LGUI": ⌘
+    "&kp LSHFT": ⇧
+    "&kp C_PP": ⏯
+    "&kp C_PREV": ⏮
+    "&kp C_NEXT": ⏭
+    "&kp SPC": ␣
+    "&kp CAPS": Caps 🔒
+    "&kp KP_NUM": Num 🔒
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB
     GS(N4): screen shot
