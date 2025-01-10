@@ -135,6 +135,10 @@ combos:
   k: Esc
   l: [Colemak]
   a: top
+- p: [9, 10, 11]
+  k: ⇥
+  l: [Colemak]
+  a: top
 - p: [4, 5, 6]
   k: ⌫
   l: [Colemak]
