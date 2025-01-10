@@ -8,16 +8,16 @@ layers:
   - U
   - Y
   - ''''
-  - {t: A, h: LSHFT}
-  - {t: R, h: LCTRL}
-  - {t: S, h: LALT}
-  - {t: T, h: LGUI}
-  - {t: G, h: RALT}
-  - {t: M, h: RALT}
-  - {t: N, h: LGUI}
-  - {t: E, h: LALT}
-  - {t: I, h: LCTRL}
-  - {t: O, h: LSHFT}
+  - {t: A, h: Shift}
+  - {t: R, h: Ctrl}
+  - {t: S, h: Opt}
+  - {t: T, h: Cmd}
+  - {t: G, h: Alt}
+  - {t: M, h: Alt}
+  - {t: N, h: Cmd}
+  - {t: E, h: Opt}
+  - {t: I, h: Ctrl}
+  - {t: O, h: Shift}
   - Z
   - X
   - C
@@ -31,19 +31,19 @@ layers:
   - {t: LSHIFT, h: numpad, s: caps word}
   - {t: SPC, h: sym / nav}
   numpad:
-  - ESC
+  - Esc
   - ''
-  - Cmd+Sft 4
-  - Cmd+Ctrl+Sft 4
+  - screen shot
+  - screen copy
   - '7'
   - '8'
   - '9'
   - '-'
   - Cmd A
   - LCTL
-  - LALT
-  - {t: TAB, h: LGUI}
-  - {t: RET, h: RALT}
+  - Opt
+  - {t: Tab, h: Cmd}
+  - {t: return, h: Alt}
   - /
   - '4'
   - '5'
@@ -70,15 +70,15 @@ layers:
   - Ctrl U
   - ''
   - BSPC
-  - {t: ^, h: LSHFT}
-  - {t: '@', h: LCTRL}
-  - {t: '!', h: LALT}
-  - {t: '=', h: LGUI}
-  - {t: $, h: RALT}
-  - {t: PG UP, h: RALT}
-  - {t: LEFT, h: LGUI}
-  - {t: UP, h: LALT}
-  - {t: RIGHT, h: LCTRL}
+  - {t: ^, h: Shift}
+  - {t: '@', h: Ctrl}
+  - {t: '!', h: Opt}
+  - {t: '=', h: Cmd}
+  - {t: $, h: Alt}
+  - {t: PG UP, h: Alt}
+  - {t: LEFT, h: Cmd}
+  - {t: UP, h: Opt}
+  - {t: RIGHT, h: Ctrl}
   - DEL
   - '~'
   - '|'
@@ -89,7 +89,7 @@ layers:
   - HOME
   - DOWN
   - END
-  - RET
+  - return
   - {t: '-', h: numpad}
   - {type: held}
   keybd / func:
@@ -101,10 +101,10 @@ layers:
   - F8
   - F9
   - F12
-  - {t: CAPS, h: LSHFT}
-  - {t: PREV, h: LCTRL}
-  - {t: PP, h: LALT}
-  - {t: NEXT, h: LGUI}
+  - {t: CAPS, h: Shift}
+  - {t: PREV, h: Ctrl}
+  - {t: PP, h: Opt}
+  - {t: NEXT, h: Cmd}
   - {t: BT 5, h: clear 5}
   - USB
   - F4
@@ -132,13 +132,13 @@ combos:
   k: J
   l: [Colemak]
 - p: [1, 2, 3]
-  k: ESC
+  k: Esc
   l: [Colemak]
 - p: [4, 5, 6]
   k: BSPC
   l: [Colemak]
 - p: [14, 15, 16]
-  k: RET
+  k: return
   l: [Colemak]
 - p: [2, 3]
   k: (
@@ -165,5 +165,5 @@ combos:
   k: '>'
   l: [Colemak]
 - p: [12, 13]
-  k: '&flash 4'
+  k: flash
   l: [keybd / func]
