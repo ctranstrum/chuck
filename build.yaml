@@ -1,7 +1,7 @@
 include:
   # One Up Chuck Dongle (optional)
   - board: seeeduino_xiao_ble
-    shield: one_up_chuck_dongle dongle_adapter
+    shield: one_up_chuck_dongle prospector_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-dongle
 

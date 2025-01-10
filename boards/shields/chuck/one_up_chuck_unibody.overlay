@@ -1,5 +1,5 @@
 #include "chuck.dtsi"
-#include "chuck_kscan.dtsi"
+#include "one_up_chuck_kscan.dtsi"
 
 &encoder {
     status = "okay";

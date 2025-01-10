@@ -21,6 +21,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: carrefinho # <-- if you want a dongle you can use this or another adapter
       url-base: https://github.com/carrefinho
+    - name: englmaxi # <-- another option for a dongle
+      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -34,6 +36,9 @@ manifest:
       revision: main
     - name: prospector-zmk-module # <-- something like this for the dongle
       remote: carrefinho
+      revision: main
+    - name: zmk-dongle-display # <-- alternate dongle
+      remote: englmaxi
       revision: main
   self:
     path: config
