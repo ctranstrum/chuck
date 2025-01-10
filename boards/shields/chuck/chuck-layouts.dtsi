@@ -1,0 +1,50 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    one_up_layout: one_up_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "One Up Chuck";
+        transform = <&default_transform>;
+        keys //                      w   h    x    y     rot    rx   ry
+            = <&key_physical_attrs 100 100    0    0       0     0    0>
+            , <&key_physical_attrs 100 100  100    0       0     0    0>
+            , <&key_physical_attrs 100 100  200    0       0     0    0>
+            , <&key_physical_attrs 100 100  300    0       0     0    0>
+
+            , <&key_physical_attrs 100 100  700    0       0     0    0>
+            , <&key_physical_attrs 100 100  800    0       0     0    0>
+            , <&key_physical_attrs 100 100  900    0       0     0    0>
+            , <&key_physical_attrs 100 100 1000    0       0     0    0>
+
+            , <&key_physical_attrs 100 100    0  100       0     0    0>
+            , <&key_physical_attrs 100 100  100  100       0     0    0>
+            , <&key_physical_attrs 100 100  200  100       0     0    0>
+            , <&key_physical_attrs 100 100  300  100       0     0    0>
+            , <&key_physical_attrs 100 100  400   75       0     0    0>
+
+            , <&key_physical_attrs 100 100  600   75       0     0    0>
+            , <&key_physical_attrs 100 100  700  100       0     0    0>
+            , <&key_physical_attrs 100 100  800  100       0     0    0>
+            , <&key_physical_attrs 100 100  900  100       0     0    0>
+            , <&key_physical_attrs 100 100 1000  100       0     0    0>
+
+            , <&key_physical_attrs 100 100    0  200       0     0    0>
+            , <&key_physical_attrs 100 100  100  200       0     0    0>
+            , <&key_physical_attrs 100 100  200  200       0     0    0>
+            , <&key_physical_attrs 100 100  300  200       0     0    0>
+            , <&key_physical_attrs 100 100  400  175       0     0    0>
+
+            , <&key_physical_attrs 100 100  600  175       0     0    0>
+            , <&key_physical_attrs 100 100  700  200       0     0    0>
+            , <&key_physical_attrs 100 100  800  200       0     0    0>
+            , <&key_physical_attrs 100 100  900  200       0     0    0>
+            , <&key_physical_attrs 100 100 1000  200       0     0    0>
+
+            , <&key_physical_attrs 150 100  425  300       0     0    0>
+
+            , <&key_physical_attrs 150 100  575  300       0     0    0>
+        ;
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4

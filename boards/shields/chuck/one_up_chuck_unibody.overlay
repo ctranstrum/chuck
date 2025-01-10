@@ -1,0 +1,8 @@
+#include "chuck.dtsi"
+#include "chuck_kscan.dtsi"
+
+&encoder {
+    status = "okay";
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree

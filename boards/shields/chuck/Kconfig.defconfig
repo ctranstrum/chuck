@@ -1,0 +1,57 @@
+if SHIELD_ONE_UP_CHUCK_DONGLE || SHIELD_ONE_UP_CHUCK_UNIBODY
+
+config ZMK_KEYBOARD_NAME
+    default "One Up Chuck"
+
+config ZMK_USB
+    default y
+
+endif
+
+if SHIELD_ONE_UP_CHUCK_DONGLE
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 1
+
+config BT_MAX_CONN
+    default 6
+
+config BT_MAX_PAIRED
+    default 6
+
+config ZMK_DISPLAY
+    default y
+
+config ZMK_IDLE_TIMEOUT
+    default 300000
+
+config BT_BAS
+    default n
+
+endif
+
+if SHIELD_ONE_UP_CHUCK_UNIBODY
+
+config BT_MAX_CONN
+    default 5
+
+config BT_MAX_PAIRED
+    default 5
+
+endif
+
+if SHIELD_ONE_UP_CHUCK_DONGLE || SHIELD_ONE_UP_CHUCK_PERIPHERAL
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+    default y
+
+endif

@@ -1,0 +1,14 @@
+file_format: "1"
+id: chuck
+name: One Up Chuck
+type: shield
+url: https://github.com/ctranstrum/chuck
+requires:
+  - xiao_ble
+features:
+  - keys
+  - encoder
+siblings:
+  - one_up_chuck_unibody
+  - one_up_chuck_peripheral
+  - one_up_chuck_dongle
