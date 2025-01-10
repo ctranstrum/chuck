@@ -28,7 +28,7 @@ layers:
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - {t: /, s: \}
-  - {t: LSHIFT, h: numpad, s: caps word}
+  - {t: sticky ⇧, h: numpad, s: caps word}
   - {t: ␣, h: sym / nav}
   numpad:
   - Esc
