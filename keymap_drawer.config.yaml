@@ -34,8 +34,14 @@ parse_config:
     GS(N4): screen shot
     GCS(N4): screen copy
     GC(Q): lock screen
+  zmk_combos:
+    combo_esc:
+      align: top
+    combo_backspace:
+      align: top
+    combo_return:
+      align: top
 
 draw_config:
   n_columns: 2
   split_gap: 15
-  separate_combo_diagrams: true
