@@ -331,9 +331,9 @@ Sft CAPS Ctl C_PREV Opt C_PP Cmd C_NEXT BT_(5)        &usb_sel &kp F4  &kp F5  &
 //                                     ┃ ##### ┃  ┃ ##### ┃
                                          &trans     &trans
 //                                     ┗━━━━━━━┛  ┗━━━━━━━┛
+            >;
 
             sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
-            >;
         };
 
         flash {
