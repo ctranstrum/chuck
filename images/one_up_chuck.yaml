@@ -9,14 +9,14 @@ layers:
   - Y
   - ''''
   - {t: A, h: Shift}
-  - {t: R, h: Ctrl}
+  - {t: R, h: LCTRL}
   - {t: S, h: Opt}
   - {t: T, h: Cmd}
   - {t: G, h: Alt}
   - {t: M, h: Alt}
   - {t: N, h: Cmd}
   - {t: E, h: Opt}
-  - {t: I, h: Ctrl}
+  - {t: I, h: LCTRL}
   - {t: O, h: Shift}
   - Z
   - X
@@ -40,7 +40,7 @@ layers:
   - '9'
   - '-'
   - Cmd A
-  - LCTL
+  - Ctrl
   - Opt
   - {t: Tab, h: Cmd}
   - {t: return, h: Alt}
@@ -71,14 +71,14 @@ layers:
   - ''
   - BSPC
   - {t: ^, h: Shift}
-  - {t: '@', h: Ctrl}
+  - {t: '@', h: LCTRL}
   - {t: '!', h: Opt}
   - {t: '=', h: Cmd}
   - {t: $, h: Alt}
   - {t: PG UP, h: Alt}
   - {t: LEFT, h: Cmd}
   - {t: UP, h: Opt}
-  - {t: RIGHT, h: Ctrl}
+  - {t: RIGHT, h: LCTRL}
   - DEL
   - '~'
   - '|'
@@ -102,7 +102,7 @@ layers:
   - F9
   - F12
   - {t: CAPS, h: Shift}
-  - {t: PREV, h: Ctrl}
+  - {t: PREV, h: LCTRL}
   - {t: PP, h: Opt}
   - {t: NEXT, h: Cmd}
   - {t: BT 5, h: clear 5}
