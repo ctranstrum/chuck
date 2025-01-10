@@ -53,6 +53,8 @@ parse_config:
   zmk_combos:
     combo_esc:
       align: top
+    combo_tab:
+      align: top
     combo_backspace:
       align: top
     combo_return:
