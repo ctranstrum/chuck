@@ -73,6 +73,10 @@ To customize the keymap for your One Up Chuck board, you can copy the
 [default keymap][keymap] from this repo to the `config` directory of
 your zmk config repo and edit it from there.
 
+Default Keymap:
+
+![default keymap](images/one_up_chuck.svg)
+
 [keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
 [chuck]: https://github.com/ctranstrum/chuck
 [zmk]: https://zmk.dev/docs/user-setup#github-repo

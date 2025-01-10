@@ -7,6 +7,7 @@ parse_config:
     left_gui: Cmd
     right_gui: Cmd
     keycode_combiner: "{mods} {key}"
+    mod_combiner: "{mod_1}-{mod_2}"
   raw_binding_map:
     "&bt_sel 0": BT 1
     "&bt_sel 1": BT 2
@@ -19,20 +20,22 @@ parse_config:
     "&bt_clr 3": clear 4
     "&bt_clr 4": clear 5
     "&caps_word": caps word
+    "&flash 4": "flash"
+    "&kp ESC": Esc
+    "&kp RET": return
+    "&kp TAB": Tab
+    "&kp LALT": Opt
+    "&kp RALT": Alt
+    "&kp LCTRL": Ctrl
+    "&kp LGUI": Cmd
+    "&kp LSHFT": Shift
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB
-    GS(4): screen shot
-    GCS(4): screen copy
+    GS(N4): screen shot
+    GCS(N4): screen copy
     GC(Q): lock screen
-    ESC: Esc
-    RET: return
-    TAB: Tab
-    LALT: Opt
-    RALT: Alt
-    LCTRL: Ctrl
-    LGUI: Cmd
-    LSHFT: Shift
 
 draw_config:
   n_columns: 2
   split_gap: 15
+  separate_combo_diagrams: true
