@@ -1,0 +1,9 @@
+parse_config:
+  modifier_fn_map:
+    left_alt: Opt
+    right_alt: Alt
+    left_gui: Cmd
+    right_gui: Cmd
+
+draw_config:
+  n_columns: 2
