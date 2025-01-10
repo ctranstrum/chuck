@@ -26,7 +26,7 @@ parse_config:
     "&kp TAB": Tab
     "&kp LALT": Opt
     "&kp RALT": Alt
-    "&kp LCTRL": Ctrl
+    "&kp LCTL": Ctrl
     "&kp LGUI": Cmd
     "&kp LSHFT": Shift
     "&studio_unlock": ZMK Studio
@@ -41,7 +41,3 @@ parse_config:
       align: top
     combo_return:
       align: top
-
-draw_config:
-  n_columns: 2
-  split_gap: 15
