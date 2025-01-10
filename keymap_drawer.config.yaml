@@ -2,8 +2,36 @@ parse_config:
   modifier_fn_map:
     left_alt: Opt
     right_alt: Alt
+    left_ctrl: Ctrl
+    right_ctrl: Ctrl
     left_gui: Cmd
     right_gui: Cmd
+    keycode_combiner: "{mods} {key}"
+  raw_binding_map:
+    "&bt_sel 0": BT 1
+    "&bt_sel 1": BT 2
+    "&bt_sel 2": BT 3
+    "&bt_sel 3": BT 4
+    "&bt_sel 4": BT 5
+    "&bt_clr 0": clear 1
+    "&bt_clr 1": clear 2
+    "&bt_clr 2": clear 3
+    "&bt_clr 3": clear 4
+    "&bt_clr 4": clear 5
+    "&caps_word": caps word
+    "&studio_unlock": ZMK Studio
+    "&usb_sel": USB
+    GS(4): screen shot
+    GCS(4): screen copy
+    GC(Q): lock screen
+    ESC: Esc
+    RET: return
+    TAB: Tab
+    LALT: Opt
+    RALT: Alt
+    LCTRL: Ctrl
+    LGUI: Cmd
+    LSHFT: Shift
 
 draw_config:
   n_columns: 2

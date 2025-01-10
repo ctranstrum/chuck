@@ -271,9 +271,9 @@
 // ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                          ┃   7   ┃   8   ┃   9   ┃   -   ┃
     &kp ESC  &none   GS(N4) GCS(N4)                             &kp N7  &kp N8 &kp N9 &kp MINUS
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ CtrlA ┃       ┃       ┃  Tab  ┃ Enter ┃          ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
- Sft LC(A) &kp LCTL &kp LALT Cmd TAB Alt RET          &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃          ┃       ┃       ┃       ┃       ┃       ┃
+// ┃ Cmd A ┃       ┃       ┃  Tab  ┃ Enter ┃          ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
+ &kp LG(A) &kp LCTL &kp LALT Cmd TAB Alt RET          &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃          ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃          ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
 &kp LG(Z) &kp LG(X) &kp LG(C) &kp LC(D) &kp LG(V)      &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
