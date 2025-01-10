@@ -45,6 +45,7 @@ parse_config:
     "&kp SPC": ␣
     "&kp CAPS": Caps 🔒
     "&kp KP_NUM": Num 🔒
+    "&sk LSHIFT": sticky ⇧
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB
     GS(N4): screen shot
