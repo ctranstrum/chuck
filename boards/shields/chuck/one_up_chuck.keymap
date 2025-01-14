@@ -331,8 +331,8 @@ Sft CARET Ctl AT Opt EXCL Cmd EQUAL Alt DLLR        Alt PG_UP Cmd LEFT Opt UP Ct
 Sft CAPS Ctl C_PREV Opt C_PP Cmd C_NEXT BT_(4)        &usb_sel &kp F4  &kp F5  &kp F6  &kp F11
 // ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃       ┃          ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ lock  ┃ mute  ┃       ┃       ┃numlock┃          ┃studio ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
-    GC(Q) &kp C_MUTE &none &none &kp KP_NUM     &studio_unlock &kp F1  &kp F2  &kp F3  &kp F10
+// ┃ lock  ┃ mute  ┃con rgb┃bat rgb┃numlock┃          ┃studio ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
+ GC(Q) &kp C_MUTE &ind_con &ind_bat &kp KP_NUM     &studio_unlock &kp F1  &kp F2  &kp F3  &kp F10
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓  ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ ##### ┃  ┃ ##### ┃
                                          &trans     &trans

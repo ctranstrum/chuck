@@ -20,6 +20,8 @@ parse_config:
     "&bt_clr 4": clear 5
     "&caps_word": caps word
     "&flash 4": flash
+    "&ind_bat": battery status
+    "&ind_con": connection status
     "&kp BSPC": ⌫
     "&kp DEL": ⌦
     "&kp ESC": Esc
