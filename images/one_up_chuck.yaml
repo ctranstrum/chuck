@@ -113,8 +113,8 @@ layers:
   - F11
   - lock screen
   - MUTE
-  - ''
-  - ''
+  - connection status
+  - battery status
   - Num 🔒
   - ZMK Studio
   - F1
