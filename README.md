@@ -69,6 +69,15 @@ include:
     artifact-name: chuck-unibody
 ```
 
+Modify your `config/one-up-chuck.conf` file with these changes:
+
+```conf
+CONFIG_EC11=y
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
+CONFIG_ZMK_STUDIO=y
+
+```
+
 To customize the keymap for your One Up Chuck board, you can copy the
 [default keymap][keymap] from this repo to the `config` directory of
 your zmk config repo and edit it from there.
