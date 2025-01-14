@@ -21,9 +21,7 @@ building the One Up Chuck.
 | 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                      |
 | 1    | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                         |
 | 1    | wireless only: [3.7v 250mAh 502030 rechargeable LiPo battery][battery] (max internal space: 5.3x22x32mm) |
-| 6    | SOD-123 [1N4148W SMD diodes][sod123]                                                                     |
-| 6    | SOT-23 [BAS40-06 common anode diodes][sot23-anode]                                                       |
-| 12   | SOT-23 [BAS40-05 common cathode diodes][sot23-cathode]                                                   |
+| 42   | SOD-123 [1N4148W SMD diodes][sod123]                                                                     |
 | 30   | [Gateron Low Profile hot swap sockets][sockets]                                                          |
 | 30   | [Gateron KS-33 Low Profile switches][switches] of your choice                                            |
 | 30   | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)              |
@@ -71,9 +69,9 @@ A few items that you may want to customize:
 ## Good luck
 
 I'll add more details here once I get my PCB and build it,
-but if you've built keyboards before, the only possibly tricky part
-is that there are three different kinds of diodes, so you'll need to be
-sure to understand and follow the diagrams on the silkscreen.
+but if you've built keyboards before,
+you shouldn't really have any trouble,
+just be sure to follow the symbols on the silkscreen.
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
@@ -96,8 +94,6 @@ sure to understand and follow the diagrams on the silkscreen.
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [sockets]: https://www.gateron.com/products/gateron-low-profile-switch-hot-swap-pcb-socket
 [sod123]: https://typeractive.xyz/products/smd-diodes
-[sot23-anode]: https://www.mouser.com/ProductDetail/Vishay-Semiconductors/BAS40-06-E3-08?qs=KP8Io%2FXyE5SdTXR%2F3ALECA%3D%3D
-[sot23-cathode]: https://www.mouser.com/ProductDetail/Vishay-Semiconductors/BAS40-05-E3-08?qs=KP8Io%2FXyE5S7v7z0di0Ccg%3D%3D
 [soldering101]: https://www.google.com/search?q=youtube+soldering+101
 [splitkb-build-guide]: https://docs.splitkb.com/product-guides/aurora-series/build-guide
 [switches]: https://nuphy.com/collections/switches/products/nuphy-wisteria-t55-low-profile-switches

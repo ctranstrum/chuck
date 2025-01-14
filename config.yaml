@@ -1,13 +1,13 @@
 meta:
   keyboard: &keyboard_name One Up Chuck
   author: chad@transtrum.net
-  version: &version v1.0
+  version: &version v1.1
   repository: &repo https://github.com/ctranstrum/chuck
 
   # Depending on where you are ordering from, uncomment or edit one of these:
-  order_num_template: &order_text JLCJLCJLCJLC # for ordering from JLCpcb.com
+  # order_num_template: &order_text JLCJLCJLCJLC # for ordering from JLCpcb.com
   # order_num_template: &order_text WayWayWay    # for ordering from PCBway.com
-  # order_num_template: &order_text "" # remove the order number text completely
+  order_num_template: &order_text "" # remove the order number text completely
 
 units:
   dx: u
@@ -42,14 +42,14 @@ points:
               tags: [key, switch, low_bumper]
             home:
               cpsrc: CP2
-              tags: [key, switch, triode, common_cathode]
+              tags: [key, switch]
               shared: pinky_bottom
               mirror.shared: mirror_pinky_bottom
             top:
               orient: -5
               shift: [3, 3]
               cpsrc: CP3
-              tags: [key, switch, diode, high_bumper]
+              tags: [key, switch, high_bumper]
               bind: [0, 4]
         ring:
           key:
@@ -61,10 +61,10 @@ points:
           rows:
             bottom:
               cpsrc: CP4
-              tags: [key, switch, triode, common_anode]
+              tags: [key, switch, return]
             home:
               cpsrc: CP5
-              tags: [key, switch, triode, common_cathode]
+              tags: [key, switch]
               shared: ring_bottom
               mirror:
                 cpsrc: CP0
@@ -73,7 +73,7 @@ points:
               cpdst: CP1
               cpsrc: CP0
               mirror.cpdst: CP4
-              tags: [key, switch, diode]
+              tags: [key, switch]
         middle:
           key:
             stagger: hdx
@@ -84,18 +84,18 @@ points:
           rows:
             bottom:
               cpsrc: CP2
-              tags: [key, switch, triode, common_cathode, common_anode]
+              tags: [key, switch, return]
               shared: index_bottom
               mirror.shared: mirror_index_bottom
             home:
               cpsrc: CP3
             top:
               cpsrc: CP4
-              tags: [key, switch, high_bumper, triode, common_cathode]
+              tags: [key, switch, high_bumper]
               bind: [0, 4]
               shared: middle_home
               mirror:
-                cpscrc: CP1
+                cpsrc: CP1
                 shared: mirror_middle_home
         index:
           key:
@@ -112,7 +112,7 @@ points:
               cpsrc: CP0
             top:
               cpsrc: CP1
-              tags: [key, switch, triode, common_cathode]
+              tags: [key, switch]
               shared: index_home
               mirror.shared: mirror_index_home
         inner:
@@ -124,10 +124,10 @@ points:
             bottom:
               cpsrc: CP3
               mirror.cpsrc: CP2
-              tags: [key, switch, triode, common_anode]
+              tags: [key, switch, return]
             home:
               cpsrc: CP4
-              tags: [key, switch, triode, common_cathode]
+              tags: [key, switch]
               shared: inner_bottom
               mirror.shared: mirror_inner_bottom
 
@@ -137,7 +137,7 @@ points:
         distance: mirrored_distance
       anchor: matrix_index_bottom
       columns.thumb.rows.spot:
-        tags: [thumb, switch, diode]
+        tags: [thumb, switch]
         splay: -20
         shift: [39.5, -10.5]
         bind: [7, 0, 0, 25]
@@ -441,9 +441,6 @@ outlines:
     - what: rectangle
       where: encoder
       size: [12.4, 13.2]
-    # - what: rectangle
-    #   where: encoder
-    #   size: [14, 2]
     - what: rectangle
       where: encoder
       size: [6.1, 1.2]
@@ -454,49 +451,6 @@ outlines:
       name: _encoder_plate_cutout
       expand: 1
 
-  _triode:
-    - what: rectangle
-      size: [2.9, 1.3]
-    - what: rectangle
-      size: [0.4, 0.55]
-      adjust.shift: [0, 0.925]
-    - what: rectangle
-      size: [0.4, 0.55]
-      adjust.shift: [-0.95, -0.925]
-    - what: rectangle
-      size: [0.4, 0.55]
-      adjust.shift: [0.95, -0.925]
-
-  _triodes_anodes:
-    - what: outline
-      name: _triode
-      where: common_anode
-      adjust:
-        shift: [0, -0.75 dy]
-        rotate: 180
-
-  _triodes_cathodes:
-    - what: outline
-      name: _triode
-      where: common_cathode
-      adjust:
-        shift: [6, -1.5]
-        rotate: 270
-
-  _triodes:
-    - _triodes_anodes
-    - _triodes_cathodes
-
-  _triodes_cutout:
-    - what: rectangle
-      where: common_anode
-      size: 3.5
-      adjust.shift: [0, -0.75 dy]
-    - what: rectangle
-      where: common_cathode
-      size: 3.5
-      adjust.shift: [6, -1.5]
-
   _diode:
     - what: rectangle
       size: [1.65, 2.7]
@@ -506,14 +460,34 @@ outlines:
   _diodes:
     - what: outline
       name: _diode
-      where: diode
+      where: switch
       adjust.shift: [5, -1]
 
   _diodes_cutout:
     - what: rectangle
-      where: diode
+      where: switch
       size: [2.2, 5.2]
       adjust.shift: [5, -1]
+
+  _return_diodes:
+    - what: outline
+      name: _diode
+      where: return
+      adjust:
+        shift: [0, -0.6 dy]
+        rotate: 90
+    - what: outline
+      name: _diode
+      where: return
+      adjust:
+        shift: [0, -0.75 dy]
+        rotate: 90
+
+  _return_diodes_cutout:
+    - what: rectangle
+      where: return
+      size: 5.2
+      adjust.shift: [0, -0.675 dy]
 
   _switches_plate_cutout:
     - what: rectangle
@@ -737,8 +711,8 @@ outlines:
     - ^_all_bumpers
     - ^_diodes
     - ^_diodes_cutout
-    - ^_triodes
-    - ^_triodes_cutout
+    - ^_return_diodes
+    - ^_return_diodes_cutout
 
 cases:
   _countersunk_screw:
@@ -795,7 +769,7 @@ cases:
       shift: [0, 0, 1.6]
       operation: subtract
     - what: outline
-      name: _triodes_cutout
+      name: _return_diodes_cutout
       extrude: 1.2
       shift: [0, 0, 1.8]
       operation: subtract
@@ -913,7 +887,7 @@ pcbs:
 
       diodes:
         what: sod123
-        where: [[diode, /^matrix|^thumbs/]]
+        where: [[switch, /^matrix|^thumbs/]]
         adjust:
           shift: [5, -1]
           rotate: 90
@@ -923,13 +897,13 @@ pcbs:
           from: "{{colrow}}"
           to: "D_{{cpdst}}"
           smd: true
-          via: "pad"
+          via: pad
           labels: true
           label_rotation: 90
 
       mirror_diodes:
         what: sod123
-        where: [[diode, /^mirror/]]
+        where: [[switch, /^mirror/]]
         adjust:
           shift: [5, -1]
           rotate: 270
@@ -939,62 +913,35 @@ pcbs:
           from: "{{colrow}}"
           to: "D_{{cpdst}}"
           smd: true
-          via: "pad"
+          via: pad
           labels: true
           label_rotation: 90
 
-      triode_cathodes:
-        what: sot23
-        where: [[common_cathode, /^matrix|^thumbs/]]
-        adjust:
-          shift: [6, -1.5]
-          rotate: 270
+      return_diodes:
+        what: sod123
+        where: return
+        adjust.shift: [0, -0.6 dy]
         params:
           side: B
-          A: "{{colrow}}"
-          B: "{{shared}}"
-          C: "D_{{cpdst}}"
-          via: true
-          common: cathode
-          designator: DC
+          designator: D
+          from: "D_{{cpdst}}"
+          to: "{{cpdst}}"
+          smd: true
+          via: pad
           labels: true
-          label_side: left
-          label_rotation: 90
 
-      mirror_triode_cathodes:
-        what: sot23
-        where: [[common_cathode, /^mirror/]]
-        adjust:
-          shift: [6, -1.5]
-          rotate: 270
+      interrupt_diodes:
+        what: sod123
+        where: return
+        adjust.shift: [0, -0.75 dy]
         params:
           side: B
-          A: "{{colrow}}"
-          B: "{{shared}}"
-          C: "D_{{cpdst}}"
-          via: true
-          common: cathode
-          designator: DC
+          designator: I
+          from: "D_{{cpdst}}"
+          to: CP_INT
+          smd: true
+          via: pad
           labels: true
-          label_side: right
-          label_rotation: 90
-
-      triode_anodes:
-        what: sot23
-        where: common_anode
-        adjust:
-          shift: [0, -0.75 dy]
-          rotate: 180
-        params:
-          side: B
-          A: CP_INT
-          B: "{{cpdst}}"
-          C: "D_{{cpdst}}"
-          via: true
-          common: anode
-          designator: DA
-          labels: true
-          label_side: right
 
       encoder:
         what: encoder

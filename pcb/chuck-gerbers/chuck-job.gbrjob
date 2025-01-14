@@ -5,16 +5,16 @@
       "Application": "Pcbnew",
       "Version": "8.0.7"
     },
-    "CreationDate": "2024-12-24T09:40:09-07:00"
+    "CreationDate": "2025-01-13T21:54:52-07:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "chuck",
       "GUID": "63687563-6b2e-46b6-9963-61645f706362",
-      "Revision": "v1.0"
+      "Revision": "v1.1"
     },
     "Size": {
-      "X": 225.1511,
+      "X": 225.1512,
       "Y": 121.4666
     },
     "LayerNumber": 2,
@@ -28,8 +28,8 @@
       "PadToTrack": 0.2,
       "TrackToTrack": 0.2,
       "MinLineWidth": 0.2,
-      "TrackToRegion": 0.5,
-      "RegionToRegion": 0.5
+      "TrackToRegion": 0.254,
+      "RegionToRegion": 0.254
     }
   ],
   "FilesAttributes": [
