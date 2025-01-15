@@ -58,12 +58,12 @@ accept all of the defaults, and wait a week or two for the boards to arrive.
 
 However, the minimum order at JLC is 5 copies, so you'll likely end up
 with 4 extra PCBs. I don't really have any advice for what to do with
-the extras, but you maybe you could give one to a friend!
+the extras, but you maybe could give one to a friend!
 
 A few items that you may want to customize:
 
-- the color of the board; I printed mine in black, but whatever color you pick, the edges of the PCB will still be a little greenish
-- you can choose to hide the JLC order number, or place it on the board where I've included the required order number string
+- the color of the board; I printed mine in red, but whatever color you pick, the edges of the PCB will still be a little greenish
+- I also chose to hide the JLC order number, to give the board a cleaner look
 - HASL can be lead-free if you are also using lead-free solder, or you can splurge for ENIG, but it's definitely not required
 
 ## Good luck
