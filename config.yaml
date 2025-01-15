@@ -745,11 +745,6 @@ cases:
       name: board_outline
       extrude: 3
     - what: outline
-      name: _socket_post_holes
-      extrude: 1.8
-      shift: [0, 0, 1.2]
-      operation: subtract
-    - what: outline
       name: _socket_cutout
       extrude: 2
       shift: [0, 0, 1]
@@ -797,6 +792,11 @@ cases:
       name: _power_cutout
       extrude: 1.6
       shift: [0, 0, 1.4]
+      operation: subtract
+    - what: outline
+      name: _socket_post_holes
+      extrude: 1.8
+      shift: [0, 0, 1.2]
       operation: subtract
     - -_countersunk_screw
 
