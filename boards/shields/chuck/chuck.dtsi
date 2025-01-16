@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "chuck-layouts.dtsi"
 
 / {
@@ -34,6 +35,23 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder>;
         triggers-per-rotation = <24>;
+    };
+
+    input_processors {
+        zip_scroll_scalar: zip_scroll_scalar {
+            compatible = "zmk,input-processor-scalar";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
+
+&msc_input_listener {
+    turbo {
+        layers = <0>;
+        input-processors = <&zip_scroll_scalar 3 1>;
     };
 };
 

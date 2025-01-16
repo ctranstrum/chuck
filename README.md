@@ -23,7 +23,7 @@ Unzip the firmware to find four firmware files:
 
 - chuck-unibody: for using the keyboard without a dongle
 - chuck-peripheral: for using the keyboad with a dongle
-- chuck-dongle: to install the firmware onto the Prospector ZMK dongle
+- chuck-dongle: to install the firmware onto the [Prospector ZMK dongle][prospector]
 - xiao-reset: used to clear all bluetooth connections and other saved settings
 
 Plug the One Up Chuck keyboard into your computer's USB port,
@@ -118,14 +118,15 @@ CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
 
 # Enable ZMK Studio
 CONFIG_ZMK_STUDIO=y
-
 ```
 
-See the pre-compiled firmware [config file][config] for additional settings.
+See the pre-compiled firmware [config file][config]
+for additional settings you may want to consider.
 
-To customize the keymap for your One Up Chuck board, you can copy the
-[default keymap][keymap] from this repo to the `config` directory of
-your zmk config repo and edit it from there.
+To customize the keymap for your One Up Chuck board,
+you can copy the [default keymap][keymap] from this repo
+to the `config` directory of your zmk config repo
+and edit it from there.
 
 Default Keymap:
 
@@ -135,5 +136,6 @@ Default Keymap:
 [chuck]: https://github.com/ctranstrum/chuck
 [config]: config/one-up-chuck.conf
 [keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
+[prospector]: https://github.com/carrefinho/prospector
 [studio]: https://zmk.studio
 [zmk]: https://zmk.dev/docs/user-setup#github-repo
