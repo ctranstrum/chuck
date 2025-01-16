@@ -22,6 +22,14 @@
 // Magic bluetooth button
 #define BT_(btnum) &bt_key btnum btnum
 
+// Fix to get mouse scrolling to work
+&msc_input_listener {
+    turbo {
+        layers = <0>;
+        input-processors = <&zip_scroll_scalar 2 1>;
+    };
+};
+
 // Key positions for combos
 // ┏━━━━┳━━━━┳━━━━┳━━━━┓               ┏━━━━┳━━━━┳━━━━┳━━━━┓
 // ┃ 0  ┃ 1  ┃ 2  ┃ 3  ┃               ┃ 4  ┃ 5  ┃ 6  ┃ 7  ┃

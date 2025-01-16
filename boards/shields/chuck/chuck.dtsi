@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "chuck-layouts.dtsi"
@@ -47,13 +46,6 @@
             codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
             track-remainders;
         };
-    };
-};
-
-&msc_input_listener {
-    turbo {
-        layers = <0>;
-        input-processors = <&zip_scroll_scalar 2 1>;
     };
 };
 
