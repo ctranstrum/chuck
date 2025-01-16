@@ -130,6 +130,49 @@ and edit it from there.
 
 Default Keymap:
 
+The keymap starts off by using Colemak-DH as the base,
+but it is missing the B and J keys.
+You can access those keys by using combos:
+press P and G simultaneously for B,
+and M and L for J.
+
+Additional two-finger combos are used for brackets:
+
+- { and } are S-T and N-E
+- ( and ) are F-P and L-U
+- \[ and \] are C-D and H-,
+- < and > are T-V and N-K
+
+The following three-finger combos are available:
+
+- Escape is W-F-P
+- Tab is R-S-T
+- Backspace is L-U-Y
+- Enter is N-E-I
+
+Left thumb key is a sticky shift. Press and release it once to
+capitalize the next letter typed. Press and release twice to enter
+a smart word capitalization mode that automatically exits when you
+finish typing a word.
+
+Hold the left thumb key to get a numpad under your right hand,
+as well as to access common editing commands under your left hand.
+
+The right thumb key is the space bar, and when held, it puts
+symbols under the left hand and navigation under the right.
+
+Hold both the left and right thumb keys to access special keyboard
+functions like changing the bluetooth connection (press a BT key to
+switch to that connection, or hold it to clear the connection),
+giving access to ZMK Studio, or flash a new firmware through a combo
+on G-M.
+
+The rotary encoder acts as mouse scroll on the default layer,
+as volume control when either thumb key is pressed, and
+it controls the screen brightness when both thumbs are held.
+
+See the graphic below for more details:
+
 ![default keymap](images/one_up_chuck.svg)
 
 [actions]: https://github.com/ctranstrum/chuck/actions
