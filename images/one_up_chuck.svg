@@ -1,4 +1,4 @@
-<svg width="711" height="2027" viewBox="0 0 711 2027" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="711" height="2033" viewBox="0 0 711 2033" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -339,7 +339,7 @@ path.combo {
 </g>
 <g transform="translate(30, 399)" class="layer-numpad">
 <text x="0" y="28" class="label" id="numpad">numpad:</text>
-<g transform="translate(0, 56)">
+<g transform="translate(0, 62)">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Esc</text>
@@ -466,9 +466,23 @@ path.combo {
 <a href="#sym--nav">
 <text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 78%">sym / nav</tspan></text>
 </a></g>
+<g class="combo combopos-0">
+<path d="M461,7 h-50 a6.0,6.0 0 0 0 -6.0,6.0 v51" class="combo"/>
+<path d="M461,7 h-2 a6.0,6.0 0 0 0 -6.0,6.0 v12" class="combo"/>
+<path d="M461,7 h58 a6.0,6.0 0 0 1 6.0,6.0 v13" class="combo"/>
+<rect rx="6" ry="6" x="447" y="-6" width="28" height="26" class="combo"/>
+<text x="461" y="7" class="combo tap">⌫</text>
+</g>
+<g class="combo combopos-1">
+<path d="M480,60 h-47 a6.0,6.0 0 0 0 -6.0,6.0 v51" class="combo"/>
+<path d="M480,60 h-1 a6.0,6.0 0 0 0 -6.0,6.0 v12" class="combo"/>
+<path d="M480,60 h54 a6.0,6.0 0 0 1 6.0,6.0 v15" class="combo"/>
+<rect rx="6" ry="6" x="466" y="47" width="28" height="26" class="combo"/>
+<text x="480" y="60" class="combo tap">↵</text>
 </g>
 </g>
-<g transform="translate(30, 792)" class="layer-sym / nav">
+</g>
+<g transform="translate(30, 798)" class="layer-sym / nav">
 <text x="0" y="28" class="label" id="sym--nav">sym / nav:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
@@ -603,7 +617,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1185)" class="layer-keybd / func">
+<g transform="translate(30, 1191)" class="layer-keybd / func">
 <text x="0" y="28" class="label" id="keybd--func">keybd / func:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
@@ -761,7 +775,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1578)" class="layer-flash mode">
+<g transform="translate(30, 1584)" class="layer-flash mode">
 <text x="0" y="28" class="label" id="flash-mode">flash mode:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
