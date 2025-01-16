@@ -1,3 +1,5 @@
+name: Build default firmware
+
 on: [push, pull_request, workflow_dispatch]
 
 jobs:

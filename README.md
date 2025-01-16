@@ -2,7 +2,43 @@
 
 This repo contains the firmware for the [One Up Chuck Keyboard][chuck].
 
-To use it, follow the instructions for [creating your own ZMK firmware repo][zmk]
+To use it, you have two choices:
+
+- download the pre-compiled firmware from the Actions tab of this repository.
+- create your own custom firmware.
+
+## Download pre-compiled firmware
+
+The pre-compiled firmware comes with the keymap shown at the bottom of this page,
+and also includes [ZMK Studio][studio] that allows you to customize the keymap to
+your preferences.
+
+Go into the latest successful "Build default firmware" workflow run
+from the [Actions tab][actions] of this repository,
+scroll to the Artifacts section at the bottom of the page,
+and click on the "firmware" link to download the zipfile.
+Note that you must be signed in to github to download.
+
+Unzip the firmware to find four firmware files:
+
+- chuck-unibody: for using the keyboard without a dongle
+- chuck-peripheral: for using the keyboad with a dongle
+- chuck-dongle: to install the firmware onto the Prospector ZMK dongle
+- xiao-reset: used to clear all bluetooth connections and other saved settings
+
+Plug the One Up Chuck keyboard into your computer's USB port,
+double-tap the reset button on the keyboard,
+and then copy the appropriate firmware file matching your configuration
+onto the new shared drive, which should be labeled something like XIAO-SENSE.
+
+Your computer will likely give you an error,
+since installing the firmware causes the keyboard to immediately reset,
+which the computer dislikes, but you can safely ignore the error
+and start using the keyboard.
+
+## Create your own firmware
+
+Follow the instructions for [creating your own ZMK firmware repo][zmk]
 but note that the One Up Chuck keyboard is an out-of-tree keyboard so you will not
 find it in the list of keyboards, but don't panic, we will make the necessary
 changes to get it working.
@@ -95,7 +131,9 @@ Default Keymap:
 
 ![default keymap](images/one_up_chuck.svg)
 
-[keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
+[actions]: https://github.com/ctranstrum/chuck/actions
 [chuck]: https://github.com/ctranstrum/chuck
 [config]: config/one-up-chuck.conf
+[keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
+[studio]: https://zmk.studio
 [zmk]: https://zmk.dev/docs/user-setup#github-repo

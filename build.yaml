@@ -13,3 +13,8 @@ include:
   - board: seeeduino_xiao_ble
     shield: one_up_chuck_peripheral rgbled_adapter
     artifact-name: chuck-peripheral
+
+  # Settings reset file
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: xiao-reset
