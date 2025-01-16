@@ -64,13 +64,13 @@
         combo_backspace {
             key-positions = <4 5 6>;
             bindings = <&kp BSPC>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         combo_return {
             key-positions = <14 15 16>;
             bindings = <&kp RET>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         combo_left_paren {
@@ -193,9 +193,9 @@
         };
 
         scroll_rotation: sensor_rotation_scroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
         };
 
         sscw: sticky_shift_caps_word {
@@ -265,7 +265,7 @@
 //                                     ┗━━━━━━━┛  ┗━━━━━━━┛
             >;
 
-            sensor-bindings = <&scroll_rotation>;
+            sensor-bindings = <&scroll_rotation MOVE_UP MOVE_DOWN>;
         };
 
         num {

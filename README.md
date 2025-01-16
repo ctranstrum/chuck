@@ -69,14 +69,23 @@ include:
     artifact-name: chuck-unibody
 ```
 
-Modify your `config/one-up-chuck.conf` file with these changes:
+Modify your `config/one-up-chuck.conf` file with these suggested changes:
 
 ```conf
+# Enable encoder
 CONFIG_EC11=y
 CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
+
+# Enable mouse scrolling on the encoder
+CONFIG_ZMK_POINTING=y
+CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
+
+# Enable ZMK Studio
 CONFIG_ZMK_STUDIO=y
 
 ```
+
+See the pre-compiled firmware [config file][config] for additional settings.
 
 To customize the keymap for your One Up Chuck board, you can copy the
 [default keymap][keymap] from this repo to the `config` directory of
@@ -88,4 +97,5 @@ Default Keymap:
 
 [keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
 [chuck]: https://github.com/ctranstrum/chuck
+[config]: config/one-up-chuck.conf
 [zmk]: https://zmk.dev/docs/user-setup#github-repo
