@@ -266,7 +266,7 @@
 //                                     ┗━━━━━━━┛  ┗━━━━━━━┛
             >;
 
-            sensor-bindings = <&scroll_rotation MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&scroll_rotation MOVE_Y(350) MOVE_Y(-350)>;
         };
 
         num {
