@@ -32,7 +32,7 @@ layers:
   - {t: ␣, h: sym / nav}
   numpad:
   - Esc
-  - '&msc MOVE_DOWN'
+  - ''
   - screen shot
   - screen copy
   - '7'
