@@ -196,7 +196,7 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
-            tap-ms = <35>;
+            tap-ms = <30>;
         };
 
         sscw: sticky_shift_caps_word {
@@ -266,7 +266,7 @@
 //                                     ┗━━━━━━━┛  ┗━━━━━━━┛
             >;
 
-            sensor-bindings = <&scroll_rotation MOVE_Y(350) MOVE_Y(-350)>;
+            sensor-bindings = <&scroll_rotation MOVE_Y(-300) MOVE_Y(300)>;
         };
 
         num {
