@@ -17,7 +17,7 @@ building the One Up Chuck.
 | ---- | -------------------------------------------------------------------------------------------------------- |
 | 1    | [One Up Chuck PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])            |
 | 2    | [3D printed cases][case], top and bottom                                                                 |
-| 1    | [XIAO][xiao] board of your choice, as long as it is supported by [ZMK][zmk-xiao]                         |
+| 1    | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]       |
 | 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                      |
 | 1    | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                         |
 | 1    | wireless only: [3.7v 250mAh 502030 rechargeable LiPo battery][battery] (max internal space: 5.3x22x32mm) |

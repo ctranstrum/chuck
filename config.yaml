@@ -16,6 +16,11 @@ units:
   hdx: dx / 2
   hdy: dy / 2
 
+  knob_height: 15
+  knob_diameter: 25
+  # how far to drop the outside edge of the knob, if knob diameter is larger than 21
+  knob_skirt: 2
+
   mirrored_distance: 1.5 dx
 
 points:
@@ -313,7 +318,7 @@ outlines:
   _xiao_light_guide:
     - what: circle
       where: mcu
-      radius: 1.05
+      radius: 0.95
       adjust.shift: [6, 7.5]
 
   _xiao_cutout:
@@ -416,6 +421,61 @@ outlines:
       radius: 7.5
       adjust.shift: [11, 11]
 
+  _encoder_knob_1:
+    - what: circle
+      where: encoder
+      radius: knob_diameter / 2 - 1
+
+  _encoder_knob_2:
+    - what: circle
+      where: encoder
+      radius: knob_diameter / 2 - 0.8
+
+  _encoder_knob_3:
+    - what: circle
+      where: encoder
+      radius: knob_diameter / 2 - 0.6
+
+  _encoder_knob_4:
+    - what: circle
+      where: encoder
+      radius: knob_diameter / 2 - 0.4
+
+  _encoder_knob_5:
+    - what: circle
+      where: encoder
+      radius: knob_diameter / 2 - 0.2
+
+  _encoder_knob:
+    - what: circle
+      where: encoder
+      radius: knob_diameter / 2
+
+  _encoder_knob_skirt:
+    - what: circle
+      where: encoder
+      radius: 10.5
+
+  _encoder_stem:
+    - what: circle
+      where: encoder
+      radius: 3
+    - what: rectangle
+      where: encoder
+      size: 3.1
+      adjust.shift: [0, 3.1]
+      operation: subtract
+
+  _encoder_stem_opening_1:
+    - what: outline
+      name: _encoder_stem
+      expand: 0.1
+
+  _encoder_stem_opening_2:
+    - what: outline
+      name: _encoder_stem
+      expand: 0.2
+
   _keycaps:
     - what: rectangle
       where: key
@@ -425,9 +485,6 @@ outlines:
       where: thumb
       size: [27, 18]
       corner: 1
-    - what: circle
-      where: encoder
-      radius: 12.5
 
   top_down_view:
     - board_outline
@@ -435,6 +492,7 @@ outlines:
     - _power_visualizer
     - _reset_visualizer
     - -_keycaps
+    - -_encoder_knob
     - -_xiao_light_guide
 
   _encoder_plate_cutout:
@@ -699,6 +757,7 @@ outlines:
     - ^_socket_visualizer
     - ^_socket_pcb_holes
     - ^_keycaps
+    - -_encoder_knob
     - ^_xiao_visualizer
     - ^_xiao_light_guide
     - ^_power_visualizer
@@ -713,6 +772,92 @@ outlines:
     - ^_diodes_cutout
     - ^_return_diodes
     - ^_return_diodes_cutout
+
+  # There is probably a better way to do this, but:
+  # try to select everything outside of the center,
+  # so we can remove it and be left with the center...
+  _dovetail_negative_space:
+    - what: rectangle
+      where: /^m.*_pinky/
+      size: 1.6 dx + 2
+    - what: rectangle
+      where: /^m.*_ring/
+      size: 1.6 dx + 2
+    - what: rectangle
+      where: /middle_home$/
+      size: [dx, 3 dy]
+    - what: rectangle
+      where: /^m.*_middle_top$/
+      size: [dx, dy]
+      adjust.shift: [-0.5dx, 0]
+    - what: rectangle
+      where: /index_home/
+      size: [dx, 3 dy]
+      corner: 3
+    - what: rectangle
+      where: /index_home/
+      size: [dx, 3 dy]
+      adjust.shift: [-0.5 dx, 0]
+    - what: rectangle
+      where: /^m.*_bottom/
+      size: [dx, 3 dy]
+    - what: rectangle
+      where: /^m.*_bottom/
+      size: [dx, 3 dy]
+      adjust.shift: [0, -2 dy]
+    - what: rectangle
+      where: /thumb_spot/
+      size: [dx, dy]
+    - what: rectangle
+      where: /thumb_spot/
+      size: [dx, dy]
+      adjust.shift: [0, -0.5 dy]
+
+  _dovetail:
+    - board_outline
+    - -_dovetail_negative_space
+
+  _dovetail_1:
+    - what: outline
+      name: _dovetail
+      expand: 0.2
+    - ~board_outline
+
+  _dovetail_2:
+    - what: outline
+      name: _dovetail
+      expand: 0.4
+    - ~board_outline
+
+  _dovetail_3:
+    - what: outline
+      name: _dovetail
+      expand: 0.6
+    - ~board_outline
+
+  _dovetail_4:
+    - what: outline
+      name: _dovetail
+      expand: 0.8
+    - ~board_outline
+
+  _left_half:
+    - what: rectangle
+      where: matrix_middle_bottom
+      size: [115, 150]
+      adjust.rotate: 20
+
+  _right_half:
+    - what: rectangle
+      where: mirror_matrix_middle_bottom
+      size: [115, 150]
+      adjust.rotate: 20
+
+  dovetail_visualizer:
+    - board_outline
+    - ^_dovetail
+    - ^_left_half
+    - ^_right_half
 
 cases:
   _countersunk_screw:
@@ -739,6 +884,71 @@ cases:
       name: _screw_shaft
       extrude: 2
       shift: [0, 0, 1]
+
+  encoder_knob:
+    - what: outline
+      name: _encoder_knob_1
+      extrude: 0.2
+    - what: outline
+      name: _encoder_knob_2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _encoder_knob_3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _encoder_knob_4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _encoder_knob_5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _encoder_knob
+      extrude: knob_height - 2
+      shift: [0, 0, 1]
+    - what: outline
+      name: _encoder_knob_5
+      extrude: 0.2
+      shift: [0, 0, knob_height - 1]
+    - what: outline
+      name: _encoder_knob_4
+      extrude: 0.2
+      shift: [0, 0, knob_height - 0.8]
+    - what: outline
+      name: _encoder_knob_3
+      extrude: 0.2
+      shift: [0, 0, knob_height - 0.6]
+    - what: outline
+      name: _encoder_knob_2
+      extrude: 0.2
+      shift: [0, 0, knob_height - 0.4]
+    - what: outline
+      name: _encoder_knob_1
+      extrude: 0.2
+      shift: [0, 0, knob_height - 0.2]
+    - what: outline
+      name: _encoder_stem
+      extrude: 2.25 + knob_skirt
+      shift: [0, 0, knob_height - 2.65 - knob_skirt]
+      operation: subtract
+    - what: outline
+      name: _encoder_stem_opening_1
+      extrude: 0.2
+      shift: [0, 0, knob_height - 0.4 - knob_skirt]
+      operation: subtract
+    - what: outline
+      name: _encoder_stem_opening_2
+      extrude: 0.2
+      shift: [0, 0, knob_height - 0.2 - knob_skirt]
+      operation: subtract
+    - what: outline
+      name: _encoder_knob_skirt
+      extrude: knob_skirt
+      shift: [0, 0, knob_height - knob_skirt]
+      operation: subtract
 
   bottom_case:
     - what: outline
@@ -800,42 +1010,81 @@ cases:
       operation: subtract
     - -_countersunk_screw
 
+  _top_cutouts:
+    - what: outline
+      name: _xiao_light_guide
+      extrude: 2.5
+    - what: outline
+      name: _switches_plate_cutout
+      extrude: 2.5
+    - what: outline
+      name: _encoder_plate_cutout_expanded
+      extrude: 1.2
+    - what: outline
+      name: _switches_clip_cutout
+      extrude: 1.3
+    - what: outline
+      name: _hex_nuts
+      extrude: 1.8
+    - what: outline
+      name: _battery_cutout
+      extrude: 1.6
+    - what: outline
+      name: _xiao_usb
+      extrude: 1.7
+    - what: outline
+      name: _xiao_chip
+      extrude: 0.2
+
   top_case:
     - what: outline
       name: board_outline
       extrude: 2.5
+    - -_top_cutouts
+
+  _top_dovetail:
     - what: outline
-      name: _xiao_light_guide
-      extrude: 2.5
-      operation: subtract
+      name: _dovetail
+      extrude: 0.5
+      shift: [0, 0, 2]
     - what: outline
-      name: _switches_plate_cutout
-      extrude: 2.5
-      operation: subtract
+      name: _dovetail_1
+      extrude: 0.5
+      shift: [0, 0, 1.5]
     - what: outline
-      name: _encoder_plate_cutout_expanded
-      extrude: 1.2
-      operation: subtract
+      name: _dovetail_2
+      extrude: 0.5
+      shift: [0, 0, 1]
     - what: outline
-      name: _switches_clip_cutout
-      extrude: 1.3
-      operation: subtract
+      name: _dovetail_3
+      extrude: 0.5
+      shift: [0, 0, 0.5]
     - what: outline
-      name: _hex_nuts
-      extrude: 1.8
-      operation: subtract
+      name: _dovetail_4
+      extrude: 0.5
+
+  top_dovetail:
+    - _top_dovetail
+    - -_top_cutouts
+
+  _top_dovetail_sides:
+    - top_case
+    - -_top_dovetail
+
+  top_dovetail_left:
+    - _top_dovetail_sides
     - what: outline
-      name: _battery_cutout
-      extrude: 1.6
+      name: _right_half
+      extrude: 3
       operation: subtract
+
+  top_dovetail_right:
+    - top_case
     - what: outline
-      name: _xiao_usb
-      extrude: 1.7
+      name: _left_half
+      extrude: 3
       operation: subtract
-    - what: outline
-      name: _xiao_chip
-      extrude: 0.2
-      operation: subtract
+    - -_top_dovetail
 
   # Remove the underscore to print out the mock PCB if you want to check for fit
   _mock_pcb:
