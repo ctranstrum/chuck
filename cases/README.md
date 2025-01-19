@@ -1,5 +1,12 @@
 # One Up Chuck Cases
 
+> A quick note: these files were created through ergogen and can be
+> modified and re-created if any changes are needed, which is great,
+> except that the software is still a little bit buggy, so it doesn't
+> make perfect STL files. Even though these can look a little strange,
+> I have printed all of these files and they came out okay for me,
+> unless noted below.
+
 ## Keyboard case files
 
 If you have access to your own 3D printer with a large print bed
