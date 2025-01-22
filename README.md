@@ -26,7 +26,7 @@ the One Up Chuck.
   - xiao ble is only $10 per controller compared to $25 for the nice!nano
   - Big battery and an option for a dongle, so you can run for months without recharging
 - Ergonomic design for the ultimate comfort
-  - split keyboard means you can place each half where it best works for you
+  - each half is angled to match the angle of the hands on the board
   - keys are placed where fingers naturally fall, with no excessive stretching
     - when fingers extend, they splay, so the keys also splay outward to follow the fingers
     - the pinky is shorter than the other fingers, so the pinky keys are placed lower to match, and the top pinky key is traded for a ring finger key
