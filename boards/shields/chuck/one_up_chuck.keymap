@@ -150,6 +150,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        hmcs: homerow_mod_comma_semi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            require-prior-idle-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mcs>;
+        };
+
         lp_mc: launch_pad_mission_control {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -254,11 +264,12 @@
      &kp Q   &kp W   &kp F   &kp P                              &kp L   &kp U   &kp Y  &kp SQT
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃          ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
-     Sft A   Ctl R   Opt S   Cmd T   Alt G              Alt M   Cmd N   Opt E   Ctl I   Sft O
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃          ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
+     Sft A   Ctl R   Opt S   Cmd T   Glb G              Glb M   Cmd N   Opt E   Ctl I   Sft O
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃          ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃          ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
-     &kp Z   &kp X   &kp C   &kp D   &kp V              &kp K   &kp H   &mcs    &mdc    &msb
+     &kp Z   &kp X   Alt C   &kp D   &kp V              &kp K &kp H &hmcs RALT 0 &mdc    &msb
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃          ┃       ┃       ┃ R Alt ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓  ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ SHIFT ┃  ┃ SPACE ┃
                                        &lsscw 1 0 &lt 2 SPC

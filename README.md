@@ -128,7 +128,7 @@ you can copy the [default keymap][keymap] from this repo
 to the `config` directory of your zmk config repo
 and edit it from there.
 
-Default Keymap:
+## Default Keymap
 
 The keymap starts off by using Colemak-DH as the base,
 but it is missing the B and J keys.
