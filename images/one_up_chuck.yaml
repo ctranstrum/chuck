@@ -12,20 +12,20 @@ layers:
   - {t: R, h: ^}
   - {t: S, h: ⌥}
   - {t: T, h: ⌘}
-  - {t: G, h: Alt}
-  - {t: M, h: Alt}
+  - {t: G, h: GLOBE}
+  - {t: M, h: GLOBE}
   - {t: N, h: ⌘}
   - {t: E, h: ⌥}
   - {t: I, h: ^}
   - {t: O, h: ⇧}
   - Z
   - X
-  - C
+  - {t: C, h: Alt}
   - D
   - V
   - K
   - H
-  - {t: ',', s: ;}
+  - {t: ',', h: Alt, s: ;}
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: sticky ⇧, h: numpad, s: caps word}
