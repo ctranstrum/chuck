@@ -1062,7 +1062,7 @@ cases:
       operation: subtract
     - what: outline
       name: _all_bumpers
-      extrude: 0.5
+      extrude: 1
       operation: subtract
     - what: outline
       name: _diodes_cutout
