@@ -10,11 +10,13 @@
 
         chuck {
             kscan = <&kscan1>;
+            wakeup-source;
         };
 
         direct {
             kscan = <&kscan2>;
             row-offset = <6>;
+            wakeup-source;
         };
     };
 
