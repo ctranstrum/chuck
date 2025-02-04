@@ -5,7 +5,7 @@
 
     kscan0: kscan_composite {
         compatible = "zmk,kscan-composite";
-        rows = <7>;
+        rows = <6>;
         columns = <6>;
 
         chuck {
@@ -14,7 +14,6 @@
 
         direct {
             kscan = <&kscan2>;
-            row-offset = <6>;
         };
     };
 
