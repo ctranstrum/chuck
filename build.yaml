@@ -1,20 +1,29 @@
 include:
+  # One Up Chuck wireless with the XIAO nrf52840
+  - board: seeeduino_xiao_ble
+    shield: one_up_chuck_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-unibody
+
   # One Up Chuck Dongle (optional)
   - board: seeeduino_xiao_ble
     shield: one_up_chuck_dongle prospector_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-dongle
-
-  # One Up Chuck can either be a unibody (no dongle) or peripheral (with dongle)
-  - board: seeeduino_xiao_ble
-    shield: one_up_chuck_unibody rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: chuck-unibody
   - board: seeeduino_xiao_ble
     shield: one_up_chuck_peripheral rgbled_adapter
     artifact-name: chuck-peripheral
 
+  # One Up Chuck wired only with the XIAO RP2040
+  - board: seeeduino_xiao_rp2040
+    shield: one_up_chuck_unibody rgbled_adaper
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-wired-rp2040
+
   # Settings reset file
   - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: xiao-reset
+    artifact-name: xiao-ble-reset
+  - board: seeeduino_xiao_rp2040
+    shield: settings_reset
+    artifact-name: xiao-rp2040-reset

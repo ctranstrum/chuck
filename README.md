@@ -19,12 +19,14 @@ scroll to the Artifacts section at the bottom of the page,
 and click on the "firmware" link to download the zipfile.
 Note that you must be signed in to github to download.
 
-Unzip the firmware to find four firmware files:
+Unzip the firmware to find the following firmware files:
 
 - chuck-unibody: for using the keyboard without a dongle
 - chuck-peripheral: for using the keyboad with a dongle
 - chuck-dongle: to install the firmware onto the [Prospector ZMK dongle][prospector]
-- xiao-reset: used to clear all bluetooth connections and other saved settings
+- chuck-wired-rp2040: if you use the xiao rp2040 mcu
+- xiao-ble-reset: used to clear all bluetooth connections and other saved settings
+- xiao-rp2040-reset: used to clear all saved settings on a wired build
 
 Plug the One Up Chuck keyboard into your computer's USB port,
 double-tap the reset button on the keyboard,
@@ -82,6 +84,16 @@ manifest:
 
 Then, choose one of the following to add to your `build.yaml` file:
 
+For a wireless One Up Chuck:
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: one_up_chuck_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-unibody
+```
+
 For One Up Chuck with a dongle:
 
 ```yaml
@@ -95,14 +107,13 @@ include:
     artifact-name: chuck-peripheral
 ```
 
-Or for One Up Chuck without a dongle:
+For a wired One Up Chuck with the XIAO RP2040:
 
 ```yaml
-include:
-  - board: seeeduino_xiao_ble
-    shield: one_up_chuck_unibody rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: chuck-unibody
+- board: seeeduino_xiao_rp2040
+  shield: one_up_chuck_unibody rgbled_adaper
+  snippet: studio-rpc-usb-uart
+  artifact-name: chuck-wired-rp2040
 ```
 
 Modify your `config/one-up-chuck.conf` file with these suggested changes:
