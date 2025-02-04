@@ -9,7 +9,8 @@ the One Up Chuck.
 
 ## Features
 
-- 30 key wireless split ergo keyboard with aggressive pinky stagger and splay
+- 30 key wireless ergo keyboard with aggressive pinky stagger and splay
+- central rotary encoder can be used by either hand
 - Seeed Studio [XIAO BLE][xiao] microcontroller (probably also works with the XIAO RP2040)
 - Gateron Low Profile hotswap switches
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom

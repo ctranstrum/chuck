@@ -25,15 +25,15 @@ building the One Up Chuck.
 | 30   | [Gateron Low Profile hot swap sockets][sockets]                                                          |
 | 30   | [Gateron KS-33 Low Profile switches][switches] of your choice                                            |
 | 30   | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)              |
-| 1    | Bourns [PES12-42S][detents]\* EC12 encoder with a [knob][knob] of your choice                            |
+| 1    | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case] of your choice                   |
 | 12   | [M2 hex nuts][hexnuts]                                                                                   |
 | 12   | [M2 x 6mm countersunk screws][screws]                                                                    |
 | 10   | [6mm x 1.5mm bumpons][bumpons]                                                                           |
 | ~3mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide                 |
 
-\* You could also use a Bourns [PES12-40S][encoder] EC12 detentless encoder,
-or an encoder from another manufacturer,
-but the Bourns encoder is designed to have its detents with both A and B set to low,
+\* You could also use a Bourns [PES12-42S][smallencoder] EC12 encoder,
+or an encoder from another manufacturer if you aren't going wireless,
+but the specified encoder is designed to have its detents with both A and B set to low,
 so a different option is likely to draw more power,
 and thus isn't the best choice for a wireless build.
 
@@ -76,8 +76,7 @@ just be sure to follow the symbols on the silkscreen.
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
-[encoder]: https://www.mouser.com/ProductDetail/Bourns/PES12-40S-N0024?qs=9fn1gpisni7PBzk9dl6VPg%3D%3D
-[detents]: https://www.mouser.com/ProductDetail/Bourns/PES12-42S-N0024?qs=9fn1gpisni7dJzyRXeQZlQ%3D%3D
+[encoder]: https://www.mouser.com/ProductDetail/Bourns/PEC11L-4115F-S0020?qs=gk21WLQFtgRAgrgJZfpkWw%3D%3D
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [gerber]: pcb/chuck-gerbers.zip
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
@@ -86,12 +85,12 @@ just be sure to follow the symbols on the silkscreen.
 [jlcpcb]: https://jlcpcb.com/
 [kester]: https://typeractive.xyz/products/kester-solder-wire-tube
 [keycaps]: https://nuphy.com/collections/keycaps/products/numoji-nsa
-[knob]: https://www.adafruit.com/product/5093?gQT=1
 [pcb]: pcb/
 [pinecil]: https://typeractive.xyz/products/pinecil
 [power]: https://typeractive.xyz/products/power-switch
 [reset]: https://typeractive.xyz/products/reset-button
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
+[smallencoder]: https://www.mouser.com/ProductDetail/Bourns/PES12-42S-N0024?qs=9fn1gpisni7dJzyRXeQZlQ%3D%3D
 [sockets]: https://www.gateron.com/products/gateron-low-profile-switch-hot-swap-pcb-socket
 [sod123]: https://typeractive.xyz/products/smd-diodes
 [soldering101]: https://www.google.com/search?q=youtube+soldering+101

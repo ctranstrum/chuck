@@ -1,6 +1,6 @@
 {
   "name": "chuck",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Chuck Keyboard Design",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "clean-cases": "rm -rf output/cases/*",
     "clean-outlines": "rm -rf output/outlines/*",
     "clean-pcbs": "rm -rf output/pcbs/*",
-    "copy-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py -b copy-traces pcb/lintilla.kicad_pcb output/pcbs/lintilla.kicad_pcb",
+    "copy-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py -b copy-traces pcb/chuck.kicad_pcb output/pcbs/chuck.kicad_pcb",
     "lock-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py lock-traces",
     "save-pcb": "cp output/pcbs/* pcb",
     "save-cases": "cp output/cases/*.stl cases",

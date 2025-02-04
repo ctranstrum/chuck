@@ -7,6 +7,7 @@ module.exports = {
     text: "",
     align: "left", // left, right, up, down
     shape: "rect", // can be circle
+    type: "thru_hole", // can be smd, np_thru_hole
     mirrored: { type: "boolean", value: "{{mirrored}}" },
     net: undefined,
   },
@@ -26,11 +27,15 @@ module.exports = {
       if (align == "right") x += p.width / 2 + plus;
       if (align == "up") y += p.height / 2 + plus;
       if (align == "down") y -= p.height / 2 + plus;
-      let text = "";
-      if (p.text.length) {
-        text = `(fp_text user ${p.text} (at ${x} ${y} ${p.r}) (layer ${side}.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ${mirror}))`;
-      }
-      return `(pad 1 smd ${p.shape} (at 0 0 ${p.r}) (size ${p.width} ${p.height}) (layers ${side}.Cu ${side}.Paste ${side}.Mask) ${p.net})\n${text}`;
+      const text = p.text
+        ? `(fp_text user ${p.text} (at ${x} ${y} ${p.r}) (layer ${side}.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ${mirror}))`
+        : "";
+      const shape = `${p.type} ${p.shape} (at 0 0 ${p.r}) (size ${p.width} ${p.height})`;
+      const layers = `(layers ${side}.Cu ${side}.Paste ${side}.Mask)`;
+      const smallest = Math.min(p.width, p.height);
+      const size = (smallest > 1 ? 1 : smallest * 0.9).toFixed(2);
+      const drill = p.type.endsWith("hole") ? `(drill ${size} ${size})` : "";
+      return `(pad 1 ${shape} ${drill} ${layers} ${p.net})\n${text}`;
     };
 
     const via = `(pad 1 thru_hole circle (at 0 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.net})`;

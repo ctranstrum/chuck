@@ -4,8 +4,7 @@
 > modified and re-created if any changes are needed, which is great,
 > except that the software is still a little bit buggy, so it doesn't
 > make perfect STL files. Even though these can look a little strange,
-> I have printed all of these files and they came out okay for me,
-> unless noted below.
+> I have printed all of these files and they came out okay for me.
 
 ## Keyboard case files
 
@@ -24,29 +23,28 @@ you can print the 3-part top case:
 - [top_dovetail.stl](top_dovetail.stl)
 - [top_dovetail_right.stl](top_dovetail_right.stl)
 
-I don't know exactly why, but in my slicer software the right side
-displays correctly, but then it tries to print it "inside out".
-
-If this happens to you as well, you may have better luck with this file:
-
-- [top-dovetail-right-fixed.stl](top-dovetail-right-fixed.stl)
+For the bottom case, you can split it anywhere it makes sense to you,
+since it's not visible, it matters less where the line is.
 
 ## Encoder knobs
 
-I had a hard time finding encoder knobs that I liked.
-Ideally, you should get a knob for a low-profile EC12 encoder,
-but all the ones I found were extra small,
-and I wanted one a little bigger.
-
 The keyboard was designed with the idea of using a 25mm diameter knob,
-but I couldn't find any that size that were made for the EC12.
-If you know of one, I'd be happy to learn about it.
+but I had a hard time finding encoder knobs that size,
+especially for an EC12 low-profile encoder.
 
-In the meantime, I put a super-simple knob here for you to use.
+If you use the recommended EC11 encoder,
+you should have plenty of commercially available options for the knob,
+so feel free to use whatever knob you like.
 
-After experimenting a bit, I found I preferred a 15mm tall knob,
-but a 10mm knob seems to match the height of the keycaps,
-if you like that, and a 13mm knob also seems usable.
+But I've also created a super-simple one with a skirt
+so that as much of the encoder as possible is hidden.
+
+- [ec11_encoder_knob.stl](ec11_encoder_knob.stl)
+- [ec12_encoder_knob.stl](ec12_encoder_knob.stl)
+
+Both of those knobs will give about the same look,
+but if you use a low-profile EC12 knob,
+you have the ability to go with a shorter knob:
 
 - [encoder_knob-15mm.stl](encoder_knob-15mm.stl)
 - [encoder_knob-13mm.stl](encoder_knob-13mm.stl)

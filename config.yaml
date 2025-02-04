@@ -1,8 +1,9 @@
 meta:
   keyboard: &keyboard_name One Up Chuck
   author: chad@transtrum.net
-  version: &version v1.1
+  version: &version v1.2
   repository: &repo https://github.com/ctranstrum/chuck
+  license: &license Licensed under CERN-OHL-P v2
 
   # Depending on where you are ordering from, uncomment or edit one of these:
   # order_num_template: &order_text JLCJLCJLCJLC # for ordering from JLCpcb.com
@@ -16,10 +17,14 @@ units:
   hdx: dx / 2
   hdy: dy / 2
 
-  knob_height: 15
   knob_diameter: 25
-  # how far to drop the outside edge of the knob, if knob diameter is larger than 21
+  # how far to drop the outside edge of the knob, knob diameter must be larger than 21
   knob_skirt: 2
+
+  ec11_knob_height: 17
+  ec11_shaft_height: 7
+  ec12_knob_height: 16
+  ec12_shaft_height: 2.65
 
   mirrored_distance: 1.5 dx
 
@@ -266,6 +271,31 @@ points:
         ref: battery
         shift: [-4, 22]
 
+    pad_xiao_pos:
+      key.tags: [pad_circle, xiao_pos_pad]
+      anchor:
+        ref: mcu
+        shift: [-4, -13.75]
+
+    pad_reset:
+      key.tags: [pad_circle, reset_pad]
+      anchor:
+        ref: mcu
+        shift: [4, -13.75]
+
+    pad_bat_pos:
+      key.tags: [pad_circle, bat_pos_pad]
+      anchor:
+        ref: battery
+        rotate: 270
+        shift: [13, 6]
+
+    pad_neg_pos:
+      key.tags: [pad_circle, bat_neg_pad]
+      anchor:
+        ref: battery
+        shift: [16.5, 11]
+
 outlines:
   _top_bridge:
     - what: rectangle
@@ -476,6 +506,11 @@ outlines:
       name: _encoder_stem
       expand: 0.2
 
+  _encoder_screw_shaft:
+    - what: circle
+      where: encoder
+      radius: 3.6
+
   _keycaps:
     - what: rectangle
       where: key
@@ -659,6 +694,11 @@ outlines:
       size: [9, 4]
       adjust.shift: [0, -7.2]
 
+  _pad_cutout:
+    - what: circle
+      where: pad_circle
+      radius: 1.5
+
   _screw_shaft:
     - what: circle
       where: screw
@@ -765,6 +805,7 @@ outlines:
     - ^_reset_visualizer
     - ^_reset_cutout
     - ^_battery_wire_cutout
+    - ^_pad_cutout
     - ^_hex_nuts
     - ^_screw_shaft
     - ^_all_bumpers
@@ -811,7 +852,7 @@ outlines:
     - what: rectangle
       where: /thumb_spot/
       size: [dx, dy]
-      adjust.shift: [0, -0.5 dy]
+      adjust.shift: [-0.1, -0.5 dy]
 
   _dovetail:
     - board_outline
@@ -885,7 +926,7 @@ cases:
       extrude: 2
       shift: [0, 0, 1]
 
-  encoder_knob:
+  _encoder_knob_bevel:
     - what: outline
       name: _encoder_knob_1
       extrude: 0.2
@@ -905,49 +946,104 @@ cases:
       name: _encoder_knob_5
       extrude: 0.2
       shift: [0, 0, 0.8]
+
+  ec11_encoder_knob:
+    - _encoder_knob_bevel
     - what: outline
       name: _encoder_knob
-      extrude: knob_height - 2
+      extrude: ec11_knob_height - 2
       shift: [0, 0, 1]
     - what: outline
       name: _encoder_knob_5
       extrude: 0.2
-      shift: [0, 0, knob_height - 1]
+      shift: [0, 0, ec11_knob_height - 1]
     - what: outline
       name: _encoder_knob_4
       extrude: 0.2
-      shift: [0, 0, knob_height - 0.8]
+      shift: [0, 0, ec11_knob_height - 0.8]
     - what: outline
       name: _encoder_knob_3
       extrude: 0.2
-      shift: [0, 0, knob_height - 0.6]
+      shift: [0, 0, ec11_knob_height - 0.6]
     - what: outline
       name: _encoder_knob_2
       extrude: 0.2
-      shift: [0, 0, knob_height - 0.4]
+      shift: [0, 0, ec11_knob_height - 0.4]
     - what: outline
       name: _encoder_knob_1
       extrude: 0.2
-      shift: [0, 0, knob_height - 0.2]
+      shift: [0, 0, ec11_knob_height - 0.2]
     - what: outline
       name: _encoder_stem
-      extrude: 2.25 + knob_skirt
-      shift: [0, 0, knob_height - 2.65 - knob_skirt]
+      extrude: ec11_shaft_height - 0.4
+      shift: [0, 0, 1]
       operation: subtract
     - what: outline
       name: _encoder_stem_opening_1
       extrude: 0.2
-      shift: [0, 0, knob_height - 0.4 - knob_skirt]
+      shift: [0, 0, ec11_shaft_height + 0.6]
       operation: subtract
     - what: outline
       name: _encoder_stem_opening_2
       extrude: 0.2
-      shift: [0, 0, knob_height - 0.2 - knob_skirt]
+      shift: [0, 0, ec11_shaft_height + 0.8]
+      operation: subtract
+    - what: outline
+      name: _encoder_screw_shaft
+      extrude: ec11_knob_height - ec11_shaft_height - 2
+      shift: [0, 0, ec11_shaft_height + 1]
       operation: subtract
     - what: outline
       name: _encoder_knob_skirt
       extrude: knob_skirt
-      shift: [0, 0, knob_height - knob_skirt]
+      shift: [0, 0, ec11_knob_height - knob_skirt]
+      operation: subtract
+
+  ec12_encoder_knob:
+    - _encoder_knob_bevel
+    - what: outline
+      name: _encoder_knob
+      extrude: ec12_knob_height - 2
+      shift: [0, 0, 1]
+    - what: outline
+      name: _encoder_knob_5
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 1]
+    - what: outline
+      name: _encoder_knob_4
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 0.8]
+    - what: outline
+      name: _encoder_knob_3
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 0.6]
+    - what: outline
+      name: _encoder_knob_2
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 0.4]
+    - what: outline
+      name: _encoder_knob_1
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 0.2]
+    - what: outline
+      name: _encoder_stem
+      extrude: ec12_shaft_height - 0.4 + knob_skirt
+      shift: [0, 0, ec12_knob_height - ec12_shaft_height - knob_skirt]
+      operation: subtract
+    - what: outline
+      name: _encoder_stem_opening_1
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 0.4 - knob_skirt]
+      operation: subtract
+    - what: outline
+      name: _encoder_stem_opening_2
+      extrude: 0.2
+      shift: [0, 0, ec12_knob_height - 0.2 - knob_skirt]
+      operation: subtract
+    - what: outline
+      name: _encoder_knob_skirt
+      extrude: knob_skirt
+      shift: [0, 0, ec12_knob_height - knob_skirt]
       operation: subtract
 
   bottom_case:
@@ -1035,6 +1131,9 @@ cases:
     - what: outline
       name: _xiao_chip
       extrude: 0.2
+    - what: outline
+      name: _pad_cutout
+      extrude: 1
 
   top_case:
     - what: outline
@@ -1196,7 +1295,10 @@ pcbs:
         what: encoder
         where: encoder
         params:
+          include_momentary_switch_pads: true
           include_plate_hole_marking: true
+          S1: ENC_S
+          S2: GND
 
       xiao_mcu:
         what: xiao
@@ -1206,7 +1308,7 @@ pcbs:
           orientation: down
           VUSB: none
           VCC: none
-          P0: none
+          P0: ENC_S
           P1: CP0
           P2: CP1
           P3: CP2
@@ -1228,8 +1330,7 @@ pcbs:
 
       xiao_bat_pos:
         what: pad
-        where: mcu
-        adjust.shift: [-4, -13.75]
+        where: xiao_pos_pad
         params:
           side: B
           net: BAT+
@@ -1241,9 +1342,7 @@ pcbs:
 
       xiao_reset:
         what: pad
-        where:
-          ref: mcu
-          shift: [4, -13.75]
+        where: reset_pad
         params:
           side: B
           net: RST
@@ -1269,10 +1368,7 @@ pcbs:
 
       battery_raw_pos:
         what: pad
-        where: battery
-        adjust:
-          rotate: 270
-          shift: [13, 6]
+        where: bat_pos_pad
         params:
           side: B
           net: RAW
@@ -1283,8 +1379,7 @@ pcbs:
 
       battery_raw_neg:
         what: pad
-        where: battery
-        adjust.shift: [16.5, 11]
+        where: bat_neg_pad
         params:
           side: B
           net: GND
@@ -1385,7 +1480,7 @@ pcbs:
         adjust.shift: [0.75 dx, -hdy]
         params:
           side: F
-          text: Licensed under CERN-OHL-P v2
+          text: *license
           justify: right
 
       order_number:
