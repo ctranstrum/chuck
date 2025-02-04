@@ -15,6 +15,12 @@ you will want to use the full size cases:
 - [bottom_case.stl](bottom_case.stl)
 - [top_case.stl](top_case.stl)
 
+Note that the bottom case may require supports for the bumpon indentations.
+
+The top case is best printed upside down,
+so that the visible part of the case is against the print bed,
+giving the best top surface and requiring no supports to print.
+
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
 you can print the 3-part top case:
@@ -23,7 +29,7 @@ you can print the 3-part top case:
 - [top_dovetail.stl](top_dovetail.stl)
 - [top_dovetail_right.stl](top_dovetail_right.stl)
 
-For the bottom case, you can split it anywhere it makes sense to you,
+For the bottom case, you can split it anywhere it makes sense to you;
 since it's not visible, it matters less where the line is.
 
 ## Encoder knobs

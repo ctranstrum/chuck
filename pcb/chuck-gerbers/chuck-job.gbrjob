@@ -5,16 +5,16 @@
       "Application": "Pcbnew",
       "Version": "8.0.7"
     },
-    "CreationDate": "2025-01-13T21:54:52-07:00"
+    "CreationDate": "2025-02-03T22:04:45-07:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "chuck",
       "GUID": "63687563-6b2e-46b6-9963-61645f706362",
-      "Revision": "v1.1"
+      "Revision": "v1.2"
     },
     "Size": {
-      "X": 225.1512,
+      "X": 225.1511,
       "Y": 121.4666
     },
     "LayerNumber": 2,
