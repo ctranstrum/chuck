@@ -272,7 +272,7 @@
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃                    ┃       ┃       ┃ R Alt ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ SHIFT ┃ ┃  MUTE  ┃ ┃ SPACE ┃
-                                      &lsscw 1 0 &kp K_MUTE &lt 2 SPC
+                                      &lsscw 1 0 &kp C_MUTE &lt 2 SPC
 //                                     ┃  num  ┃ ┗━━━━━━━━┛ ┃  sym  ┃
 //                                     ┗━━━━━━━┛            ┗━━━━━━━┛
             >;
@@ -296,8 +296,8 @@
 // ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃                    ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
 &kp LG(Z) &kp LG(X) &kp LG(C) &kp LC(D) &kp LG(V)                &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ ##### ┃ ┃  MUTE  ┃ ┃   0   ┃
-                                         &trans  &kp K_MUTE  &lt 2 N0
+//                                     ┃ ##### ┃ ┃  PLAY  ┃ ┃   0   ┃
+                                         &trans   &kp C_PP  &lt 2 N0
 //                                     ┃       ┃ ┗━━━━━━━━┛ ┃ func  ┃
 //                                     ┗━━━━━━━┛            ┗━━━━━━━┛
             >;
@@ -321,8 +321,8 @@ Sft CARET Ctl AT Opt EXCL Cmd EQUAL Alt DLLR                  Alt PG_UP Cmd LEFT
 // ┃   ~   ┃   |   ┃   &   ┃   _   ┃   ?   ┃                    ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ Enter ┃
 &kp TILDE &kp PIPE &kp AMPS &kp UNDER &kp QMARK               &kp PG_DN &kp HOME &kp DOWN &kp END &kp RET
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃   -   ┃ ┃  MUTE  ┃ ┃ ##### ┃
-                                     &lt 1 MINUS &kp K_MUTE   &trans
+//                                     ┃   -   ┃ ┃  NEXT  ┃ ┃ ##### ┃
+                                     &lt 1 MINUS &kp C_NEXT   &trans
 //                                     ┃ func  ┃ ┗━━━━━━━━┛ ┃       ┃
 //                                     ┗━━━━━━━┛            ┗━━━━━━━┛
             >;
@@ -346,8 +346,8 @@ Sft CAPS Ctl C_PREV Opt C_PP Cmd C_NEXT BT_(4)                  &usb_sel &kp F4 
 // ┃ lock  ┃ mute  ┃con rgb┃bat rgb┃numlock┃                    ┃studio ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
  GC(Q) &kp C_MUTE &ind_con &ind_bat &kp KP_NUM               &studio_unlock &kp F1  &kp F2  &kp F3  &kp F10
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ ##### ┃ ┃  MUTE  ┃ ┃ ##### ┃
-                                         &trans  &kp K_MUTE   &trans
+//                                     ┃ ##### ┃ ┃  PREV  ┃ ┃ ##### ┃
+                                         &trans  &kp C_PREV   &trans
 //                                     ┗━━━━━━━┛ ┗━━━━━━━━┛ ┗━━━━━━━┛
             >;
 
