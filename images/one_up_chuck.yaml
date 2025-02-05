@@ -61,7 +61,7 @@ layers:
   - '3'
   - '='
   - {type: held}
-  - MUTE
+  - ⏯
   - {t: '0', h: sym / nav}
   sym / nav:
   - '`'
@@ -93,7 +93,7 @@ layers:
   - End
   - ↵
   - {t: '-', h: numpad}
-  - MUTE
+  - ⏭
   - {type: held}
   keybd / func:
   - {t: BT 1, h: clear 1}
@@ -125,7 +125,7 @@ layers:
   - F3
   - F10
   - {type: held}
-  - MUTE
+  - ⏮
   - {type: held}
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
