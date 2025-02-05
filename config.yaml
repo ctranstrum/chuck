@@ -693,6 +693,14 @@ outlines:
       where: encoder
       size: [9, 4]
       adjust.shift: [0, -7.2]
+    - what: circle
+      where: encoder
+      radius: 1.5
+      adjust.shift: [2.5, 7]
+    - what: circle
+      where: encoder
+      radius: 1.5
+      adjust.shift: [-2.5, 7]
 
   _pad_cutout:
     - what: circle
