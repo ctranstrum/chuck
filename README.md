@@ -111,7 +111,7 @@ For a wired One Up Chuck with the XIAO RP2040:
 
 ```yaml
 - board: seeeduino_xiao_rp2040
-  shield: one_up_chuck_unibody rgbled_adaper
+  shield: one_up_chuck_unibody
   snippet: studio-rpc-usb-uart
   artifact-name: chuck-wired-rp2040
 ```
