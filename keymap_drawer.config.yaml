@@ -93,19 +93,24 @@ parse_config:
     combo_esc:
       align: top
       offset: 0.25
+      layers: [flash mode]
     combo_tab:
-      draw_separate: true
+      align: top
+      offset: 0.5
+      layers: [flash mode]
     combo_backspace:
       align: top
       offset: 0.25
       layers: [flash mode]
     combo_return:
-      draw_separate: true
+      align: top
+      offset: 0.5
+      layers: [flash mode]
     combo_up:
-      draw_separate: true
+      layers: [flash mode]
     combo_down:
-      layers: [numpad]
+      layers: [flash mode]
     combo_left:
-      layers: [Colemak]
+      layers: [flash mode]
     combo_right:
-      layers: [sym / nav]
+      layers: [flash mode]
