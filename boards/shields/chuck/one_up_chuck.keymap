@@ -311,8 +311,8 @@
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃ CtrlL ┃ CtrlU ┃  Tab  ┃ Bkspc ┃
-&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                 &kp LC(L) &kp LC(U) &kp TAB &kp BSPC
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Tab  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp TAB &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃  Del  ┃
 Sft CARET Ctl AT Opt EXCL Cmd EQUAL Alt DLLR                  Alt PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp DEL
