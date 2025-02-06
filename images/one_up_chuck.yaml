@@ -7,13 +7,13 @@ layers:
   - L
   - U
   - Y
-  - SQT
+  - ''''
   - {t: A, h: ⇧}
   - {t: R, h: ^}
   - {t: S, h: ⌥}
   - {t: T, h: ⌘}
-  - {t: G, h: GLOBE}
-  - {t: M, h: GLOBE}
+  - {t: G, h: 🌐}
+  - {t: M, h: 🌐}
   - {t: N, h: ⌘}
   - {t: E, h: ⌥}
   - {t: I, h: ^}
@@ -25,9 +25,9 @@ layers:
   - V
   - K
   - H
-  - {t: COMMA, h: Alt, s: SEMI}
-  - {t: DOT, s: COLON}
-  - {t: SLASH, s: BACKSLASH}
+  - {t: ',', h: Alt, s: ;}
+  - {t: ., s: ':'}
+  - {t: /, s: //}
   - {t: sticky ⇧, h: numpad, s: caps word}
   - MUTE
   - {t: ␣, h: sym / nav}
@@ -39,60 +39,60 @@ layers:
   - '7'
   - '8'
   - '9'
-  - MINUS
+  - '-'
   - ⌘A
   - ^
   - ⌥
   - {t: ⇥, h: ⌘}
   - {t: ↵, h: Alt}
-  - SLASH
+  - /
   - '4'
   - '5'
   - '6'
-  - PLUS
+  - +
   - ⌘Z
   - ⌘X
   - ⌘C
   - ^D
   - ⌘V
-  - STAR
+  - '*'
   - '1'
   - '2'
   - '3'
-  - EQUAL
+  - '='
   - {type: held}
   - ⏯
   - {t: '0', h: sym / nav}
   sym / nav:
-  - GRAVE
-  - HASH
-  - PRCNT
-  - STAR
+  - '`'
+  - '#'
+  - '%'
+  - '*'
   - Esc
   - ^U
   - ⇥
   - ⌫
-  - {t: CARET, h: ⇧}
-  - {t: AT, h: ^}
-  - {t: EXCL, h: ⌥}
-  - {t: EQUAL, h: ⌘}
-  - {t: DLLR, h: Alt}
+  - {t: ^, h: ⇧}
+  - {t: '@', h: ^}
+  - {t: '!', h: ⌥}
+  - {t: '=', h: ⌘}
+  - {t: $, h: Alt}
   - {t: PgUp, h: Alt}
   - {t: ←, h: ⌘}
   - {t: ↑, h: ⌥}
   - {t: →, h: ^}
   - ⌦
-  - TILDE
-  - PIPE
-  - AMPS
-  - UNDER
-  - QMARK
+  - '~'
+  - '|'
+  - '&'
+  - _
+  - '?'
   - PgDn
   - Home
   - ↓
   - End
   - ↵
-  - {t: MINUS, h: numpad}
+  - {t: '-', h: numpad}
   - ⏭
   - {type: held}
   keybd / func:
@@ -139,45 +139,45 @@ combos:
   k: Esc
   l: [Colemak]
   a: top
-  o: 0.25
+  o: 0.5
 - p: [9, 10, 11]
   k: ⇥
   l: [Colemak]
   a: top
-  o: 0.25
+  o: 0.5
 - p: [4, 5, 6]
   k: ⌫
   l: [Colemak, numpad]
   a: top
-  o: 0.25
+  o: 0.5
 - p: [14, 15, 16]
   k: ↵
   l: [Colemak, numpad]
   a: top
-  o: 0.25
+  o: 0.5
 - p: [2, 3]
-  k: LPAR
+  k: (
   l: [Colemak]
 - p: [4, 5]
-  k: RPAR
+  k: )
   l: [Colemak]
 - p: [10, 11]
-  k: LBRC
+  k: '{'
   l: [Colemak]
 - p: [14, 15]
-  k: RBRC
+  k: '}'
   l: [Colemak]
 - p: [20, 21]
-  k: LBKT
+  k: '['
   l: [Colemak]
 - p: [24, 25]
-  k: RBKT
+  k: ']'
   l: [Colemak]
 - p: [11, 22]
-  k: LT
+  k: <
   l: [Colemak]
 - p: [14, 23]
-  k: GT
+  k: '>'
   l: [Colemak]
 - p: [12, 13]
   k: flash
