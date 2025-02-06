@@ -47,7 +47,7 @@ parse_config:
     DOT: .
     DOWN: ↓
     END: End
-    EQUAL: =
+    EQUAL: "="
     ESC: Esc
     EXCL: !
     GLOBE: 🌐
