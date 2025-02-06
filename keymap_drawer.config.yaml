@@ -33,7 +33,7 @@ parse_config:
   zmk_keycode_map:
     AMPS: "&"
     AT: "@"
-    BACKSLASH: \\
+    BACKSLASH: \
     BSPC: ⌫
     CAPS: Caps 🔒
     CARET: ^
@@ -92,18 +92,22 @@ parse_config:
   zmk_combos:
     combo_esc:
       align: top
+      slide: -1
       offset: 0.25
       layers: [flash mode]
     combo_tab:
       align: top
+      slide: -0.25
       offset: 0.5
       layers: [flash mode]
     combo_backspace:
       align: top
+      slide: 1
       offset: 0.25
       layers: [flash mode]
     combo_return:
       align: top
+      slide: 0.25
       offset: 0.5
       layers: [flash mode]
     combo_up:
