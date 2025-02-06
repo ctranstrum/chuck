@@ -49,7 +49,7 @@ parse_config:
     END: End
     EQUAL: "="
     ESC: Esc
-    EXCL: !
+    EXCL: "!"
     GLOBE: 🌐
     GRAVE: "`"
     GT: ">"
@@ -85,7 +85,7 @@ parse_config:
     SQT: "'"
     STAR: "*"
     TAB: ⇥
-    TILDE: ~
+    TILDE: "~"
     UNDER: _
     UP: ↑
 
