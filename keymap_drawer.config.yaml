@@ -33,7 +33,7 @@ parse_config:
   zmk_keycode_map:
     AMPS: "&"
     AT: "@"
-    BACKSLASH: //
+    BACKSLASH: \\
     BSPC: ⌫
     CAPS: Caps 🔒
     CARET: ^
@@ -92,21 +92,19 @@ parse_config:
   zmk_combos:
     combo_esc:
       align: top
-      offset: 0.5
+      offset: 0.25
     combo_tab:
-      align: top
-      offset: 0.5
+      draw_separate: true
     combo_backspace:
       align: top
-      offset: 0.5
+      offset: 0.25
     combo_return:
-      align: top
-      offset: 0.5
+      draw_separate: true
     combo_up:
-      layers: [sym / nav]
+      draw_separate: true
     combo_down:
-      layers: [sym / nav]
+      layers: [numpad]
     combo_left:
-      layers: [sym / nav]
+      layers: [Colemak]
     combo_right:
       layers: [sym / nav]
