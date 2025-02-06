@@ -31,50 +31,82 @@ parse_config:
     GC(Q): lock screen
 
   zmk_keycode_map:
+    AMPS: "&"
+    AT: "@"
+    BACKSLASH: //
     BSPC: ⌫
-    DEL: ⌦
-    ESC: Esc
-    RET: ↵
-    TAB: ⇥
-    UP: ↑
-    DOWN: ↓
-    LEFT: ←
-    RIGHT: →
-    HOME: Home
-    END: End
-    PG_UP: PgUp
-    PG_DN: PgDn
-    LALT: ⌥
-    RALT: Alt
-    LCTL: ^
-    LCTRL: ^
-    LGUI: ⌘
-    LSHFT: ⇧
+    CAPS: Caps 🔒
+    CARET: ^
+    COLON: ":"
+    COMMA: ","
+    C_NEXT: ⏭
     C_PP: ⏯
     C_PREV: ⏮
-    C_NEXT: ⏭
-    SPC: ␣
-    CAPS: Caps 🔒
+    DEL: ⌦
+    DLLR: $
+    DOT: .
+    DOWN: ↓
+    END: End
+    EQUAL: =
+    ESC: Esc
+    EXCL: !
+    GLOBE: 🌐
+    GRAVE: "`"
+    GT: ">"
+    HASH: "#"
+    HOME: Home
     KP_NUM: Num 🔒
+    LALT: ⌥
+    LBKT: "["
+    LBRC: "{"
+    LCTL: ^
+    LCTRL: ^
+    LEFT: ←
+    LGUI: ⌘
+    LPAR: (
+    LSHFT: ⇧
+    LT: <
+    MINUS: "-"
+    PG_DN: PgDn
+    PG_UP: PgUp
+    PIPE: "|"
+    PLUS: +
+    PRCNT: "%"
+    QMARK: "?"
+    RALT: Alt
+    RBKT: "]"
+    RBRC: "}"
+    RET: ↵
+    RIGHT: →
+    RPAR: )
+    SEMI: ;
+    SLASH: /
+    SPC: ␣
+    SQT: "'"
+    STAR: "*"
+    TAB: ⇥
+    TILDE: ~
+    UNDER: _
+    UP: ↑
 
   zmk_combos:
     combo_esc:
       align: top
-      offset: 0.25
+      offset: 0.5
     combo_tab:
       align: top
-      offset: 0.25
+      offset: 0.5
     combo_backspace:
       align: top
-      offset: 0.25
+      offset: 0.5
     combo_return:
       align: top
-      offset: 0.25
+      offset: 0.5
     combo_up:
-      layers: sym / nav
+      layers: [sym / nav]
     combo_down:
-      layers: sym / nav
+      layers: [sym / nav]
     combo_left:
-      layers: sym / nav
+      layers: [sym / nav]
     combo_right:
-      layers: sym / nav
+      layers: [sym / nav]
