@@ -147,19 +147,19 @@ You can access those keys by using combos:
 press P and G simultaneously for B,
 and M and L for J.
 
-Additional two-finger combos are used for brackets:
+Additional two-finger combos using the middle and index finger are used for brackets:
 
-- { and } are S-T and N-E
-- ( and ) are F-P and L-U
-- \[ and \] are C-D and H-,
-- < and > are T-V and N-K
+- { and } are S-T and N-E (home row on each hand)
+- ( and ) are F-P and L-U (top row on each hand)
+- \[ and \] are C-D and H-, (bottom row on each hand)
+- < and > are T-V and N-K (inner column on each hand)
 
-The following three-finger combos are available:
+The following three-finger combos using the index, middle, and ring fingers are available:
 
-- Escape is W-F-P
-- Tab is R-S-T
-- Backspace is L-U-Y
-- Enter is N-E-I
+- Escape is W-F-P (top row left hand)
+- Tab is R-S-T (home row left hand)
+- Backspace is L-U-Y (top row right hand)
+- Enter is N-E-I (home row right hand)
 
 Left thumb key is a sticky shift. Press and release it once to
 capitalize the next letter typed. Press and release twice to enter
@@ -171,6 +171,9 @@ as well as to access common editing commands under your left hand.
 
 The right thumb key is the space bar, and when held, it puts
 symbols under the left hand and navigation under the right.
+
+Arrow keys can also be pressed without activating the navigation layer
+by instead using vertical combos atop the location of each arrow key.
 
 Hold both the left and right thumb keys to access special keyboard
 functions like changing the bluetooth connection (press a BT key to

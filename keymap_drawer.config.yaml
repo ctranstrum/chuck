@@ -92,7 +92,7 @@ parse_config:
   zmk_combos:
     combo_esc:
       align: top
-      slide: -1
+      slide: -0.75
       offset: 0.25
       layers: [flash mode]
     combo_tab:
@@ -102,12 +102,12 @@ parse_config:
       layers: [flash mode]
     combo_backspace:
       align: top
-      slide: 1
+      slide: -0.75
       offset: 0.25
       layers: [flash mode]
     combo_return:
       align: top
-      slide: 0.25
+      slide: -0.25
       offset: 0.5
       layers: [flash mode]
     combo_up:
