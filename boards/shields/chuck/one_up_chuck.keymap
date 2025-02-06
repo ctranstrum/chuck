@@ -89,6 +89,7 @@
             key-positions = <10 11>;
             bindings = <&kp LBRC>;
             layers = <0>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_right_curly {
@@ -119,6 +120,30 @@
             key-positions = <14 23>;
             bindings = <&kp GT>;
             layers = <0>;
+        };
+
+        combo_up {
+            key-positions = <5 15>;
+            bindings = <&kp UP>;
+            layers = <0 1>;
+        };
+
+        combo_down {
+            key-positions = <15 25>;
+            bindings = <&kp DOWN>;
+            layers = <0 1>;
+        };
+
+        combo_left {
+            key-positions = <4 14>;
+            bindings = <&kp LEFT>;
+            layers = <0 1>;
+        };
+
+        combo_right {
+            key-positions = <6 16>;
+            bindings = <&kp RIGHT>;
+            layers = <0 1>;
         };
 
         // Combos are always executed on the central, so if we have a dongle
@@ -290,11 +315,11 @@
     &kp ESC  &none   GS(N4) GCS(N4)                                       &kp N7  &kp N8 &kp N9 &kp MINUS
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ Cmd A ┃       ┃       ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
- &kp LG(A) &kp LCTL &kp LALT Cmd TAB Alt RET                    &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
-// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+ &kp LG(A) &kp LCTL &kp LALT Cmd TAB Glb RET                    &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃                    ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
-&kp LG(Z) &kp LG(X) &kp LG(C) &kp LC(D) &kp LG(V)                &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
+&kp LG(Z) &kp LG(X) Alt LG(C) &kp LC(D) &kp LG(V)                &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ ##### ┃ ┃  PLAY  ┃ ┃   0   ┃
                                          &trans   &kp C_PP  &lt 2 N0
@@ -315,11 +340,11 @@
 &kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp TAB &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃  Del  ┃
-Sft CARET Ctl AT Opt EXCL Cmd EQUAL Alt DLLR                  Alt PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp DEL
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                    ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
+Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                  Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp DEL
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ~   ┃   |   ┃   &   ┃   _   ┃   ?   ┃                    ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ Enter ┃
-&kp TILDE &kp PIPE &kp AMPS &kp UNDER &kp QMARK               &kp PG_DN &kp HOME &kp DOWN &kp END &kp RET
+&kp TILDE &kp PIPE &kp AMPS &kp UNDER &kp QMARK               &kp PG_DN &kp HOME Alt DOWN &kp END &kp RET
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃   -   ┃ ┃  NEXT  ┃ ┃ ##### ┃
                                      &lt 1 MINUS &kp C_NEXT   &trans

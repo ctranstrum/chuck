@@ -98,6 +98,7 @@ parse_config:
     combo_backspace:
       align: top
       offset: 0.25
+      layers: [flash mode]
     combo_return:
       draw_separate: true
     combo_up:
