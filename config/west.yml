@@ -6,13 +6,15 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: ctranstrum
+      url-base: https://github.com/ctranstrum
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-rgbled-widget
-      remote: caksoylar
+    - name: zmk-rgbled-layer-widget
+      remote: ctranstrum
       revision: main
     - name: prospector-zmk-module
       remote: carrefinho
