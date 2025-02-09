@@ -17,7 +17,7 @@ include:
   # One Up Chuck wired only with the XIAO RP2040
   # note: the rgbled adapter is not needed
   - board: seeeduino_xiao_rp2040
-    shield: one_up_chuck_unibody
+    shield: one_up_chuck_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-wired-rp2040
 
