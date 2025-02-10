@@ -302,7 +302,7 @@
 //                                     ┗━━━━━━━┛            ┗━━━━━━━┛
             >;
 
-            sensor-bindings = <&scroll_rotation MOVE_Y(-300) MOVE_Y(300)>;
+            sensor-bindings = <&scroll_rotation SCRL_DOWN SCRL_UP>;
         };
 
         num {
