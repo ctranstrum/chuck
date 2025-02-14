@@ -316,8 +316,8 @@
 // ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                    ┃   7   ┃   8   ┃   9   ┃   -   ┃
     &kp ESC  &none   GS(N4) GCS(N4)                                       &kp N7  &kp N8 &kp N9 &kp MINUS
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd A ┃       ┃       ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
- &kp LG(A) &kp LCTL &kp LALT Cmd TAB Glb RET                    &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
+ &kp LG(A) Crl BSPC Opt SPC Cmd TAB Glb RET                     &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
 // ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃                    ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
@@ -342,11 +342,11 @@
 &kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp TAB &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃  Del  ┃
-Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                  Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp DEL
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
+Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp DEL
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ~   ┃   |   ┃   &   ┃   _   ┃   ?   ┃                    ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ Enter ┃
-&kp TILDE &kp PIPE &kp AMPS &kp UNDER &kp QMARK               &kp PG_DN &kp HOME Alt DOWN &kp END &kp RET
+&kp TILDE &kp PIPE &kp AMPS &kp UNDER &kp QMARK               &kp PG_DN &kp HOME &kp DOWN &kp END &kp RET
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃   -   ┃ ┃  NEXT  ┃ ┃ ##### ┃
                                      &lt 1 MINUS &kp C_NEXT   &trans
