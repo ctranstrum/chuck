@@ -23,6 +23,10 @@ parse_config:
     "&flash 4": flash
     "&ind_bat": battery status
     "&ind_con": connection status
+    "&msc SCRL_DOWN": scroll ↓
+    "&msc SCRL_LEFT": scroll ←
+    "&msc SCRL_RIGHT": scroll →
+    "&msc SCRL_UP": scroll ↑
     "&sk LSHIFT": sticky ⇧
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB

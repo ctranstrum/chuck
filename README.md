@@ -161,6 +161,17 @@ The following three-finger combos using the index, middle, and ring fingers are 
 - Backspace is L-U-Y (top row right hand)
 - Enter is N-E-I (home row right hand)
 
+Modifier keys are available as holds under the home row keys on each hand.
+Command is under the index finger.
+Opt is under the middle finger.
+Ctrl is under the ring finger.
+Shift is under the pinky.
+Globe does not work exactly the same as on a native Mac keyboard
+due to design choices Apple made,
+but you can get most of its functionality,
+accessed by holding the inner column home row key
+(G on the left hand, M on the right).
+
 Left thumb key is a sticky shift. Press and release it once to
 capitalize the next letter typed. Press and release twice to enter
 a smart word capitalization mode that automatically exits when you
