@@ -21,7 +21,7 @@ Note that you must be signed in to github to download.
 
 Unzip the firmware to find the following firmware files:
 
-- chuck-unibody: for using the keyboard without a dongle
+- chuck-unibody-ble: for using the keyboard wirelessly without a dongle
 - chuck-peripheral: for using the keyboad with a dongle
 - chuck-dongle: to install the firmware onto the [Prospector ZMK dongle][prospector]
 - chuck-wired-rp2040: if you use the xiao rp2040 mcu
@@ -91,7 +91,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: one_up_chuck_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
-    artifact-name: chuck-unibody
+    artifact-name: chuck-unibody-ble
 ```
 
 For One Up Chuck with a dongle:
@@ -191,7 +191,7 @@ See the graphic below for more details:
 
 [actions]: https://github.com/ctranstrum/chuck/actions
 [chuck]: https://github.com/ctranstrum/chuck
-[config]: config/one-up-chuck.conf
+[config]: config/one_up_chuck.conf
 [keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
 [prospector]: https://github.com/carrefinho/prospector
 [studio]: https://zmk.studio
