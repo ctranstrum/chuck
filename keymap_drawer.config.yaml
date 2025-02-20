@@ -91,25 +91,13 @@ parse_config:
 
   zmk_combos:
     combo_esc:
-      align: top
-      slide: -0.75
-      offset: 0.25
-      layers: [flash mode]
+      draw_separate: true
     combo_tab:
-      align: top
-      slide: -0.25
-      offset: 0.5
-      layers: [flash mode]
+      draw_separate: true
     combo_backspace:
-      align: top
-      slide: -0.75
-      offset: 0.25
-      layers: [flash mode]
+      draw_separate: true
     combo_return:
-      align: top
-      slide: -0.25
-      offset: 0.5
-      layers: [flash mode]
+      draw_separate: true
     combo_up:
       layers: [flash mode]
     combo_down:
@@ -117,4 +105,12 @@ parse_config:
     combo_left:
       layers: [flash mode]
     combo_right:
+      layers: [flash mode]
+    combo_scroll_up:
+      layers: [flash mode]
+    combo_scroll_down:
+      layers: [flash mode]
+    combo_scroll_left:
+      layers: [flash mode]
+    combo_scroll_right:
       layers: [flash mode]

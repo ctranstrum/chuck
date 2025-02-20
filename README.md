@@ -174,6 +174,7 @@ symbols under the left hand and navigation under the right.
 
 Arrow keys can also be pressed without activating the navigation layer
 by instead using vertical combos atop the location of each arrow key.
+Similarly, mouse scroll can be found in the same locations on the left hand.
 
 Hold both the left and right thumb keys to access special keyboard
 functions like changing the bluetooth connection (press a BT key to

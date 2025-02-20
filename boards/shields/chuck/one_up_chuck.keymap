@@ -148,6 +148,30 @@
             layers = <0 1>;
         };
 
+        combo_scroll_up {
+            key-positions = <2 10>;
+            bindings = <&msc SCRL_UP>;
+            layers = <0>;
+        };
+
+        combo_scroll_down {
+            key-positions = <10 20>;
+            bindings = <&msc SCRL_DOWN>;
+            layers = <0>;
+        };
+
+        combo_scroll_left {
+            key-positions = <1 9>;
+            bindings = <&msc SCRL_LEFT>;
+            layers = <0>;
+        };
+
+        combo_scroll_right {
+            key-positions = <3 11>;
+            bindings = <&msc SCRL_RIGHT>;
+            layers = <0>;
+        };
+
         // Combos are always executed on the central, so if we have a dongle
         // without an easily accessible reset button, we can use a combo to
         // put the central into bootloder mode
