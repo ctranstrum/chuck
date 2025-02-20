@@ -188,16 +188,16 @@ combos:
   k: →
   l: [flash mode]
 - p: [2, 10]
-  k: '&msc SCRL_UP'
+  k: scroll ↑
   l: [flash mode]
 - p: [10, 20]
-  k: '&msc SCRL_DOWN'
+  k: scroll ↓
   l: [flash mode]
 - p: [1, 9]
-  k: '&msc SCRL_LEFT'
+  k: scroll ←
   l: [flash mode]
 - p: [3, 11]
-  k: '&msc SCRL_RIGHT'
+  k: scroll →
   l: [flash mode]
 - p: [12, 13]
   k: flash

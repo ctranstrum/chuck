@@ -867,25 +867,25 @@ path.combo {
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="175" y="49" width="28" height="26" class="combo"/>
 <text x="189" y="62" class="combo tap">
-<tspan x="189" dy="-0.6em">&amp;msc</tspan><tspan x="189" dy="1.2em">SCRL_UP</tspan>
+<tspan x="189" dy="-0.6em">scroll</tspan><tspan x="189" dy="1.2em">↑</tspan>
 </text>
 </g>
 <g class="combo combopos-5">
 <rect rx="6" ry="6" x="156" y="102" width="28" height="26" class="combo"/>
 <text x="170" y="115" class="combo tap">
-<tspan x="170" dy="-0.6em" style="font-size: 78%">&amp;msc</tspan><tspan x="170" dy="1.2em" style="font-size: 78%">SCRL_DOWN</tspan>
+<tspan x="170" dy="-0.6em">scroll</tspan><tspan x="170" dy="1.2em">↓</tspan>
 </text>
 </g>
 <g class="combo combopos-6">
 <rect rx="6" ry="6" x="105" y="59" width="28" height="26" class="combo"/>
 <text x="119" y="72" class="combo tap">
-<tspan x="119" dy="-0.6em" style="font-size: 78%">&amp;msc</tspan><tspan x="119" dy="1.2em" style="font-size: 78%">SCRL_LEFT</tspan>
+<tspan x="119" dy="-0.6em">scroll</tspan><tspan x="119" dy="1.2em">←</tspan>
 </text>
 </g>
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="222" y="96" width="28" height="26" class="combo"/>
 <text x="236" y="109" class="combo tap">
-<tspan x="236" dy="-0.6em" style="font-size: 70%">&amp;msc</tspan><tspan x="236" dy="1.2em" style="font-size: 70%">SCRL_RIGHT</tspan>
+<tspan x="236" dy="-0.6em">scroll</tspan><tspan x="236" dy="1.2em">→</tspan>
 </text>
 </g>
 </g>
