@@ -307,21 +307,21 @@
             sensor-bindings = <&scroll_rotation SCRL_DOWN SCRL_UP>;
         };
 
-        nav {
+        numpad {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            display-name = "navigation"            ;
+            display-name = "numpad"                ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                    ┃  Esc  ┃ CtrlU ┃  Tab  ┃ Bkspc ┃
-    &kp ESC  &none   GS(N4) GCS(N4)                                     &kp ESC &kp LC(U) &kp TAB &kp BSPC
+// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                    ┃   7   ┃   8   ┃   9   ┃   -   ┃
+    &kp ESC  &none   GS(N4) GCS(N4)                                       &kp N7  &kp N8 &kp N9 &kp MINUS
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃  Del  ┃
- Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                    &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp DEL
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
+ &kp LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                     &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃                    ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ Enter ┃
-&kp LG(Z) &kp LG(X) Alt LG(C) &kp LC(D) &kp LG(V)             &kp PG_DN &kp HOME &kp DOWN &kp END &kp RET
+// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃                    ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
+&kp LG(Z) &kp LG(X) Alt LG(C) &kp LC(D) &kp LG(V)                &kp STAR &kp N1  Alt N2 &kp N3 &kp EQUAL
 // ┃       ┃       ┃  Alt  ┃       ┃       ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ ##### ┃ ┃  PLAY  ┃ ┃   0   ┃
@@ -333,22 +333,22 @@
             sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
         };
 
-        sym_num {
+        sym_nav {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            display-name = "sym / num"             ;
+            display-name = "sym / nav"             ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃   7   ┃   8   ┃   9   ┃   -   ┃
-&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                     &kp N7  &kp N8 &kp N9 &kp MINUS
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Tab  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp TAB &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃   *   ┃   4   ┃   5   ┃   6   ┃   +   ┃
-&kp CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                    Glb STAR  Cmd N4  Opt N5  Ctl N6 &kp PLUS
-// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
+// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃  Del  ┃
+Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp DEL
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ~   ┃   |   ┃   &   ┃   _   ┃   ?   ┃                    ┃   0   ┃   1   ┃   2   ┃   3   ┃   /   ┃
-&kp TILDE &kp PIPE Alt AMPS &kp UNDER &kp QMARK                  &kp N0   &kp N1  Alt N2 &kp N3 &kp SLASH
-// ┃       ┃       ┃  Alt  ┃       ┃       ┃                    ┃       ┃       ┃  Alt  ┃       ┃       ┃
+// ┃   ~   ┃   |   ┃   &   ┃   _   ┃   ?   ┃                    ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ Enter ┃
+&kp TILDE &kp PIPE Alt AMPS &kp UNDER &kp QMARK               &kp PG_DN &kp HOME &kp DOWN &kp END &kp RET
+// ┃       ┃       ┃  Alt  ┃       ┃       ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃   -   ┃ ┃  NEXT  ┃ ┃ ##### ┃
                                      &lt 1 MINUS &kp C_NEXT   &trans
