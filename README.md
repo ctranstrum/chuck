@@ -31,7 +31,9 @@ Unzip the firmware to find the following firmware files:
 Plug the One Up Chuck keyboard into your computer's USB port,
 double-tap the reset button on the keyboard,
 and then copy the appropriate firmware file matching your configuration
-onto the new shared drive, which should be labeled something like XIAO-SENSE.
+onto the new shared drive, which should be labeled something like
+XIAO-SENSE for the Xiao BLE
+and RPI-RP2 for the Xiao RP2040.
 
 Your computer will likely give you an error,
 since installing the firmware causes the keyboard to immediately reset,
