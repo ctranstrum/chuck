@@ -174,10 +174,10 @@ but you can get most of its functionality,
 accessed by holding the inner column home row key
 (G on the left hand, M on the right).
 
-Left thumb key is a sticky shift. Press and release it once to
-capitalize the next letter typed. Press and release twice to enter
-a smart word capitalization mode that automatically exits when you
-finish typing a word.
+Left thumb key is a sticky shift.
+Tap it once to capitalize the next letter typed.
+Tap twice to enter a smart word capitalization mode
+that automatically exits when you finish typing a word.
 
 Hold the left thumb key to get a numpad under your right hand,
 as well as to access common editing commands under your left hand.

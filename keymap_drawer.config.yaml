@@ -94,6 +94,14 @@ parse_config:
     UP: ↑
 
   zmk_combos:
+    combo_b:
+      dendron: true
+    combo_j:
+      dendron: true
+    combo_less_than:
+      dendron: true
+    combo_greater_than:
+      dendron: true
     combo_esc:
       draw_separate: true
     combo_tab:
@@ -103,13 +111,13 @@ parse_config:
     combo_return:
       draw_separate: true
     combo_up:
-      layers: [flash mode]
+      layers: [flash mode, sym / nav]
     combo_down:
-      layers: [flash mode]
+      layers: [flash mode, sym / nav]
     combo_left:
-      layers: [flash mode]
+      layers: [flash mode, sym / nav]
     combo_right:
-      layers: [flash mode]
+      layers: [flash mode, sym / nav]
     combo_scroll_up:
       layers: [flash mode]
     combo_scroll_down:
