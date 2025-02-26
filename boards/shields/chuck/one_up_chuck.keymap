@@ -336,7 +336,7 @@
 //                                     ┗━━━━━━━┛            ┗━━━━━━━┛
             >;
 
-            sensor-bindings = <&scroll_rotation SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
         };
 
         numpad {
