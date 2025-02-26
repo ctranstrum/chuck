@@ -132,9 +132,11 @@ combos:
 - p: [3, 12]
   k: B
   l: [Colemak]
+  d: true
 - p: [4, 13]
   k: J
   l: [Colemak]
+  d: true
 - p: [1, 2, 3]
   k: Esc
   l: [Colemak]
@@ -172,21 +174,23 @@ combos:
 - p: [11, 22]
   k: <
   l: [Colemak]
+  d: true
 - p: [14, 23]
   k: '>'
   l: [Colemak]
+  d: true
 - p: [5, 15]
   k: ↑
-  l: [flash mode]
+  l: [flash mode, sym / nav]
 - p: [15, 25]
   k: ↓
-  l: [flash mode]
+  l: [flash mode, sym / nav]
 - p: [4, 14]
   k: ←
-  l: [flash mode]
+  l: [flash mode, sym / nav]
 - p: [6, 16]
   k: →
-  l: [flash mode]
+  l: [flash mode, sym / nav]
 - p: [2, 10]
   k: scroll ↑
   l: [flash mode]

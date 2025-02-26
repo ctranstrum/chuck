@@ -274,10 +274,14 @@ path.combo {
 <text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 78%">sym / nav</tspan></text>
 </a></g>
 <g class="combo combopos-0">
+<path d="M265,111 l-8,-12" class="combo"/>
+<path d="M265,111 l8,12" class="combo"/>
 <rect rx="6" ry="6" x="251" y="98" width="28" height="26" class="combo"/>
 <text x="265" y="111" class="combo tap">B</text>
 </g>
 <g class="combo combopos-1">
+<path d="M387,111 l8,-12" class="combo"/>
+<path d="M387,111 l-8,12" class="combo"/>
 <rect rx="6" ry="6" x="373" y="98" width="28" height="26" class="combo"/>
 <text x="387" y="111" class="combo tap">J</text>
 </g>
@@ -306,10 +310,14 @@ path.combo {
 <text x="470" y="164" class="combo tap">]</text>
 </g>
 <g class="combo combopos-8">
+<path d="M244,163 l-8,-12" class="combo"/>
+<path d="M244,163 l8,12" class="combo"/>
 <rect rx="6" ry="6" x="230" y="150" width="28" height="26" class="combo"/>
 <text x="244" y="163" class="combo tap">&lt;</text>
 </g>
 <g class="combo combopos-9">
+<path d="M408,163 l8,-12" class="combo"/>
+<path d="M408,163 l-8,12" class="combo"/>
 <rect rx="6" ry="6" x="394" y="150" width="28" height="26" class="combo"/>
 <text x="408" y="163" class="combo tap">&gt;</text>
 </g>
@@ -587,6 +595,22 @@ path.combo {
 </g>
 <g transform="translate(383, 288) rotate(-42.5)" class="key held keypos-30">
 <rect rx="6" ry="6" x="-40" y="-26" width="80" height="52" class="key held"/>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="449" y="49" width="28" height="26" class="combo"/>
+<text x="463" y="62" class="combo tap">↑</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="468" y="102" width="28" height="26" class="combo"/>
+<text x="482" y="115" class="combo tap">↓</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="402" y="96" width="28" height="26" class="combo"/>
+<text x="416" y="109" class="combo tap">←</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="519" y="59" width="28" height="26" class="combo"/>
+<text x="533" y="72" class="combo tap">→</text>
 </g>
 </g>
 </g>
