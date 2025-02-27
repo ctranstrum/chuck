@@ -5,7 +5,7 @@ so I thought I'd give one a try, but none of the
 existing boards had what I wanted. Hence:
 the One Up Chuck.
 
-![One Up Chuck Keyboard](images/chuck.png)
+![One Up Chuck Keyboard](images/chuck-pink.jpg)
 
 ## Features
 
