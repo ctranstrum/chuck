@@ -256,8 +256,7 @@
             #binding-cells = <1>;
             x-input-code = <INPUT_REL_HWHEEL>;
             y-input-code = <INPUT_REL_WHEEL>;
-            delay-ms = <0>;
-            time-to-max-speed-ms = <0>;
+            time-to-max-speed-ms = <500>;
             acceleration-exponent = <0>;
         };
 
