@@ -68,8 +68,12 @@ A few items that you may want to customize:
 
 ## Good luck
 
-I'll add more details here once I get my PCB and build it,
-but if you've built keyboards before,
+I was able to successfully build v1.2 of my board,
+though I think I want to make changes to it,
+so I don't want to write a build guide using photos
+of an unfinished product,
+but if you want to build it yourself
+and you've built keyboards before,
 you shouldn't really have any trouble,
 just be sure to follow the symbols on the silkscreen.
 
