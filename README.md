@@ -11,7 +11,8 @@ the One Up Chuck.
 
 - 30 key wireless ergo keyboard with aggressive pinky stagger and splay
 - central rotary encoder can be used by either hand
-- Seeed Studio [XIAO BLE][xiao] microcontroller (probably also works with the XIAO RP2040)
+- designed for the Seeed Studio [XIAO BLE][xiao] wireless microcontroller
+  - also works with the [XIAO RP2040][rp2040] for a lower-cost wired board
 - Gateron Low Profile hotswap switches
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
@@ -26,6 +27,7 @@ the One Up Chuck.
 - Low cost wireless
   - xiao ble is only $10 per controller compared to $25 for the nice!nano
   - Big battery and an option for a dongle, so you can run for months without recharging
+  - xiao rp2040 is under $5 with no need to purchase a battery or power switch if you want a wired board
 - Ergonomic design for the ultimate comfort
   - each half is angled to match the angle of the hands on the board
   - keys are placed where fingers naturally fall, with no excessive stretching
@@ -53,6 +55,7 @@ Still in its infancy, but the [Build Guide][guide] is started.
 [guide]: BUILD.md
 [ohl]: LICENSE.txt
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
+[rp2040]: https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
 [studio]: https://zmk.dev/docs/features/studio
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk]: https://zmk.dev
