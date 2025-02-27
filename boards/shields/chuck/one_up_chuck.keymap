@@ -251,19 +251,10 @@
             bindings = <&kp>, <&kp>;
         };
 
-        rotary_scroll: rotary_mouse_wheel {
-            compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
-            time-to-max-speed-ms = <500>;
-            acceleration-exponent = <0>;
-        };
-
         scroll_rotation: sensor_rotation_scroll {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
-            bindings = <&rotary_scroll>, <&rotary_scroll>;
+            bindings = <&msc>, <&msc>;
             tap-ms = <50>;
         };
 
