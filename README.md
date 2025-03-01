@@ -125,9 +125,8 @@ Modify your `config/one-up-chuck.conf` file with these suggested changes:
 CONFIG_EC11=y
 CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
 
-# Enable mouse scrolling on the encoder
+# Enable mouse emulation
 CONFIG_ZMK_POINTING=y
-CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
 
 # Enable ZMK Studio
 CONFIG_ZMK_STUDIO=y
