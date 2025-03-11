@@ -13,25 +13,28 @@ building the Charlieflex.
 
 ## Bill of materials
 
-> Warning! The bill of materials is not currently updated. This shows the materials for v1.2 of the board.
+> Warning! The case files are not currently updated. They are still the models for v1.2 of the board.
 
-| Qty  | Description                                                                                              |
-| ---- | -------------------------------------------------------------------------------------------------------- |
-| 1    | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])             |
-| 2    | [3D printed cases][case], top and bottom                                                                 |
-| 1    | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]       |
-| 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                      |
-| 1    | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                         |
-| 1    | wireless only: [3.7v 250mAh 502030 rechargeable LiPo battery][battery] (max internal space: 5.3x22x32mm) |
-| 42   | SOD-123 [1N4148W SMD diodes][sod123]                                                                     |
-| 30   | [Gateron Low Profile hot swap sockets][sockets]                                                          |
-| 30   | [Gateron KS-33 Low Profile switches][switches] of your choice                                            |
-| 30   | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)              |
-| 1    | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case] of your choice                   |
-| 12   | [M2 hex nuts][hexnuts]                                                                                   |
-| 12   | [M2 x 6mm countersunk screws][screws]                                                                    |
-| 10   | [6mm x 1.5mm bumpons][bumpons]                                                                           |
-| ~3mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide                 |
+| Qty   | Description                                                                                            |
+| ----- | ------------------------------------------------------------------------------------------------------ |
+| 1     | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])           |
+| 2     | [3D printed cases][case], top and bottom                                                               |
+| 1     | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]     |
+| 1     | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18])     |
+| 1     | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                       |
+| 1     | wireless only: [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm) |
+| 1     | wireless only: [JST PH 2 battery jack][jst]                                                            |
+| 45    | SOD-123 [1N4148W SMD diodes][sod123]                                                                   |
+| 30-32 | [Gateron Low Profile hot swap sockets][sockets]                                                        |
+| 30-32 | [Gateron KS-33 Low Profile switches][switches] of your choice                                          |
+| 30-32 | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)            |
+| 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case] of your choice                 |
+| 9     | [M2 x 6mm countersunk screws][screws6mm]                                                               |
+| 9     | [M2 hex nuts][hexnuts]                                                                                 |
+| 3     | [M2 x 10mm countersunk screws][screws10mm]                                                             |
+| 3     | [M2 heat-set inserts 3mm][heatset]                                                                     |
+| 10    | [6mm x 1.5mm bumpons][bumpons]                                                                         |
+| ~6mm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
 
 \* You could also use a Bourns [PES12-42S][smallencoder] EC12 encoder,
 or an encoder from another manufacturer if you aren't going wireless,
@@ -79,38 +82,37 @@ and you've built keyboards before,
 you shouldn't really have any trouble,
 just be sure to follow the symbols on the silkscreen.
 
-[battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
+[battery]: https://ydlbattery.com/products/3-7v-300mah-502530-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
 [encoder]: https://www.mouser.com/ProductDetail/Bourns/PEC11L-4115F-S0020?qs=gk21WLQFtgRAgrgJZfpkWw%3D%3D
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [gerber]: pcb/chuck-gerbers.zip
+[heatset]: https://www.mcmaster.com/94459A767/
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
 [how-to-solder]: https://www.google.com/search?q=youtube+how+to+solder
 [jlc3dp]: https://jlc3dp.com/
 [jlcpcb]: https://jlcpcb.com/
+[jst]: https://typeractive.xyz/products/battery-jack
 [kester]: https://typeractive.xyz/products/kester-solder-wire-tube
 [keycaps]: https://nuphy.com/collections/keycaps/products/numoji-nsa
 [pcb]: pcb/
 [pinecil]: https://typeractive.xyz/products/pinecil
 [power]: https://typeractive.xyz/products/power-switch
-[reset]: https://typeractive.xyz/products/reset-button
-[rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
+[pts526]: https://www.ckswitches.com/media/2780/pts526.pdf
+[reset]: https://www.aliexpress.us/item/3256806760201032.html
+[screws6mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
+[screws10mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222572064851
 [smallencoder]: https://www.mouser.com/ProductDetail/Bourns/PES12-42S-N0024?qs=9fn1gpisni7dJzyRXeQZlQ%3D%3D
 [sockets]: https://www.gateron.com/products/gateron-low-profile-switch-hot-swap-pcb-socket
 [sod123]: https://typeractive.xyz/products/smd-diodes
 [soldering101]: https://www.google.com/search?q=youtube+soldering+101
 [splitkb-build-guide]: https://docs.splitkb.com/product-guides/aurora-series/build-guide
 [switches]: https://nuphy.com/collections/switches/products/nuphy-wisteria-t55-low-profile-switches
+[ts18]: https://www.sameskydevices.com/product/resource/ts18.pdf
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
-[zmk]: https://zmk.dev/
 [zmk-xiao]: https://zmk.dev/docs/hardware#seeed_xiao
 [zmkdocs]: https://zmk.dev/docs
 [zmkrepo]: https://zmk.dev/docs/user-setup
 [zmkstudio]: https://zmk.studio/
-[ergogen]: https://ergogen.xyz
-[ergonautone]: https://ergonautkb.com/docs/keyboards/ergonaut-one/intro/
-[klor]: https://github.com/GEIGEIGEIST/KLOR
-[ohl]: LICENSE.txt
-[screws]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk

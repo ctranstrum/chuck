@@ -9,7 +9,7 @@ the Charlieflex.
 
 ## Features
 
-- 30 key wireless ergo keyboard with aggressive pinky stagger and splay
+- 30-32 key wireless ergo keyboard with aggressive pinky stagger and splay
 - central rotary encoder can be used by either hand
 - designed for the Seeed Studio [XIAO BLE][xiao] wireless microcontroller
   - also works with the [XIAO RP2040][rp2040] for a lower-cost wired board
@@ -39,6 +39,7 @@ the Charlieflex.
     - only one thumb key for each hand
   - centrally located rotary encoder knob for easy access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
+  - options for 1 or 2 thumb keys on each hand
 - Low profile 3D printable case
   - case is only about 7mm high and comes in two separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
   - smaller versions are included for smaller print beds
