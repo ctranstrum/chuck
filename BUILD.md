@@ -1,4 +1,4 @@
-# One Up Chuck Build Guide
+# Charlieflex Build Guide
 
 If this is your first time building a custom keyboard,
 you should do two things before attempting this build.
@@ -9,13 +9,15 @@ you should do two things before attempting this build.
 
 The remainder of this build guide will assume a basic familiarity with the process
 and will only hit upon specific items that may be different or important to note while
-building the One Up Chuck.
+building the Charlieflex.
 
 ## Bill of materials
 
+> Warning! The bill of materials is not currently updated. This shows the materials for v1.2 of the board.
+
 | Qty  | Description                                                                                              |
 | ---- | -------------------------------------------------------------------------------------------------------- |
-| 1    | [One Up Chuck PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])            |
+| 1    | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])             |
 | 2    | [3D printed cases][case], top and bottom                                                                 |
 | 1    | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]       |
 | 1    | [Panasonic EVQ-PUC02K momentary switch][reset] for the reset button                                      |

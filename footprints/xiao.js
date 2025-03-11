@@ -39,11 +39,11 @@ module.exports = {
       ${p.at /* parametric position */}
 
       ${"" /* footprint reference */}
-      (fp_text reference "${p.ref}" (at -19.3989 -11.28268) (layer F.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
+      (fp_text reference "${p.ref}" (at -19.3989 -11.28268) (layer B.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
 
       ${
         "" /* notes
-      (fp_text user "SEEED XIAO BLE\\nFACE ${is_up ? 'UP' : 'DOWN'}" (at ${def_pos}5 -1 ${p.rot} unlocked) (layer F.SilkS) (effects (font (size 1 1) (thickness 0.15)) (justify left)))
+      (fp_text user "SEEED XIAO BLE\\nFACE ${is_up ? 'UP' : 'DOWN'}" (at ${def_pos}5 -1 ${p.rot} unlocked) (layer B.SilkS) (effects (font (size 1 1) (thickness 0.15)) (justify left)))
       turned off for now, but it's cool, so maybe turn it on later /* }
 
       ${''/* illustration of the (possible) USB port overhang */
@@ -54,24 +54,24 @@ module.exports = {
       (fp_line (start -3.81 -6.94) (end 3.81 -6.94) (layer Dwgs.User) (width 0.15))
 
       ${"" /* component outline */}
-      (fp_line (start 8.89 3.545) (end 8.89 4.075) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 0.995) (end 8.89 1.525) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 6.085) (end 8.89 6.615) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 3.535) (end -8.89 4.065) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 -10.5) (end 8.89 -10.5) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 -8.6) (end -8.89 -10.5) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 -4.075) (end 8.89 -3.545) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 -6.625) (end -8.89 -6.095) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 10.5) (end -8.89 8.6) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 -10.49) (end 8.89 -8.65) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 -1.535) (end 8.89 -1.005) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 6.075) (end -8.89 6.605) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 -1.545) (end -8.89 -1.015) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 -4.085) (end -8.89 -3.555) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 -6.61) (end 8.89 -6.08) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 8.61) (end 8.89 10.5) (layer "F.SilkS") (width 0.12))
-      (fp_line (start 8.89 10.5) (end -8.89 10.5) (layer "F.SilkS") (width 0.12))
-      (fp_line (start -8.89 0.995) (end -8.89 1.525) (layer "F.SilkS") (width 0.12))
+      (fp_line (start 8.89 3.545) (end 8.89 4.075) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 0.995) (end 8.89 1.525) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 6.085) (end 8.89 6.615) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 3.535) (end -8.89 4.065) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 -10.5) (end 8.89 -10.5) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 -8.6) (end -8.89 -10.5) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 -4.075) (end 8.89 -3.545) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 -6.625) (end -8.89 -6.095) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 10.5) (end -8.89 8.6) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 -10.49) (end 8.89 -8.65) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 -1.535) (end 8.89 -1.005) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 6.075) (end -8.89 6.605) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 -1.545) (end -8.89 -1.015) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 -4.085) (end -8.89 -3.555) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 -6.61) (end 8.89 -6.08) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 8.61) (end 8.89 10.5) (layer "B.SilkS") (width 0.12))
+      (fp_line (start 8.89 10.5) (end -8.89 10.5) (layer "B.SilkS") (width 0.12))
+      (fp_line (start -8.89 0.995) (end -8.89 1.525) (layer "B.SilkS") (width 0.12))
       (fp_rect (start -8.89 10.5) (end 8.89 -10.5) (layer "Dwgs.User") (width 0.12) (fill none))
       (fp_rect (start 3.350197 -6.785813) (end 5.128197 -4.118813) (layer "Dwgs.User") (width 0.12) (fill none))
       (fp_rect (start -3.507811 -8.182813) (end -5.285811 -10.849813) (layer "Dwgs.User") (width 0.12) (fill none))

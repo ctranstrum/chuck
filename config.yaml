@@ -1,7 +1,7 @@
 meta:
-  keyboard: &keyboard_name One Up Chuck
+  keyboard: &keyboard_name Charlieflex
   author: chad@transtrum.net
-  version: &version v1.2
+  version: &version v1.3
   repository: &repo https://github.com/ctranstrum/chuck
   license: &license Licensed under CERN-OHL-P v2
 
@@ -21,12 +21,15 @@ units:
   # how far to drop the outside edge of the knob, knob diameter must be larger than 21
   knob_skirt: 2
 
+  # EC11 knob height must be at least 16
   ec11_knob_height: 17
   ec11_shaft_height: 7
+
+  # EC12 knob height must be at least 8.5
   ec12_knob_height: 16
   ec12_shaft_height: 2.65
 
-  mirrored_distance: 1.5 dx
+  mirrored_distance: 1.75 dx
 
 points:
   zones:
@@ -101,8 +104,8 @@ points:
               cpsrc: CP3
             top:
               cpsrc: CP4
-              tags: [key, switch, high_bumper]
-              bind: [0, 4]
+              tags: [key, switch, mid_bumper]
+              bind: [0, 1]
               shared: middle_home
               mirror:
                 cpsrc: CP1
@@ -145,52 +148,55 @@ points:
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
-      anchor: matrix_index_bottom
-      columns.thumb.rows.spot:
-        tags: [thumb, switch]
-        splay: -20
-        shift: [39.5, -10.5]
-        bind: [7, 0, 0, 25]
-        cpdst: CP2
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [0, -dy - 3]
+      key:
         cpsrc: CP5
-        mirror.cpdst: CP3
+        mirror.cpsrc: CP6
+        tags: [key, switch]
+        bind: [15, 0, 0, 15]
+      columns:
+        inner.rows.spot:
+          splay: -15
+          cpdst: CP2
+        outer.rows.spot:
+          cpdst: CP3
 
     encoder:
       anchor:
-        aggregate.parts: [thumbs_thumb_spot, mirror_thumbs_thumb_spot]
-        shift: [0, dx]
+        aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        shift: [0, 1.05 dy]
       key:
         tags: [encoder]
-        bind: [25, 6, 25.3, 6]
+        cpsrc: CP6
+        cpdst: CP1
+        bind: [25, 4.3, 23.75, 4.3]
 
     mcu:
       key.tags: [mcu]
       anchor:
         # top middle left
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
-        shift: [-21, 7.45]
+        shift: [-6, 2.65]
 
     power:
       key.tags: [power]
       anchor:
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
-        shift: [28, 15.8]
+        shift: [20, 13]
 
     reset:
       key:
         tags: [reset]
-        asym: clone
       anchor:
-        ref: matrix_pinky_top
-        shift: [hdx / 3, hdy + 4]
-      mirror:
-        ref: matrix_inner_home
-        distance: mirrored_distance
+        ref: power
+        shift: [0, -hdy]
 
     battery:
       anchor:
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
-        shift: [4, -8]
+        shift: [0, -7.5]
       key.tags: [battery]
 
     palm_bumper:
@@ -206,15 +212,15 @@ points:
       key.tags: [bumper]
       anchor:
         ref: encoder
-        shift: [0, -1.7 dy]
+        shift: [0, -1.6 dy]
 
     center_bumper:
       key.tags: [bumper]
       anchor:
         ref: encoder
-        shift: [0, 1.9 dy]
+        shift: [0, 1.3 dy]
 
-    pinky_screw:
+    pinky_home_screw:
       key.tags: [screw]
       anchor:
         ref: matrix_pinky_home
@@ -223,7 +229,7 @@ points:
         ref: matrix_inner_home
         distance: mirrored_distance
 
-    low_screw:
+    pinky_low_screw:
       key.tags: [screw]
       anchor:
         ref: matrix_pinky_bottom
@@ -232,11 +238,11 @@ points:
         ref: matrix_inner_home
         distance: mirrored_distance
 
-    middle_home_screw:
+    pinky_high_screw:
       key.tags: [screw]
       anchor:
-        ref: matrix_middle_home
-        shift: [-hdx - 1.5, hdy]
+        ref: matrix_ring_top
+        shift: [-hdx - 1.5, 0]
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
@@ -245,7 +251,7 @@ points:
       key.tags: [screw]
       anchor:
         ref: matrix_middle_top
-        shift: [0, hdy + 4]
+        shift: [4, hdy + 4]
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
@@ -253,56 +259,50 @@ points:
     thumb_screw:
       key.tags: [screw]
       anchor:
-        ref: thumbs_thumb_spot
+        ref: thumbs_inner_spot
         shift: [-hdx - 2, -hdy + 3]
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
 
+    center_screw:
+      key.tags: [screw]
+      anchor:
+        ref: encoder
+        shift: [0, 2 dy]
+
     center_bottom_screw:
       key.tags: [screw]
       anchor:
         ref: encoder
-        shift: [0, -1.3 dy]
-
-    center_top_screw:
-      key.tags: [screw]
-      anchor:
-        ref: battery
-        shift: [-4, 22]
+        shift: [0, -1.25 dy]
 
     pad_xiao_pos:
       key.tags: [pad_circle, xiao_pos_pad]
       anchor:
         ref: mcu
-        shift: [-4, -13.75]
+        shift: [-4, -15]
 
     pad_reset:
       key.tags: [pad_circle, reset_pad]
       anchor:
         ref: mcu
-        shift: [4, -13.75]
+        shift: [4, -15]
 
-    pad_bat_pos:
-      key.tags: [pad_circle, bat_pos_pad]
+    jst:
+      key.tags: [jst]
       anchor:
-        ref: battery
-        rotate: 270
-        shift: [13, 6]
-
-    pad_neg_pos:
-      key.tags: [pad_circle, bat_neg_pad]
-      anchor:
-        ref: battery
-        shift: [16.5, 11]
+        ref: mirror_matrix_index_top
+        shift: [-0.75 hdx, dy]
+        rotate: 315
 
 outlines:
   _top_bridge:
     - what: rectangle
       where:
         aggregate.parts: [matrix_middle_top, mirror_matrix_middle_top]
-        shift: [0, -7.05]
-      size: [95, 50]
+        shift: [0, -7]
+      size: [101.6, 44.25]
 
   _keys_surround:
     - what: rectangle
@@ -312,23 +312,13 @@ outlines:
       corner: 2
       fillet: 2
 
-  _thumbs_surround:
-    - what: rectangle
-      where: thumb
-      bound: true
-      size: [1.5 dx + 4, dy + 4]
-      corner: 4
-      fillet: 2
-
   outline_shapes_builder:
     - _top_bridge
     - ^_keys_surround
-    - ^_thumbs_surround
 
   _basic_outline_shape:
     - _top_bridge
     - _keys_surround
-    - _thumbs_surround
 
   board_outline:
     - what: outline
@@ -345,6 +335,12 @@ outlines:
       size: [8, 2]
       adjust.shift: [0, 11.5]
 
+  _xiao_usb_cutout:
+    - what: rectangle
+      where: mcu
+      size: [9.5, 8.5]
+      adjust.shift: [0, 8.25]
+
   _xiao_light_guide:
     - what: circle
       where: mcu
@@ -354,8 +350,9 @@ outlines:
   _xiao_cutout:
     - what: rectangle
       where: mcu
-      size: [14, 22]
+      size: [14, 21]
       corner: 1
+    - _xiao_usb_cutout
 
   _xiao_bottom_cutout:
     - what: rectangle
@@ -369,11 +366,12 @@ outlines:
       size: [19, 21.5]
       corner: 1
 
-  _xiao_usb:
+  # Make some room for the solder
+  _xiao_cutout_solder:
     - what: rectangle
       where: mcu
-      size: [9.5, 6.5]
-      adjust.shift: [0, 7.25]
+      size: [19, 18]
+      corner: 1
 
   _xiao_chip:
     - what: rectangle
@@ -407,49 +405,96 @@ outlines:
       size: [9, 4.7]
       adjust.shift: [0, -0.2]
 
-  _reset_pcb_holes:
+  _reset_outline:
+    - what: polygon
+      points:
+        - ref: reset
+          shift: [2.6, 1.5]
+        - ref: reset
+          shift: [1.5, 2.6]
+        - ref: reset
+          shift: [-1.5, 2.6]
+        - ref: reset
+          shift: [-2.6, 1.5]
+        - ref: reset
+          shift: [-2.6, -1.5]
+        - ref: reset
+          shift: [-1.5, -2.6]
+        - ref: reset
+          shift: [1.5, -2.6]
+        - ref: reset
+          shift: [2.6, -1.5]
+    - what: rectangle
+      size: [6.4, 0.5]
+      where: reset
+      adjust.shift: [0, -1.85]
+    - what: rectangle
+      where: reset
+      size: [6.4, 0.5]
+      adjust.shift: [0, 1.85]
+
+  _reset_button:
     - what: circle
       where: reset
-      radius: 0.375
-      adjust.shift: [0, 1.375]
+      radius: 1
+
+  _reset_button_cutout_smallest:
     - what: circle
       where: reset
-      radius: 0.375
-      adjust.shift: [0, -1.375]
+      radius: 1.1
+
+  _reset_button_cutout_small:
+    - what: circle
+      where: reset
+      radius: 1.2
+
+  _reset_button_cutout_medium:
+    - what: circle
+      where: reset
+      radius: 1.3
+
+  _reset_button_cutout_large:
+    - what: circle
+      where: reset
+      radius: 1.4
 
   _reset_visualizer:
-    - what: rectangle
-      where: reset
-      size: [6.3, 3.6]
-      adjust.resist: true
-    - what: rectangle
-      where: reset
-      size: [2.55, 0.9]
-      adjust:
-        shift: [0, 2.05]
-        resist: true
-    - -_reset_pcb_holes
+    - _reset_outline
+    - ^_reset_button
 
   _reset_cutout:
     - what: rectangle
       where: reset
-      size: [7.3, 4.5]
-      adjust:
-        resist: true
-        shift: [0, -0.25]
+      size: [9, 6]
+      corner: 1
 
   _battery_cutout:
     - what: rectangle
       where: battery
-      size: [23, 33]
+      size: [28, 33]
       corner: 1
 
   _battery_wire_cutout:
-    - _battery_cutout
+    - what: rectangle
+      where: jst
+      size: [6.5, 8]
+      adjust.shift: [0, -2]
+      corner: 1
+    - what: rectangle
+      where: jst
+      size: [12, 16]
+      adjust.shift: [0, -12]
+      corner: 3
+
+  _jst_pcb_holes:
     - what: circle
-      where: battery
-      radius: 7.5
-      adjust.shift: [11, 11]
+      where: jst
+      radius: 0.4
+      adjust.shift: [1, 0]
+    - what: circle
+      where: jst
+      radius: 0.4
+      adjust.shift: [-1, 0]
 
   _encoder_knob_1:
     - what: circle
@@ -511,15 +556,15 @@ outlines:
       where: encoder
       radius: 3.6
 
-  _keycaps:
+  _keycap:
     - what: rectangle
-      where: key
       size: 18
       corner: 1
-    - what: rectangle
-      where: thumb
-      size: [27, 18]
-      corner: 1
+
+  _keycaps:
+    - what: outline
+      name: _keycap
+      where: key
 
   top_down_view:
     - board_outline
@@ -546,116 +591,192 @@ outlines:
 
   _diode:
     - what: rectangle
-      size: [1.65, 2.7]
+      size: [2.7, 1.65]
     - what: rectangle
-      size: [0.6, 3.9]
+      size: [3.9, 0.6]
 
   _diodes:
     - what: outline
       name: _diode
-      where: switch
-      adjust.shift: [5, -1]
+      where: key
+      adjust:
+        shift: [5, -4]
+        resist: true
+    - what: outline
+      name: _diode
+      where: encoder
+      adjust.shift: [0, 14]
 
   _diodes_cutout:
     - what: rectangle
-      where: switch
-      size: [2.2, 5.2]
-      adjust.shift: [5, -1]
+      where: key
+      size: [5.2, 2.2]
+      adjust:
+        shift: [5, -4]
+        resist: true
+    - what: rectangle
+      where: encoder
+      size: [5.2, 2.2]
+      adjust.shift: [0, 14]
 
   _return_diodes:
     - what: outline
       name: _diode
       where: return
-      adjust:
-        shift: [0, -0.6 dy]
-        rotate: 90
+      adjust.shift: [0, -0.4 dy]
     - what: outline
       name: _diode
       where: return
-      adjust:
-        shift: [0, -0.75 dy]
-        rotate: 90
+      adjust.shift: [0, -0.55 dy]
 
   _return_diodes_cutout:
     - what: rectangle
       where: return
       size: 5.2
-      adjust.shift: [0, -0.675 dy]
+      adjust.shift: [0, -0.475 dy]
 
-  _switches_plate_cutout:
+  _switch_cutout:
     - what: rectangle
-      where: switch
       size: 14
       corner: 1
+
+  _switch_clip:
+    - what: rectangle
+      size: [15, 14]
+      corner: 1
+
+  _switches_plate_cutout:
+    - what: outline
+      name: _switch_cutout
+      where: key
     - _encoder_plate_cutout
 
   _switches_clip_cutout:
-    - what: rectangle
-      where: switch
-      size: [14.7, 14]
-      corner: 1
-
-  # Ugh, I don't have exact measurements, so this is maybe close-ish?
-  _glp_socket:
-    - what: rectangle
-      size: [4.04, 4.35]
-      adjust.shift: [4.8, 4.7]
-    - what: rectangle
-      size: [1.75, 1.74]
-      adjust.shift: [7.65, 4.7]
-    - what: rectangle
-      size: [5.94, 4.35]
-      adjust.shift: [-1.85, 5.75]
-    - what: rectangle
-      size: [1.75, 1.74]
-      adjust.shift: [-5.65, 5.75]
-    - what: rectangle
-      size: [4.2, 3.8]
-      adjust:
-        rotate: -30
-        shift: [1.95, 5.2]
-    - what: rectangle
-      size: 1.5
-      adjust.shift: [0, 8]
-      operation: subtract
-
-  _glp_socket_expanded:
     - what: outline
-      name: _glp_socket
-      expand: 1
+      name: _switch_clip
+      where: key
 
-  _socket_visualizer:
-    - what: outline
-      name: _glp_socket
-      where: switch
-      adjust.resist: true
+  _switch_holes:
+    # these are created in the pcb software ...
+    # but we need to create them manually for our mock pcb
+    # ... also the radius has been rounded up for fdm printing ...
+    - what: circle # center post
+      radius: 2.5
+    - what: circle # v1 left stabililzer
+      radius: 0.9
+      adjust.shift: [-5.5, 0]
+    - what: circle # v1 right stabilizer
+      radius: 0.9
+      adjust.shift: [5.5, 0]
+    - what: circle # v2 stabilizer
+      radius: 0.8
+      adjust.shift: [-5, -5.15]
 
-  _socket_cutout:
+  _switch_holes_placed:
     - what: outline
-      name: _glp_socket_expanded
-      where: switch
+      name: _switch_holes
+      where: key
       adjust.resist: true
 
   _socket_post_holes:
+    # center
     - what: circle
-      where: switch
-      radius: 2.55
+      radius: 1.6
+      adjust.shift: [0, -5.95]
+    # left (or rather, right on the opposite side of the board)
+    - what: circle
+      radius: 1.6
+      adjust.shift: [-5, -3.75]
+    # right
+    # - what: circle
+    #   radius: 1.6
+    #   adjust.shift: [5, -3.75]
+
+  _socket_post_holes_placed:
+    - what: outline
+      name: _socket_post_holes
+      where: key
+      adjust:
+        rotate: 180
+        resist: true
+
+  # make a fairly accurate socket model
+  _socket_outline:
+    - what: rectangle
+      adjust.shift: [0, -5.95]
+      size: [4.75, 4.65]
+      bevel: 1
+    - what: rectangle
+      adjust.shift: [-4.85, -3.8]
+      size: [4.85, 4.65]
+      fillet: 1
+    - what: rectangle
+      size: 2.6
+      adjust.shift: [-2.4, -4.8]
+    - what: rectangle
+      adjust.shift: [-1.4, -2.5]
+      size: 2.3
+    - what: circle
+      radius: 2.3
+      adjust.shift: [-0.4, -1.35]
+      operation: subtract
+    - what: rectangle
+      size: 2
+      adjust.shift: [-2.375, -6.125]
+    - what: circle
+      radius: 1
+      adjust.shift: [-3.375, -7.125]
+      operation: subtract
+    - what: rectangle
+      size: [3.6, 1.7]
+      adjust.shift: [2.375, -5.95]
+    - what: rectangle
+      size: [3.6, 1.7]
+      adjust.shift: [-7.325, -3.8]
+    - what: rectangle
+      size: [2, 0.6]
+      adjust.shift: [-6.5, -1.775]
+
+  _socket_outlines:
+    - what: outline
+      name: _socket_outline
+      where: key
+      adjust:
+        rotate: 180
+        resist: true
+
+  # enlarge it a bit for wiggle room
+  _socket_expanded:
+    - what: outline
+      name: _socket_outline
+      expand: 0.75
+
+  # then drop it under every key
+  _socket_cutout:
+    - what: outline
+      name: _socket_expanded
+      where: key
+      adjust.resist: true
+
+  _socket_visualizer:
+    - _switch_holes_placed
+    - _socket_outlines
 
   # This is only needed for visualization of the pcb_outline
   _socket_pcb_holes:
-    - _socket_post_holes
-    - what: circle
-      where: switch
-      radius: 1.5
-      adjust:
-        resist: true
-        shift: [-2.6, 5.75]
-    - what: circle
-      where: switch
-      radius: 1.5
-      adjust:
-        resist: true
-        shift: [4.4, 4.7]
+    - _socket_post_holes_placed
+    # - what: circle
+    #   where: key
+    #   radius: 1.5
+    #   adjust:
+    #     resist: true
+    #     shift: [-2.6, 5.75]
+    # - what: circle
+    #   where: key
+    #   radius: 1.5
+    #   adjust:
+    #     resist: true
+    #     shift: [4.4, 4.7]
 
   _encoder_pcb_holes:
     # This is just an approximation of the encoder mounting holes
@@ -740,7 +861,7 @@ outlines:
   pcb_outline:
     - board_outline
     - -_xiao_cutout
-    - -_battery_cutout
+    # - -_battery_cutout
 
   _hex_nut_angle:
     - what: rectangle
@@ -770,6 +891,12 @@ outlines:
       where: low_bumper
       adjust.shift: [-7, -7]
 
+  _mid_bumper:
+    - what: outline
+      name: _bumper
+      where: mid_bumper
+      adjust.shift: [11, 15]
+
   _high_bumper:
     - what: outline
       name: _bumper
@@ -783,6 +910,7 @@ outlines:
 
   _all_bumpers:
     - _low_bumper
+    - _mid_bumper
     - _high_bumper
     - _bumpers
 
@@ -793,7 +921,7 @@ outlines:
     - ^_encoder_plate_cutout_expanded
     - ^_battery_cutout
     - -_xiao_light_guide
-    - ^_xiao_usb
+    - ^_xiao_usb_cutout
     - ^_xiao_chip
     - ^_hex_nuts
 
@@ -805,13 +933,17 @@ outlines:
     - ^_socket_visualizer
     - ^_socket_pcb_holes
     - ^_keycaps
-    - -_encoder_knob
+    - ^_encoder_knob
+    - ^_encoder_pcb_holes
+    - ^_encoder_bottom_cutout
     - ^_xiao_visualizer
     - ^_xiao_light_guide
     - ^_power_visualizer
     - ^_power_cutout
     - ^_reset_visualizer
     - ^_reset_cutout
+    - ^_jst_pcb_holes
+    - ^_battery_cutout
     - ^_battery_wire_cutout
     - ^_pad_cutout
     - ^_hex_nuts
@@ -855,10 +987,10 @@ outlines:
       size: [dx, 3 dy]
       adjust.shift: [0, -2 dy]
     - what: rectangle
-      where: /thumb_spot/
+      where: /thumb_outer_spot/
       size: [dx, dy]
     - what: rectangle
-      where: /thumb_spot/
+      where: /thumb_outer_spot/
       size: [dx, dy]
       adjust.shift: [-0.1, -0.5 dy]
 
@@ -1093,6 +1225,11 @@ cases:
       shift: [0, 0, 1.8]
       operation: subtract
     - what: outline
+      name: _xiao_cutout_solder
+      extrude: 0.4
+      shift: [0, 0, 1.5]
+      operation: subtract
+    - what: outline
       name: _battery_wire_cutout
       extrude: 2.1
       shift: [0, 0, 0.9]
@@ -1134,7 +1271,7 @@ cases:
       name: _battery_cutout
       extrude: 1.6
     - what: outline
-      name: _xiao_usb
+      name: _xiao_usb_cutout
       extrude: 1.7
     - what: outline
       name: _xiao_chip
@@ -1211,11 +1348,11 @@ cases:
       extrude: 1.6
       operation: subtract
     - what: outline
-      name: _reset_pcb_holes
+      name: _encoder_pcb_holes
       extrude: 1.6
       operation: subtract
     - what: outline
-      name: _encoder_pcb_holes
+      name: _jst_pcb_holes
       extrude: 1.6
       operation: subtract
 
@@ -1231,22 +1368,30 @@ pcbs:
 
     footprints:
       hotswap_sockets:
-        what: ks33
-        where: switch
+        what: choc-v1-v2
+        where: key
         params:
           from: "{{cpsrc}}"
           to: "{{colrow}}"
           include_keycap: true
           include_corner_marks: true
-          include_socket_silks: true
-        adjust.rotate: 180
+
+      charlieplex_map:
+        what: text
+        where: key
+        adjust:
+          shift: [-3/5 hdx, hdy / 3]
+          resist: true
+        params:
+          side: B
+          text: "{{cpsrc}}-{{cpdst}}"
 
       diodes:
         what: sod123
-        where: [[switch, /^matrix|^thumbs/]]
+        where: key
         adjust:
-          shift: [5, -1]
-          rotate: 90
+          shift: [5, -4]
+          resist: true
         params:
           side: B
           designator: SW
@@ -1255,28 +1400,33 @@ pcbs:
           smd: true
           via: pad
           labels: true
-          label_rotation: 90
 
-      mirror_diodes:
+      encoder_charlieplex:
+        what: text
+        where: encoder
+        adjust.shift: [0, hdy]
+        params:
+          side: B
+          text: "{{cpsrc}}-{{cpdst}}"
+
+      encoder_diode:
         what: sod123
-        where: [[switch, /^mirror/]]
+        where: encoder
         adjust:
-          shift: [5, -1]
-          rotate: 270
+          shift: [0, 14]
         params:
           side: B
           designator: SW
-          from: "{{colrow}}"
+          from: encdiode
           to: "D_{{cpdst}}"
           smd: true
           via: pad
           labels: true
-          label_rotation: 90
 
       return_diodes:
         what: sod123
         where: return
-        adjust.shift: [0, -0.6 dy]
+        adjust.shift: [0, -0.4 dy]
         params:
           side: B
           designator: D
@@ -1289,7 +1439,7 @@ pcbs:
       interrupt_diodes:
         what: sod123
         where: return
-        adjust.shift: [0, -0.75 dy]
+        adjust.shift: [0, -0.55 dy]
         params:
           side: B
           designator: I
@@ -1305,8 +1455,9 @@ pcbs:
         params:
           include_momentary_switch_pads: true
           include_plate_hole_marking: true
-          S1: ENC_S
-          S2: GND
+          include_silkscreen: true
+          S1: "{{cpsrc}}"
+          S2: encdiode
 
       xiao_mcu:
         what: xiao
@@ -1316,17 +1467,17 @@ pcbs:
           orientation: down
           VUSB: none
           VCC: none
-          P0: ENC_S
-          P1: CP0
-          P2: CP1
-          P3: CP2
-          P4: CP3
-          P5: none
-          P6: CP4
+          P0: CP0
+          P1: CP1
+          P2: CP2
+          P3: CP3
+          P4: CP4
+          P5: CP5
+          P6: CP6
           P7: CP_INT
           P8: ENC_B
           P9: ENC_A
-          P10: CP5
+          P10: none
 
       xiao_note:
         what: text
@@ -1340,7 +1491,7 @@ pcbs:
         what: pad
         where: xiao_pos_pad
         params:
-          side: B
+          text_side: B
           net: BAT+
           text: BAT+
           shape: circle
@@ -1352,7 +1503,7 @@ pcbs:
         what: pad
         where: reset_pad
         params:
-          side: B
+          text_side: B
           net: RST
           text: RST
           shape: circle
@@ -1360,43 +1511,16 @@ pcbs:
           width: 2
           height: 2
 
-      battery_wire_guide:
-        what: arc
-        where: battery
-        adjust.shift: [11, 11]
-        params.side: B
-
-      battery_note:
-        what: text
-        where: battery
-        adjust.shift: [0, 18]
+      battery_jst:
+        what: jst-ph-2
+        where: jst
         params:
-          text: BATTERY 5 x 20 x 30 mm
-          side: B
-
-      battery_raw_pos:
-        what: pad
-        where: bat_pos_pad
-        params:
-          side: B
-          net: RAW
-          text: +
-          shape: circle
-          width: 2
-          height: 2
-
-      battery_raw_neg:
-        what: pad
-        where: bat_neg_pad
-        params:
-          side: B
-          net: GND
-          text: "-"
-          width: 2
-          height: 2
+          BAT_P: RAW
+          BAT_N: GND
 
       reset_button:
-        what: evqpuc
+        # what: evqpuc
+        what: reset-smd-top
         where: reset
         params:
           side: B
@@ -1407,7 +1531,7 @@ pcbs:
         what: text
         where: reset
         adjust:
-          shift: [-4, 0.6]
+          shift: [-9, 0]
         params:
           side: B
           text: RESET
@@ -1454,6 +1578,13 @@ pcbs:
         what: mountinghole
         where: screw
 
+      board_logo:
+        what: mushroom
+        where: encoder
+        adjust.shift: [1, 6]
+        params:
+          side: F
+
       keyboard_name:
         what: text
         where: matrix_pinky_bottom
@@ -1468,16 +1599,16 @@ pcbs:
 
       board_version:
         what: text
-        where.aggregate.parts: [thumbs_thumb_spot, mirror_thumbs_thumb_spot]
-        adjust.shift: [0, -0.7 dy]
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -hdy]
         params:
           text: *version
           side: F
 
       board_repo:
         what: text
-        where.aggregate.parts: [thumbs_thumb_spot, mirror_thumbs_thumb_spot]
-        adjust.shift: [0, -0.85 dy]
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -0.65 dy]
         params:
           side: F
           text: *repo
@@ -1485,11 +1616,18 @@ pcbs:
       license_note:
         what: text
         where: mirror_matrix_pinky_bottom
-        adjust.shift: [0.75 dx, -hdy]
+        adjust.shift: [dx, -hdy]
         params:
           side: F
           text: *license
           justify: right
+
+      license_logo:
+        what: oshw
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [1.65 dx, -0.1 dy]
+        params:
+          side: F
 
       order_number:
         what: text

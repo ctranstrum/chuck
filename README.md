@@ -1,11 +1,11 @@
-# One Up Chuck Keyboard
+# Charlieflex Keyboard
 
 I haven't had a non-split ergonomic keyboard before,
 so I thought I'd give one a try, but none of the
 existing boards had what I wanted. Hence:
-the One Up Chuck.
+the Charlieflex.
 
-![One Up Chuck Keyboard](images/chuck-pink.jpg)
+![Charliflex Layout](images/chuck.png)
 
 ## Features
 
@@ -17,10 +17,12 @@ the One Up Chuck.
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
 - Wireless-first design using [ZMK][zmk] [firmware][firmware] (including [ZMK Studio][studio])
-- [PCB](images/pcb-one-up-chuck.jpg) designed with [ergogen][ergogen]
+- [PCB](images/chuck-pcb.jpg) designed with [ergogen][ergogen]
 - Internal space (5.3 x 22 x 32 mm) for a "large" 502030 250mAh battery
 - Licensed under the [CERN Open Hardware License v2][ohl]
 - All source files available, so you can tweak the design if needed
+
+![Charlieflex PCB](images/chuck-pcb.jpg)
 
 ## Design goals
 
@@ -48,7 +50,11 @@ the One Up Chuck.
   - unlike other ultra-low-profile cases, no electronics are exposed on either the bottom or the top of the case
   - on the side of the case, the reset button and power switch are available, and the usb port is accessible
 
+## Build Guide
+
 Still in its infancy, but the [Build Guide][guide] is started.
+
+![Charliflex Keyboard](images/chuck-pink.jpg)
 
 [ergogen]: https://ergogen.xyz
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk

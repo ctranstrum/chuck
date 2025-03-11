@@ -115,6 +115,11 @@ module.exports = {
       (layer "${p.side}.${p.include_silkscreen ? "SilkS" : "Fab"}")
       ${p.ref_hide}
       (effects (font (size 1 1) (thickness 0.15))${p.side == "B" ? " (justify mirror)" : ""})
+    )
+    (fp_text user "ENCODER"
+      (at 0 0)
+      (layer "${p.side}.${p.include_silkscreen ? "SilkS" : "Fab"}")
+      (effects (font (size 1 1) (thickness 0.15))${p.side == "B" ? " (justify mirror)" : ""})
     )${
       p.reversible && !p.ref_hide
         ? `
