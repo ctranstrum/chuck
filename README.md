@@ -36,7 +36,6 @@ the Charlieflex.
     - when fingers extend, they splay, so the keys also splay outward to follow the fingers
     - the pinky is shorter than the other fingers, so the pinky keys are placed lower to match, and the top pinky key is traded for a ring finger key
     - the inner column of each hand is reduced to two keys
-    - only one thumb key for each hand
   - centrally located rotary encoder knob for easy access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
   - options for 1 or 2 thumb keys on each hand
@@ -49,13 +48,13 @@ the Charlieflex.
   - keycaps and switches can be easily removed and exchanged so you can fine tune the feel
 - Electrostatic protection
   - unlike other ultra-low-profile cases, no electronics are exposed on either the bottom or the top of the case
-  - usb port and power switch are on the back, reset switch recessed into the bottom of the case
+  - usb port and power switch are on the back, reset switch is recessed into the bottom of the case
 
 ## Build Guide
 
 This project is still in development, but the [Build Guide][guide] is started.
 
-Here is an image of an early prototype of the board, the final version has a slightly different layout.
+Here is an image of an early prototype of the board; the final version has a slightly different layout.
 
 ![Charliflex Keyboard](images/chuck-pink.jpg)
 
