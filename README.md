@@ -13,7 +13,7 @@ the Charlieflex.
 - central rotary encoder can be used by either hand
 - designed for the Seeed Studio [XIAO BLE][xiao] wireless microcontroller
   - also works with the [XIAO RP2040][rp2040] for a lower-cost wired board
-- Gateron Low Profile hotswap switches
+- Choc v1 or v2 low profile hotswap switches
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
 - Wireless-first design using [ZMK][zmk] [firmware][firmware] (including [ZMK Studio][studio])
@@ -49,11 +49,13 @@ the Charlieflex.
   - keycaps and switches can be easily removed and exchanged so you can fine tune the feel
 - Electrostatic protection
   - unlike other ultra-low-profile cases, no electronics are exposed on either the bottom or the top of the case
-  - on the side of the case, the reset button and power switch are available, and the usb port is accessible
+  - usb port and power switch are on the back, reset switch recessed into the bottom of the case
 
 ## Build Guide
 
-Still in its infancy, but the [Build Guide][guide] is started.
+This project is still in development, but the [Build Guide][guide] is started.
+
+Here is an image of an early prototype of the board, the final version has a slightly different layout.
 
 ![Charliflex Keyboard](images/chuck-pink.jpg)
 

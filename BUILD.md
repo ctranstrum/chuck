@@ -25,9 +25,9 @@ building the Charlieflex.
 | 1     | wireless only: [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm) |
 | 1     | wireless only: [JST PH 2 battery jack][jst]                                                            |
 | 45    | SOD-123 [1N4148W SMD diodes][sod123]                                                                   |
-| 30-32 | [Gateron Low Profile hot swap sockets][sockets]                                                        |
-| 30-32 | [Gateron KS-33 Low Profile switches][switches] of your choice                                          |
-| 30-32 | [Low profile MX keycaps][keycaps] of your choice (note: full sized keycaps will be too big)            |
+| 30-32 | Kailh [choc hot swap sockets][sockets]                                                                 |
+| 30-32 | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                              |
+| 30-32 | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                           |
 | 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case] of your choice                 |
 | 9     | [M2 x 6mm countersunk screws][screws6mm]                                                               |
 | 9     | [M2 hex nuts][hexnuts]                                                                                 |
@@ -67,7 +67,7 @@ the extras, but you maybe could give one to a friend!
 
 A few items that you may want to customize:
 
-- the color of the board; I printed mine in red, but whatever color you pick, the edges of the PCB will still be a little greenish
+- the color of the board; I printed mine in blue
 - I also chose to hide the JLC order number, to give the board a cleaner look
 - HASL can be lead-free if you are also using lead-free solder, or you can splurge for ENIG, but it's definitely not required
 
@@ -82,9 +82,14 @@ and you've built keyboards before,
 you shouldn't really have any trouble,
 just be sure to follow the symbols on the silkscreen.
 
+All components except the encoder and the JST connector are soldered to the bottom of the board.
+
 [battery]: https://ydlbattery.com/products/3-7v-300mah-502530-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
+[chockeycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
+[chocv1]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
+[chocv2]: https://www.lofree.co/products/hades-low-profile-pom-switches
 [encoder]: https://www.mouser.com/ProductDetail/Bourns/PEC11L-4115F-S0020?qs=gk21WLQFtgRAgrgJZfpkWw%3D%3D
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [gerber]: pcb/chuck-gerbers.zip
@@ -95,7 +100,7 @@ just be sure to follow the symbols on the silkscreen.
 [jlcpcb]: https://jlcpcb.com/
 [jst]: https://typeractive.xyz/products/battery-jack
 [kester]: https://typeractive.xyz/products/kester-solder-wire-tube
-[keycaps]: https://nuphy.com/collections/keycaps/products/numoji-nsa
+[mxkeycaps]: https://nuphy.com/collections/keycaps/products/numoji-nsa
 [pcb]: pcb/
 [pinecil]: https://typeractive.xyz/products/pinecil
 [power]: https://typeractive.xyz/products/power-switch
@@ -104,11 +109,10 @@ just be sure to follow the symbols on the silkscreen.
 [screws6mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
 [screws10mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222572064851
 [smallencoder]: https://www.mouser.com/ProductDetail/Bourns/PES12-42S-N0024?qs=9fn1gpisni7dJzyRXeQZlQ%3D%3D
-[sockets]: https://www.gateron.com/products/gateron-low-profile-switch-hot-swap-pcb-socket
+[sockets]: https://typeractive.xyz/products/hotswap-sockets?variant=45742200324327
 [sod123]: https://typeractive.xyz/products/smd-diodes
 [soldering101]: https://www.google.com/search?q=youtube+soldering+101
 [splitkb-build-guide]: https://docs.splitkb.com/product-guides/aurora-series/build-guide
-[switches]: https://nuphy.com/collections/switches/products/nuphy-wisteria-t55-low-profile-switches
 [ts18]: https://www.sameskydevices.com/product/resource/ts18.pdf
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk-xiao]: https://zmk.dev/docs/hardware#seeed_xiao
