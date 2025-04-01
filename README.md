@@ -5,7 +5,7 @@ so I thought I'd give one a try, but none of the
 existing boards had what I wanted. Hence:
 the Charlieflex.
 
-![Charliflex Layout](images/chuck.png)
+![Charlieflex Layout](images/chuck.png)
 
 ## Features
 
@@ -56,7 +56,7 @@ This project is still in development, but the [Build Guide][guide] is started.
 
 Here is an image of an early prototype of the board; the final version has a slightly different layout.
 
-![Charliflex Keyboard](images/chuck-pink.jpg)
+![Charlieflex Keyboard](images/chuck-pink.jpg)
 
 [ergogen]: https://ergogen.xyz
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk
