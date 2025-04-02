@@ -173,29 +173,36 @@ but you can get most of its functionality,
 accessed by holding the inner column home row key
 (G on the left hand, M on the right).
 
-Left thumb key is a sticky shift.
+The reachy left thumb key is a sticky shift.
 Tap it once to capitalize the next letter typed.
 Tap twice to enter a smart word capitalization mode
 that automatically exits when you finish typing a word.
 
-Hold the left thumb key to get a numpad under your right hand,
-as well as to access common editing commands under your left hand.
+Hold the tucky left thumb key to get a numpad under your right hand,
+as well as to access `ctrl` editing commands under your left hand.
+The reachy left thumb puts navigation keys under the right hand,
+along with `cmd` editing commands under the left.
 
-The right thumb key is the space bar, and when held, it puts
-symbols under the left hand and navigation under the right.
+The reachy right thumb key is the space bar,
+and when either right thumb key is held,
+you get symbols under the left hand
+and navigation under the right.
 
 Arrow keys can also be pressed without activating the navigation layer
 by instead using vertical combos atop the location of each arrow key.
 Similarly, mouse scroll can be found in the same locations on the left hand.
 
-Hold both the left and right thumb keys to access special keyboard
-functions like changing the bluetooth connection (press a BT key to
-switch to that connection, or hold it to clear the connection),
-giving access to ZMK Studio, or flash a new firmware through a combo
-on G-M.
+Hold both the left and right reachy thumb keys
+to access special keyboard functions
+like changing the bluetooth connection
+(press a BT key to switch to that connection,
+or hold it to clear the connection),
+giving access to ZMK Studio,
+or flash a new firmware through a combo on G-M.
 
-The rotary encoder acts as mouse scroll on the default layer,
-as volume control when either thumb key is pressed, and
+The rotary encoder acts as volume control on the default layer,
+as mouse scroll when either reachy thumb key is held,
+forward and back when the tucky left thumb is held, and
 it controls the screen brightness when both thumbs are held.
 
 See the graphic below for more details:
