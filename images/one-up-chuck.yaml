@@ -1,0 +1,209 @@
+layout: {zmk_keyboard: one-up-chuck}
+layers:
+  Colemak:
+  - Q
+  - W
+  - F
+  - P
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: A, h: ⇧}
+  - {t: R, h: ^}
+  - {t: S, h: ⌥}
+  - {t: T, h: ⌘}
+  - {t: G, h: 🌐}
+  - {t: M, h: 🌐}
+  - {t: N, h: ⌘}
+  - {t: E, h: ⌥}
+  - {t: I, h: ^}
+  - {t: O, h: ⇧}
+  - Z
+  - X
+  - {t: C, h: Alt}
+  - D
+  - V
+  - K
+  - H
+  - {t: ',', h: Alt, s: ;}
+  - {t: ., s: ':'}
+  - {t: /, s: \}
+  - {t: sticky ⇧, h: numpad, s: caps word}
+  - MUTE
+  - {t: ␣, h: sym / nav}
+  numpad:
+  - Esc
+  - ''
+  - screen shot
+  - screen copy
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - ⌘A
+  - {t: ⌫, h: ^}
+  - {t: ␣, h: ⌥}
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: 🌐}
+  - /
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - ⌘Z
+  - ⌘X
+  - {t: ⌘C, h: Alt}
+  - ^D
+  - ⌘V
+  - '*'
+  - '1'
+  - {t: '2', h: Alt}
+  - '3'
+  - '='
+  - {type: held}
+  - ⏯
+  - {t: '0', h: sym / nav}
+  sym / nav:
+  - '`'
+  - '#'
+  - '%'
+  - '*'
+  - Esc
+  - ^U
+  - ⇥
+  - ⌫
+  - {t: ^, h: ⇧}
+  - {t: '@', h: ^}
+  - {t: '!', h: ⌥}
+  - {t: '=', h: ⌘}
+  - {t: $, h: 🌐}
+  - PgUp
+  - ←
+  - ↑
+  - →
+  - ⌦
+  - '~'
+  - '|'
+  - {t: '&', h: Alt}
+  - _
+  - '?'
+  - PgDn
+  - Home
+  - ↓
+  - End
+  - ↵
+  - {t: '-', h: numpad}
+  - ⏭
+  - {type: held}
+  keybd / func:
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - {t: BT 4, h: clear 4}
+  - F7
+  - F8
+  - F9
+  - F12
+  - {t: Caps 🔒, h: ⇧}
+  - {t: ⏮, h: ^}
+  - {t: ⏯, h: ⌥}
+  - {t: ⏭, h: ⌘}
+  - {t: BT 5, h: clear 5}
+  - USB
+  - F4
+  - F5
+  - F6
+  - F11
+  - lock screen
+  - MUTE
+  - connection status
+  - battery status
+  - Num 🔒
+  - ZMK Studio
+  - F1
+  - F2
+  - F3
+  - F10
+  - {type: held}
+  - ⏮
+  - {type: held}
+  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+combos:
+- p: [3, 12]
+  k: B
+  l: [Colemak]
+  d: true
+- p: [4, 13]
+  k: J
+  l: [Colemak]
+  d: true
+- p: [1, 2, 3]
+  k: Esc
+  l: [Colemak]
+  draw_separate: true
+- p: [9, 10, 11]
+  k: ⇥
+  l: [Colemak]
+  draw_separate: true
+- p: [4, 5, 6]
+  k: ⌫
+  l: [Colemak, numpad]
+  draw_separate: true
+- p: [14, 15, 16]
+  k: ↵
+  l: [Colemak, numpad]
+  draw_separate: true
+- p: [2, 3]
+  k: (
+  l: [Colemak]
+- p: [4, 5]
+  k: )
+  l: [Colemak]
+- p: [10, 11]
+  k: '{'
+  l: [Colemak]
+- p: [14, 15]
+  k: '}'
+  l: [Colemak]
+- p: [20, 21]
+  k: '['
+  l: [Colemak]
+- p: [24, 25]
+  k: ']'
+  l: [Colemak]
+- p: [11, 22]
+  k: <
+  l: [Colemak]
+  d: true
+- p: [14, 23]
+  k: '>'
+  l: [Colemak]
+  d: true
+- p: [5, 15]
+  k: ↑
+  l: [Colemak, numpad]
+- p: [15, 25]
+  k: ↓
+  l: [Colemak, numpad]
+- p: [4, 14]
+  k: ←
+  l: [Colemak, numpad]
+- p: [6, 16]
+  k: →
+  l: [Colemak, numpad]
+- p: [2, 10]
+  k: scroll ↑
+  l: [flash mode]
+- p: [10, 20]
+  k: scroll ↓
+  l: [flash mode]
+- p: [1, 9]
+  k: scroll ←
+  l: [flash mode]
+- p: [3, 11]
+  k: scroll →
+  l: [flash mode]
+- p: [12, 13]
+  k: flash
+  l: [keybd / func]
