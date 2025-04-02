@@ -100,8 +100,8 @@ layers:
   - ''
   - numpad
   - {type: held}
-  - ⇥
-  - Esc
+  - {t: ⇥, h: symbols}
+  - ␣
   symbols:
   - '`'
   - '#'
@@ -133,7 +133,7 @@ layers:
   - End
   - ''
   - _
-  - /
+  - {t: /, h: navigation}
   - {type: held}
   - {t: ▽, type: trans}
   function:
