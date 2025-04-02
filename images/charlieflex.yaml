@@ -97,7 +97,7 @@ layers:
   - Home
   - ↓
   - End
-  - ''
+  - ␣
   - numpad
   - {type: held}
   - {t: ⇥, h: symbols}
@@ -131,7 +131,7 @@ layers:
   - Home
   - ↓
   - End
-  - ''
+  - ␣
   - _
   - {t: /, h: navigation}
   - {type: held}
@@ -145,10 +145,10 @@ layers:
   - F8
   - F9
   - F12
-  - LSFT
+  - ⇧
   - ^
   - ⌥
-  - LCMD
+  - ⌘
   - 🌐
   - ''
   - F4
@@ -175,7 +175,7 @@ layers:
   - ''
   - screen shot
   - screen copy
-  - ^↑
+  - launchpad
   - USB
   - ''
   - battery status
@@ -184,7 +184,7 @@ layers:
   - {t: BT 3, h: clear 3}
   - {t: BT 4, h: clear 4}
   - {t: BT 5, h: clear 5}
-  - Hyper4
+  - ^↑
   - Num 🔒
   - ''
   - ''
@@ -194,7 +194,7 @@ layers:
   - Caps 🔒
   - ''
   - ''
-  - '&flash 6'
+  - flash
   - ZMK Studio
   - ⏮
   - ⏯
@@ -257,17 +257,17 @@ combos:
   l: [Colemak]
   d: true
 - p: [5, 15]
-  k: ↑
-  l: [flash mode, navigation]
+  k: mouse ↑
+  l: [flash mode]
 - p: [15, 26]
-  k: ↓
-  l: [flash mode, navigation]
+  k: mouse ↓
+  l: [flash mode]
 - p: [4, 14]
-  k: ←
-  l: [flash mode, navigation]
+  k: mouse ←
+  l: [flash mode]
 - p: [6, 16]
-  k: →
-  l: [flash mode, navigation]
+  k: mouse →
+  l: [flash mode]
 - p: [2, 10]
   k: scroll ↑
   l: [flash mode]
@@ -281,5 +281,5 @@ combos:
   k: scroll →
   l: [flash mode]
 - p: [12, 13]
-  k: '&flash 6'
+  k: flash
   l: [keyboard]
