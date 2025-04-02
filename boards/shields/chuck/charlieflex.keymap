@@ -122,28 +122,28 @@
             layers = <0>;
         };
 
-        combo_up {
+        combo_mouse_up {
             key-positions = <5 15>;
-            bindings = <&kp UP>;
-            layers = <0 1 2>;
+            bindings = <&mmv MOVE_UP>;
+            layers = <0>;
         };
 
-        combo_down {
+        combo_mouse_down {
             key-positions = <15 26>;
-            bindings = <&kp DOWN>;
-            layers = <0 1 2>;
+            bindings = <&mmv MOVE_DOWN>;
+            layers = <0>;
         };
 
-        combo_left {
+        combo_mouse_left {
             key-positions = <4 14>;
-            bindings = <&kp LEFT>;
-            layers = <0 1 2>;
+            bindings = <&mmv MOVE_LEFT>;
+            layers = <0>;
         };
 
-        combo_right {
+        combo_mouse_right {
             key-positions = <6 16>;
-            bindings = <&kp RIGHT>;
-            layers = <0 1 2>;
+            bindings = <&mmv MOVE_RIGHT>;
+            layers = <0>;
         };
 
         combo_scroll_up {
@@ -372,8 +372,8 @@
  Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                    &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
 // ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃     ┃  PREV  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃       ┃
-&kp LG(Z) &kp LG(X) Alt LG(C) &kp LG(D) &kp LG(V) &kp C_PREV  &kp PG_DN &kp HOME &kp DOWN &kp END &none
+// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃     ┃  PREV  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+&kp LG(Z) &kp LG(X) Alt LG(C) &kp LG(D) &kp LG(V) &kp C_PREV  &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃       ┃ ##### ┃    ┃  Tab  ┃  SPC  ┃
@@ -398,8 +398,8 @@
 Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp DEL
 // ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃     ┃  NEXT  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃       ┃
-&kp TILDE &kp PIPE Alt PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME &kp DOWN &kp END &none
+// ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃     ┃  NEXT  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+&kp TILDE &kp PIPE Alt PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃   _   ┃   /   ┃    ┃ ##### ┃ ##### ┃
@@ -421,7 +421,7 @@ Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEF
      &none   &none   &none   &none                                       &kp F7  &kp F8  &kp F9  &kp F12
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃       ┃       ┃       ┃       ┃       ┃                    ┃       ┃  F4   ┃  F5   ┃  F6   ┃  F11  ┃
-&kp LSFT &kp LCTRL &kp LALT &kp LCMD &kp GLOBE                    &none  &kp F4  &kp F5  &kp F6  &kp F11
+&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp GLOBE                   &none  &kp F4  &kp F5  &kp F6  &kp F11
 // ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃       ┃       ┃       ┃       ┃       ┃     ┃  MUTE  ┃     ┃       ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
@@ -444,10 +444,10 @@ Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEF
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 // ┃c stat ┃       ┃scrnsht┃scrn cp┃                                    ┃launchp┃  USB  ┃       ┃battery┃
-   &ind_con  &none   GS(N4) GCS(N4)                                   &kp LC(UP) &usb_sel &none &ind_bat
+   &ind_con  &none   GS(N4) GCS(N4)                                     HYPR(N4) &usb_sel &none &ind_bat
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                    ┃mission┃numlock┃       ┃       ┃       ┃
-     BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                    HYPR(N4) &kp KP_NUM &none  &none   &none
+     BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                    &kp LC(UP) &kp KP_NUM &none &none  &none
 // ┃       ┃       ┃       ┃       ┃       ┃                    ┃control┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ lock  ┃ mute  ┃caps lk┃       ┃       ┃     ┃ flash  ┃     ┃studio ┃ prev  ┃ play  ┃ next  ┃       ┃

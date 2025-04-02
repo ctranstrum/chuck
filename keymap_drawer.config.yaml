@@ -21,8 +21,13 @@ parse_config:
     "&bt_clr 4": clear 5
     "&caps_word": caps word
     "&flash 4": flash
+    "&flash 6": flash
     "&ind_bat": battery status
     "&ind_con": connection status
+    "&mmv MOVE_DOWN": mouse ↓
+    "&mmv MOVE_LEFT": mouse ←
+    "&mmv MOVE_RIGHT": mouse →
+    "&mmv MOVE_UP": mouse ↑
     "&msc SCRL_DOWN": scroll ↓
     "&msc SCRL_LEFT": scroll ←
     "&msc SCRL_RIGHT": scroll →
@@ -30,9 +35,11 @@ parse_config:
     "&sk LSHIFT": sticky ⇧
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB
-    GS(N4): screen shot
-    GCS(N4): screen copy
     GC(Q): lock screen
+    GC(UP): mission control
+    GCS(N4): screen copy
+    GS(N4): screen shot
+    HYPR(N4): launchpad
 
   zmk_keycode_map:
     AMPS: "&"
@@ -110,14 +117,14 @@ parse_config:
       draw_separate: true
     combo_return:
       draw_separate: true
-    combo_up:
-      layers: [flash mode, navigation]
-    combo_down:
-      layers: [flash mode, navigation]
-    combo_left:
-      layers: [flash mode, navigation]
-    combo_right:
-      layers: [flash mode, navigation]
+    combo_mouse_up:
+      layers: [flash mode]
+    combo_mouse_down:
+      layers: [flash mode]
+    combo_mouse_left:
+      layers: [flash mode]
+    combo_mouse_right:
+      layers: [flash mode]
     combo_scroll_up:
       layers: [flash mode]
     combo_scroll_down:
