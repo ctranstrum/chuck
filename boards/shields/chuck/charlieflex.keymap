@@ -484,6 +484,8 @@ Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEF
 //                                 ┃       ┃       ┃    ┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
             >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
         };
 
         // Extra empty layers for ZMK Studio
