@@ -200,7 +200,7 @@
                       , <18 19 20 21 22 23 24 25 26 27 28>
                       ,          <32 29    30 31>;
         };
-    }
+    };
 };
 
 // vim: expandtab softtabstop=4 shiftwidth=4
