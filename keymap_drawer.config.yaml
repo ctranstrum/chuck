@@ -111,13 +111,13 @@ parse_config:
     combo_return:
       draw_separate: true
     combo_up:
-      layers: [flash mode, sym / nav]
+      layers: [flash mode, navigation]
     combo_down:
-      layers: [flash mode, sym / nav]
+      layers: [flash mode, navigation]
     combo_left:
-      layers: [flash mode, sym / nav]
+      layers: [flash mode, navigation]
     combo_right:
-      layers: [flash mode, sym / nav]
+      layers: [flash mode, navigation]
     combo_scroll_up:
       layers: [flash mode]
     combo_scroll_down:
