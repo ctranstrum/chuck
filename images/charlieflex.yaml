@@ -24,14 +24,16 @@ layers:
   - {t: C, h: Alt}
   - D
   - V
+  - MUTE
   - K
   - H
   - {t: ',', h: Alt, s: ;}
   - {t: ., s: ':'}
   - {t: /, s: \}
-  - {t: sticky ⇧, h: numpad, s: caps word}
-  - MUTE
-  - {t: ␣, h: sym / nav}
+  - {t: '-', h: numpad}
+  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: ␣, h: symbols}
+  - {t: '*', h: symbols}
   numpad:
   - Esc
   - ''
@@ -41,7 +43,7 @@ layers:
   - '8'
   - '9'
   - '-'
-  - ⌘A
+  - ^A
   - {t: ⌫, h: ^}
   - {t: ␣, h: ⌥}
   - {t: ⇥, h: ⌘}
@@ -51,20 +53,56 @@ layers:
   - '5'
   - '6'
   - +
-  - ⌘Z
-  - ⌘X
+  - ^Z
+  - ^X
   - {t: ⌘C, h: Alt}
   - ^D
-  - ⌘V
+  - ^V
+  - ⏯
   - '*'
   - '1'
-  - {t: '2', h: Alt}
+  - '2'
   - '3'
   - '='
   - {type: held}
-  - ⏯
-  - {t: '0', h: sym / nav}
-  sym / nav:
+  - navigation
+  - '0'
+  - .
+  navigation:
+  - Esc
+  - ''
+  - screen shot
+  - screen copy
+  - Esc
+  - ''
+  - ⌦
+  - ⌫
+  - {t: ⌘A, h: ⇧}
+  - {t: ⌫, h: ^}
+  - {t: ␣, h: ⌥}
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: 🌐}
+  - PgUp
+  - ←
+  - ↑
+  - →
+  - ↵
+  - ⌘Z
+  - ⌘X
+  - {t: ⌘C, h: Alt}
+  - ⌘D
+  - ⌘V
+  - ⏮
+  - PgDn
+  - Home
+  - ↓
+  - End
+  - ''
+  - numpad
+  - {type: held}
+  - ⇥
+  - Esc
+  symbols:
   - '`'
   - '#'
   - '%'
@@ -85,50 +123,88 @@ layers:
   - ⌦
   - '~'
   - '|'
-  - {t: '&', h: Alt}
-  - _
+  - {t: +, h: Alt}
+  - '&'
   - '?'
+  - ⏭
   - PgDn
   - Home
   - ↓
   - End
-  - ↵
-  - {t: '-', h: numpad}
-  - ⏭
+  - ''
+  - _
+  - /
   - {type: held}
-  keybd / func:
-  - {t: BT 1, h: clear 1}
-  - {t: BT 2, h: clear 2}
-  - {t: BT 3, h: clear 3}
-  - {t: BT 4, h: clear 4}
+  - {t: ▽, type: trans}
+  function:
+  - ''
+  - ''
+  - ''
+  - ''
   - F7
   - F8
   - F9
   - F12
-  - {t: Caps 🔒, h: ⇧}
-  - {t: ⏮, h: ^}
-  - {t: ⏯, h: ⌥}
-  - {t: ⏭, h: ⌘}
-  - {t: BT 5, h: clear 5}
-  - USB
+  - LSFT
+  - ^
+  - ⌥
+  - LCMD
+  - 🌐
+  - ''
   - F4
   - F5
   - F6
   - F11
-  - lock screen
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - MUTE
-  - connection status
-  - battery status
-  - Num 🔒
-  - ZMK Studio
+  - ''
   - F1
   - F2
   - F3
   - F10
   - {type: held}
-  - ⏮
   - {type: held}
-  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  - ''
+  - ''
+  keyboard:
+  - connection status
+  - ''
+  - screen shot
+  - screen copy
+  - ^↑
+  - USB
+  - ''
+  - battery status
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - {t: BT 4, h: clear 4}
+  - {t: BT 5, h: clear 5}
+  - Hyper4
+  - Num 🔒
+  - ''
+  - ''
+  - ''
+  - lock screen
+  - MUTE
+  - Caps 🔒
+  - ''
+  - ''
+  - '&flash 6'
+  - ZMK Studio
+  - ⏮
+  - ⏯
+  - ⏭
+  - ''
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [3, 12]
   k: B
@@ -148,11 +224,11 @@ combos:
   draw_separate: true
 - p: [4, 5, 6]
   k: ⌫
-  l: [Colemak, numpad]
+  l: [Colemak, numpad, navigation]
   draw_separate: true
 - p: [14, 15, 16]
   k: ↵
-  l: [Colemak, numpad]
+  l: [Colemak, numpad, navigation]
   draw_separate: true
 - p: [2, 3]
   k: (
@@ -169,29 +245,29 @@ combos:
 - p: [20, 21]
   k: '['
   l: [Colemak]
-- p: [24, 25]
+- p: [25, 26]
   k: ']'
   l: [Colemak]
 - p: [11, 22]
   k: <
   l: [Colemak]
   d: true
-- p: [14, 23]
+- p: [14, 24]
   k: '>'
   l: [Colemak]
   d: true
 - p: [5, 15]
   k: ↑
-  l: [flash mode, sym / nav]
-- p: [15, 25]
+  l: [flash mode, navigation]
+- p: [15, 26]
   k: ↓
-  l: [flash mode, sym / nav]
+  l: [flash mode, navigation]
 - p: [4, 14]
   k: ←
-  l: [flash mode, sym / nav]
+  l: [flash mode, navigation]
 - p: [6, 16]
   k: →
-  l: [flash mode, sym / nav]
+  l: [flash mode, navigation]
 - p: [2, 10]
   k: scroll ↑
   l: [flash mode]
@@ -205,5 +281,5 @@ combos:
   k: scroll →
   l: [flash mode]
 - p: [12, 13]
-  k: flash
-  l: [keybd / func]
+  k: '&flash 6'
+  l: [keyboard]
