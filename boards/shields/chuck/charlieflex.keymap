@@ -105,7 +105,7 @@
         };
 
         combo_right_bracket {
-            key-positions = <24 25>;
+            key-positions = <25 26>;
             bindings = <&kp RBKT>;
             layers = <0>;
         };
@@ -117,7 +117,7 @@
         };
 
         combo_greater_than {
-            key-positions = <14 23>;
+            key-positions = <14 24>;
             bindings = <&kp GT>;
             layers = <0>;
         };
@@ -129,7 +129,7 @@
         };
 
         combo_down {
-            key-positions = <15 25>;
+            key-positions = <15 26>;
             bindings = <&kp DOWN>;
             layers = <0 1>;
         };
@@ -315,15 +315,15 @@
 // ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                    ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
      Sft A   Ctl R   Opt S   Cmd T   Glb G                        Glb M   Cmd N   Opt E   Ctl I   Sft O
 // ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃                    ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
-     &kp Z   &kp X   Alt C   &kp D   &kp V                        &kp K &kp H &hmcs RALT 0 &mdc    &msb
-// ┃       ┃       ┃ R Alt ┃       ┃       ┃                    ┃       ┃       ┃ R Alt ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ SHIFT ┃ ┃  MUTE  ┃ ┃ SPACE ┃
-                                      &lsscw 1 0 &kp C_MUTE &lt 2 SPC
-//                                     ┃  nav  ┃ ┗━━━━━━━━┛ ┃ symnm ┃
-//                                     ┗━━━━━━━┛            ┗━━━━━━━┛
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃     ┃  MUTE  ┃     ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
+     &kp Z   &kp X   Alt C   &kp D   &kp V       &kp C_MUTE       &kp K &kp H &hmcs RALT 0 &mdc    &msb
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   -   ┃ SHIFT ┃    ┃ SPACE ┃   *   ┃
+                                &lt 1 MINUS &lsscw 1 0  &lt 2 SPC &kp STAR
+//                                 ┃  num  ┃  nav  ┃    ┃  sym  ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;

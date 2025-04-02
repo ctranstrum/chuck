@@ -5,7 +5,7 @@
         compatible = "zmk,physical-layout";
         display-name = "Charlieflex";
 
-        transform = <&matrix_transform0>;
+        transform = <&charlieflex_transform_22>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100   54   49    1500   104    99>
@@ -48,7 +48,7 @@
         compatible = "zmk,physical-layout";
         display-name = "21 Chuck Street";
 
-        transform = <&matrix_transform0>;
+        transform = <&charlieflex_transform_21>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100   54   49    1500   104    99>
@@ -90,7 +90,7 @@
         compatible = "zmk,physical-layout";
         display-name = "Chucker by the Dozen";
 
-        transform = <&matrix_transform0>;
+        transform = <&charlieflex_transform_12>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100   54   49    1500   104    99>
@@ -132,7 +132,7 @@
         compatible = "zmk,physical-layout";
         display-name = "One Up Chuck";
 
-        transform = <&matrix_transform0>;
+        transform = <&charlieflex_transform_11>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100   54   49    1500   104    99>
