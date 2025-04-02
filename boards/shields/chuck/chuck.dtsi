@@ -3,7 +3,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &one_up_layout;
+        zmk,physical-layout = &charlieflex_layout22;
     };
 
     charlieflex_transform_22: keymap_transform_22 {
