@@ -321,7 +321,7 @@
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃   -   ┃ SHIFT ┃    ┃ SPACE ┃   *   ┃
-                                &lt 1 MINUS &lsscw 1 0  &lt 2 SPC &kp STAR
+                                &lt 1 MINUS &lsscw 2 0 &lt 3 SPC &lt 3 STAR
 //                                 ┃  num  ┃  nav  ┃    ┃  sym  ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
             >;
@@ -329,7 +329,7 @@
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
         };
 
-        numpad {
+        num {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
             display-name = "numpad"                ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -341,23 +341,49 @@
 // ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
  &kp LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                     &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
 // ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃                    ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
-&kp LG(Z) &kp LG(X) Alt LG(C) &kp LC(D) &kp LG(V)                &kp STAR &kp N1  Alt N2 &kp N3 &kp EQUAL
-// ┃       ┃       ┃  Alt  ┃       ┃       ┃                    ┃       ┃       ┃       ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┓ ┏━━━━━━━━┓ ┏━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ ##### ┃ ┃  PLAY  ┃ ┃   0   ┃
-                                         &trans   &kp C_PP  &lt 2 N0
-//                                     ┃       ┃ ┗━━━━━━━━┛ ┃ func  ┃
-//                                     ┗━━━━━━━┛            ┗━━━━━━━┛
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ CtrlD ┃ Cmd V ┃     ┃  PLAY  ┃     ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
+&kp LG(Z) &kp LG(X) Alt LG(C) &kp LC(D) &kp LG(V) &kp C_PP       &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃       ┃    ┃   0   ┃   .   ┃
+                                     &trans  &mo 2       &kp N0  &kp DOT
+//                                 ┃  num  ┃ func  ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
             >;
 
             sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
         };
 
-        sym_nav {
+        nav {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            display-name = "sym / nav"             ;
+            display-name = "navigation"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Del  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp DEL &kp BSPC
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ~   ┃   |   ┃   &   ┃   _   ┃   ?   ┃     ┃  PLAY  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃       ┃
+&kp TILDE &kp PIPE Alt AMPS &kp UNDER &kp QMARK  &kp C_NEXT   &kp PG_DN &kp HOME &kp DOWN &kp END &none
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃ ##### ┃    ┃  Tab  ┃  Esc  ┃
+                                     &mo 1   &trans      &kp TAB &kp ESC
+//                                 ┃ func  ┃       ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
+        };
+
+        sym {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "symbols"               ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓

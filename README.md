@@ -113,7 +113,7 @@ For a wired Charlieflex with the XIAO RP2040:
 
 ```yaml
 - board: seeeduino_xiao_rp2040
-  shield: charlieflex_unibody
+  shield: charlieflex_unibody rgbled_adapter
   snippet: studio-rpc-usb-uart
   artifact-name: chuck-wired-rp2040
 ```
