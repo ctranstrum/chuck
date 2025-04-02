@@ -1,11 +1,11 @@
 include:
-  # One Up Chuck wireless with the XIAO nrf52840
+  # Charlieflex wireless with the XIAO nrf52840
   - board: seeeduino_xiao_ble
     shield: one_up_chuck_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-unibody-ble
 
-  # One Up Chuck Dongle (optional)
+  # Charlieflex Dongle (optional)
   - board: seeeduino_xiao_ble
     shield: one_up_chuck_dongle prospector_adapter
     snippet: studio-rpc-usb-uart
@@ -14,7 +14,7 @@ include:
     shield: one_up_chuck_peripheral rgbled_adapter
     artifact-name: chuck-peripheral
 
-  # One Up Chuck wired only with the XIAO RP2040
+  # Charlieflex wired only with the XIAO RP2040
   - board: seeeduino_xiao_rp2040
     shield: one_up_chuck_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart

@@ -1,6 +1,6 @@
 file_format: "1"
-id: chuck
-name: One Up Chuck
+id: charlieflex
+name: Charlieflex
 type: shield
 url: https://github.com/ctranstrum/chuck
 requires:
@@ -9,6 +9,6 @@ features:
   - keys
   - encoder
 siblings:
-  - one_up_chuck_unibody
-  - one_up_chuck_peripheral
-  - one_up_chuck_dongle
+  - charlieflex_unibody
+  - charlieflex_peripheral
+  - charlieflex_dongle

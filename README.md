@@ -1,6 +1,6 @@
-# One Up Chuck Keyboard ZMK Firmware
+# Charlieflex Keyboard ZMK Firmware
 
-This repo contains the firmware for the [One Up Chuck Keyboard][chuck].
+This repo contains the firmware for the [Charlieflex Keyboard][chuck].
 
 To use it, you have two choices:
 
@@ -28,7 +28,7 @@ Unzip the firmware to find the following firmware files:
 - xiao-ble-reset: used to clear all bluetooth connections and other saved settings
 - xiao-rp2040-reset: used to clear all saved settings on a wired build
 
-Plug the One Up Chuck keyboard into your computer's USB port,
+Plug the Charlieflex keyboard into your computer's USB port,
 double-tap the reset button on the keyboard,
 and then copy the appropriate firmware file matching your configuration
 onto the new shared drive, which should be labeled something like
@@ -43,7 +43,7 @@ and start using the keyboard.
 ## Create your own firmware
 
 Follow the instructions for [creating your own ZMK firmware repo][zmk]
-but note that the One Up Chuck keyboard is an out-of-tree keyboard so you will not
+but note that the Charlieflex keyboard is an out-of-tree keyboard so you will not
 find it in the list of keyboards, but don't panic, we will make the necessary
 changes to get it working.
 
@@ -86,34 +86,34 @@ manifest:
 
 Then, choose one of the following to add to your `build.yaml` file:
 
-For a wireless One Up Chuck:
+For a wireless Charlieflex:
 
 ```yaml
 include:
   - board: seeeduino_xiao_ble
-    shield: one_up_chuck_unibody rgbled_adapter
+    shield: charlieflex_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-unibody-ble
 ```
 
-For One Up Chuck with a dongle:
+For Charlieflex with a dongle:
 
 ```yaml
 include:
   - board: seeeduino_xiao_ble
-    shield: one_up_chuck_dongle prospector_adapter
+    shield: charlieflex_dongle prospector_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-dongle
   - board: seeeduino_xiao_ble
-    shield: one_up_chuck_peripheral rgbled_adapter
+    shield: charlieflex_peripheral rgbled_adapter
     artifact-name: chuck-peripheral
 ```
 
-For a wired One Up Chuck with the XIAO RP2040:
+For a wired Charlieflex with the XIAO RP2040:
 
 ```yaml
 - board: seeeduino_xiao_rp2040
-  shield: one_up_chuck_unibody
+  shield: charlieflex_unibody
   snippet: studio-rpc-usb-uart
   artifact-name: chuck-wired-rp2040
 ```
@@ -135,7 +135,7 @@ CONFIG_ZMK_STUDIO=y
 See the pre-compiled firmware [config file][config]
 for additional settings you may want to consider.
 
-To customize the keymap for your One Up Chuck board,
+To customize the keymap for your Charlieflex board,
 you can copy the [default keymap][keymap] from this repo
 to the `config` directory of your zmk config repo
 and edit it from there.
@@ -200,12 +200,12 @@ it controls the screen brightness when both thumbs are held.
 
 See the graphic below for more details:
 
-![default keymap](images/one_up_chuck.svg)
+![default keymap](images/charlieflex.svg)
 
 [actions]: https://github.com/ctranstrum/chuck/actions
 [chuck]: https://github.com/ctranstrum/chuck
-[config]: config/one_up_chuck.conf
-[keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/one_up_chuck.keymap
+[config]: config/charlieflex.conf
+[keymap]: https://github.com/ctranstrum/chuck/tree/zmk/boards/shields/chuck/charlieflex.keymap
 [prospector]: https://github.com/carrefinho/prospector
 [studio]: https://zmk.studio
 [zmk]: https://zmk.dev/docs/user-setup#github-repo

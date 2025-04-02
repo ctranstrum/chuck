@@ -1,8 +1,8 @@
-config SHIELD_ONE_UP_CHUCK_UNIBODY
-    def_bool $(shields_list_contains,one_up_chuck_unibody)
+config SHIELD_CHARLIEFLEX_UNIBODY
+    def_bool $(shields_list_contains,charlieflex_unibody)
 
-config SHIELD_ONE_UP_CHUCK_DONGLE
-    def_bool $(shields_list_contains,one_up_chuck_dongle)
+config SHIELD_CHARLIEFLEX_DONGLE
+    def_bool $(shields_list_contains,charlieflex_dongle)
 
-config SHIELD_ONE_UP_CHUCK_PERIPHERAL
-    def_bool $(shields_list_contains,one_up_chuck_peripheral)
+config SHIELD_CHARLIEFLEX_PERIPHERAL
+    def_bool $(shields_list_contains,charlieflex_peripheral)
