@@ -855,7 +855,7 @@ outlines:
 
   _screw_shaft:
     - what: circle
-      where: screw
+      where: [screw, top_screw]
       radius: 1.2
 
   _countersink1:
