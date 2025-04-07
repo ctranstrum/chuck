@@ -13,12 +13,10 @@ building the Charlieflex.
 
 ## Bill of materials
 
-> Warning! The case files are not currently updated. They are still the models for v1.2 of the board.
-
 | Qty   | Description                                                                                            |
 | ----- | ------------------------------------------------------------------------------------------------------ |
 | 1     | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])           |
-| 2     | [3D printed cases][case], top and bottom                                                               |
+| 3     | [3D printed cases][case], bottom, top, and attic                                                       |
 | 1     | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]     |
 | 1     | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18])     |
 | 1     | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                       |
@@ -31,8 +29,8 @@ building the Charlieflex.
 | 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case] of your choice                 |
 | 9     | [M2 x 6mm countersunk screws][screws6mm]                                                               |
 | 9     | [M2 hex nuts][hexnuts]                                                                                 |
-| 3     | [M2 x 10mm countersunk screws][screws10mm]                                                             |
-| 3     | [M2 heat-set inserts 3mm][heatset]                                                                     |
+| 3     | [M2 x 8mm countersunk screws][screws8mm]                                                               |
+| 3     | [M2 heat-set inserts 3mm x 3mm][heatset]                                                               |
 | 10    | [6mm x 1.5mm bumpons][bumpons]                                                                         |
 | ~6mm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
 
@@ -47,6 +45,7 @@ and thus isn't the best choice for a wireless build.
 You should ideally have access to:
 
 - a [soldering iron][pinecil]
+- a [heat-set insert tool][heatsettool]
 - some [good quality solder][kester]
 - a decent hands-free magnifying glass
 - precision tweezers
@@ -71,6 +70,27 @@ A few items that you may want to customize:
 - I also chose to hide the JLC order number, to give the board a cleaner look
 - HASL can be lead-free if you are also using lead-free solder, or you can splurge for ENIG, but it's definitely not required
 
+## General order
+
+I like to start with the smaller components, then move to the larger,
+and finish with items that go on the top of the board.
+
+So, the order I install:
+
+### Installed on the bottom of the board
+
+- diodes
+- hotswap sockets
+- power switch
+- reset switch
+- xiao
+- reset and battery wire connections to xiao
+
+### Assembled on the top of the board, but soldered on the bottom
+
+- jst
+- encoder
+
 ## Good luck
 
 I was able to successfully build v1.2 of my board,
@@ -93,7 +113,8 @@ All components except the encoder and the JST connector are soldered to the bott
 [encoder]: https://www.mouser.com/ProductDetail/Bourns/PEC11L-4115F-S0020?qs=gk21WLQFtgRAgrgJZfpkWw%3D%3D
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [gerber]: pcb/chuck-gerbers.zip
-[heatset]: https://www.mcmaster.com/94459A767/
+[heatset]: https://www.partsbuilt.com/m2-heat-set-thread-insert-3mm-wide-3mm-long-4-pack/
+[heatsettool]: https://pine64.com/product/pinecil-threaded-insert-tips-set-and-adapter/
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
 [how-to-solder]: https://www.google.com/search?q=youtube+how+to+solder
 [jlc3dp]: https://jlc3dp.com/
@@ -107,7 +128,7 @@ All components except the encoder and the JST connector are soldered to the bott
 [pts526]: https://www.ckswitches.com/media/2780/pts526.pdf
 [reset]: https://www.aliexpress.us/item/3256806760201032.html
 [screws6mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
-[screws10mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222572064851
+[screws8mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571933779
 [smallencoder]: https://www.mouser.com/ProductDetail/Bourns/PES12-42S-N0024?qs=9fn1gpisni7dJzyRXeQZlQ%3D%3D
 [sockets]: https://typeractive.xyz/products/hotswap-sockets?variant=45742200324327
 [sod123]: https://typeractive.xyz/products/smd-diodes

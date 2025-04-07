@@ -14,12 +14,13 @@ you will want to use the full size cases:
 
 - [bottom_case.stl](bottom_case.stl)
 - [top_case.stl](top_case.stl)
+- [attic.stl](attic.stl) goes above the top plate
 
 Note that the bottom case may require supports for the bumpon indentations.
 
-The top case is best printed upside down,
+The top case and the attic are best printed upside down,
 so that the visible part of the case is against the print bed,
-giving the best top surface and requiring no supports to print.
+giving the best top surface and requiring minimal supports to print.
 
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,

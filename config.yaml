@@ -29,6 +29,11 @@ units:
   ec12_knob_height: 16
   ec12_shaft_height: 2.65
 
+  # easily change the thicknesses of different parts of the case
+  bottom_case_height: 3
+  top_case_height: 2.2
+  attic_case_height: 7
+
   mirrored_distance: 1.75 dx
 
 points:
@@ -248,7 +253,7 @@ points:
         distance: mirrored_distance
 
     middle_top_screw:
-      key.tags: [screw]
+      key.tags: [top_screw]
       anchor:
         ref: matrix_middle_top
         shift: [4, hdy + 4]
@@ -266,7 +271,7 @@ points:
         distance: mirrored_distance
 
     center_screw:
-      key.tags: [screw]
+      key.tags: [top_screw]
       anchor:
         ref: encoder
         shift: [0, 2 dy]
@@ -342,9 +347,11 @@ outlines:
       adjust.shift: [0, 8.25]
 
   _xiao_light_guide:
+    # in theory this should be 1.75mm diameter
+    # but for FDM prints, I find I need more room
     - what: circle
       where: mcu
-      radius: 0.95
+      radius: 1.05
       adjust.shift: [6, 7.5]
 
   _xiao_cutout:
@@ -441,22 +448,22 @@ outlines:
   _reset_button_cutout_smallest:
     - what: circle
       where: reset
-      radius: 1.1
+      radius: 1.3
 
   _reset_button_cutout_small:
     - what: circle
       where: reset
-      radius: 1.2
+      radius: 1.6
 
   _reset_button_cutout_medium:
     - what: circle
       where: reset
-      radius: 1.3
+      radius: 1.9
 
   _reset_button_cutout_large:
     - what: circle
       where: reset
-      radius: 1.4
+      radius: 2.1
 
   _reset_visualizer:
     - _reset_outline
@@ -468,16 +475,21 @@ outlines:
       size: [9, 6]
       corner: 1
 
+  _reset_post:
+    - what: circle
+      where: reset
+      radius: 1.1
+
   _battery_cutout:
     - what: rectangle
       where: battery
       size: [28, 33]
       corner: 1
 
-  _battery_wire_cutout:
+  _jst_cutout:
     - what: rectangle
       where: jst
-      size: [6.5, 8]
+      size: 8
       adjust.shift: [0, -2]
       corner: 1
     - what: rectangle
@@ -495,6 +507,11 @@ outlines:
       where: jst
       radius: 0.4
       adjust.shift: [-1, 0]
+
+  _jst_tht_cutout:
+    - what: outline
+      name: _jst_pcb_holes
+      expand: 1
 
   _encoder_knob_1:
     - what: circle
@@ -656,6 +673,12 @@ outlines:
       name: _switch_clip
       where: key
 
+  _switches_swap_tool:
+    - what: rectangle
+      where: key
+      size: [3.5, 18.7]
+      corner: 1
+
   _switch_holes:
     # these are created in the pcb software ...
     # but we need to create them manually for our mock pcb
@@ -756,7 +779,9 @@ outlines:
     - what: outline
       name: _socket_expanded
       where: key
-      adjust.resist: true
+      adjust:
+        rotate: 180
+        resist: true
 
   _socket_visualizer:
     - _switch_holes_placed
@@ -804,23 +829,23 @@ outlines:
   _encoder_bottom_cutout:
     - what: circle
       where: encoder
-      radius: 2
+      radius: 1.5
       adjust.shift: [-5.6, 0]
     - what: circle
       where: encoder
-      radius: 2
+      radius: 1.5
       adjust.shift: [5.6, 0]
     - what: rectangle
       where: encoder
-      size: [9, 4]
+      size: [9, 2]
       adjust.shift: [0, -7.2]
     - what: circle
       where: encoder
-      radius: 1.5
+      radius: 1
       adjust.shift: [2.5, 7]
     - what: circle
       where: encoder
-      radius: 1.5
+      radius: 1
       adjust.shift: [-2.5, 7]
 
   _pad_cutout:
@@ -881,6 +906,16 @@ outlines:
       name: _hex_nut
       where: screw
 
+  _heat_set:
+    - what: circle
+      radius: 1.45
+      where: top_screw
+
+  _heat_set_passage:
+    - what: circle
+      radius: 1.2
+      where: top_screw
+
   _bumper:
     - what: circle
       radius: 3.1
@@ -917,10 +952,12 @@ outlines:
   top_plate:
     - board_outline
     - -_switches_plate_cutout
+    - -_switches_swap_tool
+    - -_xiao_light_guide
     - ^_switches_clip_cutout
     - ^_encoder_plate_cutout_expanded
     - ^_battery_cutout
-    - -_xiao_light_guide
+    - ^_jst_cutout
     - ^_xiao_usb_cutout
     - ^_xiao_chip
     - ^_hex_nuts
@@ -944,7 +981,7 @@ outlines:
     - ^_reset_cutout
     - ^_jst_pcb_holes
     - ^_battery_cutout
-    - ^_battery_wire_cutout
+    - ^_jst_cutout
     - ^_pad_cutout
     - ^_hex_nuts
     - ^_screw_shaft
@@ -954,71 +991,164 @@ outlines:
     - ^_return_diodes
     - ^_return_diodes_cutout
 
-  # There is probably a better way to do this, but:
-  # try to select everything outside of the center,
-  # so we can remove it and be left with the center...
-  _dovetail_negative_space:
-    - what: rectangle
-      where: /^m.*_pinky/
-      size: 1.6 dx + 2
-    - what: rectangle
-      where: /^m.*_ring/
-      size: 1.6 dx + 2
-    - what: rectangle
-      where: /middle_home$/
-      size: [dx, 3 dy]
-    - what: rectangle
-      where: /^m.*_middle_top$/
-      size: [dx, dy]
-      adjust.shift: [-0.5dx, 0]
-    - what: rectangle
-      where: /index_home/
-      size: [dx, 3 dy]
-      corner: 3
-    - what: rectangle
-      where: /index_home/
-      size: [dx, 3 dy]
-      adjust.shift: [-0.5 dx, 0]
-    - what: rectangle
-      where: /^m.*_bottom/
-      size: [dx, 3 dy]
-    - what: rectangle
-      where: /^m.*_bottom/
-      size: [dx, 3 dy]
-      adjust.shift: [0, -2 dy]
-    - what: rectangle
-      where: /thumb_outer_spot/
-      size: [dx, dy]
-    - what: rectangle
-      where: /thumb_outer_spot/
-      size: [dx, dy]
-      adjust.shift: [-0.1, -0.5 dy]
+  _attic_outline_poly:
+    - what: polygon
+      points:
+        - ref: matrix_middle_top
+          shift: [-dx, dy]
+        - ref: matrix_middle_top
+          shift: [-dx, hdy]
+        - ref: matrix_middle_top
+          shift: [hdx, hdy]
+        - ref: matrix_middle_top
+          shift: [hdx, 0]
+        - ref: matrix_index_top
+          shift: [hdx, hdy]
+        - ref: matrix_inner_home
+          shift: [-hdx, hdy]
+        - ref: matrix_inner_home
+          shift: [hdx, hdy]
 
-  _dovetail:
+        - ref: mirror_matrix_inner_home
+          shift: [hdx, hdy]
+        - ref: mirror_matrix_inner_home
+          shift: [-hdx, hdy]
+        - ref: mirror_matrix_index_top
+          shift: [hdx, hdy]
+        - ref: mirror_matrix_middle_top
+          shift: [hdx, 0]
+        - ref: mirror_matrix_middle_top
+          shift: [hdx, hdy]
+        - ref: mirror_matrix_middle_top
+          shift: [-dx, hdy]
+        - ref: mirror_matrix_middle_top
+          shift: [-dx, dy]
+
+  _attic_outline:
     - board_outline
-    - -_dovetail_negative_space
+    - what: outline
+      name: _attic_outline_poly
+      operation: intersect
+      fillet: 2
+
+  attic_outline:
+    - what: outline
+      name: _attic_outline
+      fillet: 1
+
+  _attic_outline_1:
+    - what: outline
+      name: attic_outline
+      expand: -0.1
+
+  _attic_outline_2:
+    - what: outline
+      name: attic_outline
+      expand: -0.2
+
+  _attic_outline_3:
+    - what: outline
+      name: attic_outline
+      expand: -0.3
+
+  _attic_outline_4:
+    - what: outline
+      name: attic_outline
+      expand: -0.4
+
+  _attic_outline_5:
+    - what: outline
+      name: attic_outline
+      expand: -0.5
+
+  _attic_outline_6:
+    - what: outline
+      name: attic_outline
+      expand: -0.6
+
+  _attic_outline_7:
+    - what: outline
+      name: attic_outline
+      expand: -0.7
+
+  _attic_outline_8:
+    - what: outline
+      name: attic_outline
+      expand: -0.8
+
+  _attic_outline_9:
+    - what: outline
+      name: attic_outline
+      expand: -0.9
+
+  _dovetail_outline_poly:
+    - what: polygon
+      points:
+        - ref: matrix_middle_top
+          shift: [hdx, 2dy]
+        - ref: matrix_middle_top
+          shift: [hdx, 0]
+        - ref: matrix_index_top
+          shift: [hdx, hdy]
+        - ref: matrix_inner_home
+          shift: [-hdx, hdy]
+        - ref: matrix_inner_home
+          shift: [hdx, hdy]
+
+        - ref: matrix_inner_bottom
+          shift: [hdx, -hdy]
+        - ref: thumbs_outer_spot
+          shift: [-hdx, hdy]
+        - ref: thumbs_outer_spot
+          shift: [hdx, hdy]
+        - ref: thumbs_outer_spot
+          shift: [hdx, -2dy]
+
+        - ref: mirror_thumbs_outer_spot
+          shift: [hdx, -2dy]
+        - ref: mirror_thumbs_outer_spot
+          shift: [hdx, hdy]
+        - ref: mirror_thumbs_outer_spot
+          shift: [-hdx, hdy]
+        - ref: mirror_matrix_inner_bottom
+          shift: [hdx, -hdy]
+
+        - ref: mirror_matrix_inner_home
+          shift: [hdx, hdy]
+        - ref: mirror_matrix_inner_home
+          shift: [-hdx, hdy]
+        - ref: mirror_matrix_index_top
+          shift: [hdx, hdy]
+        - ref: mirror_matrix_middle_top
+          shift: [hdx, 0]
+        - ref: mirror_matrix_middle_top
+          shift: [hdx, 2dy]
+
+  dovetail:
+    - board_outline
+    - ~_dovetail_outline_poly
 
   _dovetail_1:
     - what: outline
-      name: _dovetail
+      name: dovetail
       expand: 0.2
     - ~board_outline
 
   _dovetail_2:
     - what: outline
-      name: _dovetail
+      name: dovetail
       expand: 0.4
     - ~board_outline
 
   _dovetail_3:
     - what: outline
-      name: _dovetail
+      name: dovetail
       expand: 0.6
     - ~board_outline
 
   _dovetail_4:
     - what: outline
-      name: _dovetail
+      name: dovetail
       expand: 0.8
     - ~board_outline
 
@@ -1036,7 +1166,7 @@ outlines:
 
   dovetail_visualizer:
     - board_outline
-    - ^_dovetail
+    - -dovetail
     - ^_left_half
     - ^_right_half
 
@@ -1063,8 +1193,29 @@ cases:
       shift: [0, 0, 0.8]
     - what: outline
       name: _screw_shaft
-      extrude: 2
+      extrude: bottom_case_height - 1
       shift: [0, 0, 1]
+
+  _reset_bottom_cutout:
+    - what: outline
+      name: _reset_cutout
+      extrude: 1.2
+      shift: [0, 0, bottom_case_height - 1.2]
+    - what: outline
+      name: _reset_button_cutout_large
+      extrude: 0.2
+    - what: outline
+      name: _reset_button_cutout_medium
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _reset_button_cutout_small
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _reset_button_cutout_smallest
+      extrude: bottom_case_height - 1.8
+      shift: [0, 0, 0.6]
 
   _encoder_knob_bevel:
     - what: outline
@@ -1189,16 +1340,21 @@ cases:
   bottom_case:
     - what: outline
       name: board_outline
-      extrude: 3
+      extrude: bottom_case_height
     - what: outline
       name: _socket_cutout
       extrude: 2
-      shift: [0, 0, 1]
+      shift: [0, 0, bottom_case_height - 2]
+      operation: subtract
+    - what: outline
+      name: _switch_holes_placed
+      extrude: 1.8
+      shift: [0, 0, bottom_case_height - 1.8]
       operation: subtract
     - what: outline
       name: _encoder_bottom_cutout
       extrude: 2
-      shift: [0, 0, 1]
+      shift: [0, 0, bottom_case_height - 2]
       operation: subtract
     - what: outline
       name: _all_bumpers
@@ -1207,69 +1363,64 @@ cases:
     - what: outline
       name: _diodes_cutout
       extrude: 1.4
-      shift: [0, 0, 1.6]
+      shift: [0, 0, bottom_case_height - 1.4]
       operation: subtract
     - what: outline
       name: _return_diodes_cutout
       extrude: 1.2
-      shift: [0, 0, 1.8]
+      shift: [0, 0, bottom_case_height - 1.2]
       operation: subtract
     - what: outline
       name: _xiao_bottom_cutout
       extrude: 2.5
-      shift: [0, 0, 0.5]
+      shift: [0, 0, bottom_case_height - 2.5]
       operation: subtract
     - what: outline
       name: _xiao_cutout_wall
       extrude: 1.2
-      shift: [0, 0, 1.8]
+      shift: [0, 0, bottom_case_height - 1.2]
       operation: subtract
     - what: outline
       name: _xiao_cutout_solder
-      extrude: 0.4
+      extrude: 0.5
       shift: [0, 0, 1.5]
-      operation: subtract
-    - what: outline
-      name: _battery_wire_cutout
-      extrude: 2.1
-      shift: [0, 0, 0.9]
-      operation: subtract
-    - what: outline
-      name: _reset_cutout
-      extrude: 1.8
-      shift: [0, 0, 1.2]
       operation: subtract
     - what: outline
       name: _power_cutout
       extrude: 1.6
-      shift: [0, 0, 1.4]
+      shift: [0, 0, bottom_case_height - 1.6]
       operation: subtract
     - what: outline
-      name: _socket_post_holes
-      extrude: 1.8
-      shift: [0, 0, 1.2]
+      name: _jst_tht_cutout
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height - 1.6]
       operation: subtract
+    - -_reset_bottom_cutout
     - -_countersunk_screw
 
   _top_cutouts:
     - what: outline
       name: _xiao_light_guide
-      extrude: 2.5
+      extrude: top_case_height
     - what: outline
       name: _switches_plate_cutout
-      extrude: 2.5
+      extrude: top_case_height
     - what: outline
       name: _encoder_plate_cutout_expanded
       extrude: 1.2
     - what: outline
       name: _switches_clip_cutout
-      extrude: 1.3
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _switches_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
     - what: outline
       name: _hex_nuts
       extrude: 1.8
     - what: outline
-      name: _battery_cutout
-      extrude: 1.6
+      name: _heat_set_passage
+      extrude: top_case_height
     - what: outline
       name: _xiao_usb_cutout
       extrude: 1.7
@@ -1279,33 +1430,36 @@ cases:
     - what: outline
       name: _pad_cutout
       extrude: 1
+    - what: outline
+      name: _jst_cutout
+      extrude: top_case_height
 
   top_case:
     - what: outline
       name: board_outline
-      extrude: 2.5
+      extrude: top_case_height
     - -_top_cutouts
 
   _top_dovetail:
     - what: outline
-      name: _dovetail
-      extrude: 0.5
-      shift: [0, 0, 2]
+      name: dovetail
+      extrude: top_case_height / 5
+      shift: [0, 0, 4 * top_case_height / 5]
     - what: outline
       name: _dovetail_1
-      extrude: 0.5
-      shift: [0, 0, 1.5]
+      extrude: top_case_height / 5
+      shift: [0, 0, 3 * top_case_height / 5]
     - what: outline
       name: _dovetail_2
-      extrude: 0.5
-      shift: [0, 0, 1]
+      extrude: top_case_height / 5
+      shift: [0, 0, 2 * top_case_height / 5]
     - what: outline
       name: _dovetail_3
-      extrude: 0.5
-      shift: [0, 0, 0.5]
+      extrude: top_case_height / 5
+      shift: [0, 0, top_case_height / 5]
     - what: outline
       name: _dovetail_4
-      extrude: 0.5
+      extrude: top_case_height / 5
 
   top_dovetail:
     - _top_dovetail
@@ -1319,16 +1473,69 @@ cases:
     - _top_dovetail_sides
     - what: outline
       name: _right_half
-      extrude: 3
+      extrude: top_case_height
       operation: subtract
 
   top_dovetail_right:
     - top_case
     - what: outline
       name: _left_half
-      extrude: 3
+      extrude: top_case_height
       operation: subtract
     - -_top_dovetail
+
+  attic:
+    - what: outline
+      name: attic_outline
+      extrude: attic_case_height / 10
+    - what: outline
+      name: _attic_outline_1
+      extrude: 2 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_2
+      extrude: 3 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_3
+      extrude: 4 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_4
+      extrude: 5 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_5
+      extrude: 6 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_6
+      extrude: 7 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_7
+      extrude: 8 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_8
+      extrude: 9 * attic_case_height / 10
+    - what: outline
+      name: _attic_outline_9
+      extrude: 10 * attic_case_height / 10
+    - what: outline
+      name: _xiao_light_guide
+      extrude: attic_case_height
+      operation: subtract
+    - what: outline
+      name: _battery_cutout
+      extrude: attic_case_height - 1
+      operation: subtract
+    - what: outline
+      name: _jst_cutout
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _heat_set
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _heat_set_passage
+      extrude: 1.5
+      shift: [0, 0, 3.2]
+      operation: subtract
 
   # Remove the underscore to print out the mock PCB if you want to check for fit
   _mock_pcb:
