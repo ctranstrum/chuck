@@ -32,7 +32,8 @@ building the Charlieflex.
 | 3     | [M2 x 8mm countersunk screws][screws8mm]                                                               |
 | 3     | [M2 heat-set inserts 3mm x 3mm][heatset]                                                               |
 | 10    | [6mm x 1.5mm bumpons][bumpons]                                                                         |
-| ~6mm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
+| ~1cm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
+| 2     | short (1cm) [26 gauge electrical wire][wire], preferably in two different colors                       |
 
 \* You could also use a Bourns [PES12-42S][smallencoder] EC12 encoder,
 or an encoder from another manufacturer if you aren't going wireless,
@@ -135,6 +136,7 @@ All components except the encoder and the JST connector are soldered to the bott
 [soldering101]: https://www.google.com/search?q=youtube+soldering+101
 [splitkb-build-guide]: https://docs.splitkb.com/product-guides/aurora-series/build-guide
 [ts18]: https://www.sameskydevices.com/product/resource/ts18.pdf
+[wire]: https://www.walmart.com/ip/26-Gauge-PVC-Hookup-Wire-1-5m-5ft-26AWG-Flexible-Electrical-Wire-Tinned-Copper-Stranded-6-Color-1-5mm/5487030958
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk-xiao]: https://zmk.dev/docs/hardware#seeed_xiao
 [zmkdocs]: https://zmk.dev/docs

@@ -18,7 +18,7 @@ the Charlieflex.
 - [RGB LED status][rgbled] visible on the top of the case
 - Wireless-first design using [ZMK][zmk] [firmware][firmware] (including [ZMK Studio][studio])
 - [PCB](images/chuck-pcb.jpg) designed with [ergogen][ergogen]
-- Internal space (5.3 x 22 x 32 mm) for a "large" 502030 250mAh battery
+- Internal space (5.5 x 27 x 32 mm) for a "large" 502530 300mAh battery
 - Licensed under the [CERN Open Hardware License v2][ohl]
 - All source files available, so you can tweak the design if needed
 
@@ -40,14 +40,15 @@ the Charlieflex.
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
   - options for 1 or 2 thumb keys on each hand
 - Low profile 3D printable case
-  - case is only about 7mm high and comes in two separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
+  - case is only about 7mm high and comes in separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
   - smaller versions are included for smaller print beds
   - a few different knobs are included so you can get the height that works best for you
   - bumpons are inset into the case 1mm to minimize their height; they add only 1/2mm in height
 - Hotswappable
-  - keycaps and switches can be easily removed and exchanged so you can fine tune the feel
+  - keycaps and v1 switches can be easily removed and exchanged so you can fine tune the feel
+  - strangely, choc v2 switches seem to be designed without a way to easily remove them
 - Electrostatic protection
-  - unlike other ultra-low-profile cases, no electronics are exposed on either the bottom or the top of the case
+  - unlike other ultra-low-profile cases, no electronics are left exposed
   - usb port and power switch are on the back, reset switch is recessed into the bottom of the case
 
 ## Build Guide
