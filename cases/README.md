@@ -8,6 +8,8 @@
 
 ## Keyboard case files
 
+### Full size printer
+
 If you have access to your own 3D printer with a large print bed
 or if you are sending the files away to be printed,
 you will want to use the full size cases:
@@ -23,11 +25,7 @@ depending on the number of thumb keys used on each hand:
 - [top_case_twentyone_chuck_street.stl](top_case_twentyone_chuck_street.stl) for two thumb keys on the left hand and one on the right
 - [top_case_chucker_by_the_dozen.stl](top_case_chucker_by_the_dozen.stl) for one thumgb key on the left hand and two on the right
 
-Note that the bottom case may require supports for the bumpon indentations.
-
-The top case and the attic are best printed upside down,
-so that the visible part of the case is against the print bed,
-giving the best top surface and requiring minimal supports to print.
+### Mini printer
 
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
@@ -39,12 +37,22 @@ you can print the 3-part top case:
 - [top_dovetail_right_1.stl](top_dovetail_right_1.stl) right piece with one thumb key
 - [top_dovetail_right_2.stl](top_dovetail_right_2.stl) right piece with two thumb keys
 
-For the bottom case:
+The bottom case is broken into two pieces:
 
 - [bottom_dovetail_left.stl](bottom_dovetail_left.stl)
 - [bottom_dovetail_right.stl](bottom_dovetail_right.stl)
 
-The attic is small enough that you can use the same file as for the full size case.
+The attic is small enough that you can use the [same file](attic.stl) as for the full size case.
+
+## Print quality hints
+
+The top case and the attic are best printed upside down,
+so that the visible part of the case is against the print bed,
+giving the best top surface and requiring minimal supports to print.
+
+I had better luck on my prints with supports enabled.
+However, it also meant I had to do a little post-processing on the prints
+to get them ready for assembly.
 
 ## Encoder knobs
 
