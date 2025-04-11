@@ -12,9 +12,16 @@ If you have access to your own 3D printer with a large print bed
 or if you are sending the files away to be printed,
 you will want to use the full size cases:
 
-- [bottom_case.stl](bottom_case.stl)
-- [top_case.stl](top_case.stl)
+- [bottom_case.stl](bottom_case.stl) installed below the PCB
+- [top_case.stl](top_case.stl) installed above the PCB for two thumb keys on each side
 - [attic.stl](attic.stl) goes above the top plate
+
+There are three alternative top cases that can be used
+depending on the number of thumb keys used on each hand:
+
+- [top_case_one_up_chuck.stl](top_case_one_up_chuck.stl) for one thumb key on each hand
+- [top_case_twenty_one_chuck_street.stl](top_case_twenty_one_chuck_street.stl) for two thumb keys on the left hand and one on the right
+- [top_case_chucker_by_the_dozen.stl](top_case_chucker_by_the_dozen.stl) for one thumgb key on the left hand and two on the right
 
 Note that the bottom case may require supports for the bumpon indentations.
 
@@ -26,12 +33,18 @@ If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
 you can print the 3-part top case:
 
-- [top_dovetail_left.stl](top_dovetail_left.stl)
-- [top_dovetail.stl](top_dovetail.stl)
-- [top_dovetail_right.stl](top_dovetail_right.stl)
+- [top_dovetail.stl](top_dovetail.stl) center piece
+- [top_dovetail_left_1.stl](top_dovetail_left_1.stl) left piece with one thumb key
+- [top_dovetail_left_2.stl](top_dovetail_left_2.stl) left piece with two thumb keys
+- [top_dovetail_right_1.stl](top_dovetail_right_1.stl) right piece with one thumb key
+- [top_dovetail_right_2.stl](top_dovetail_right_2.stl) right piece with two thumb keys
 
-For the bottom case, you can split it anywhere it makes sense to you;
-since it's not visible, it matters less where the line is.
+For the bottom case:
+
+- [bottom_dovetail_left.stl](bottom_dovetail_left.stl)
+- [bottom_dovetail_right.stl](bottom_dovetail_right.stl)
+
+The attic is small enough that you can use the same file as for the full size case.
 
 ## Encoder knobs
 

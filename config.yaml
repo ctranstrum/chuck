@@ -46,7 +46,7 @@ points:
         distance: mirrored_distance
       key:
         autobind: .5
-        tags: [key, switch]
+        tags: [switch]
       columns:
         pinky:
           key:
@@ -57,17 +57,17 @@ points:
             bottom:
               cpsrc: CP1
               bind: [0, 45, 0, 0]
-              tags: [key, switch, low_bumper]
+              tags: [switch, low_bumper]
             home:
               cpsrc: CP2
-              tags: [key, switch]
+              tags: [switch]
               shared: pinky_bottom
               mirror.shared: mirror_pinky_bottom
             top:
               orient: -5
               shift: [3, 3]
               cpsrc: CP3
-              tags: [key, switch, high_bumper]
+              tags: [switch, high_bumper]
               bind: [0, 4]
         ring:
           key:
@@ -79,10 +79,10 @@ points:
           rows:
             bottom:
               cpsrc: CP4
-              tags: [key, switch, return]
+              tags: [switch, return]
             home:
               cpsrc: CP5
-              tags: [key, switch]
+              tags: [switch]
               shared: ring_bottom
               mirror:
                 cpsrc: CP0
@@ -91,7 +91,7 @@ points:
               cpdst: CP1
               cpsrc: CP0
               mirror.cpdst: CP4
-              tags: [key, switch]
+              tags: [switch]
         middle:
           key:
             stagger: hdx
@@ -102,14 +102,14 @@ points:
           rows:
             bottom:
               cpsrc: CP2
-              tags: [key, switch, return]
+              tags: [switch, return]
               shared: index_bottom
               mirror.shared: mirror_index_bottom
             home:
               cpsrc: CP3
             top:
               cpsrc: CP4
-              tags: [key, switch, mid_bumper]
+              tags: [switch, mid_bumper]
               bind: [0, 1]
               shared: middle_home
               mirror:
@@ -130,7 +130,7 @@ points:
               cpsrc: CP0
             top:
               cpsrc: CP1
-              tags: [key, switch]
+              tags: [switch]
               shared: index_home
               mirror.shared: mirror_index_home
         inner:
@@ -142,10 +142,10 @@ points:
             bottom:
               cpsrc: CP3
               mirror.cpsrc: CP2
-              tags: [key, switch, return]
+              tags: [switch, return]
             home:
               cpsrc: CP4
-              tags: [key, switch]
+              tags: [switch]
               shared: inner_bottom
               mirror.shared: mirror_inner_bottom
 
@@ -159,14 +159,15 @@ points:
       key:
         cpsrc: CP5
         mirror.cpsrc: CP6
-        tags: [key, switch]
         bind: [15, 0, 0, 15]
       columns:
         inner.rows.spot:
           splay: -15
           cpdst: CP2
+          tags: [opt_switch]
         outer.rows.spot:
           cpdst: CP3
+          tags: [switch]
 
     encoder:
       anchor:
@@ -311,7 +312,7 @@ outlines:
 
   _keys_surround:
     - what: rectangle
-      where: [key, encoder]
+      where: [opt_switch, switch, encoder]
       bound: true
       size: [dx + 4, dy + 4]
       corner: 2
@@ -581,7 +582,7 @@ outlines:
   _keycaps:
     - what: outline
       name: _keycap
-      where: key
+      where: [opt_switch, switch]
 
   top_down_view:
     - board_outline
@@ -615,7 +616,7 @@ outlines:
   _diodes:
     - what: outline
       name: _diode
-      where: key
+      where: [opt_switch, switch]
       adjust:
         shift: [5, -4]
         resist: true
@@ -626,7 +627,7 @@ outlines:
 
   _diodes_cutout:
     - what: rectangle
-      where: key
+      where: [opt_switch, switch]
       size: [5.2, 2.2]
       adjust:
         shift: [5, -4]
@@ -665,17 +666,49 @@ outlines:
   _switches_plate_cutout:
     - what: outline
       name: _switch_cutout
-      where: key
+      where: switch
     - _encoder_plate_cutout
+
+  _optional_left_switch_cutout:
+    - what: outline
+      name: _switch_cutout
+      where: [[opt_switch, /^thumb/]]
+
+  _optional_right_switch_cutout:
+    - what: outline
+      name: _switch_cutout
+      where: [[opt_switch, /^mirror/]]
 
   _switches_clip_cutout:
     - what: outline
       name: _switch_clip
-      where: key
+      where: switch
+
+  _optional_left_clip_cutout:
+    - what: outline
+      name: _switch_clip
+      where: [[opt_switch, /^thumb/]]
+
+  _optional_right_clip_cutout:
+    - what: outline
+      name: _switch_clip
+      where: [[opt_switch, /^mirror/]]
 
   _switches_swap_tool:
     - what: rectangle
-      where: key
+      where: switch
+      size: [3.5, 18.7]
+      corner: 1
+
+  _optional_left_swap_tool:
+    - what: rectangle
+      where: [[opt_switch, /^thumb/]]
+      size: [3.5, 18.7]
+      corner: 1
+
+  _optional_right_swap_tool:
+    - what: rectangle
+      where: [[opt_switch, /^mirror/]]
       size: [3.5, 18.7]
       corner: 1
 
@@ -698,7 +731,7 @@ outlines:
   _switch_holes_placed:
     - what: outline
       name: _switch_holes
-      where: key
+      where: [opt_switch, switch]
       adjust.resist: true
 
   _socket_post_holes:
@@ -710,15 +743,11 @@ outlines:
     - what: circle
       radius: 1.6
       adjust.shift: [-5, -3.75]
-    # right
-    # - what: circle
-    #   radius: 1.6
-    #   adjust.shift: [5, -3.75]
 
-  _socket_post_holes_placed:
+  _socket_pcb_holes:
     - what: outline
       name: _socket_post_holes
-      where: key
+      where: [opt_switch, switch]
       adjust:
         rotate: 180
         resist: true
@@ -763,7 +792,7 @@ outlines:
   _socket_outlines:
     - what: outline
       name: _socket_outline
-      where: key
+      where: [opt_switch, switch]
       adjust:
         rotate: 180
         resist: true
@@ -778,7 +807,7 @@ outlines:
   _socket_cutout:
     - what: outline
       name: _socket_expanded
-      where: key
+      where: [opt_switch, switch]
       adjust:
         rotate: 180
         resist: true
@@ -786,22 +815,6 @@ outlines:
   _socket_visualizer:
     - _switch_holes_placed
     - _socket_outlines
-
-  # This is only needed for visualization of the pcb_outline
-  _socket_pcb_holes:
-    - _socket_post_holes_placed
-    # - what: circle
-    #   where: key
-    #   radius: 1.5
-    #   adjust:
-    #     resist: true
-    #     shift: [-2.6, 5.75]
-    # - what: circle
-    #   where: key
-    #   radius: 1.5
-    #   adjust:
-    #     resist: true
-    #     shift: [4.4, 4.7]
 
   _encoder_pcb_holes:
     # This is just an approximation of the encoder mounting holes
@@ -1434,11 +1447,48 @@ cases:
       name: _jst_cutout
       extrude: top_case_height
 
-  top_case:
+  _top_left_cutouts:
+    - what: outline
+      name: _optional_left_switch_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _optional_left_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _optional_left_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+
+  _top_right_cutouts:
+    - what: outline
+      name: _optional_right_switch_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _optional_right_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _optional_right_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+
+  top_case_one_up_chuck:
     - what: outline
       name: board_outline
       extrude: top_case_height
     - -_top_cutouts
+
+  top_case_chucker_by_the_dozen:
+    - top_case_one_up_chuck
+    - -_top_right_cutouts
+
+  top_case_twentyone_chuck_street:
+    - top_case_one_up_chuck
+    - -_top_left_cutouts
+
+  top_case:
+    - top_case_one_up_chuck
+    - -_top_left_cutouts
+    - -_top_right_cutouts
 
   _top_dovetail:
     - what: outline
@@ -1465,24 +1515,39 @@ cases:
     - _top_dovetail
     - -_top_cutouts
 
-  _top_dovetail_sides:
+  _top_dovetail_sides_1:
+    - top_case_one_up_chuck
+    - -_top_dovetail
+
+  _top_dovetail_sides_2:
     - top_case
     - -_top_dovetail
 
-  top_dovetail_left:
-    - _top_dovetail_sides
+  _dovetail_right:
     - what: outline
       name: _right_half
       extrude: top_case_height
-      operation: subtract
 
-  top_dovetail_right:
-    - top_case
+  _dovetail_left:
     - what: outline
       name: _left_half
       extrude: top_case_height
-      operation: subtract
-    - -_top_dovetail
+
+  top_dovetail_left_1:
+    - _top_dovetail_sides_1
+    - -_dovetail_right
+
+  top_dovetail_right_1:
+    - _top_dovetail_sides_1
+    - -_dovetail_left
+
+  top_dovetail_left_2:
+    - _top_dovetail_sides_2
+    - -_dovetail_right
+
+  top_dovetail_right_2:
+    - _top_dovetail_sides_2
+    - -_dovetail_left
 
   attic:
     - what: outline
@@ -1576,7 +1641,7 @@ pcbs:
     footprints:
       hotswap_sockets:
         what: choc-v1-v2
-        where: key
+        where: [opt_switch, switch]
         params:
           from: "{{cpsrc}}"
           to: "{{colrow}}"
@@ -1585,7 +1650,7 @@ pcbs:
 
       charlieplex_map:
         what: text
-        where: key
+        where: [opt_switch, switch]
         adjust:
           shift: [-3/5 hdx, hdy / 3]
           resist: true
@@ -1595,7 +1660,7 @@ pcbs:
 
       diodes:
         what: sod123
-        where: key
+        where: [opt_switch, switch]
         adjust:
           shift: [5, -4]
           resist: true
