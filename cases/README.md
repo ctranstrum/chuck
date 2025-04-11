@@ -23,7 +23,7 @@ depending on the number of thumb keys used on each hand:
 
 - [top_case_one_up_chuck.stl](top_case_one_up_chuck.stl) for one thumb key on each hand
 - [top_case_twentyone_chuck_street.stl](top_case_twentyone_chuck_street.stl) for two thumb keys on the left hand and one on the right
-- [top_case_chucker_by_the_dozen.stl](top_case_chucker_by_the_dozen.stl) for one thumgb key on the left hand and two on the right
+- [top_case_chucker_by_the_dozen.stl](top_case_chucker_by_the_dozen.stl) for one thumb key on the left hand and two on the right
 
 ### Mini printer
 
@@ -77,3 +77,5 @@ you have the ability to go with a shorter knob:
 - [encoder_knob-15mm.stl](encoder_knob-15mm.stl)
 - [encoder_knob-13mm.stl](encoder_knob-13mm.stl)
 - [encoder_knob-10mm.stl](encoder_knob-10mm.stl)
+
+All of the encoder files can be printed as-is with no supports.
