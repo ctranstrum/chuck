@@ -20,7 +20,7 @@ There are three alternative top cases that can be used
 depending on the number of thumb keys used on each hand:
 
 - [top_case_one_up_chuck.stl](top_case_one_up_chuck.stl) for one thumb key on each hand
-- [top_case_twenty_one_chuck_street.stl](top_case_twenty_one_chuck_street.stl) for two thumb keys on the left hand and one on the right
+- [top_case_twentyone_chuck_street.stl](top_case_twentyone_chuck_street.stl) for two thumb keys on the left hand and one on the right
 - [top_case_chucker_by_the_dozen.stl](top_case_chucker_by_the_dozen.stl) for one thumgb key on the left hand and two on the right
 
 Note that the bottom case may require supports for the bumpon indentations.
