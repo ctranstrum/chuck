@@ -71,7 +71,7 @@ A few items that you may want to customize:
 - I also chose to hide the JLC order number, to give the board a cleaner look
 - HASL can be lead-free if you are also using lead-free solder, or you can splurge for ENIG, but it's definitely not required
 
-## General order
+## General soldering order
 
 I like to start with the smaller components, then move to the larger,
 and finish with items that go on the top of the board.
@@ -95,7 +95,7 @@ So, the order I install:
 ## Good luck
 
 I was able to successfully build v1.2 of my board,
-though I think I want to make changes to it,
+though I have since made changes for v1.3,
 so I don't want to write a build guide using photos
 of an unfinished product,
 but if you want to build it yourself

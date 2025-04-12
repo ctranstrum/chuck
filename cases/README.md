@@ -16,7 +16,7 @@ you will want to use the full size cases:
 
 - [bottom_case.stl](bottom_case.stl) installed below the PCB
 - [top_case.stl](top_case.stl) installed above the PCB for two thumb keys on each side
-- [attic.stl](attic.stl) goes above the top plate
+- [attic.stl](attic.stl) goes above the top plate (do not print in resin)
 
 There are three alternative top cases that can be used
 depending on the number of thumb keys used on each hand:
@@ -46,13 +46,24 @@ The attic is small enough that you can use the [same file](attic.stl) as for the
 
 ## Print quality hints
 
-The top case and the attic are best printed upside down,
+When printing this case,
+it should be noted that the attic portion of the case is designed
+to have heat-set inserts melted into it,
+so it is not recommended to print the attic using a resin printer
+or using a material that cannot be melted easily,
+unless you plan on altering the case design to use another method
+to fasten the case together.
+
+All other parts of the case can be printed in whatever material you like.
+
+For FDM printing,
+the top case and the attic are best printed upside down,
 so that the visible part of the case is against the print bed,
 giving the best top surface and requiring minimal supports to print.
 
-I had better luck on my prints with supports enabled.
+I had better luck on my FDM prints with supports enabled.
 However, it also meant I had to do a little post-processing on the prints
-to get them ready for assembly.
+to remove the supports prior to assembly.
 
 ## Encoder knobs
 
