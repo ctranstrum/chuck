@@ -259,7 +259,7 @@ combos:
 - p: [12, 22]
   k: '&mkp LCLK'
   l: [flash mode]
-- p: [12, 22]
+- p: [8, 18]
   k: '&mkp RCLK'
   l: [flash mode]
 - p: [5, 15]
