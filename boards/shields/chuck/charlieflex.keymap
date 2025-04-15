@@ -129,7 +129,7 @@
         };
 
         combo_mouse_right_click {
-            key-positions = <12 22>;
+            key-positions = <8 18>;
             bindings = <&mkp RCLK>;
             layers = <0>;
         };
