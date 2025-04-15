@@ -117,6 +117,10 @@ parse_config:
       draw_separate: true
     combo_return:
       draw_separate: true
+    combo_mouse_click:
+      layers: [flash mode]
+    combo_mouse_right_click:
+      layers: [flash mode]
     combo_mouse_up:
       layers: [flash mode]
     combo_mouse_down:

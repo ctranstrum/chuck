@@ -122,6 +122,18 @@
             layers = <0>;
         };
 
+        combo_mouse_click {
+            key-positions = <12 22>;
+            bindings = <&mkp LCLK>;
+            layers = <0>;
+        };
+
+        combo_mouse_right_click {
+            key-positions = <12 22>;
+            bindings = <&mkp RCLK>;
+            layers = <0>;
+        };
+
         combo_mouse_up {
             key-positions = <5 15>;
             bindings = <&mmv MOVE_UP>;
@@ -347,7 +359,7 @@
 // ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃     ┃  PLAY  ┃     ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
-&kp LC(Z) &kp LC(X) Alt LG(C) &kp LC(D) &kp LC(V) &kp C_PP       &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
+&kp LC(Z) &kp LC(X) Alt LC(C) &kp LC(D) &kp LC(V) &kp C_PP       &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃ ##### ┃       ┃    ┃   0   ┃   .   ┃
@@ -391,16 +403,16 @@
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Tab  ┃ Bkspc ┃
-&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp TAB &kp BSPC
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Del  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp DEL &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃  Del  ┃
-Sft CARET Ctl AT Opt EXCL Cmd EQUAL Glb DLLR                   &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp DEL
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+&kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                   Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃     ┃  NEXT  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
-&kp TILDE &kp PIPE Alt PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
-// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+&kp TILDE &kp PIPE Alt PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
+// ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃   _   ┃   /   ┃    ┃ ##### ┃ ##### ┃
                                   &kp UNDER &lt 2 SLASH  &trans  &trans
