@@ -33,7 +33,7 @@ layers:
   - {t: '-', h: numpad}
   - {t: LSHIFT, h: navigation, s: caps word}
   - {t: ␣, h: symbols}
-  - {t: '*', h: symbols}
+  - {t: '*', h: keyboard}
   numpad:
   - Esc
   - ''
@@ -201,9 +201,9 @@ layers:
   - ⏭
   - ''
   - {t: ▽, type: trans}
-  - {type: held}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [3, 12]
