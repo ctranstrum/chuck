@@ -33,7 +33,7 @@ layers:
   - {t: '-', h: numpad}
   - {t: LSHIFT, h: navigation, s: caps word}
   - {t: ␣, h: symbols}
-  - {t: '*', h: keyboard}
+  - {t: '*', h: symbols}
   numpad:
   - Esc
   - ''
@@ -201,11 +201,14 @@ layers:
   - ⏭
   - ''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
+- p: [0, 7]
+  k: ZMK Studio
+  l: [Colemak]
 - p: [3, 12]
   k: B
   l: [Colemak]
