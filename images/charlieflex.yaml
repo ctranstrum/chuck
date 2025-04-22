@@ -31,7 +31,7 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: '-', h: numpad}
-  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: LSHIFT, h: navigation, s: caps word}
   - {t: ␣, h: symbols}
   - {t: '*', h: symbols}
   numpad:

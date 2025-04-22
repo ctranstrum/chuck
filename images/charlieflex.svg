@@ -266,9 +266,7 @@ path.combo {
 </a></g>
 <g transform="translate(282, 285) rotate(37.5)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">sticky</tspan><tspan x="0" dy="1.2em">⇧</tspan>
-</text>
+<text x="0" y="0" class="key tap">LSHIFT</text>
 <a href="#navigation">
 <text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 70%">navigation</tspan></text>
 </a><text x="0" y="-24" class="key shifted"><tspan style="font-size: 78%">caps word</tspan></text>
