@@ -37,6 +37,12 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_unlock {
+            key-positions = <0 7>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+
         combo_b {
             key-positions = <3 12>;
             bindings = <&kp B>;
@@ -346,8 +352,8 @@
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃   -   ┃ SHIFT ┃    ┃ SPACE ┃   *   ┃
-                                &lt 1 MINUS &lsscw 2 0 &lt 3 SPC &lt 5 STAR
-//                                 ┃  num  ┃  nav  ┃    ┃  sym  ┃  kbd  ┃
+                                &lt 1 MINUS &lsscw 2 0 &lt 3 SPC &lt 3 STAR
+//                                 ┃  num  ┃  nav  ┃    ┃  sym  ┃  sym  ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
             >;
 
