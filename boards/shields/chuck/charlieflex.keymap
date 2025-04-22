@@ -270,10 +270,17 @@
             tap-ms = <30>;
         };
 
+        skqr: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            quick-release;
+            bindings = <&kp>;
+        };
+
         sscw: sticky_shift_caps_word {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&sk LSHIFT>, <&caps_word>;
+            bindings = <&skqr LSHIFT>, <&caps_word>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
