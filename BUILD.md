@@ -411,7 +411,10 @@ Attach the keycaps. Again, try to first align the keycap and then use firm even 
 ### Attach the bumpons
 
 Once everything else is installed, flip the keyboard back over and press each bumpon into place
-in its designated spot. Your keyboard is now ready for firmware.
+in its designated spot. Your keyboard is now ready for its photoshoot and the installation of firmware.
+
+If you'd like to share your hard work with the rest of the world, take a photo of your new Charlieflex and
+send it to me. My contact information is on my profile. Congratulations on a job well done!
 
 ## Firmware installation
 

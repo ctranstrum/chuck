@@ -57,12 +57,17 @@ Check out the [Build Guide][guide] for details.
 
 ![Charlieflex Keyboard](images/chuck-blue.jpg)
 
+My Charlieflex, in the Twentyone Chuck Street layout, with 2 keys for the left thumb and one key for the right.
+I'm using [LDSA keycaps][ldsa] on [Twilight Ambient Choc v1 switches][twilight].
+
 [ergogen]: https://ergogen.xyz
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk
 [guide]: BUILD.md
+[ldsa]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [ohl]: LICENSE.txt
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [rp2040]: https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
 [studio]: https://zmk.dev/docs/features/studio
+[twilight]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873426436260
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk]: https://zmk.dev
