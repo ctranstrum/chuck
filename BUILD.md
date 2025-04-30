@@ -33,7 +33,7 @@ building the Charlieflex.
 | 3     | [M2 heat-set inserts 3mm x 3mm][heatset]                                                               |
 | 10    | [6mm x 1.5mm bumpons][bumpons]                                                                         |
 | ~1cm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
-| 2     | short (1cm) [26 gauge electrical wire][wire], preferably in two different colors                       |
+| 2     | short (1-2cm) [26 gauge electrical wire][wire], preferably in two different colors                     |
 
 \* You could also use a Bourns [PES12-42S][smallencoder] EC12 encoder,
 or an encoder from another manufacturer if you aren't going wireless,
@@ -343,7 +343,7 @@ in preparation for the next step.
 ### Bottom case
 
 Place the bottom of the case upside down in place on the exposed bottom of the board.
-Insert and secure the 9 6mm countersunk screws.
+Insert and secure the nine 6mm countersunk screws.
 Three on the left side, three on the right side, and three on the bottom.
 Leave the center screw hole and the two top screw holes empty.
 
@@ -387,7 +387,7 @@ This filament will bring the light from the LED on the xiao up to the top surfac
 ![light guide active](images/light-guide-active.jpg)
 
 Finally, arrange the battery and wires in place so that the battery cover can close,
-and then insert the 3 10mm countersunk screws through the bottom of the case to secure the battery cover.
+and then insert the three 10mm countersunk screws through the bottom of the case to secure the battery cover.
 
 ### Knob cover
 
@@ -447,7 +447,7 @@ If you still have the default keymap installed and want to update the layout wit
 the "ZMK Studio unlock" key combination is accessed
 by simultaneously pressing the top two keys on the outside edes of the keyboard,
 or in other words, the keys that are by default mapped to Q and apostrophe.
-Note that you will need to be using Chrome or Edge to get it to work.
+Note that as of the time of this writing, you will need to be using Chrome or Edge to get it to work.
 
 If a key isn't working, the first thing to look at is that the switch has been installed properly,
 and the pins aren't bent.
@@ -458,7 +458,7 @@ You do not necessarily need to remove all the switches.
 However, if you are doing extensive re-soldering work,
 it may be a good idea to fully remove the PCB from the case.
 
-One unexpected feature of the XIAO microcontroller is that the power switch must be "ON"
+One unexpected feature of the XIAO BLE microcontroller is that the power switch must be "ON"
 in order for the battery to charge while plugged into a USB-C cable.
 Remember: sliding the power switch toward the USB port turns the keyboard on,
 while sliding it away from the USB port turns it off.
@@ -498,6 +498,7 @@ while sliding it away from the USB port turns it off.
 [ts18]: https://www.sameskydevices.com/product/resource/ts18.pdf
 [wire]: https://www.walmart.com/ip/26-Gauge-PVC-Hookup-Wire-1-5m-5ft-26AWG-Flexible-Electrical-Wire-Tinned-Copper-Stranded-6-Color-1-5mm/5487030958
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
+[zmk]: https://zmk.dev
 [zmk-xiao]: https://zmk.dev/docs/hardware#seeed_xiao
 [zmkdocs]: https://zmk.dev/docs
 [zmkrepo]: https://zmk.dev/docs/user-setup
