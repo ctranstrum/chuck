@@ -26,7 +26,7 @@ building the Charlieflex.
 | 30-32 | Kailh [choc hot swap sockets][sockets]                                                                 |
 | 30-32 | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                              |
 | 30-32 | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                           |
-| 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case] of your choice                 |
+| 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice            |
 | 9     | [M2 x 6mm countersunk screws][screws6mm]                                                               |
 | 9     | [M2 hex nuts][hexnuts]                                                                                 |
 | 3     | [M2 x 8mm countersunk screws][screws8mm]                                                               |
@@ -467,6 +467,7 @@ while sliding it away from the USB port turns it off.
 [battery]: https://ydlbattery.com/products/3-7v-300mah-502530-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
+[case-knob]: cases#encoder-knobs
 [chockeycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [chocv1]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
 [chocv2]: https://www.lofree.co/products/hades-low-profile-pom-switches
