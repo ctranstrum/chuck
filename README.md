@@ -13,12 +13,12 @@ the Charlieflex.
 - central rotary encoder can be used by either hand
 - designed for the Seeed Studio [XIAO BLE][xiao] wireless microcontroller
   - also works with the [XIAO RP2040][rp2040] for a lower-cost wired board
-- Choc v1 or v2 low profile hotswap switches
-- 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
+- Choc v1 or v2 low profile hotswap switches to allow a wider range of keycap choices
+- Unique tiered low-profile "snug sandwich" case with no exposed electrical components
 - [RGB LED status][rgbled] visible on the top of the case
 - Wireless-first design using [ZMK][zmk] [firmware][firmware] (including [ZMK Studio][studio])
-- [PCB](images/chuck-pcb.jpg) designed with [ergogen][ergogen]
 - Internal space (5.5 x 27 x 32 mm) for a "large" 502530 300mAh battery
+- [PCB](images/chuck-pcb.jpg) designed with [ergogen][ergogen] for easy modification
 - Licensed under the [CERN Open Hardware License v2][ohl]
 - All source files available, so you can tweak the design if needed
 
@@ -30,34 +30,32 @@ the Charlieflex.
   - xiao ble is only $10 per controller compared to $25 for the nice!nano
   - Big battery and an option for a dongle, so you can run for months without recharging
   - xiao rp2040 is under $5 with no need to purchase a battery or power switch if you want a wired board
-- Ergonomic design for the ultimate comfort
+- Ergonomic unibody design for the ultimate comfort
   - each half is angled to match the angle of the hands on the board
   - keys are placed where fingers naturally fall, with no excessive stretching
     - when fingers extend, they splay, so the keys also splay outward to follow the fingers
     - the pinky is shorter than the other fingers, so the pinky keys are placed lower to match, and the top pinky key is traded for a ring finger key
-    - the inner column of each hand is reduced to two keys
-  - centrally located rotary encoder knob for easy access to scrolling and volume control
+    - the inner column of each hand is reduced to two keys to eliminate the need for index finger stretching
+  - centrally located rotary encoder knob for easy ambidextrous access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
-  - options for 1 or 2 thumb keys on each hand
 - Low profile 3D printable case
-  - case is only about 7mm high and comes in separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
+  - case is only about 7mm high in front and 15mm hight in the back, and comes in three separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
+  - options for 1 or 2 thumb keys on each hand so you can go minimal if desired
   - smaller versions are included for smaller print beds
   - a few different knobs are included so you can get the height that works best for you
   - bumpons are inset into the case 1mm to minimize their height; they add only 1/2mm in height
 - Hotswappable
-  - keycaps and v1 switches can be easily removed and exchanged so you can fine tune the feel
-  - strangely, choc v2 switches seem to be designed without a way to easily remove them
-- Electrostatic protection
+  - keycaps and switches can be easily removed and exchanged so you can fine-tune the feel
+- Electrostatic mitigation
   - unlike other ultra-low-profile cases, no electronics are left exposed
   - usb port and power switch are on the back, reset switch is recessed into the bottom of the case
 
 ## Build Guide
 
-This project is still in development, but the [Build Guide][guide] is started.
+Interested in building a Charlieflex of your own?
+Check out the [Build Guide][guide] for details.
 
-Here is an image of an early prototype of the board; the final version has a slightly different layout.
-
-![Charlieflex Keyboard](images/chuck-pink.jpg)
+![Charlieflex Keyboard](images/chuck-blue.jpg)
 
 [ergogen]: https://ergogen.xyz
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk
