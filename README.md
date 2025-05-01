@@ -5,9 +5,11 @@ so I thought I'd give one a try, but none of the
 existing boards had what I wanted. Hence:
 the Charlieflex.
 
-![Charlieflex Layout](images/chuck.png)
+![Charlieflex sample](images/chuck-sample.jpg)
 
 ## Features
+
+![Charlieflex PCB](images/chuck-pcb.jpg)
 
 - 30-32 key wireless ergo keyboard with aggressive pinky stagger and splay
 - central rotary encoder can be used by either hand
@@ -22,9 +24,9 @@ the Charlieflex.
 - Licensed under the [CERN Open Hardware License v2][ohl]
 - All source files available, so you can tweak the design if needed
 
-![Charlieflex PCB](images/chuck-pcb.jpg)
-
 ## Design goals
+
+![Charlieflex Layout](images/chuck.png)
 
 - Low cost wireless
   - xiao ble is only $10 per controller compared to $25 for the nice!nano
