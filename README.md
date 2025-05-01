@@ -35,9 +35,11 @@ the Charlieflex.
 - Ergonomic unibody design for the ultimate comfort and easy portability
   - each half is angled to match the angle of the hands on the board
   - keys are placed where fingers naturally fall, with no excessive stretching
+    - 1DFH: no finger has to move farther than 1 key's distance from its home row position
     - when fingers extend, they splay, so the keys also splay outward to follow the fingers
     - the pinky is shorter than the other fingers, so the pinky keys are placed lower to match, and the top pinky key is traded for a ring finger key
     - the inner column of each hand is reduced to two keys to eliminate the need for index finger stretching
+    - each thumb gets a single key, with an option for a secondary thumb key if your thumbs are smarter than mine
   - centrally located rotary encoder knob for easy ambidextrous access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
 - Low profile 3D printable case
