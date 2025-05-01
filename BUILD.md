@@ -224,6 +224,10 @@ through-hole.
 
 ![xiao complete](images/xiao-complete.jpg)
 
+Repeat this process until all the pads of the xiao are soldered well to the board.
+I also usually re-solder the first pad I did,
+since it likely has the least amount of solder on it compared to all the others.
+
 ### Solder the xiao connections
 
 Begin by cutting a short piece of wire a little bit longer than needed to connect the pad to the through-hole.
@@ -413,6 +417,8 @@ Attach the keycaps. Again, try to first align the keycap and then use firm even 
 Once everything else is installed, flip the keyboard back over and press each bumpon into place
 in its designated spot. Your keyboard is now ready for its photoshoot and the installation of firmware.
 
+## Photoshoot
+
 If you'd like to share your hard work with the rest of the world, take a photo of your new Charlieflex and
 send it to me. My contact information is on my profile. Congratulations on a job well done!
 
@@ -449,8 +455,15 @@ by simultaneously pressing the top two keys on the outside edes of the keyboard,
 or in other words, the keys that are by default mapped to Q and apostrophe.
 Note that as of the time of this writing, you will need to be using Chrome or Edge to get it to work.
 
-If a key isn't working, the first thing to look at is that the switch has been installed properly,
+If a key isn't working,
+the first thing to look at is that the switch has been installed properly,
 and the pins aren't bent.
+
+If you need to troubleshoot the soldering by shorting MCU pins to test the firmware is working,
+remember that this board uses a charlieplex matrix with an interrupt pin,
+so you will not be able to test by shorting the row/column pins together.
+Instead, you will also need to connect to the interrupt pin as well,
+which is labeled as P7 on the PCB.
 
 If you need to correct any soldering,
 access to the bottom of the PCB involves removing all 12 screws from the bottom of the case.
