@@ -60,18 +60,30 @@ the Charlieflex.
 Interested in building a Charlieflex of your own?
 Check out the [Build Guide][guide] for details.
 
-![Charlieflex Keyboard](images/chuck-blue.jpg)
+---
+
+![Charlieflex Choc v1 Keyboard](images/chuck-blue.jpg)
 
 My Charlieflex, in the Twentyone Chuck Street layout, with 2 keys for the left thumb and one key for the right.
 I'm using [LDSA keycaps][ldsa] on [Twilight Ambient Choc v1 switches][twilight].
 
+---
+
+![Charlieflex Choc v2 Keyboard](images/chuck-chocv2.jpg)
+
+The same Charlieflex,
+this time with [Lofree Hades Choc v2 switches][hades]
+and [Nuphy Shiokaze nSA keycaps][shiokaze].
+
 [ergogen]: https://ergogen.xyz
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk
 [guide]: BUILD.md
+[hades]: https://www.lofree.co/products/hades-low-profile-pom-switches
 [ldsa]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [ohl]: LICENSE.txt
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [rp2040]: https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
+[shiokaze]: https://nuphy.com/collections/keycaps/products/shiokaze-nsa-dye-sub-pbt-keycaps
 [studio]: https://zmk.dev/docs/features/studio
 [twilight]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873426436260
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
