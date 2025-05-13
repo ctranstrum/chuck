@@ -29,7 +29,7 @@ building the Charlieflex.
 | 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice            |
 | 9     | [M2 x 6mm countersunk screws][screws6mm]                                                               |
 | 9     | [M2 hex nuts][hexnuts]                                                                                 |
-| 3     | [M2 x 8mm countersunk screws][screws8mm]                                                               |
+| 3     | [M2 x 10mm countersunk screws][screws10mm]                                                             |
 | 3     | [M2 heat-set inserts 3mm x 3mm][heatset]                                                               |
 | 10    | [6mm x 1.5mm bumpons][bumpons]                                                                         |
 | ~1cm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
@@ -503,7 +503,7 @@ while sliding it away from the USB port turns it off.
 [pts526]: https://www.ckswitches.com/media/2780/pts526.pdf
 [reset]: https://www.aliexpress.us/item/3256806760201032.html
 [screws6mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
-[screws8mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571933779
+[screws10mm]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222572064851
 [smallencoder]: https://www.mouser.com/ProductDetail/Bourns/PES12-42S-N0024?qs=9fn1gpisni7dJzyRXeQZlQ%3D%3D
 [sockets]: https://typeractive.xyz/products/hotswap-sockets?variant=45742200324327
 [sod123]: https://typeractive.xyz/products/smd-diodes
