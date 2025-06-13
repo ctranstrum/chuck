@@ -207,3 +207,4 @@ combos:
 - p: [12, 13]
   k: flash
   l: [keybd / func]
+  d: true

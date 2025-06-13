@@ -787,6 +787,8 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g class="combo combopos-0">
+<path d="M333,139 l-30,0" class="combo"/>
+<path d="M333,139 l30,0" class="combo"/>
 <rect rx="6" ry="6" x="319" y="126" width="28" height="26" class="combo"/>
 <text x="333" y="139" class="combo tap">flash</text>
 </g>

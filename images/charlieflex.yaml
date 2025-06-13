@@ -31,7 +31,7 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: '-', h: numpad}
-  - {t: LSHIFT, h: navigation, s: caps word}
+  - {t: sticky shift, h: navigation, s: caps word}
   - {t: ␣, h: symbols}
   - {t: '*', h: symbols}
   numpad:
@@ -123,7 +123,7 @@ layers:
   - ↵
   - '~'
   - '|'
-  - {t: +, h: Alt}
+  - +
   - '&'
   - '?'
   - ⏭
@@ -175,30 +175,30 @@ layers:
   - ''
   - screen shot
   - screen copy
-  - launchpad
+  - launch pad
   - USB
   - ''
   - battery status
-  - {t: BT 1, h: clear 1}
-  - {t: BT 2, h: clear 2}
-  - {t: BT 3, h: clear 3}
+  - ''
+  - ⏮
+  - ⏯
+  - ⏭
+  - ''
+  - mission control
   - {t: BT 4, h: clear 4}
   - {t: BT 5, h: clear 5}
-  - ^↑
-  - Num 🔒
-  - ''
   - ''
   - ''
   - lock screen
   - MUTE
   - Caps 🔒
-  - ''
+  - Num 🔒
   - ''
   - flash
   - ZMK Studio
-  - ⏮
-  - ⏯
-  - ⏭
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
   - ''
   - {t: ▽, type: trans}
   - {type: held}
@@ -209,6 +209,8 @@ combos:
 - p: [0, 7]
   k: ZMK Studio
   l: [Colemak]
+  a: top
+  o: 1.0
 - p: [3, 12]
   k: B
   l: [Colemak]
@@ -260,10 +262,10 @@ combos:
   l: [Colemak]
   d: true
 - p: [12, 22]
-  k: '&mkp LCLK'
+  k: mouse click
   l: [flash mode]
 - p: [8, 18]
-  k: '&mkp RCLK'
+  k: right click
   l: [flash mode]
 - p: [5, 15]
   k: mouse ↑
@@ -292,3 +294,4 @@ combos:
 - p: [12, 13]
   k: flash
   l: [keyboard]
+  d: true
