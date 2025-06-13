@@ -24,6 +24,8 @@ parse_config:
     "&flash 6": flash
     "&ind_bat": battery status
     "&ind_con": connection status
+    "&mkp LCLK": "mouse click"
+    "&mkp RCLK": "right click"
     "&mmv MOVE_DOWN": mouse ↓
     "&mmv MOVE_LEFT": mouse ←
     "&mmv MOVE_RIGHT": mouse →
@@ -36,10 +38,9 @@ parse_config:
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB
     GC(Q): lock screen
-    GC(UP): mission control
     GCS(N4): screen copy
     GS(N4): screen shot
-    HYPR(N4): launchpad
+    HYPR(N4): launch pad
 
   zmk_keycode_map:
     AMPS: "&"
@@ -72,10 +73,12 @@ parse_config:
     LBRC: "{"
     LCTL: ^
     LCTRL: ^
+    LC(UP): mission control
     LEFT: ←
     LGUI: ⌘
     LPAR: (
     LSHFT: ⇧
+    LSHIFT: sticky shift
     LT: <
     MINUS: "-"
     PG_DN: PgDn
@@ -101,6 +104,9 @@ parse_config:
     UP: ↑
 
   zmk_combos:
+    combo_unlock:
+      align: top
+      offset: 1
     combo_b:
       dendron: true
     combo_j:
@@ -137,3 +143,5 @@ parse_config:
       layers: [flash mode]
     combo_scroll_right:
       layers: [flash mode]
+    combo_flash:
+      dendron: true

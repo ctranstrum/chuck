@@ -426,7 +426,7 @@
 // ┃       ┃       ┃       ┃       ┃       ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃     ┃  NEXT  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
-&kp TILDE &kp PIPE Alt PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
+&kp TILDE &kp PIPE &kp PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
 // ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃   _   ┃   /   ┃    ┃ ##### ┃ ##### ┃
@@ -473,12 +473,12 @@
 // ┃c stat ┃       ┃scrnsht┃scrn cp┃                                    ┃launchp┃  USB  ┃       ┃battery┃
    &ind_con  &none   GS(N4) GCS(N4)                                     HYPR(N4) &usb_sel &none &ind_bat
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                    ┃mission┃numlock┃       ┃       ┃       ┃
-     BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                    &kp LC(UP) &kp KP_NUM &none &none  &none
+// ┃       ┃ prev  ┃ play  ┃ next  ┃       ┃                    ┃mission┃  BT4  ┃  BT5  ┃       ┃       ┃
+   &none &kp C_PREV &kp C_PP &kp C_NEXT &none                   &kp LC(UP) BT_(3) BT_(4)  &none   &none
 // ┃       ┃       ┃       ┃       ┃       ┃                    ┃control┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ lock  ┃ mute  ┃caps lk┃       ┃       ┃     ┃ flash  ┃     ┃studio ┃ prev  ┃ play  ┃ next  ┃       ┃
-   GC(Q) &kp C_MUTE &kp CAPS &none   &none        &flash 6 &studio_unlock &kp C_PREV &kp C_PP &kp C_NEXT &none
+// ┃ lock  ┃ mute  ┃caps lk┃numlock┃       ┃     ┃ flash  ┃     ┃studio ┃  BT1  ┃  BT2  ┃  BT3  ┃       ┃
+  GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none      &flash 6 &studio_unlock BT_(0)  BT_(1)  BT_(2)  &none
 // ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃ unlock┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃ ##### ┃ ##### ┃    ┃ ##### ┃ ##### ┃
