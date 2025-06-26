@@ -252,7 +252,8 @@ stick the other end into the through hole and solder there as well.
 
 The reset button goes to from the RST hole on the PCB to the unlabeled reset pad on the back of the xiao.
 
-![RST pad](images/xiao-reset.jpg)
+![XIAO BLE RST pad](images/xiao-reset.jpg)
+![XIAO RP2040 RST pad](images/xiao-rp2040-reset.jpg)
 
 Even though it's unlabeled, it's not difficult to find.
 There are four circular pads near the USB port at the top of the xiao.
