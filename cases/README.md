@@ -14,40 +14,47 @@ If you have access to your own 3D printer with a large print bed
 or if you are sending the files away to be printed,
 you will want to use the full size cases:
 
-- [bottom_case.stl](bottom_case.stl) installed below the PCB
-- [top_case.stl](top_case.stl) installed above the PCB for two thumb keys on each side
-- [attic.stl](attic.stl) goes above the top plate (do not print in resin)
+| wired                           | wireless                  | description                                                      |
+| ------------------------------- | ------------------------- | ---------------------------------------------------------------- |
+| [bottom](wired_bottom_case.stl) | [bottom](bottom_case.stl) | installed below the PCB                                          |
+| [top](wired_top_case.stl)       | [top](top_case.stl)       | installed above the PCB for two thumb keys on each side          |
+|                                 | [battery](attic.stl)      | above the top plate to cover the battery (do not print in resin) |
 
 There are three alternative top cases that can be used
 depending on the number of thumb keys used on each hand:
 
-- [top_case_one_up_chuck.stl](top_case_one_up_chuck.stl) for one thumb key on each hand
-- [top_case_twentyone_chuck_street.stl](top_case_twentyone_chuck_street.stl) for two thumb keys on the left hand and one on the right
-- [top_case_chucker_by_the_dozen.stl](top_case_chucker_by_the_dozen.stl) for one thumb key on the left hand and two on the right
+| wired                                                               | wireless                                                      | description                                          |
+| ------------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------- |
+| [one up chuck](wired_top_case_one_up_chuck.stl)                     | [one up chuck](top_case_one_up_chuck.stl)                     | one thumb key on each hand                           |
+| [twentyone chuck street](wired_top_case_twentyone_chuck_street.stl) | [twentyone chuck street](top_case_twentyone_chuck_street.stl) | two thumb keys on the left hand and one on the right |
+| [chucker by the dozen](wired_top_case_chucker_by_the_dozen.stl)     | [chucker by the dozen](top_case_chucker_by_the_dozen.stl)     | one thumb key on the left hand and two on the right  |
 
 ### Mini printer
 
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
-you can print the 3-part top case:
+you can print the 3-part (plus the battery cover for wireless builds) top case:
 
-- [top_dovetail.stl](top_dovetail.stl) center piece
-- [top_dovetail_left_1.stl](top_dovetail_left_1.stl) left piece with one thumb key
-- [top_dovetail_left_2.stl](top_dovetail_left_2.stl) left piece with two thumb keys
-- [top_dovetail_right_1.stl](top_dovetail_right_1.stl) right piece with one thumb key
-- [top_dovetail_right_2.stl](top_dovetail_right_2.stl) right piece with two thumb keys
+| wired                                     | wireless                            | description                                                      |
+| ----------------------------------------- | ----------------------------------- | ---------------------------------------------------------------- |
+| [center](wired_top_dovetail.stl)          | [center](top_dovetail.stl)          | center dovetail piece                                            |
+| [left 1](wired_top_dovetail_left_1.stl)   | [left 1](top_dovetail_left_1.stl)   | left piece with one thumb key                                    |
+| [left 2](wired_top_dovetail_left_2.stl)   | [left 2](top_dovetail_left_2.stl)   | left piece with two thumb keys                                   |
+| [right 1](wired_top_dovetail_right_1.stl) | [right 1](top_dovetail_right_1.stl) | right piece with one thumb key                                   |
+| [right 2](wired_top_dovetail_right_2.stl) | [right 2](top_dovetail_right_2.stl) | right piece with two thumb keys                                  |
+|                                           | [battery](attic.stl)                | above the top plate to cover the battery (do not print in resin) |
 
 The bottom case is broken into two pieces:
 
-- [bottom_dovetail_left.stl](bottom_dovetail_left.stl)
-- [bottom_dovetail_right.stl](bottom_dovetail_right.stl)
-
-The attic is small enough that you can use the [same file](attic.stl) as for the full size case.
+| wired                                    | wireless                           | description  |
+| ---------------------------------------- | ---------------------------------- | ------------ |
+| [left](wired_bottom_dovetail_left.stl)   | [left](bottom_dovetail_left.stl)   | left bottom  |
+| [right](wired_bottom_dovetail_right.stl) | [right](bottom_dovetail_right.stl) | right bottom |
 
 ## Print quality hints
 
 When printing this case,
-it should be noted that the attic portion of the case is designed
+it should be noted that the "attic" portion of the case (battery cover) is designed
 to have heat-set inserts melted into it,
 so it is not recommended to print the attic using a resin printer
 or using a material that cannot be melted easily,

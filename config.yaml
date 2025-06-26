@@ -919,6 +919,12 @@ outlines:
       name: _hex_nut
       where: screw
 
+  _hex_nuts_wired:
+    - _hex_nuts
+    - what: outline
+      name: _hex_nut
+      where: top_screw
+
   _heat_set:
     - what: circle
       radius: 1.45
@@ -1350,7 +1356,7 @@ cases:
       shift: [0, 0, ec12_knob_height - knob_skirt]
       operation: subtract
 
-  bottom_case:
+  wired_bottom_case:
     - what: outline
       name: board_outline
       extrude: bottom_case_height
@@ -1398,6 +1404,11 @@ cases:
       extrude: 0.5
       shift: [0, 0, 1.5]
       operation: subtract
+    - -_reset_bottom_cutout
+    - -_countersunk_screw
+
+  bottom_case:
+    - wired_bottom_case
     - what: outline
       name: _power_cutout
       extrude: 1.6
@@ -1408,8 +1419,6 @@ cases:
       extrude: 1.6
       shift: [0, 0, bottom_case_height - 1.6]
       operation: subtract
-    - -_reset_bottom_cutout
-    - -_countersunk_screw
 
   _top_cutouts:
     - what: outline
@@ -1429,12 +1438,6 @@ cases:
       extrude: 1
       shift: [0, 0, top_case_height - 1]
     - what: outline
-      name: _hex_nuts
-      extrude: 1.8
-    - what: outline
-      name: _heat_set_passage
-      extrude: top_case_height
-    - what: outline
       name: _xiao_usb_cutout
       extrude: 1.7
     - what: outline
@@ -1443,6 +1446,21 @@ cases:
     - what: outline
       name: _pad_cutout
       extrude: 1
+
+  _wired_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _hex_nuts_wired
+      extrude: 1.8
+
+  _wireless_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _hex_nuts
+      extrude: 1.8
+    - what: outline
+      name: _heat_set_passage
+      extrude: top_case_height
     - what: outline
       name: _jst_cutout
       extrude: top_case_height
@@ -1475,7 +1493,7 @@ cases:
     - what: outline
       name: board_outline
       extrude: top_case_height
-    - -_top_cutouts
+    - -_wireless_top_cutouts
 
   top_case_chucker_by_the_dozen:
     - top_case_one_up_chuck
@@ -1487,6 +1505,25 @@ cases:
 
   top_case:
     - top_case_one_up_chuck
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  wired_top_case_one_up_chuck:
+    - what: outline
+      name: board_outline
+      extrude: top_case_height
+    - -_wired_top_cutouts
+
+  wired_top_case_chucker_by_the_dozen:
+    - wired_top_case_one_up_chuck
+    - -_top_right_cutouts
+
+  wired_top_case_twentyone_chuck_street:
+    - wired_top_case_one_up_chuck
+    - -_top_left_cutouts
+
+  wired_top_case:
+    - wired_top_case_one_up_chuck
     - -_top_left_cutouts
     - -_top_right_cutouts
 
@@ -1513,7 +1550,7 @@ cases:
 
   top_dovetail:
     - _top_dovetail
-    - -_top_cutouts
+    - -_wireless_top_cutouts
 
   _top_dovetail_sides_1:
     - top_case_one_up_chuck
@@ -1547,6 +1584,34 @@ cases:
 
   top_dovetail_right_2:
     - _top_dovetail_sides_2
+    - -_dovetail_left
+
+  wired_top_dovetail:
+    - _top_dovetail
+    - -_wired_top_cutouts
+
+  _wired_top_dovetail_sides_1:
+    - wired_top_case_one_up_chuck
+    - -_top_dovetail
+
+  _wired_top_dovetail_sides_2:
+    - wired_top_case
+    - -_top_dovetail
+
+  wired_top_dovetail_left_1:
+    - _wired_top_dovetail_sides_1
+    - -_dovetail_right
+
+  wired_top_dovetail_right_1:
+    - _wired_top_dovetail_sides_1
+    - -_dovetail_left
+
+  wired_top_dovetail_left_2:
+    - _wired_top_dovetail_sides_2
+    - -_dovetail_right
+
+  wired_top_dovetail_right_2:
+    - _wired_top_dovetail_sides_2
     - -_dovetail_left
 
   attic:

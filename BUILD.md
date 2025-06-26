@@ -13,31 +13,32 @@ building the Charlieflex.
 
 ## Bill of materials
 
-| Qty   | Description                                                                                            |
-| ----- | ------------------------------------------------------------------------------------------------------ |
-| 1     | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])           |
-| 3     | [3D printed cases][case], bottom, top, and attic                                                       |
-| 1     | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]     |
-| 1     | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18])     |
-| 1     | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                       |
-| 1     | wireless only: [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm) |
-| 1     | wireless only: [JST PH 2 battery jack][jst]                                                            |
-| 45    | SOD-123 [1N4148W SMD diodes][sod123]                                                                   |
-| 30-32 | Kailh [choc hot swap sockets][sockets]                                                                 |
-| 30-32 | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                              |
-| 30-32 | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                           |
-| 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice            |
-| 9     | [M2 x 6mm countersunk screws][screws6mm]                                                               |
-| 9     | [M2 hex nuts][hexnuts]                                                                                 |
-| 3     | [M2 x 10mm countersunk screws][screws10mm]                                                             |
-| 3     | [M2 heat-set inserts 3mm x 3mm][heatset]                                                               |
-| 10    | [6mm x 1.5mm bumpons][bumpons]                                                                         |
-| ~1cm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide               |
-| 2     | short (1-2cm) [26 gauge electrical wire][wire], preferably in two different colors                     |
+| Qty   | Description                                                                                             |
+| ----- | ------------------------------------------------------------------------------------------------------- |
+| 1     | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])            |
+| 3     | [3D printed cases][case], bottom, top, and attic                                                        |
+| 1     | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]      |
+| 1     | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18])      |
+| 1     | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                        |
+| 1     | wireless only: [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm)  |
+| 1     | wireless only: [JST PH 2 battery jack][jst]                                                             |
+| 45    | SOD-123 [1N4148W SMD diodes][sod123]                                                                    |
+| 30-32 | Kailh [choc hot swap sockets][sockets]                                                                  |
+| 30-32 | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                               |
+| 30-32 | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                            |
+| 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice             |
+| 9-12  | [M2 x 6mm countersunk screws][screws6mm] (9 needed for the wireless case, 12 for wired)                 |
+| 9-12  | [M2 hex nuts][hexnuts] (9 needed for the wireless case, 12 for wired)                                   |
+| 3     | wireless case only: [M2 x 10mm countersunk screws][screws10mm]                                          |
+| 3     | wireless case only: [M2 heat-set inserts 3mm x 3mm][heatset]                                            |
+| 10    | [6mm x 1.5mm bumpons][bumpons]                                                                          |
+| ~1cm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide                |
+| 1-2   | short (1-2cm) [26 gauge electrical wire][wire], preferably in two different colors for a wireless build |
 
-\* You could also use a Bourns [PES12-42S][smallencoder] EC12 encoder,
+\* You could also use a low-profile Bourns [PES12-42S][smallencoder] EC12 encoder,
 or an encoder from another manufacturer if you aren't going wireless,
-but the specified encoder is designed to have its detents with both A and B set to low,
+but the specified encoder listed in the bill of materials
+is designed to have its detents with both A and B set to low,
 so a different option is likely to draw more power,
 and thus isn't the best choice for a wireless build.
 
@@ -81,7 +82,7 @@ You will probably want to send in your print order around the same time you orde
 I've used [JLC][jlc3dp] in the past with good results.
 
 Just remember that you should print the top-most piece of the case,
-called "attic" in the [case list][case],
+called "attic" in the [case list][case] and needed only for a wireless build,
 in nylon or PLA rather than resin,
 though all other parts of the case can be printed in resin.
 The reason for this is that the design calls for heat-set inserts
@@ -171,6 +172,10 @@ Solder all the sockets on the board.
 
 ### Solder the power switch
 
+_Note_: you should skip this step if you are not building a wireless keyboard.
+A wired keyboard is powered by the USB from the computer,
+so doesn't need a power switch.
+
 ![start power](images/power-start.jpg)
 
 To solder the power switch, first apply a bit of solder to one of the pads.
@@ -230,6 +235,9 @@ since it likely has the least amount of solder on it compared to all the others.
 
 ### Solder the xiao connections
 
+_Note_: you should skip the BAT+ portion of this step if you are not building a wireless keyboard.
+But be sure to solder the reset connection in the latter half of this step regardless.
+
 Begin by cutting a short piece of wire a little bit longer than needed to connect the pad to the through-hole.
 
 For the power connection, this connects the BAT+ hole on the PCB with the BAT+ pad on the back of the xiao.
@@ -266,7 +274,10 @@ and attach with solder in the same manner as the first.
 
 ### Solder the JST connector
 
-Unlike all componenst so far,
+_Note_: you should skip this step if you are not building a wireless keyboard.
+The JST connector attaches the battery to the board, and is not used on a wired build.
+
+Unlike all components so far,
 the JST connector needs to be inserted into place from the opposite side of the board.
 
 ![start jst](images/jst-start.jpg)
@@ -311,6 +322,10 @@ Take a moment and admire your work.
 
 ### Install the heat-set inserts
 
+_Note_: you should skip this step if you are not building a wireless keyboard.
+The heat-set inserts are used to attach the battery cover to the case,
+which is not present in the wired version of the case.
+
 While you can use your regular soldering tip for installing the heat-set inserts,
 it is easier to get better results using a heat-set tip.
 
@@ -335,7 +350,8 @@ Repeat for the other two heat-set inserts.
 
 ### Top plate
 
-Set the top plate upside down and insert the 9 hex nuts into place in the case.
+Set the top plate upside down and insert the hex nuts into place in the case.
+Note that there are 9 hex nuts used for the wireless case, and 12 for the wired version.
 
 ![hex nuts](images/hex-nuts.jpg)
 
@@ -357,6 +373,8 @@ Leave the center screw hole and the two top screw holes empty.
 
 ### Battery
 
+_Note_: you should skip this step if you are not building a wireless keyboard.
+
 Insert the battery JST cable into the JST connector,
 carefully observing the polarity of the wires.
 
@@ -369,10 +387,11 @@ the wire or buy a different battery.
 
 ![jst connected](images/jst-connected.jpg)
 
-### Battery cover
+### LED light guide
 
-Cut a piece of transparent filament about 1cm in length.
-Ensure that it can be inserted into the battery cover hole.
+Cut a piece of transparent filament about 1cm in length for a wireless build
+or about 2.5 to 3 mm in length for a wired build.
+Ensure that it can be inserted into the LED light guide hole.
 Tolerances on 3D prints are not always great,
 so you may need to slightly enlarge the hole,
 or if the hole is too loose,
@@ -380,10 +399,16 @@ you may need to apply a small amount of glue when installation is complete.
 
 ![light guide start](images/light-guide-start.jpg)
 
-Test the length of the filament by inserting it through the battery cover and
+If using the battery cover for a wireless build,
+test the length of the filament by inserting it through the battery cover and
 into its place in the top case.
 I like to do this before the battery cover is installed so that I can more easily
 work with the filament and the holes as needed.
+
+If instead you are doing a wired build,
+the correct fit is easier to determine,
+though the small length of filament can be trickier to work with.
+
 Ensure that the filament is flush or slightly protrudes maybe half a millimeter when fully inserted.
 
 ![light guide complete](images/light-guide-done.jpg)
@@ -391,6 +416,10 @@ Ensure that the filament is flush or slightly protrudes maybe half a millimeter 
 This filament will bring the light from the LED on the xiao up to the top surface of the case.
 
 ![light guide active](images/light-guide-active.jpg)
+
+### Battery cover
+
+_Note_: you should skip this step if you are not building a wireless keyboard.
 
 Finally, arrange the battery and wires in place so that the battery cover can close,
 and then insert the three 10mm countersunk screws through the bottom of the case to secure the battery cover.
