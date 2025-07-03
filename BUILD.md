@@ -13,31 +13,33 @@ building the Charlieflex.
 
 ## Bill of materials
 
-| Qty   | Description                                                                                             |
-| ----- | ------------------------------------------------------------------------------------------------------- |
-| 1     | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])            |
-| 3     | [3D printed cases][case], bottom, top, and attic                                                        |
-| 1     | [XIAO BLE][xiao] or compatible board of your choice, as long as it is supported by [ZMK][zmk-xiao]      |
-| 1     | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18])      |
-| 1     | wireless only: [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                        |
-| 1     | wireless only: [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm)  |
-| 1     | wireless only: [JST PH 2 battery jack][jst]                                                             |
-| 45    | SOD-123 [1N4148W SMD diodes][sod123]                                                                    |
-| 30-32 | Kailh [choc hot swap sockets][sockets]                                                                  |
-| 30-32 | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                               |
-| 30-32 | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                            |
-| 1     | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice             |
-| 9-12  | [M2 x 6mm countersunk screws][screws6mm] (9 needed for the wireless case, 12 for wired)                 |
-| 9-12  | [M2 hex nuts][hexnuts] (9 needed for the wireless case, 12 for wired)                                   |
-| 3     | wireless case only: [M2 x 10mm countersunk screws][screws10mm]                                          |
-| 3     | wireless case only: [M2 heat-set inserts 3mm x 3mm][heatset]                                            |
-| 10    | [6mm x 1.5mm bumpons][bumpons]                                                                          |
-| ~1cm  | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide                |
-| 1-2   | short (1-2cm) [26 gauge electrical wire][wire], preferably in two different colors for a wireless build |
+| Wireless Qty | Description                                                                                        | Wired Qty |
+| ------------ | -------------------------------------------------------------------------------------------------- | --------- |
+| 1            | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])       | 1         |
+| 3            | [3D printed cases][case],                                                                          | 2         |
+| 1            | [XIAO BLE][xiao]                                                                                   |           |
+|              | [XIAO RP2040][rp2040]                                                                              | 1         |
+| 1            | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18]) | 1         |
+| 1            | [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                                  |           |
+| 1            | [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm)            |           |
+| 1            | [JST PH 2 battery jack][jst]                                                                       |           |
+| 45           | SOD-123 [1N4148W SMD diodes][sod123]                                                               | 1         |
+| 30-32        | Kailh [choc hot swap sockets][sockets]                                                             | 30-32     |
+| 30-32        | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                          | 30-32     |
+| 30-32        | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                       | 30-32     |
+| 1            | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice        |           |
+|              | Bourns [PES12-42S][small encoder] low profile EC12 encoder with a [knob][case-knob] of your choice | 1         |
+| 9            | [M2 x 6mm countersunk screws][screws6mm]                                                           | 12        |
+| 9            | [M2 hex nuts][hexnuts]                                                                             | 12        |
+| 3            | [M2 x 10mm countersunk screws][screws10mm]                                                         |           |
+| 3            | [M2 heat-set inserts 3mm x 3mm][heatset]                                                           |           |
+| 10           | [6mm x 1.5mm bumpons][bumpons]                                                                     | 10        |
+| ~1cm         | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide           | ~3mm      |
+| 2            | short (1-2cm) piece of [26 gauge electrical wire][wire]                                            | 1         |
 
 \* You could also use a low-profile Bourns [PES12-42S][smallencoder] EC12 encoder,
 or an encoder from another manufacturer if you aren't going wireless,
-but the specified encoder listed in the bill of materials
+but the specified wireless encoder listed in the bill of materials
 is designed to have its detents with both A and B set to low,
 so a different option is likely to draw more power,
 and thus isn't the best choice for a wireless build.
@@ -252,18 +254,18 @@ stick the other end into the through hole and solder there as well.
 
 The reset button goes to from the RST hole on the PCB to the unlabeled reset pad on the back of the xiao.
 
-![XIAO BLE RST pad](images/xiao-reset.jpg)
-![XIAO RP2040 RST pad](images/xiao-rp2040-reset.jpg)
-
 Even though it's unlabeled, it's not difficult to find.
 There are four circular pads near the USB port at the top of the xiao.
 
-The reset pad is located:
+Location of the RST pad on the XIAO BLE:
 
-- on the lower right
-- closest to the word seeedstudio
-- closest to the BAT- pad
-- closest to the P1 pad
+![XIAO BLE RST pad](images/xiao-reset.jpg)
+
+Location of the RST pad on the XIAO RP2040:
+
+![XIAO RP2040 RST pad](images/xiao-rp2040-reset.jpg)
+
+Install it using the same method as the BAT+ wire.
 
 ![second wire](images/wire-two.jpg)
 
@@ -368,7 +370,11 @@ in preparation for the next step.
 Place the bottom of the case upside down in place on the exposed bottom of the board.
 Insert and secure the nine 6mm countersunk screws.
 Three on the left side, three on the right side, and three on the bottom.
-Leave the center screw hole and the two top screw holes empty.
+
+For the wireless build,
+leave the center screw hole and the two top screw holes empty for now.
+
+For the wired build, insert those three 6mm countersunk screws at this time as well.
 
 ![bottom screws](images/bottom-screws.jpg)
 
@@ -414,7 +420,7 @@ Ensure that the filament is flush or slightly protrudes maybe half a millimeter 
 
 ![light guide complete](images/light-guide-done.jpg)
 
-This filament will bring the light from the LED on the xiao up to the top surface of the case.
+This filament will bring the light from the LED on the XIAO up to the top surface of the case.
 
 ![light guide active](images/light-guide-active.jpg)
 
@@ -544,6 +550,7 @@ while sliding it away from the USB port turns it off.
 [ts18]: https://www.sameskydevices.com/product/resource/ts18.pdf
 [wire]: https://www.walmart.com/ip/26-Gauge-PVC-Hookup-Wire-1-5m-5ft-26AWG-Flexible-Electrical-Wire-Tinned-Copper-Stranded-6-Color-1-5mm/5487030958
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
+[rp2040]: https://wiki.seeedstudio.com/XIAO-RP2040/
 [zmk]: https://zmk.dev
 [zmk-xiao]: https://zmk.dev/docs/hardware#seeed_xiao
 [zmkdocs]: https://zmk.dev/docs
