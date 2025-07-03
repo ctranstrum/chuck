@@ -22,13 +22,13 @@ building the Charlieflex.
 | 1            | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18]) | 1         |
 | 1            | [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                                  |           |
 | 1            | [3.7v 300mAh 502530 LiPo battery][battery] or smaller (max internal space: 5.5x27x32mm)            |           |
-| 1            | [JST PH 2 battery jack][jst]                                                                       |           |
-| 45           | SOD-123 [1N4148W SMD diodes][sod123]                                                               | 1         |
+| 1            | [JST PH-2 battery jack][jst]                                                                       |           |
+| 45           | SOD-123 [1N4148W SMD diodes][sod123]                                                               | 45        |
 | 30-32        | Kailh [choc hot swap sockets][sockets]                                                             | 30-32     |
 | 30-32        | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                          | 30-32     |
 | 30-32        | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                       | 30-32     |
 | 1            | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice        |           |
-|              | Bourns [PES12-42S][small encoder] low profile EC12 encoder with a [knob][case-knob] of your choice | 1         |
+|              | Bourns [PES12-42S][smallencoder] low profile EC12 encoder with a [knob][case-knob] of your choice  | 1         |
 | 9            | [M2 x 6mm countersunk screws][screws6mm]                                                           | 12        |
 | 9            | [M2 hex nuts][hexnuts]                                                                             | 12        |
 | 3            | [M2 x 10mm countersunk screws][screws10mm]                                                         |           |
@@ -37,8 +37,7 @@ building the Charlieflex.
 | ~1cm         | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide           | ~3mm      |
 | 2            | short (1-2cm) piece of [26 gauge electrical wire][wire]                                            | 1         |
 
-\* You could also use a low-profile Bourns [PES12-42S][smallencoder] EC12 encoder,
-or an encoder from another manufacturer if you aren't going wireless,
+\* You can use a different encoder from another manufacturer if you aren't going wireless,
 but the specified wireless encoder listed in the bill of materials
 is designed to have its detents with both A and B set to low,
 so a different option is likely to draw more power,
