@@ -16,7 +16,7 @@ building the Charlieflex.
 | Wireless Qty | Description                                                                                        | Wired Qty |
 | ------------ | -------------------------------------------------------------------------------------------------- | --------- |
 | 1            | [Charlieflex PCB][pcb] (can be printed by uploading the [zip file][gerber] to [JLC][jlcpcb])       | 1         |
-| 3            | [3D printed cases][case],                                                                          | 2         |
+| 3            | [3D printed cases][case]                                                                           | 2         |
 | 1            | [XIAO BLE][xiao]                                                                                   |           |
 |              | [XIAO RP2040][rp2040]                                                                              | 1         |
 | 1            | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18]) | 1         |
