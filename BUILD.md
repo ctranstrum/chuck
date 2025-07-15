@@ -492,25 +492,47 @@ by simultaneously pressing the top two keys on the outside edes of the keyboard,
 or in other words, the keys that are by default mapped to Q and apostrophe.
 Note that as of the time of this writing, you will need to be using Chrome or Edge to get it to work.
 
-If a key isn't working,
+If a single key isn't working,
 the first thing to look at is that the switch has been installed properly,
 and the pins aren't bent.
+The second most likely cause of a single key not working is an improperly installed diode.
+Find the diode closest to that key and ensure it is installed in the correct orientation
+and that both legs are well attached to the PCB.
 
 If you need to troubleshoot the soldering by shorting MCU pins to test the firmware is working,
-remember that this board uses a charlieplex matrix with an interrupt pin,
-so you will not be able to test by shorting the row/column pins together.
+note that this board uses a charlieplex matrix with an interrupt pin,
+so you will not be able to test by shorting only the row/column pins together
+as you would in a standard matrix wiring diagram.
 Instead, you will also need to connect to the interrupt pin as well,
 which is labeled as P7 on the PCB.
+
+The pins used for each switch is printed on the PCB next to the switch.
+An example label would be something like `CP0-CP5`,
+which means that the switch connects P0 to P5.
+So to test that switch by shorting wires together,
+you would need to short P0 (the source pin)
+to both P5 (the destination pin)
+as well as P7 (the interrupt pin).
+
+The encoder keypress is wired up the same as any other key,
+using a source pin, a destination pin, and the interrupt pin.
+Turning the encoder left and right is handled via pins P8 and P9 on the MCU.
+
+P10 is not used.
+If one MCU pin becomes damaged,
+it may be possible to repair by connecting a jumper from the broken pin
+to P10, and then updating the firmware to use P10 instead of the broken pin.
 
 If you need to correct any soldering,
 access to the bottom of the PCB involves removing all 12 screws from the bottom of the case.
 You do not necessarily need to remove all the switches.
 However, if you are doing extensive re-soldering work,
 it may be a good idea to fully remove the PCB from the case.
+This will prevent the heat from the soldering iron from deforming the case.
 
 One unexpected feature of the XIAO BLE microcontroller is that the power switch must be "ON"
 in order for the battery to charge while plugged into a USB-C cable.
-Remember: sliding the power switch toward the USB port turns the keyboard on,
+An easy way to remember: sliding the power switch toward the USB port turns the keyboard on,
 while sliding it away from the USB port turns it off.
 
 [bambu]: https://makerworld.com/en/models/1367965-case-for-the-charlieflex-keyboard
