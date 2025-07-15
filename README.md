@@ -75,7 +75,15 @@ The same Charlieflex,
 this time with [Lofree Hades Choc v2 switches][hades]
 and [Nuphy Shiokaze nSA keycaps][shiokaze].
 
+---
+
+![Charlieflex Choc v1 Keyboard](images/chuck-pink.jpg)
+
+I built a pink Charlieflex for the office, with [LDSA keycaps][ldsa]
+on [Bokeh Ambient Choc v1 switches][bokeh].
+
 [ergogen]: https://ergogen.xyz
+[bokeh]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=51042310062244
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk
 [guide]: BUILD.md
 [hades]: https://www.lofree.co/products/hades-low-profile-pom-switches
