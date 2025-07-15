@@ -1,6 +1,6 @@
 # Charlieflex Keyboard
 
-I haven't had a non-split ergonomic keyboard before,
+I haven't had a unibody ergonomic keyboard before,
 so I thought I'd give one a try, but none of the
 existing boards had what I wanted. Hence:
 the Charlieflex.
@@ -9,7 +9,7 @@ the Charlieflex.
 
 ## Features
 
-![Charlieflex PCB](images/chuck-pcb.jpg)
+![Charlieflex keymap](images/chuck-keymap.jpg)
 
 - 30-32 key wireless ergo keyboard with aggressive pinky stagger and splay
 - central rotary encoder can be used by either hand
@@ -57,29 +57,25 @@ the Charlieflex.
 
 ## Build Guide
 
+![Charlieflex PCB](images/chuck-pcb.jpg)
+
 Interested in building a Charlieflex of your own?
 Check out the [Build Guide][guide] for details.
 
----
-
-![Charlieflex Choc v1 Keyboard](images/chuck-blue.jpg)
-
-My Charlieflex, in the Twentyone Chuck Street layout, with 2 keys for the left thumb and one key for the right.
-I'm using [LDSA keycaps][ldsa] on [Twilight Ambient Choc v1 switches][twilight].
-
----
+## Builds
 
 ![Charlieflex Choc v2 Keyboard](images/chuck-chocv2.jpg)
 
-The same Charlieflex,
-this time with [Lofree Hades Choc v2 switches][hades]
+My Charlieflex, in the Twentyone Chuck Street layout, with 2 keys for the left thumb and one key for the right.
+I'm using [Lofree Hades Choc v2 switches][hades]
 and [Nuphy Shiokaze nSA keycaps][shiokaze].
 
 ---
 
 ![Charlieflex Choc v1 Keyboard](images/chuck-pink.jpg)
 
-I built a pink Charlieflex for the office, with [LDSA keycaps][ldsa]
+I also built a pink Charlieflex for the office,
+this time with [LDSA keycaps][ldsa]
 on [Bokeh Ambient Choc v1 switches][bokeh].
 
 [ergogen]: https://ergogen.xyz
