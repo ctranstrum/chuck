@@ -118,7 +118,7 @@ For a wired Charlieflex with the XIAO RP2040:
   artifact-name: chuck-wired-rp2040
 ```
 
-Modify your `config/one-up-chuck.conf` file with these suggested changes:
+Modify your `config/charlieflex.conf` file with these suggested changes:
 
 ```conf
 # Enable encoder
