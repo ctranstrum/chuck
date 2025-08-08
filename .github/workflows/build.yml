@@ -4,4 +4,5 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2
+    # The revision needs to match in config/west.yml
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
