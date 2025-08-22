@@ -155,21 +155,21 @@ Additional two-finger combos using the middle and index finger are used for brac
 - \[ and \] are C-D and H-, (bottom row on each hand)
 - < and > are T-V and N-K (inner column on each hand)
 
-The following three-finger combos using the index, middle, and ring fingers are available:
+The following keys are available via either
+three-finger combos (using the index, middle, and ring fingers)
+or two-finger combos (using the pinky and ring fingers):
 
-- Escape is W-F-P (top row left hand)
-- Tab is R-S-T (home row left hand)
-- Backspace is L-U-Y (top row right hand)
-- Enter is N-E-I (home row right hand)
+- Escape is Q-W and W-F-P (top row left hand)
+- Tab is A-R and R-S-T (home row left hand)
+- Backspace is Y-' and L-U-Y (top row right hand)
+- Enter is I-O and N-E-I (home row right hand)
 
-However, some people find three-finger combos more difficult to access,
-so those same keys are also available as two-finger combos
-using the pinkies and ring fingers:
+Shift keys for punctuation has changed a little from the default:
 
-- Escape is Q-W (top row left hand)
-- Tab is A-R (home row left hand)
-- Backspace is Y-' (top row right hand)
-- Enter is I-O (home row right hand)
+- Shift ' for " (same as a default keyboard)
+- Shift , for ;
+- Shift . for :
+- Shift / for \\
 
 Modifier keys are available as holds under the home row keys on each hand.
 Command is under the index finger.
@@ -185,7 +185,8 @@ accessed by holding the inner column home row key
 The reachy left thumb key is a sticky shift.
 Tap it once to capitalize the next letter typed.
 Tap twice to enter a smart word capitalization mode
-that automatically exits when you finish typing a word.
+that automatically exits when you finish typing a word
+(for example, press space when done).
 
 Hold the tucky left thumb key to get a numpad under your right hand,
 as well as to access `ctrl` editing commands under your left hand.
