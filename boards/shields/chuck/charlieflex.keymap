@@ -61,8 +61,20 @@
             layers = <0>;
         };
 
+        combo_esc_pinky {
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
         combo_tab {
             key-positions = <9 10 11>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+
+        combo_tab_pinky {
+            key-positions = <8 9>;
             bindings = <&kp TAB>;
             layers = <0>;
         };
@@ -73,8 +85,20 @@
             layers = <0 1 2>;
         };
 
+        combo_backspace_pinky {
+            key-positions = <6 7>;
+            bindings = <&kp BSPC>;
+            layers = <0 1 2>;
+        };
+
         combo_return {
             key-positions = <14 15 16>;
+            bindings = <&kp RET>;
+            layers = <0 1 2>;
+        };
+
+        combo_return_pinky {
+            key-positions = <16 17>;
             bindings = <&kp RET>;
             layers = <0 1 2>;
         };

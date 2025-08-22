@@ -162,6 +162,15 @@ The following three-finger combos using the index, middle, and ring fingers are 
 - Backspace is L-U-Y (top row right hand)
 - Enter is N-E-I (home row right hand)
 
+However, some people find three-finger combos more difficult to access,
+so those same keys are also available as two-finger combos
+using the pinkies and ring fingers:
+
+- Escape is Q-W (top row left hand)
+- Tab is A-R (home row left hand)
+- Backspace is Y-' (top row right hand)
+- Enter is I-O (home row right hand)
+
 Modifier keys are available as holds under the home row keys on each hand.
 Command is under the index finger.
 Opt is under the middle finger.
