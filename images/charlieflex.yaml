@@ -235,18 +235,18 @@ combos:
   l: [Colemak]
 - p: [4, 5, 6]
   k: ⌫
-  l: [Colemak, numpad, navigation]
+  l: [Colemak, numpad]
   draw_separate: true
 - p: [6, 7]
   k: ⌫
-  l: [Colemak, numpad, navigation]
+  l: [Colemak, numpad]
 - p: [14, 15, 16]
   k: ↵
-  l: [Colemak, numpad, navigation]
+  l: [Colemak, numpad]
   draw_separate: true
 - p: [16, 17]
   k: ↵
-  l: [Colemak, numpad, navigation]
+  l: [Colemak, numpad]
 - p: [2, 3]
   k: (
   l: [Colemak]
