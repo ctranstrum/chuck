@@ -237,14 +237,14 @@ combos:
   k: ⇥
   l: [Colemak]
   draw_separate: true
-- p: [8, 9]
+- p: [18, 19]
   k: ⇥
   l: [Colemak]
 - p: [14, 15, 16]
   k: ↵
   l: [Colemak, numpad]
   draw_separate: true
-- p: [16, 17]
+- p: [27, 28]
   k: ↵
   l: [Colemak, numpad]
 - p: [2, 3]
