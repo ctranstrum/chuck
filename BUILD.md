@@ -538,7 +538,7 @@ while sliding it away from the USB port turns it off.
 [bambu]: https://makerworld.com/en/models/1367965-case-for-the-charlieflex-keyboard
 [battery]: https://ydlbattery.com/products/3-7v-300mah-502530-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
-[case]: cases/
+[case]: cases#readme
 [case-knob]: cases#encoder-knobs
 [chockeycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [chocv1]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
