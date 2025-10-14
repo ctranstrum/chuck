@@ -42,17 +42,18 @@ the Charlieflex.
     - each thumb gets a single key, with an option for a secondary thumb key if your thumbs are smarter than mine
   - centrally located rotary encoder knob for easy ambidextrous access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
-- Low profile 3D printable case
-  - case is only about 7mm high in front and 15mm high in the back, and comes in three separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
+- Low profile [3D printable case][case]
+  - wireless case is only about 7mm high in front and 15mm high in the back, and comes in three separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
+  - for those who don't want or need the extra space required for a battery, a separate wired case is provided, which comes in two pieces and is just under 7mm tall
   - options for 1 or 2 thumb keys on each hand so you can go minimal if desired
   - smaller versions are included for smaller print beds
-  - a few different knobs are included so you can get the height that works best for you
+  - a few different [knobs][case-knob] are included so you can get the height that works best for you
   - bumpons are inset into the case 1mm to minimize their height; they add only 1/2mm in height
 - Hotswappable
   - keycaps and switches can be easily removed and exchanged so you can fine-tune the feel
-  - ability to move back and forth between choc v1 and choc v2
+  - ability to move back and forth between or even mix and match choc v1 and choc v2
 - Electrostatic mitigation
-  - unlike other ultra-low-profile cases, no electronics are left exposed
+  - unlike many other ultra-low-profile cases, no electronics are left exposed
   - usb port and power switch are on the back, reset switch is recessed into the bottom of the case
 
 ## Build Guide
@@ -80,6 +81,8 @@ on [Bokeh Ambient Choc v1 switches][bokeh].
 
 [ergogen]: https://ergogen.xyz
 [bokeh]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=51042310062244
+[case]: cases#readme
+[case-knob]: cases#encoder-knobs
 [firmware]: https://github.com/ctranstrum/chuck/tree/zmk
 [guide]: BUILD.md
 [hades]: https://www.lofree.co/products/hades-low-profile-pom-switches
