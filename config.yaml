@@ -244,6 +244,24 @@ points:
         ref: matrix_inner_home
         distance: mirrored_distance
 
+    rectangle_top_screw:
+      key.tags: [mid_screw]
+      anchor:
+        ref: matrix_pinky_top
+        shift: [-2.5 hdx, 1.5 hdy]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    rectangle_bottom_screw:
+      key.tags: [mid_screw]
+      anchor:
+        ref: matrix_pinky_bottom
+        shift: [-0.4 hdx, -3.25 hdy]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
     pinky_high_screw:
       key.tags: [screw]
       anchor:
@@ -330,6 +348,32 @@ outlines:
     - what: outline
       name: _basic_outline_shape
       fillet: 2
+
+  _board_outline_padding:
+    - what: outline
+      name: board_outline
+      expand: 0.25
+
+  _rectangle_outline:
+    - what: rectangle
+      where:
+        aggregate.parts: [matrix_index_home, mirror_matrix_index_home]
+      size: [230, 97.4]
+      corner: 4
+      fillet: 4
+
+  _rectangle_case_outline:
+    - board_outline
+    - _rectangle_outline
+
+  rectangle_case_outline:
+    - what: outline
+      name: _rectangle_case_outline
+      fillet: 8
+
+  _rectangle_case_fill:
+    - rectangle_case_outline
+    - -_board_outline_padding
 
   _xiao_visualizer:
     - what: rectangle
@@ -868,7 +912,7 @@ outlines:
 
   _screw_shaft:
     - what: circle
-      where: [screw, top_screw]
+      where: [screw, mid_screw, top_screw]
       radius: 1.2
 
   _countersink1:
@@ -925,15 +969,25 @@ outlines:
       name: _hex_nut
       where: top_screw
 
-  _heat_set:
+  _top_heat_set:
     - what: circle
       radius: 1.45
       where: top_screw
 
-  _heat_set_passage:
+  _top_heat_set_passage:
     - what: circle
       radius: 1.2
       where: top_screw
+
+  _mid_heat_set:
+    - what: circle
+      radius: 1.45
+      where: mid_screw
+
+  _mid_heat_set_passage:
+    - what: circle
+      radius: 1.2
+      where: mid_screw
 
   _bumper:
     - what: circle
@@ -980,6 +1034,10 @@ outlines:
     - ^_xiao_usb_cutout
     - ^_xiao_chip
     - ^_hex_nuts
+
+  rectangle_visualizer:
+    - rectangle_case_outline
+    - ^_screw_shaft
 
   component_visualization:
     - board_outline
@@ -1356,69 +1414,71 @@ cases:
       shift: [0, 0, ec12_knob_height - knob_skirt]
       operation: subtract
 
-  wired_bottom_case:
-    - what: outline
-      name: board_outline
-      extrude: bottom_case_height
+  _bottom_cutouts:
     - what: outline
       name: _socket_cutout
       extrude: 2
       shift: [0, 0, bottom_case_height - 2]
-      operation: subtract
     - what: outline
       name: _switch_holes_placed
       extrude: 1.8
       shift: [0, 0, bottom_case_height - 1.8]
-      operation: subtract
     - what: outline
       name: _encoder_bottom_cutout
       extrude: 2
       shift: [0, 0, bottom_case_height - 2]
-      operation: subtract
     - what: outline
       name: _all_bumpers
       extrude: 1
-      operation: subtract
     - what: outline
       name: _diodes_cutout
       extrude: 1.4
       shift: [0, 0, bottom_case_height - 1.4]
-      operation: subtract
     - what: outline
       name: _return_diodes_cutout
       extrude: 1.2
       shift: [0, 0, bottom_case_height - 1.2]
-      operation: subtract
     - what: outline
       name: _xiao_bottom_cutout
       extrude: 2.5
       shift: [0, 0, bottom_case_height - 2.5]
-      operation: subtract
     - what: outline
       name: _xiao_cutout_wall
       extrude: 1.2
       shift: [0, 0, bottom_case_height - 1.2]
-      operation: subtract
     - what: outline
       name: _xiao_cutout_solder
       extrude: 0.5
       shift: [0, 0, 1.5]
-      operation: subtract
-    - -_reset_bottom_cutout
-    - -_countersunk_screw
+    - _reset_bottom_cutout
+    - _countersunk_screw
 
-  bottom_case:
-    - wired_bottom_case
+  _wireless_bottom_cutouts:
     - what: outline
       name: _power_cutout
       extrude: 1.6
       shift: [0, 0, bottom_case_height - 1.6]
-      operation: subtract
     - what: outline
       name: _jst_tht_cutout
       extrude: 1.6
       shift: [0, 0, bottom_case_height - 1.6]
-      operation: subtract
+
+  rectangle_bottom_case:
+    - what: outline
+      name: rectangle_case_outline
+      extrude: bottom_case_height
+    - -_bottom_cutouts
+    - -_wireless_bottom_cutouts
+
+  wired_bottom_case:
+    - what: outline
+      name: board_outline
+      extrude: bottom_case_height
+    - -_bottom_cutouts
+
+  bottom_case:
+    - wired_bottom_case
+    - -_wireless_bottom_cutouts
 
   _top_cutouts:
     - what: outline
@@ -1459,7 +1519,7 @@ cases:
       name: _hex_nuts
       extrude: 1.8
     - what: outline
-      name: _heat_set_passage
+      name: _top_heat_set_passage
       extrude: top_case_height
     - what: outline
       name: _jst_cutout
@@ -1526,6 +1586,30 @@ cases:
     - wired_top_case_one_up_chuck
     - -_top_left_cutouts
     - -_top_right_cutouts
+
+  _rectangle_top_case:
+    - what: outline
+      name: rectangle_case_outline
+      extrude: top_case_height
+    - -_wireless_top_cutouts
+    - -_top_left_cutouts
+
+  rectangle_top_case:
+    - what: case
+      name: _rectangle_top_case
+      shift: [0, 0, 1.6]
+    - what: outline
+      name: _rectangle_case_fill
+      extrude: 1.6
+    - what: outline
+      name: _mid_heat_set
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _mid_heat_set_passage
+      extrude: 0.3
+      shift: [0, 0, 3]
+      operation: subtract
 
   _top_dovetail:
     - what: outline
@@ -1658,13 +1742,13 @@ cases:
       extrude: 3
       operation: subtract
     - what: outline
-      name: _heat_set
+      name: _top_heat_set
       extrude: 3
       operation: subtract
     - what: outline
-      name: _heat_set_passage
+      name: _top_heat_set_passage
       extrude: 1.5
-      shift: [0, 0, 3.2]
+      shift: [0, 0, 3]
       operation: subtract
 
   # Remove the underscore to print out the mock PCB if you want to check for fit

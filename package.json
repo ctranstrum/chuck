@@ -28,6 +28,7 @@
   "author": "chad@transtrum.net",
   "license": "CERN-OHL-P-2.0",
   "devDependencies": {
+    "@jscad/cli": "^1.10.0",
     "ergogen": "^4.1.0",
     "prettier": "^3.4.2"
   }
