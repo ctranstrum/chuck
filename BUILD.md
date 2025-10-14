@@ -488,7 +488,7 @@ or how to configure your own [zmk repo][zmkrepo], please refer to the [ZMK docs]
 
 If you still have the default keymap installed and want to update the layout with [ZMK Studio][zmkstudio],
 the "ZMK Studio unlock" key combination is accessed
-by simultaneously pressing the top two keys on the outside edes of the keyboard,
+by simultaneously pressing the top two keys on the outside edges of the keyboard,
 or in other words, the keys that are by default mapped to Q and apostrophe.
 Note that as of the time of this writing, you will need to be using Chrome or Edge to get it to work.
 
