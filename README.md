@@ -160,9 +160,9 @@ three-finger combos (using the index, middle, and ring fingers)
 or two-finger combos (using the pinky and ring fingers):
 
 - Escape is Q-W and W-F-P (top row left hand)
-- Tab is A-R and R-S-T (home row left hand)
-- Backspace is Y-' and L-U-Y (top row right hand)
-- Enter is I-O and N-E-I (home row right hand)
+- Tab is Z-X (bottom row left hand) and R-S-T (home row left hand)
+- Backspace is L-U-Y and Y-' (top row right hand)
+- Enter is N-E-I (home row right hand) and .-/ (bottom row right hand)
 
 Shift keys for punctuation has changed a little from the default:
 
@@ -172,15 +172,14 @@ Shift keys for punctuation has changed a little from the default:
 - Shift / for \\
 
 Modifier keys are available as holds under the home row keys on each hand.
-Command is under the index finger.
-Opt is under the middle finger.
-Ctrl is under the ring finger.
-Shift is under the pinky.
+Command is under the index finger (T and N).
+Opt is under the middle finger (S and E).
+Ctrl is under the ring finger (R and I).
+Shift is under the pinky (A and O).
 Globe does not work exactly the same as on a native Mac keyboard
 due to design choices Apple made,
 but you can get most of its functionality,
-accessed by holding the inner column home row key
-(G on the left hand, M on the right).
+accessed by holding the inner column home row key (G and M).
 
 The reachy left thumb key is a sticky shift.
 Tap it once to capitalize the next letter typed.
