@@ -215,16 +215,34 @@ points:
         distance: mirrored_distance
 
     thumb_bumper:
-      key.tags: [bumper]
+      key.tags: [bumper, rect_bumper]
       anchor:
         ref: encoder
         shift: [0, -1.6 dy]
 
     center_bumper:
-      key.tags: [bumper]
+      key.tags: [bumper, rect_bumper]
       anchor:
         ref: encoder
         shift: [0, 1.3 dy]
+
+    rectangle_top_bumper:
+      key.tags: [rect_bumper]
+      anchor:
+        ref: matrix_pinky_top
+        shift: [-2.3 hdx, 1.4 hdy]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
+
+    rectangle_bottom_bumper:
+      key.tags: [rect_bumper]
+      anchor:
+        ref: matrix_pinky_bottom
+        shift: [-0.25 hdx, -3 hdy]
+      mirror:
+        ref: matrix_inner_home
+        distance: mirrored_distance
 
     pinky_home_screw:
       key.tags: [screw]
@@ -240,24 +258,6 @@ points:
       anchor:
         ref: matrix_pinky_bottom
         shift: [hdy + 2, -hdy + 2]
-      mirror:
-        ref: matrix_inner_home
-        distance: mirrored_distance
-
-    rectangle_top_screw:
-      key.tags: [mid_screw]
-      anchor:
-        ref: matrix_pinky_top
-        shift: [-2.5 hdx, 1.5 hdy]
-      mirror:
-        ref: matrix_inner_home
-        distance: mirrored_distance
-
-    rectangle_bottom_screw:
-      key.tags: [mid_screw]
-      anchor:
-        ref: matrix_pinky_bottom
-        shift: [-0.4 hdx, -3.25 hdy]
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
@@ -296,7 +296,7 @@ points:
         shift: [0, 2 dy]
 
     center_bottom_screw:
-      key.tags: [screw]
+      key.tags: [screw, rect_screw]
       anchor:
         ref: encoder
         shift: [0, -1.25 dy]
@@ -334,7 +334,6 @@ outlines:
       bound: true
       size: [dx + 4, dy + 4]
       corner: 2
-      fillet: 2
 
   outline_shapes_builder:
     - _top_bridge
@@ -359,17 +358,77 @@ outlines:
       where:
         aggregate.parts: [matrix_index_home, mirror_matrix_index_home]
       size: [230, 97.4]
-      corner: 4
-      fillet: 4
-
-  _rectangle_case_outline:
-    - board_outline
-    - _rectangle_outline
+      corner: 5
 
   rectangle_case_outline:
+    - board_outline
     - what: outline
-      name: _rectangle_case_outline
-      fillet: 8
+      name: _rectangle_outline
+      fillet: 10
+
+  _rectangle_snap1:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap2:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.05
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap3:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.1
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap4:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.15
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap5:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.2
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap6:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.25
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap7:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.3
+    - what: outline
+      name: board_outline
+      fillet: 10
+
+  _rectangle_snap8:
+    - what: outline
+      name: _rectangle_outline
+      expand: -1.35
+    - what: outline
+      name: board_outline
+      fillet: 10
 
   _rectangle_case_fill:
     - rectangle_case_outline
@@ -418,7 +477,7 @@ outlines:
       size: [19, 21.5]
       corner: 1
 
-  # Make some room for the solder
+      # Make some room for the solder
   _xiao_cutout_solder:
     - what: rectangle
       where: mcu
@@ -783,7 +842,7 @@ outlines:
     - what: circle
       radius: 1.6
       adjust.shift: [0, -5.95]
-    # left (or rather, right on the opposite side of the board)
+      # left (or rather, right on the opposite side of the board)
     - what: circle
       radius: 1.6
       adjust.shift: [-5, -3.75]
@@ -796,7 +855,7 @@ outlines:
         rotate: 180
         resist: true
 
-  # make a fairly accurate socket model
+        # make a fairly accurate socket model
   _socket_outline:
     - what: rectangle
       adjust.shift: [0, -5.95]
@@ -841,13 +900,13 @@ outlines:
         rotate: 180
         resist: true
 
-  # enlarge it a bit for wiggle room
+        # enlarge it a bit for wiggle room
   _socket_expanded:
     - what: outline
       name: _socket_outline
       expand: 0.75
 
-  # then drop it under every key
+      # then drop it under every key
   _socket_cutout:
     - what: outline
       name: _socket_expanded
@@ -912,7 +971,7 @@ outlines:
 
   _screw_shaft:
     - what: circle
-      where: [screw, mid_screw, top_screw]
+      where: [screw, top_screw]
       radius: 1.2
 
   _countersink1:
@@ -938,6 +997,36 @@ outlines:
   _countersink5:
     - what: outline
       name: _screw_shaft
+      expand: 0.2
+
+  _rect_screw_shaft:
+    - what: circle
+      where: [rect_screw, top_screw]
+      radius: 1.2
+
+  _rect_countersink1:
+    - what: outline
+      name: _rect_screw_shaft
+      expand: 1
+
+  _rect_countersink2:
+    - what: outline
+      name: _rect_screw_shaft
+      expand: 0.8
+
+  _rect_countersink3:
+    - what: outline
+      name: _rect_screw_shaft
+      expand: 0.6
+
+  _rect_countersink4:
+    - what: outline
+      name: _rect_screw_shaft
+      expand: 0.4
+
+  _rect_countersink5:
+    - what: outline
+      name: _rect_screw_shaft
       expand: 0.2
 
   pcb_outline:
@@ -969,6 +1058,11 @@ outlines:
       name: _hex_nut
       where: top_screw
 
+  _rect_hex_nuts:
+    - what: outline
+      name: _hex_nut
+      where: rect_screw
+
   _top_heat_set:
     - what: circle
       radius: 1.45
@@ -978,16 +1072,6 @@ outlines:
     - what: circle
       radius: 1.2
       where: top_screw
-
-  _mid_heat_set:
-    - what: circle
-      radius: 1.45
-      where: mid_screw
-
-  _mid_heat_set_passage:
-    - what: circle
-      radius: 1.2
-      where: mid_screw
 
   _bumper:
     - what: circle
@@ -1022,6 +1106,12 @@ outlines:
     - _high_bumper
     - _bumpers
 
+  _rect_bumpers:
+    - _mid_bumper
+    - what: outline
+      name: _bumper
+      where: rect_bumper
+
   top_plate:
     - board_outline
     - -_switches_plate_cutout
@@ -1037,7 +1127,10 @@ outlines:
 
   rectangle_visualizer:
     - rectangle_case_outline
-    - ^_screw_shaft
+    - ^_rectangle_snap1
+    - ^_rectangle_snap8
+    - ^_rect_bumpers
+    - ^_rect_countersink1
 
   component_visualization:
     - board_outline
@@ -1273,6 +1366,31 @@ cases:
       extrude: bottom_case_height - 1
       shift: [0, 0, 1]
 
+  _rect_countersunk_screw:
+    - what: outline
+      name: _rect_countersink1
+      extrude: 0.2
+    - what: outline
+      name: _rect_countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rect_countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rect_countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _rect_countersink5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _rect_screw_shaft
+      extrude: bottom_case_height - 1
+      shift: [0, 0, 1]
+
   _reset_bottom_cutout:
     - what: outline
       name: _reset_cutout
@@ -1428,9 +1546,6 @@ cases:
       extrude: 2
       shift: [0, 0, bottom_case_height - 2]
     - what: outline
-      name: _all_bumpers
-      extrude: 1
-    - what: outline
       name: _diodes_cutout
       extrude: 1.4
       shift: [0, 0, bottom_case_height - 1.4]
@@ -1451,7 +1566,6 @@ cases:
       extrude: 0.5
       shift: [0, 0, 1.5]
     - _reset_bottom_cutout
-    - _countersunk_screw
 
   _wireless_bottom_cutouts:
     - what: outline
@@ -1465,16 +1579,42 @@ cases:
 
   rectangle_bottom_case:
     - what: outline
-      name: rectangle_case_outline
-      extrude: bottom_case_height
+      name: _rectangle_snap4
+      extrude: bottom_case_height - 0.4
+    - what: outline
+      name: _rectangle_snap5
+      extrude: 0.1
+      shift: [0, 0, bottom_case_height - 0.4]
+    - what: outline
+      name: _rectangle_snap6
+      extrude: 0.1
+      shift: [0, 0, bottom_case_height - 0.3]
+    - what: outline
+      name: _rectangle_snap7
+      extrude: 0.1
+      shift: [0, 0, bottom_case_height - 0.2]
+    - what: outline
+      name: _rectangle_snap8
+      extrude: 0.1
+      shift: [0, 0, bottom_case_height - 0.1]
+    - what: outline
+      name: _rect_bumpers
+      extrude: 1
+      operation: subtract
     - -_bottom_cutouts
+    - -_rect_countersunk_screw
     - -_wireless_bottom_cutouts
 
   wired_bottom_case:
     - what: outline
       name: board_outline
       extrude: bottom_case_height
+    - what: outline
+      name: _all_bumpers
+      extrude: 1
+      operation: subtract
     - -_bottom_cutouts
+    - -_countersunk_screw
 
   bottom_case:
     - wired_bottom_case
@@ -1601,15 +1741,6 @@ cases:
     - what: outline
       name: _rectangle_case_fill
       extrude: 1.6
-    - what: outline
-      name: _mid_heat_set
-      extrude: 3
-      operation: subtract
-    - what: outline
-      name: _mid_heat_set_passage
-      extrude: 0.3
-      shift: [0, 0, 3]
-      operation: subtract
 
   _top_dovetail:
     - what: outline
