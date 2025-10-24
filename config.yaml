@@ -334,6 +334,7 @@ outlines:
       bound: true
       size: [dx + 4, dy + 4]
       corner: 2
+      fillet: 2
 
   outline_shapes_builder:
     - _top_bridge
@@ -429,6 +430,31 @@ outlines:
     - what: outline
       name: board_outline
       fillet: 10
+
+  _rectangle_clip1:
+    - rectangle_case_outline
+    - -_board_outline_padding
+    - -_rectangle_snap1
+
+  _rectangle_clip2:
+    - rectangle_case_outline
+    - -_board_outline_padding
+    - -_rectangle_snap2
+
+  _rectangle_clip3:
+    - rectangle_case_outline
+    - -_board_outline_padding
+    - -_rectangle_snap3
+
+  _rectangle_clip4:
+    - rectangle_case_outline
+    - -_board_outline_padding
+    - -_rectangle_snap4
+
+  _rectangle_clip5:
+    - rectangle_case_outline
+    - -_board_outline_padding
+    - -_rectangle_snap5
 
   _rectangle_case_fill:
     - rectangle_case_outline
@@ -601,6 +627,11 @@ outlines:
       size: [12, 16]
       adjust.shift: [0, -12]
       corner: 3
+    - what: rectangle
+      where: jst
+      size: [6, 30]
+      adjust.shift: [0, -13]
+      corner: 2
 
   _jst_pcb_holes:
     - what: circle
@@ -1579,24 +1610,24 @@ cases:
 
   rectangle_bottom_case:
     - what: outline
-      name: _rectangle_snap4
-      extrude: bottom_case_height - 0.4
-    - what: outline
-      name: _rectangle_snap5
+      name: _rectangle_snap8
       extrude: 0.1
-      shift: [0, 0, bottom_case_height - 0.4]
-    - what: outline
-      name: _rectangle_snap6
-      extrude: 0.1
-      shift: [0, 0, bottom_case_height - 0.3]
     - what: outline
       name: _rectangle_snap7
       extrude: 0.1
-      shift: [0, 0, bottom_case_height - 0.2]
+      shift: [0, 0, 0.1]
     - what: outline
-      name: _rectangle_snap8
+      name: _rectangle_snap6
       extrude: 0.1
-      shift: [0, 0, bottom_case_height - 0.1]
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rectangle_snap5
+      extrude: 0.1
+      shift: [0, 0, 0.3]
+    - what: outline
+      name: _rectangle_snap4
+      extrude: bottom_case_height - 0.4
+      shift: [0, 0, 0.4]
     - what: outline
       name: _rect_bumpers
       extrude: 1
@@ -1657,6 +1688,18 @@ cases:
     - _top_cutouts
     - what: outline
       name: _hex_nuts
+      extrude: 1.8
+    - what: outline
+      name: _top_heat_set_passage
+      extrude: top_case_height
+    - what: outline
+      name: _jst_cutout
+      extrude: top_case_height
+
+  _rect_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _rect_hex_nuts
       extrude: 1.8
     - what: outline
       name: _top_heat_set_passage
@@ -1731,16 +1774,36 @@ cases:
     - what: outline
       name: rectangle_case_outline
       extrude: top_case_height
-    - -_wireless_top_cutouts
+    - -_rect_top_cutouts
     - -_top_left_cutouts
 
   rectangle_top_case:
     - what: case
       name: _rectangle_top_case
-      shift: [0, 0, 1.6]
+      shift: [0, 0, 1.6 + bottom_case_height]
     - what: outline
       name: _rectangle_case_fill
       extrude: 1.6
+      shift: [0, 0, bottom_case_height]
+    - what: outline
+      name: _rectangle_clip1
+      extrude: bottom_case_height - 0.4
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rectangle_clip2
+      extrude: 0.1
+      shift: [0, 0, 0.3]
+    - what: outline
+      name: _rectangle_clip3
+      extrude: 0.1
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rectangle_clip4
+      extrude: 0.1
+      shift: [0, 0, 0.1]
+    - what: outline
+      name: _rectangle_clip5
+      extrude: 0.1
 
   _top_dovetail:
     - what: outline
