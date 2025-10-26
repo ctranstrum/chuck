@@ -1770,17 +1770,26 @@ cases:
     - -_top_left_cutouts
     - -_top_right_cutouts
 
-  _rectangle_top_case:
+  _rectangle_top_case_one_up_chuck:
     - what: outline
       name: rectangle_case_outline
       extrude: top_case_height
     - -_rect_top_cutouts
+
+  _rectangle_top_case_chucker_by_the_dozen:
+    - _rectangle_top_case_one_up_chuck
+    - -_top_right_cutouts
+
+  _rectangle_top_case_twentyone_chuck_street:
+    - _rectangle_top_case_one_up_chuck
     - -_top_left_cutouts
 
-  rectangle_top_case:
-    - what: case
-      name: _rectangle_top_case
-      shift: [0, 0, 1.6 + bottom_case_height]
+  _rectangle_top_case:
+    - _rectangle_top_case_one_up_chuck
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  _rectangle_top_common:
     - what: outline
       name: _rectangle_case_fill
       extrude: 1.6
@@ -1804,6 +1813,30 @@ cases:
     - what: outline
       name: _rectangle_clip5
       extrude: 0.1
+
+  rectangle_top_case_one_up_chuck:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_one_up_chuck
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_chucker_by_the_dozen:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_chucker_by_the_dozen
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_twentyone_chuck_street:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_twentyone_chuck_street
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case
+      shift: [0, 0, 1.6 + bottom_case_height]
 
   _top_dovetail:
     - what: outline

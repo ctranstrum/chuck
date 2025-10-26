@@ -51,6 +51,22 @@ The bottom case is broken into two pieces:
 | [left](wired_bottom_dovetail_left.stl)   | [left](bottom_dovetail_left.stl)   | left bottom  |
 | [right](wired_bottom_dovetail_right.stl) | [right](bottom_dovetail_right.stl) | right bottom |
 
+### Rectangle snap-fit case
+
+I've also created an alternative case that uses fewer screws and instead utilizes a snap-fit design.
+
+Unlike the sandwich-style cases, it is available only for full-size printer beds,
+and only for a wireless build.
+
+| wireless                                                                | description                                                      |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [bottom](rectangle_bottom_case.stl)                                     | bottom case                                                      |
+| [top](rectangle_top_case.stl)                                           | top case option with two thumb keys on each hand                 |
+| [one_up_chuck](rectangle_top_case_one_up_chuck.stl)                     | top case option with one thumb key on each hand                  |
+| [twentyone_chuck_street](rectangle_top_case_twentyone_chuck_street.stl) | top case option with two left thumb keys and one right thumb key |
+| [chucker_by_the_dozen](rectangle_top_case_chucker_by_the_dozen.stl)     | top case option with one left thumb key and two right thumb keys |
+| [battery cover](attic.stl)                                              | above the top case to cover the battery (do not print in resin)  |
+
 ## Print quality hints
 
 When printing this case,
