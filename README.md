@@ -38,7 +38,7 @@
   - centrally located rotary encoder knob for easy ambidextrous access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
 
-![finger map](images/fingering.jpg)
+![finger map](images/fingers.svg)
 
 - Low profile [3D printable case][case]
   - wireless case is only about 7mm high in front and 15mm high in the back, and comes in three separate pieces, each largely flat on one side for easy FDM printing with minimal fuss

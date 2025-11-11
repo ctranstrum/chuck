@@ -1,0 +1,162 @@
+<svg width="740" height="500" viewBox="0 0 740 500" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>/* inherit to force styles through use tags */
+svg path {
+    fill: inherit;
+}
+
+/* font and background color specifications */
+svg.keymap {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-size: 14px;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    fill: #24292e;
+}
+
+/* default key styling */
+rect.key {
+    fill: #f6f8fa;
+    stroke: #c9cccf;
+    stroke-width: 1;
+}
+
+rect.finger1 {
+    fill: #fdd;
+}
+
+rect.finger2 {
+    fill: #ffd;
+}
+
+rect.finger3 {
+    fill: #dfd;
+}
+
+rect.finger4 {
+    fill: #cdf;
+}
+
+rect.finger5 {
+    fill: #edf;
+}
+
+text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #666;
+}
+</style>
+<g transform="translate(30, 0)" class="layer-Colemak">
+<g transform="translate(0, 91)">
+<g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+</g>
+<g transform="translate(126, 45) rotate(15.0)" class="key keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+</g>
+<g transform="translate(199, 36) rotate(20.0)" class="key keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger3"/>
+</g>
+<g transform="translate(246, 83) rotate(22.5)" class="key keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(419, 83) rotate(-22.5)" class="key keypos-4">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(467, 36) rotate(-20.0)" class="key keypos-5">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger3"/>
+</g>
+<g transform="translate(540, 45) rotate(-15.0)" class="key keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+</g>
+<g transform="translate(603, 63) rotate(-15.0)" class="key keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+</g>
+<g transform="translate(42, 124) rotate(10.0)" class="key keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger1"/>
+<text x="0" y="0" class="key tap">pinky</text>
+</g>
+<g transform="translate(111, 99) rotate(15.0)" class="key keypos-9">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+<text x="0" y="0" class="key tap">ring</text>
+</g>
+<g transform="translate(180, 89) rotate(20.0)" class="key keypos-10">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger3"/>
+<text x="0" y="0" class="key tap">middle</text>
+</g>
+<g transform="translate(225, 135) rotate(22.5)" class="key keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+<text x="0" y="0" class="key tap">index</text>
+</g>
+<g transform="translate(284, 139) rotate(22.5)" class="key keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(382, 139) rotate(-22.5)" class="key keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(441, 135) rotate(-22.5)" class="key keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+<text x="0" y="0" class="key tap">index</text>
+</g>
+<g transform="translate(486, 89) rotate(-20.0)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger3"/>
+<text x="0" y="0" class="key tap">middle</text>
+</g>
+<g transform="translate(554, 99) rotate(-15.0)" class="key keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+<text x="0" y="0" class="key tap">ring</text>
+</g>
+<g transform="translate(623, 124) rotate(-10.0)" class="key keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger1"/>
+<text x="0" y="0" class="key tap">pinky</text>
+</g>
+<g transform="translate(32, 180) rotate(10.0)" class="key keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger1"/>
+</g>
+<g transform="translate(97, 153) rotate(15.0)" class="key keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+</g>
+<g transform="translate(160, 141) rotate(20.0)" class="key keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger3"/>
+</g>
+<g transform="translate(203, 187) rotate(22.5)" class="key keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(262, 191) rotate(22.5)" class="key keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(333, 226)" class="key keypos-23">
+<rect rx="40" ry="40" x="-40" y="-40" width="80" height="80" class="key"/>
+</g>
+<g transform="translate(403, 191) rotate(-22.5)" class="key keypos-24">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(462, 187) rotate(-22.5)" class="key keypos-25">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger4"/>
+</g>
+<g transform="translate(505, 141) rotate(-20.0)" class="key keypos-26">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger3"/>
+</g>
+<g transform="translate(568, 153) rotate(-15.0)" class="key keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
+</g>
+<g transform="translate(633, 180) rotate(-10.0)" class="key keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger1"/>
+</g>
+<g transform="translate(237, 251) rotate(37.5)" class="key keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger5"/>
+</g>
+<g transform="translate(282, 285) rotate(37.5)" class="key keypos-30">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger5"/>
+<text x="0" y="0" class="key tap">thumb</text>
+</g>
+<g transform="translate(384, 285) rotate(-37.5)" class="key keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger5"/>
+<text x="0" y="0" class="key tap">thumb</text>
+</g>
+<g transform="translate(428, 251) rotate(-37.5)" class="key keypos-32">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger5"/>
+</g>
+</g>
+</g>
+</svg>
