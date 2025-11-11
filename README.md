@@ -37,6 +37,9 @@
     - each thumb gets a single key, with an option for a secondary thumb key if your thumbs are smarter than mine
   - centrally located rotary encoder knob for easy ambidextrous access to scrolling and volume control
   - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
+
+![finger map](images/fingering.jpg)
+
 - Low profile [3D printable case][case]
   - wireless case is only about 7mm high in front and 15mm high in the back, and comes in three separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
   - for those who don't want or need the extra space required for a battery, a separate wired case is provided, which comes in two pieces and is just under 7mm tall
