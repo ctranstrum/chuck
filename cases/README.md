@@ -53,6 +53,10 @@ The bottom case is broken into two pieces:
 
 ### Rectangle snap-fit case
 
+![rectangle-top](../images/rectangle-top.jpg)
+
+![rectangle-bottom](../images/rectangle-bottom.jpg)
+
 I've also created an alternative case that uses fewer screws and instead utilizes a snap-fit design.
 
 Unlike the sandwich-style cases, it is available only for full-size printer beds,

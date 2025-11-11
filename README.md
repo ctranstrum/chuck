@@ -1,10 +1,5 @@
 # Charlieflex Keyboard
 
-I haven't had a unibody ergonomic keyboard before,
-so I thought I'd give one a try, but none of the
-existing boards had what I wanted. Hence:
-the Charlieflex.
-
 ![Charlieflex sample](images/chuck-sample.jpg)
 
 ## Features
@@ -63,6 +58,21 @@ the Charlieflex.
 Interested in building a Charlieflex of your own?
 Check out the [Build Guide][guide] for details.
 
+## Ancestry
+
+I designed the [Lintilla keyboard][lintilla] before the Charlieflex,
+but I realized that I didn't actually like split keyboards,
+because I move around a bit as I type so I either have to keep adjusting position
+of each half, or I end up contorting my wrists to reach the keys.
+
+I also came to the conclusion that I would be better off with fewer pinky keys,
+due to the strain of reaching with the pinky, and my thumbs aren't actually
+smart enough for three keys each.
+
+However, the basic layout of the remaining keys didn't change much from what
+I had before, so if you want a split layout and more keys than the Charlieflex offers,
+maybe the [Lintilla][lintilla] is for you.
+
 ## Builds
 
 ![Charlieflex Choc v2 Keyboard](images/chuck-chocv2.jpg)
@@ -79,6 +89,12 @@ I also built a pink Charlieflex for the office,
 this time with [LDSA keycaps][ldsa]
 on [Bokeh Ambient Choc v1 switches][bokeh].
 
+---
+
+![Charlieflex keyboard with rectangle case](images/rectangle-top.jpg)
+
+An alternate case that uses fewer screws and is a bit more stable when placed on your lap.
+
 [ergogen]: https://ergogen.xyz
 [bokeh]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=51042310062244
 [case]: cases#readme
@@ -87,6 +103,7 @@ on [Bokeh Ambient Choc v1 switches][bokeh].
 [guide]: BUILD.md
 [hades]: https://www.lofree.co/products/hades-low-profile-pom-switches
 [ldsa]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
+[lintilla]: https://github.com/ctranstrum/lintilla
 [ohl]: LICENSE.txt
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [rp2040]: https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
