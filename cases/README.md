@@ -10,6 +10,12 @@
 
 ### Full size printer
 
+![top-case](../images/top-case.jpg)
+
+![attic-case](../images/attic-case.jpg)
+
+![bottom-case](../images/bottom-case.jpg)
+
 If you have access to your own 3D printer with a large print bed
 or if you are sending the files away to be printed,
 you will want to use the full size cases:
