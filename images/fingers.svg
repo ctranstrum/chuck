@@ -46,7 +46,7 @@ text {
     fill: #666;
 }
 </style>
-<g transform="translate(60, 0)" class="layer-Colemak">
+<g transform="translate(75, 0)" class="layer-Colemak">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
 </g>
