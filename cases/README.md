@@ -31,6 +31,10 @@ depending on the number of thumb keys used on each hand:
 
 ### Mini printer
 
+![split-top](../images/split-top.jpg)
+
+![split-bottom](../images/split-bottom.jpg)
+
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
 you can print the 3-part (plus the battery cover for wireless builds) top case:
@@ -93,6 +97,8 @@ However, it also meant I had to do a little post-processing on the prints
 to remove the supports prior to assembly.
 
 ## Encoder knobs
+
+![knobs](../images/knobs.jpg)
 
 The keyboard was designed with the idea of using a 25mm diameter knob,
 but I had a hard time finding encoder knobs that size,
