@@ -20,11 +20,11 @@ you will want to use the full size cases:
 
 ![attic-case](../images/attic-case.jpg)
 
-| wired                           | wireless                  | description                                                      |
-| ------------------------------- | ------------------------- | ---------------------------------------------------------------- |
-| [bottom](wired_bottom_case.stl) | [bottom](bottom_case.stl) | installed below the PCB                                          |
-| [top](wired_top_case.stl)       | [top](top_case.stl)       | installed above the PCB for two thumb keys on each side          |
-|                                 | [battery](attic.stl)      | above the top plate to cover the battery (do not print in resin) |
+| wired                           | wireless                   | description                                             |
+| ------------------------------- | -------------------------- | ------------------------------------------------------- |
+| [bottom](wired_bottom_case.stl) | [bottom](bottom_case.stl)  | installed below the PCB                                 |
+| [top](wired_top_case.stl)       | [top](top_case.stl)        | installed above the PCB for two thumb keys on each side |
+|                                 | [battery cover](attic.stl) | above the top plate (do not print in resin)             |
 
 There are three alternative top cases that can be used
 depending on the number of thumb keys used on each hand:
@@ -86,12 +86,16 @@ and only for a wireless build.
 | [chucker_by_the_dozen](rectangle_top_case_chucker_by_the_dozen.stl)     | top case option with one left thumb key and two right thumb keys |
 | [battery cover](attic.stl)                                              | above the top case to cover the battery (do not print in resin)  |
 
+Note that it is especially important when printing this case style on an FDM printer to place the top case
+upside down in the slicer so that the top surface of the case is in direct contact with the print bed.
+Otherwise you are going to have a real struggle with support removal.
+
 ## Print quality hints
 
 When printing this case,
-it should be noted that the "attic" portion of the case (battery cover) is designed
+it should be noted that the battery cover (filename: `attic.stl`) is designed
 to have heat-set inserts melted into it,
-so it is not recommended to print the attic using a resin printer
+so it is not recommended to print using a resin printer
 or using a material that cannot be melted easily,
 unless you plan on altering the case design to use another method
 to fasten the case together.
@@ -103,9 +107,12 @@ the top case and the attic are best printed upside down,
 so that the visible part of the case is against the print bed,
 giving the best top surface and requiring minimal supports to print.
 
-I had better luck on my FDM prints with supports enabled.
-However, it also meant I had to do a little post-processing on the prints
-to remove the supports prior to assembly.
+If you are having trouble with some of the raised areas sagging during printing,
+you can try to enable supports.
+While I was able to tune my printer to get great results without supports,
+if your printer is not well calibrated,
+it may be worth it to enable supports and spend a little time
+post-processing the prints to remove the supports prior to assembly.
 
 ## Encoder knobs
 
