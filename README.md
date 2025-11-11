@@ -64,9 +64,9 @@ Check out the [Build Guide][guide] for details.
 ## Ancestry
 
 I designed the [Lintilla keyboard][lintilla] before the Charlieflex,
-but I realized that I didn't actually like split keyboards,
-because I move around a bit as I type so I either have to keep adjusting position
-of each half, or I end up contorting my wrists to reach the keys.
+but over time I realized that I didn't actually like split keyboards with separate halves,
+because I move around a bit as I type so I either have to keep adjusting the position
+of each half, or I end up contorting my wrists to align with the keyboard.
 
 I also came to the conclusion that I would be better off with fewer pinky keys,
 due to the strain of reaching with the pinky, and my thumbs aren't actually
@@ -96,7 +96,8 @@ on [Bokeh Ambient Choc v1 switches][bokeh].
 
 ![Charlieflex keyboard with rectangle case](images/rectangle-top.jpg)
 
-An alternate case that uses fewer screws and is a bit more stable when placed on your lap.
+An alternate snap-fit case that uses fewer screws and is a bit more stable
+if you tend to use the keyboard directly on your lap.
 
 [ergogen]: https://ergogen.xyz
 [bokeh]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=51042310062244
