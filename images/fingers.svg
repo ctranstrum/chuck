@@ -1,4 +1,4 @@
-<svg width="740" height="500" viewBox="0 0 740 500" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="740" height="320" viewBox="0 0 740 320" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -46,8 +46,7 @@ text {
     fill: #666;
 }
 </style>
-<g transform="translate(30, 0)" class="layer-Colemak">
-<g transform="translate(0, 91)">
+<g transform="translate(50, 0)" class="layer-Colemak">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger2"/>
 </g>
@@ -156,7 +155,6 @@ text {
 </g>
 <g transform="translate(428, 251) rotate(-37.5)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key finger5"/>
-</g>
 </g>
 </g>
 </svg>
