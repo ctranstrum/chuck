@@ -10,15 +10,15 @@
 
 ### Full size printer
 
-![top-case](../images/top-case.jpg)
-
-![attic-case](../images/attic-case.jpg)
-
-![bottom-case](../images/bottom-case.jpg)
-
 If you have access to your own 3D printer with a large print bed
 or if you are sending the files away to be printed,
 you will want to use the full size cases:
+
+![bottom-case](../images/bottom-case.jpg)
+
+![top-case](../images/top-case.jpg)
+
+![attic-case](../images/attic-case.jpg)
 
 | wired                           | wireless                  | description                                                      |
 | ------------------------------- | ------------------------- | ---------------------------------------------------------------- |
@@ -35,15 +35,15 @@ depending on the number of thumb keys used on each hand:
 | [twentyone chuck street](wired_top_case_twentyone_chuck_street.stl) | [twentyone chuck street](top_case_twentyone_chuck_street.stl) | two thumb keys on the left hand and one on the right |
 | [chucker by the dozen](wired_top_case_chucker_by_the_dozen.stl)     | [chucker by the dozen](top_case_chucker_by_the_dozen.stl)     | one thumb key on the left hand and two on the right  |
 
+Note that for best results on an FDM printer, the top plate and the battery cover should be printed upside down.
+
 ### Mini printer
-
-![split-top](../images/split-top.jpg)
-
-![split-bottom](../images/split-bottom.jpg)
 
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
 you can print the 3-part (plus the battery cover for wireless builds) top case:
+
+![split-top](../images/split-top.jpg)
 
 | wired                                     | wireless                            | description                                                      |
 | ----------------------------------------- | ----------------------------------- | ---------------------------------------------------------------- |
@@ -52,22 +52,27 @@ you can print the 3-part (plus the battery cover for wireless builds) top case:
 | [left 2](wired_top_dovetail_left_2.stl)   | [left 2](top_dovetail_left_2.stl)   | left piece with two thumb keys                                   |
 | [right 1](wired_top_dovetail_right_1.stl) | [right 1](top_dovetail_right_1.stl) | right piece with one thumb key                                   |
 | [right 2](wired_top_dovetail_right_2.stl) | [right 2](top_dovetail_right_2.stl) | right piece with two thumb keys                                  |
-|                                           | [battery](attic.stl)                | above the top plate to cover the battery (do not print in resin) |
+|                                           | [battery cover](attic.stl)          | above the top plate to cover the battery (do not print in resin) |
+
+Note that these top cases should be printed upside down for best results on an FDM printer.
 
 The bottom case is broken into two pieces:
+
+![split-bottom](../images/split-bottom.jpg)
 
 | wired                                    | wireless                           | description  |
 | ---------------------------------------- | ---------------------------------- | ------------ |
 | [left](wired_bottom_dovetail_left.stl)   | [left](bottom_dovetail_left.stl)   | left bottom  |
 | [right](wired_bottom_dovetail_right.stl) | [right](bottom_dovetail_right.stl) | right bottom |
 
-### Rectangle snap-fit case
+### Rectangular snap-fit case
+
+I've also created an alternative case that uses fewer screws and instead relies on a snap-fit design
+to remain securely fastened without sacrificing any additional height compared to the original sandwich design.
 
 ![rectangle-top](../images/rectangle-top.jpg)
 
 ![rectangle-bottom](../images/rectangle-bottom.jpg)
-
-I've also created an alternative case that uses fewer screws and instead utilizes a snap-fit design.
 
 Unlike the sandwich-style cases, it is available only for full-size printer beds,
 and only for a wireless build.
