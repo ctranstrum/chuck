@@ -1,7 +1,7 @@
 meta:
-  keyboard: &keyboard_name Charlieflex
+  keyboard: &keyboard_name Charlieflex Plus
   author: chad@transtrum.net
-  version: &version v1.3
+  version: &version v1.4
   repository: &repo https://github.com/ctranstrum/chuck
   license: &license Licensed under CERN-OHL-P v2
 
@@ -47,12 +47,23 @@ points:
       key:
         autobind: .5
         tags: [switch]
+      rows:
+        bottom:
+          rowpin: D13
+          mirror.rowpin: D19
+        home:
+          rowpin: D14
+          mirror.rowpin: D18
+        top:
+          rowpin: D15
+          mirror.rowpin: D17
       columns:
         pinky:
           key:
-            cpdst: CP0
             splay: -10
+            cpdst: CP0
             mirror.cpdst: CP5
+            colpin: D2
           rows:
             bottom:
               cpsrc: CP1
@@ -61,8 +72,6 @@ points:
             home:
               cpsrc: CP2
               tags: [switch]
-              shared: pinky_bottom
-              mirror.shared: mirror_pinky_bottom
             top:
               orient: -5
               shift: [3, 3]
@@ -76,6 +85,7 @@ points:
             splay: -5
             cpdst: CP0
             mirror.cpdst: CP5
+            colpin: D3
           rows:
             bottom:
               cpsrc: CP4
@@ -83,10 +93,7 @@ points:
             home:
               cpsrc: CP5
               tags: [switch]
-              shared: ring_bottom
-              mirror:
-                cpsrc: CP0
-                shared: mirror_ring_bottom
+              mirror.cpsrc: CP0
             top:
               cpdst: CP1
               cpsrc: CP0
@@ -99,28 +106,25 @@ points:
             splay: -5
             cpdst: CP1
             mirror.cpdst: CP4
+            colpin: D4
           rows:
             bottom:
               cpsrc: CP2
               tags: [switch, return]
-              shared: index_bottom
-              mirror.shared: mirror_index_bottom
             home:
               cpsrc: CP3
             top:
               cpsrc: CP4
               tags: [switch, mid_bumper]
               bind: [0, 1]
-              shared: middle_home
-              mirror:
-                cpsrc: CP1
-                shared: mirror_middle_home
+              mirror.cpsrc: CP1
         index:
           key:
             stagger: -hdx
             splay: -2.5
             cpdst: CP2
             mirror.cpdst: CP3
+            colpin: D5
           rows:
             bottom:
               cpdst: CP1
@@ -131,13 +135,12 @@ points:
             top:
               cpsrc: CP1
               tags: [switch]
-              shared: index_home
-              mirror.shared: mirror_index_home
         inner:
           key:
             stagger: 2/3 hdx
             cpdst: CP2
             mirror.cpdst: CP3
+            colpin: D6
           rows:
             bottom:
               cpsrc: CP3
@@ -146,8 +149,6 @@ points:
             home:
               cpsrc: CP4
               tags: [switch]
-              shared: inner_bottom
-              mirror.shared: mirror_inner_bottom
 
     thumbs:
       mirror:
@@ -160,14 +161,17 @@ points:
         cpsrc: CP5
         mirror.cpsrc: CP6
         bind: [15, 0, 0, 15]
+        rowpin: D7
       columns:
         inner.rows.spot:
           splay: -15
           cpdst: CP2
+          colpin: D5
           tags: [opt_switch]
         outer.rows.spot:
           cpdst: CP3
           tags: [switch]
+          colpin: D6
 
     encoder:
       anchor:
@@ -178,6 +182,8 @@ points:
         cpsrc: CP6
         cpdst: CP1
         bind: [25, 4.3, 23.75, 4.3]
+        colpin: D4
+        rowpin: D7
 
     mcu:
       key.tags: [mcu]
@@ -2134,6 +2140,248 @@ pcbs:
         params:
           side: B
           text: XIAO BLE FACE DOWN
+
+      xiao_bat_pos:
+        what: pad
+        where: xiao_pos_pad
+        params:
+          text_side: B
+          net: BAT+
+          text: BAT+
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      xiao_reset:
+        what: pad
+        where: reset_pad
+        params:
+          text_side: B
+          net: RST
+          text: RST
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      battery_jst:
+        what: jst-ph-2
+        where: jst
+        params:
+          BAT_P: RAW
+          BAT_N: GND
+
+      reset_button:
+        # what: evqpuc
+        what: reset-smd-top
+        where: reset
+        params:
+          side: B
+          from: GND
+          to: RST
+
+      reset_note:
+        what: text
+        where: reset
+        adjust:
+          shift: [-9, 0]
+        params:
+          side: B
+          text: RESET
+          justify: left
+
+      power_slider:
+        what: trislider
+        where: power
+        params:
+          side: B
+          posts: true
+          vias: true
+          COM: RAW
+          A: BAT+
+
+      power_label:
+        what: text
+        where: power
+        adjust.shift: [-4.5, 0.6]
+        params:
+          side: B
+          text: POWER
+          justify: right
+
+      power_on:
+        what: text
+        where: power
+        adjust.shift: [-4.5, -0.8]
+        params:
+          side: B
+          text: ON
+          justify: right
+
+      power_off:
+        what: text
+        where: power
+        adjust.shift: [4.5, 0.6]
+        params:
+          side: B
+          text: OFF
+          justify: left
+
+      mounting_holes:
+        what: mountinghole
+        where: screw
+
+      board_logo:
+        what: mushroom
+        where: encoder
+        adjust.shift: [1, 6]
+        params:
+          side: F
+
+      keyboard_name:
+        what: text
+        where: matrix_pinky_bottom
+        adjust.shift: [dx - 4.5, -0.85 hdy]
+        params:
+          side: F
+          text: *keyboard_name
+          layer: Cu
+          size: 3
+          thickness: 0.5
+          justify: left
+
+      board_version:
+        what: text
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -hdy]
+        params:
+          text: *version
+          side: F
+
+      board_repo:
+        what: text
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -0.65 dy]
+        params:
+          side: F
+          text: *repo
+
+      license_note:
+        what: text
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [dx, -hdy]
+        params:
+          side: F
+          text: *license
+          justify: right
+
+      license_logo:
+        what: oshw
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [1.65 dx, -0.1 dy]
+        params:
+          side: F
+
+      order_number:
+        what: text
+        where: encoder
+        adjust.shift: [0, hdy - 2.75]
+        params:
+          side: F
+          text: *order_text
+
+  chuckplus:
+    template: kicad8
+    outlines:
+      main:
+        outline: pcb_outline
+    params:
+      name: *keyboard_name
+      paper: A4
+
+    footprints:
+      hotswap_sockets:
+        what: choc-v1-v2
+        where: [opt_switch, switch]
+        params:
+          from: "{{colpin}}"
+          to: "{{colrow}}"
+          include_keycap: true
+          include_corner_marks: true
+
+      plus_map:
+        what: text
+        where: [opt_switch, switch]
+        adjust:
+          shift: [-3/5 hdx, hdy / 3]
+          resist: true
+        params:
+          side: B
+          text: "{{colpin}}-{{rowpin}}"
+
+      diodes:
+        what: sod123
+        where: [opt_switch, switch]
+        adjust:
+          shift: [5, -4]
+          resist: true
+        params:
+          side: B
+          designator: SW
+          from: "{{colrow}}"
+          to: "{{rowpin}}"
+          smd: true
+          via: pad
+          labels: true
+
+      encoder_map:
+        what: text
+        where: encoder
+        adjust.shift: [0, hdy]
+        params:
+          side: B
+          text: "{{colpin}}-{{rowpin}}"
+
+      encoder_diode:
+        what: sod123
+        where: encoder
+        adjust:
+          shift: [0, 14]
+        params:
+          side: B
+          designator: SW
+          from: encdiode
+          to: "{{rowpin}}"
+          smd: true
+          via: pad
+          labels: true
+
+      encoder:
+        what: encoder
+        where: encoder
+        params:
+          include_momentary_switch_pads: true
+          include_plate_hole_marking: true
+          include_silkscreen: true
+          S1: "{{cpsrc}}"
+          S2: encdiode
+
+      xiao_mcu_plus:
+        what: xiaoplus
+        where: mcu
+        params:
+          side: B
+          D8: ENC_B
+          D9: ENC_A
+
+      xiao_note:
+        what: text
+        where: mcu
+        adjust.shift: [0, -12]
+        params:
+          side: B
+          text: XIAO PLUS FACE DOWN
 
       xiao_bat_pos:
         what: pad
