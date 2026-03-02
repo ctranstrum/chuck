@@ -149,6 +149,8 @@ points:
             home:
               cpsrc: CP4
               tags: [switch]
+            top:
+              skip: true
 
     thumbs:
       mirror:
@@ -166,12 +168,14 @@ points:
         inner.rows.spot:
           splay: -15
           cpdst: CP2
-          colpin: D5
+          colpin: D2
+          mirror.colpin: D6
           tags: [opt_switch]
         outer.rows.spot:
           cpdst: CP3
           tags: [switch]
-          colpin: D6
+          colpin: D3
+          mirror.colpin: D5
 
     encoder:
       anchor:
@@ -2364,7 +2368,7 @@ pcbs:
           include_momentary_switch_pads: true
           include_plate_hole_marking: true
           include_silkscreen: true
-          S1: "{{cpsrc}}"
+          S1: "{{colpin}}"
           S2: encdiode
 
       xiao_mcu_plus:
@@ -2372,6 +2376,9 @@ pcbs:
         where: mcu
         params:
           side: B
+          face_down: true
+          include_battery_pads: false
+          include_reset_pads: false
           D8: ENC_B
           D9: ENC_A
 

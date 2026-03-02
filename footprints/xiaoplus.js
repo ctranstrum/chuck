@@ -4,8 +4,10 @@
 module.exports = {
   params: {
     designator: "MCU",
-    side: "F&B", // F, B, F&B
-    clean_reversible: true,
+    side: "F",
+    face_down: false,
+    include_battery_pads: true,
+    include_reset_pads: true,
     include_courtyard: true,
     include_antenna_keepout: true,
     include_user_drawing_outline: true,
@@ -93,19 +95,20 @@ module.exports = {
     }
 
     // battery pads
-    lines.push(
-      `(pad "BAT_A" thru_hole circle (at ${mil(-50)} ${mil(210)}) (size ${mil(60)} ${mil(60)}) (drill ${mil(30)}) (layers "*.Cu" "*.Mask") ${p.BAT_A})`,
-    );
-    lines.push(
-      `(pad "BAT_B" thru_hole circle (at ${mil(50)} ${mil(210)}) (size ${mil(60)} ${mil(60)}) (drill ${mil(30)}) (layers "*.Cu" "*.Mask") ${p.BAT_B})`,
-    );
-    lines.push(
-      `(fp_text user "+" (at ${mil(-110)} ${mil(230)} 0) (layer "B.SilkS") (effects (font (size 1 1) (thickness 0.2) (bold yes) ) ) )`,
-    );
-    lines.push(
-      `(fp_text user "+" (at ${mil(110)} ${mil(230)} 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.2) (bold yes) ) ) )`,
-    );
-    lines.push(`
+    if (p.include_battery_pads) {
+      lines.push(
+        `(pad "BAT_A" thru_hole circle (at ${mil(-50)} ${mil(210)}) (size ${mil(60)} ${mil(60)}) (drill ${mil(30)}) (layers "*.Cu" "*.Mask") ${p.BAT_A})`,
+      );
+      lines.push(
+        `(pad "BAT_B" thru_hole circle (at ${mil(50)} ${mil(210)}) (size ${mil(60)} ${mil(60)}) (drill ${mil(30)}) (layers "*.Cu" "*.Mask") ${p.BAT_B})`,
+      );
+      lines.push(
+        `(fp_text user "+" (at ${mil(-110)} ${mil(230)} 0) (layer "B.SilkS") (effects (font (size 1 1) (thickness 0.2) (bold yes) ) ) )`,
+      );
+      lines.push(
+        `(fp_text user "+" (at ${mil(110)} ${mil(230)} 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.2) (bold yes) ) ) )`,
+      );
+      lines.push(`
 (fp_arc (start -1.524 0.4572) (mid -1.464484 0.313516) (end -1.3208 0.254) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 (fp_arc (start 1.3208 0.254) (mid 1.464484 0.313516) (end 1.524 0.4572) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 (fp_arc (start -1.3208 5.334) (mid -1.464484 5.274484) (end -1.524 5.1308) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
@@ -115,15 +118,17 @@ module.exports = {
 (fp_line (start 1.3208 5.334) (end -1.3208 5.334) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 (fp_line (start -1.3208 0.254) (end 1.3208 0.254) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 `);
+    }
 
     // reset pads
-    lines.push(
-      `(pad "RST_A" thru_hole circle (at ${mil(-50)} ${mil(-240)}) (size 1.524 1.524) (drill 1.016) (layers "*.Cu" "*.Mask") ${p.RST_A})`,
-    );
-    lines.push(
-      `(pad "RST_B" thru_hole circle (at ${mil(50)} ${mil(-240)}) (size 1.524 1.524) (drill 1.016) (layers "*.Cu" "*.Mask") ${p.RST_B})`,
-    );
-    lines.push(`
+    if (p.include_reset_pads) {
+      lines.push(
+        `(pad "RST_A" thru_hole circle (at ${mil(-50)} ${mil(-240)}) (size 1.524 1.524) (drill 1.016) (layers "*.Cu" "*.Mask") ${p.RST_A})`,
+      );
+      lines.push(
+        `(pad "RST_B" thru_hole circle (at ${mil(50)} ${mil(-240)}) (size 1.524 1.524) (drill 1.016) (layers "*.Cu" "*.Mask") ${p.RST_B})`,
+      );
+      lines.push(`
 (fp_line (start -1.524 -6.2992) (end -1.524 -8.89) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 (fp_line (start -1.3208 -9.0932) (end 1.3208 -9.0932) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 (fp_line (start 1.3208 -6.096) (end -1.3208 -6.096) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
@@ -133,49 +138,45 @@ module.exports = {
 (fp_arc (start 1.3208 -9.0932) (mid 1.464484 -9.033684) (end 1.524 -8.89) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 (fp_arc (start 1.524 -6.2992) (mid 1.464484 -6.155516) (end 1.3208 -6.096) (stroke (width 0.05) (type default) ) (layer "Edge.Cuts") )
 `);
+    }
 
     // pins
     /**
-     * @type {{ name: string, left: boolean, cr: boolean, pos: number }[]}
+     * @type {{ name: string, left: boolean, pos: number }[]}
      */
-    // cr: clean reversible, if the pad can be swapped with the other side
     const pads = [
-      { left: true, cr: false, name: "D0", pos: 0 },
-      { left: true, cr: false, name: "D11", pos: 1 },
-      { left: true, cr: false, name: "D1", pos: 2 },
-      { left: true, cr: false, name: "D12", pos: 3 },
-      { left: true, cr: false, name: "D2", pos: 4 },
-      { left: true, cr: false, name: "D13", pos: 5 },
-      { left: true, cr: true, name: "D3", pos: 6 },
-      { left: true, cr: true, name: "D14", pos: 7 },
-      { left: true, cr: true, name: "D4", pos: 8 },
-      { left: true, cr: true, name: "D15", pos: 9 },
-      { left: true, cr: true, name: "D5", pos: 10 },
-      { left: true, cr: true, name: "D16", pos: 11 },
-      { left: true, cr: true, name: "D6", pos: 12 },
+      { left: true, name: "D0", pos: 0 },
+      { left: true, name: "D11", pos: 1 },
+      { left: true, name: "D1", pos: 2 },
+      { left: true, name: "D12", pos: 3 },
+      { left: true, name: "D2", pos: 4 },
+      { left: true, name: "D13", pos: 5 },
+      { left: true, name: "D3", pos: 6 },
+      { left: true, name: "D14", pos: 7 },
+      { left: true, name: "D4", pos: 8 },
+      { left: true, name: "D15", pos: 9 },
+      { left: true, name: "D5", pos: 10 },
+      { left: true, name: "D16", pos: 11 },
+      { left: true, name: "D6", pos: 12 },
 
-      { left: false, cr: true, name: "D7", pos: 12 },
-      { left: false, cr: true, name: "D17", pos: 11 },
-      { left: false, cr: true, name: "D8", pos: 10 },
-      { left: false, cr: true, name: "D18", pos: 9 },
-      { left: false, cr: true, name: "D9", pos: 8 },
-      { left: false, cr: true, name: "D19", pos: 7 },
-      { left: false, cr: true, name: "D10", pos: 6 },
+      { left: false, name: "D7", pos: 12 },
+      { left: false, name: "D17", pos: 11 },
+      { left: false, name: "D8", pos: 10 },
+      { left: false, name: "D18", pos: 9 },
+      { left: false, name: "D9", pos: 8 },
+      { left: false, name: "D19", pos: 7 },
+      { left: false, name: "D10", pos: 6 },
 
-      { left: false, cr: false, name: "P3V3", pos: 4 },
-      { left: false, cr: false, name: "GND", pos: 2 },
-      { left: false, cr: false, name: "P5V", pos: 0 },
+      { left: false, name: "P3V3", pos: 4 },
+      { left: false, name: "GND", pos: 2 },
+      { left: false, name: "P5V", pos: 0 },
     ];
     function addPads(front) {
       const l = front ? "F" : "B";
       pads.forEach((pad) => {
         // base position: 350 mil to the left or right
         const x =
-          350 *
-          (pad.left ? -1 : 1) *
-          // if the pad is for the B side (!front), flip the position
-          // unless the pad is clean reversible and clean_reversible is enabled
-          (!front && !(pad.cr && p.clean_reversible) ? -1 : 1);
+          350 * (pad.left ? -1 : 1) * (front ? 1 : -1) * (p.face_down ? -1 : 1);
         const y = -300 + 50 * pad.pos;
         lines.push(
           `(pad "${pad.name}" smd oval (at ${mil(x)} ${mil(y)} ${p.rot}) (size ${mil(60)} ${mil(32)}) (thermal_bridge_angle 45) (layers "${l}.Cu" "${l}.Paste" "${l}.Mask") ${p[pad.name]})`,
@@ -190,7 +191,7 @@ module.exports = {
     }
 
     return `
-(footprint "genteure:XIAO_nRF52840_Plus"
+(footprint "genteure_modified:XIAO_nRF52840_Plus"
   (layer "${p.side == "F&B" ? "F" : p.side}.Cu")
   ${p.at /* parametric position */}
   (attr smd)
