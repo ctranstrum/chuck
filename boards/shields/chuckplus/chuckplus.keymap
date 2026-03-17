@@ -1,0 +1,588 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <behaviors/rgbled_widget.dtsi>
+
+// Multiple mods
+#define GC(key) &kp LG(LC(key))
+#define GS(key) &kp LG(LS(key))
+#define GCS(key) &kp LG(LC(LS(key)))
+#define HYPR(key) &kp LG(LA(LC(LS(key))))
+
+// Shortcuts for home row mods
+#define Glb &hm GLOBE
+#define Sft &hm LSHFT
+#define Ctl &hm LCTRL
+#define Opt &hm LALT
+#define Cmd &hm LGUI
+#define Alt &hm RALT
+
+// Magic bluetooth button
+#define BT_(btnum) &bt_key btnum btnum
+
+// Key positions for combos
+// ┏━━━━┳━━━━┳━━━━┳━━━━┓                    ┏━━━━┳━━━━┳━━━━┳━━━━┓
+// ┃ 0  ┃ 1  ┃ 2  ┃ 3  ┃                    ┃ 4  ┃ 5  ┃ 6  ┃ 7  ┃
+// ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┓          ┏━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
+// ┃ 8  ┃ 9  ┃ 10 ┃<11>┃ 12 ┃          ┃ 13 ┃<14>┃ 15 ┃ 16 ┃ 17 ┃
+// ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫  ┏━━━━┓  ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
+// ┃ 18 ┃ 19 ┃ 20 ┃ 21 ┃ 22 ┃  ┃ 23 ┃  ┃ 24 ┃ 25 ┃ 26 ┃ 27 ┃ 28 ┃
+// ┗━━━━┻━━━━┻━━━━┻━━━━╋━━━━╋━━┻━┳┳━┻━━╋━━━━╋━━━━┻━━━━┻━━━━┻━━━━┛
+//                     ┃ 29 ┃ 30 ┃┃ 31 ┃ 32 ┃
+//                     ┗━━━━┻━━━━┛┗━━━━┻━━━━┛
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_unlock {
+            key-positions = <0 7>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+
+        combo_b {
+            key-positions = <3 12>;
+            bindings = <&kp B>;
+            layers = <0>;
+        };
+
+        combo_j {
+            key-positions = <4 13>;
+            bindings = <&kp J>;
+            layers = <0>;
+        };
+
+        combo_esc {
+            key-positions = <1 2 3>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_esc_pinky {
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_backspace {
+            key-positions = <4 5 6>;
+            bindings = <&kp BSPC>;
+            layers = <0 1>;
+        };
+
+        combo_backspace_pinky {
+            key-positions = <6 7>;
+            bindings = <&kp BSPC>;
+            layers = <0 1>;
+        };
+
+        combo_tab {
+            key-positions = <9 10 11>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+
+        combo_tab_pinky {
+            key-positions = <18 19>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+
+        combo_return {
+            key-positions = <14 15 16>;
+            bindings = <&kp RET>;
+            layers = <0 1>;
+        };
+
+        combo_return_pinky {
+            key-positions = <27 28>;
+            bindings = <&kp RET>;
+            layers = <0 1>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_left_paren {
+            key-positions = <2 3>;
+            bindings = <&kp LPAR>;
+            layers = <0>;
+        };
+
+        combo_right_paren {
+            key-positions = <4 5>;
+            bindings = <&kp RPAR>;
+            layers = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_left_curly {
+            key-positions = <10 11>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_right_curly {
+            key-positions = <14 15>;
+            bindings = <&kp RBRC>;
+            layers = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_left_bracket {
+            key-positions = <20 21>;
+            bindings = <&kp LBKT>;
+            layers = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_right_bracket {
+            key-positions = <25 26>;
+            bindings = <&kp RBKT>;
+            layers = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_less_than {
+            key-positions = <11 22>;
+            bindings = <&kp LT>;
+            layers = <0>;
+        };
+
+        combo_greater_than {
+            key-positions = <14 24>;
+            bindings = <&kp GT>;
+            layers = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_mouse_click {
+            key-positions = <12 22>;
+            bindings = <&mkp LCLK>;
+            layers = <0>;
+        };
+
+        combo_mouse_right_click {
+            key-positions = <8 18>;
+            bindings = <&mkp RCLK>;
+            layers = <0>;
+        };
+
+        combo_mouse_up {
+            key-positions = <5 15>;
+            bindings = <&mmv MOVE_UP>;
+            layers = <0>;
+        };
+
+        combo_mouse_down {
+            key-positions = <15 26>;
+            bindings = <&mmv MOVE_DOWN>;
+            layers = <0>;
+        };
+
+        combo_mouse_left {
+            key-positions = <4 14>;
+            bindings = <&mmv MOVE_LEFT>;
+            layers = <0>;
+        };
+
+        combo_mouse_right {
+            key-positions = <6 16>;
+            bindings = <&mmv MOVE_RIGHT>;
+            layers = <0>;
+        };
+
+        combo_scroll_up {
+            key-positions = <2 10>;
+            bindings = <&msc SCRL_UP>;
+            layers = <0>;
+        };
+
+        combo_scroll_down {
+            key-positions = <10 20>;
+            bindings = <&msc SCRL_DOWN>;
+            layers = <0>;
+        };
+
+        combo_scroll_left {
+            key-positions = <1 9>;
+            bindings = <&msc SCRL_LEFT>;
+            layers = <0>;
+        };
+
+        combo_scroll_right {
+            key-positions = <3 11>;
+            bindings = <&msc SCRL_RIGHT>;
+            layers = <0>;
+        };
+
+        // Combos are always executed on the central, so if we have a dongle
+        // without an easily accessible reset button, we can use a combo to
+        // put the central into bootloder mode
+        combo_flash {
+            key-positions = <12 13>;
+            bindings = <&flash 6>;  // The layer number of the flash layer
+            layers = <5>;  // The layer number of the layer where this combo is active
+        };
+    };
+
+    behaviors {
+        bt_key: magic_bluetooth_key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&bt_clr>, <&bt_sel>;
+        };
+
+        hm: homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            require-prior-idle-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        hmcs: homerow_mod_comma_semi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            require-prior-idle-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mcs>;
+        };
+
+        lp_mc: launch_pad_mission_control {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <HYPR(N4)>, <&kp LC(UP)>;
+        };
+
+        lsscw: layer_sticky_shift_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sscw>;
+        };
+
+        mcs: mod_comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mdc: mod_dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        msb: mod_slash_back {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        key_rotation: sensor_rotation_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        scroll_rotation: sensor_rotation_scroll {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <30>;
+        };
+
+        skqr: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+            bindings = <&kp>;
+        };
+
+        sscw: sticky_shift_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&skqr LSHIFT>, <&caps_word>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        fn_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
+        };
+        kbd_layer {
+            if-layers = <2 3>;
+            then-layer = <5>;
+        };
+    };
+
+    macros {
+        bt_clr: bluetooth_clear {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>, <&bt BT_CLR>;
+        };
+
+        bt_sel: bluetooth_select {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&out OUT_BLE>, <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
+        };
+
+        usb_sel: usb_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_USB>;
+        };
+
+        flash: dongle_bootloader {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &to MACRO_PLACEHOLDER>, <&bootloader>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        colemak {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "Colemak"               ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃   Q   ┃   W   ┃   F   ┃   P   ┃                                    ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃
+     &kp Q   &kp W   &kp F   &kp P                                        &kp L   &kp U   &kp Y  &kp SQT
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                    ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
+     Sft A   Ctl R   Opt S   Cmd T   Glb G                        Glb M   Cmd N   Opt E   Ctl I   Sft O
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃     ┃  MUTE  ┃     ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
+     &kp Z   &kp X   Alt C   &kp D   &kp V       &kp C_MUTE       &kp K &kp H &hmcs RALT 0 &mdc    &msb
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   -   ┃ SHIFT ┃    ┃ SPACE ┃   *   ┃
+                                &lt 1 MINUS &lsscw 2 0 &lt 3 SPC &lt 3 STAR
+//                                 ┃  num  ┃  nav  ┃    ┃  sym  ┃  sym  ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
+        };
+
+        num {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "numpad"                ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                    ┃   7   ┃   8   ┃   9   ┃   -   ┃
+    &kp ESC  &none   GS(N4) GCS(N4)                                       &kp N7  &kp N8 &kp N9 &kp MINUS
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ CtrlA ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
+ &kp LC(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                     &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃     ┃  PLAY  ┃     ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
+&kp LC(Z) &kp LC(X) Alt LC(C) &kp LC(D) &kp LC(V) &kp C_PP       &kp STAR &kp N1  &kp N2 &kp N3 &kp EQUAL
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃       ┃    ┃   0   ┃   .   ┃
+                                    &trans   &mo 2       &kp N0  &kp DOT
+//                                 ┃  num  ┃ func  ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&key_rotation C_PREV C_NEXT>;
+        };
+
+        nav {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "navigation"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                    ┃  Esc  ┃       ┃  Del  ┃ Bkspc ┃
+    &kp ESC  &none   GS(N4) GCS(N4)                                      &kp ESC  &none  &kp DEL &kp BSPC
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+ Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                    &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃     ┃  PREV  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+&kp LG(Z) &kp LG(X) Alt LG(C) &kp LG(D) &kp LG(V) &kp C_PREV  &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃ ##### ┃    ┃  Tab  ┃  SPC  ┃
+                                     &mo 1  &trans      &lt 3 TAB &kp SPC
+//                                 ┃ func  ┃       ┃    ┃ keybd ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        sym {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "symbols"               ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Del  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp DEL &kp BSPC
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+&kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                   Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃     ┃  NEXT  ┃     ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+&kp TILDE &kp PIPE &kp PLUS &kp AMPS &kp QMARK   &kp C_NEXT   &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
+// ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   _   ┃   /   ┃    ┃ ##### ┃ ##### ┃
+                                  &kp UNDER &lt 2 SLASH  &trans  &trans
+//                                 ┃       ┃ keybd ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        fn {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "function"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃                                    ┃  F7   ┃  F8   ┃  F9   ┃  F12  ┃
+     &none   &none   &none   &none                                       &kp F7  &kp F8  &kp F9  &kp F12
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃       ┃  F4   ┃  F5   ┃  F6   ┃  F11  ┃
+&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp GLOBE                   &none  &kp F4  &kp F5  &kp F6  &kp F11
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃     ┃  MUTE  ┃     ┃       ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
+     &none   &none   &none   &none   &none       &kp C_MUTE       &none  &kp F1   &kp F2 &kp F3  &kp F10
+// ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃ ##### ┃    ┃       ┃       ┃
+                                    &trans  &trans        &none   &none
+//                                 ┃       ┃       ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
+        };
+
+        kbd {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "keyboard"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃c stat ┃       ┃scrnsht┃scrn cp┃                                    ┃launchp┃  USB  ┃       ┃battery┃
+   &ind_con  &none   GS(N4) GCS(N4)                                     HYPR(N4) &usb_sel &none &ind_bat
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃ prev  ┃ play  ┃ next  ┃       ┃                    ┃mission┃  BT4  ┃  BT5  ┃       ┃       ┃
+   &none &kp C_PREV &kp C_PP &kp C_NEXT &none                   &kp LC(UP) BT_(3) BT_(4)  &none   &none
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃control┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ lock  ┃ mute  ┃caps lk┃numlock┃       ┃     ┃ flash  ┃     ┃studio ┃  BT1  ┃  BT2  ┃  BT3  ┃       ┃
+  GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none      &flash 6 &studio_unlock BT_(0)  BT_(1)  BT_(2)  &none
+// ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃ unlock┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃ ##### ┃    ┃ ##### ┃ ##### ┃
+                                    &trans  &trans       &trans  &trans
+//                                 ┃       ┃       ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
+        };
+        flash {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "flash mode"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃                                    ┃       ┃       ┃       ┃       ┃
+     &none   &none   &none   &none                                        &none   &none   &none   &none
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+     &none   &none   &none   &none   &none                        &none   &none   &none   &none   &none
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃     ┃        ┃     ┃       ┃       ┃       ┃       ┃       ┃
+     &none   &none   &none   &none   &none         &none          &none   &none   &none   &none   &none
+// ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃       ┃    ┃       ┃       ┃
+                                     &none   &none        &none   &none
+//                                 ┃       ┃       ┃    ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┛
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        // Extra empty layers for ZMK Studio
+
+        layer7 {
+            status = "reserved";
+        };
+
+        layer8 {
+            status = "reserved";
+        };
+
+        layer9 {
+            status = "reserved";
+        };
+
+        layer10 {
+            status = "reserved";
+        };
+
+        layer11 {
+            status = "reserved";
+        };
+
+        layer12 {
+            status = "reserved";
+        };
+
+        layer13 {
+            status = "reserved";
+        };
+
+        layer14 {
+            status = "reserved";
+        };
+
+        layer15 {
+            status = "reserved";
+        };
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=dts

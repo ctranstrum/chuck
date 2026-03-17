@@ -5,6 +5,12 @@ include:
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-unibody-ble
 
+  # Chuck Plus wireless with the XIAO nrf52840 Plus
+  - board: seeeduino_xiao_ble
+    shield: chuckplus_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-unibody-plus
+
   # Charlieflex Dongle (optional)
   - board: seeeduino_xiao_ble
     shield: charlieflex_dongle prospector_adapter

@@ -1,0 +1,41 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan_chuck {
+        compatible = "zmk,kscan-gpio-matrix";
+
+        row-gpios
+            = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D15
+            , <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D14
+            , <&gpio1  1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D13
+            , <&gpio1  3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D17
+            , <&gpio1  5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D18
+            , <&gpio1  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D19
+            , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
+            ;
+
+        col-gpios
+            = <&xiao_d 2 GPIO_ACTIVE_HIGH> // D2
+            , <&xiao_d 3 GPIO_ACTIVE_HIGH> // D3
+            , <&xiao_d 4 GPIO_ACTIVE_HIGH> // D4
+            , <&xiao_d 5 GPIO_ACTIVE_HIGH> // D5
+            , <&xiao_d 6 GPIO_ACTIVE_HIGH> // D6
+            ;
+
+        wakeup-source;
+    };
+};
+
+// For bigger batteries, we want to enable faster charging
+&gpio0 {
+    fastbatcharge: fast-battery-charge {
+        gpio-hog;
+        gpios = <13 GPIO_ACTIVE_HIGH>;
+        output-low;
+        line-name = "Fast Battery Charge";
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4

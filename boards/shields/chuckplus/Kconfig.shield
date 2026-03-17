@@ -1,0 +1,8 @@
+config SHIELD_CHUCKPLUS_UNIBODY
+    def_bool $(shields_list_contains,chuckplus_unibody)
+
+config SHIELD_CHUCKPLUS_DONGLE
+    def_bool $(shields_list_contains,chuckplus_dongle)
+
+config SHIELD_CHUCKPLUS_PERIPHERAL
+    def_bool $(shields_list_contains,chuckplus_peripheral)

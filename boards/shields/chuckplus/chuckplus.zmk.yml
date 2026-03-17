@@ -1,0 +1,14 @@
+file_format: "1"
+id: chuckplus
+name: Chuck Plus
+type: shield
+url: https://github.com/ctranstrum/chuck
+requires:
+  - xiao_ble
+features:
+  - keys
+  - encoder
+siblings:
+  - chuckplus_unibody
+  - chuckplus_peripheral
+  - chuckplus_dongle
