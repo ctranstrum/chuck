@@ -19,6 +19,9 @@ include:
   - board: seeeduino_xiao_ble
     shield: charlieflex_peripheral rgbled_adapter
     artifact-name: chuck-peripheral
+  - board: seeeduino_xiao_ble
+    shield: chuckplus_peripheral rgbled_adapter
+    artifact-name: chuck-peripheral-plus
 
   # Charlieflex wired only with the XIAO RP2040
   - board: seeeduino_xiao_rp2040

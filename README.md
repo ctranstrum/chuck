@@ -22,7 +22,9 @@ Note that you must be signed in to github to download.
 Unzip the firmware to find the following firmware files:
 
 - chuck-unibody-ble: for using the keyboard wirelessly without a dongle
+- chuck-unibody-plus: if you use the xiao nrf52840 plus
 - chuck-peripheral: for using the keyboad with a dongle
+- chuck-peripheral-plus: the dongle version of the xiao nrf52840 plus
 - chuck-dongle: to install the firmware onto the [Prospector ZMK dongle][prospector]
 - chuck-wired-rp2040: if you use the xiao rp2040 mcu
 - xiao-ble-reset: used to clear all bluetooth connections and other saved settings
@@ -86,7 +88,7 @@ manifest:
 
 Then, choose one of the following to add to your `build.yaml` file:
 
-For a wireless Charlieflex:
+For a wireless Charlieflex with the XIAO nrf52840:
 
 ```yaml
 include:
@@ -96,7 +98,17 @@ include:
     artifact-name: chuck-unibody-ble
 ```
 
-For Charlieflex with a dongle:
+For a wireless Charlieflex Plus with the XIAO nrf52840 Plus:
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: chuckplus_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-unibody-ble
+```
+
+For the Charlieflex on a XIAO nrf52840 with a dongle:
 
 ```yaml
 include:
@@ -106,6 +118,19 @@ include:
     artifact-name: chuck-dongle
   - board: seeeduino_xiao_ble
     shield: charlieflex_peripheral rgbled_adapter
+    artifact-name: chuck-peripheral
+```
+
+For the Charlieflex Plus using the XIAO nrf52840 Plus, paired with a dongle:
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: chuckplus_dongle prospector_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-dongle
+  - board: seeeduino_xiao_ble
+    shield: chuckplus_peripheral rgbled_adapter
     artifact-name: chuck-peripheral
 ```
 
