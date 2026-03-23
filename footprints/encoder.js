@@ -131,13 +131,13 @@ module.exports = {
         : ""
     }
     (attr through_hole)
-    (pad "A" thru_hole oval (at 2.5 ${p.encoder_pads_position} ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "F.Mask") ${p.A})
-    (pad "C" thru_hole oval (at 0 ${p.encoder_pads_position} ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "F.Mask") ${p.C})
-    (pad "B" thru_hole oval (at -2.5 ${p.encoder_pads_position} ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "F.Mask") ${p.B})
+    (pad "A" thru_hole oval (at 2.5 ${p.encoder_pads_position} ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "*.Mask") ${p.A})
+    (pad "C" thru_hole oval (at 0 ${p.encoder_pads_position} ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "*.Mask") ${p.C})
+    (pad "B" thru_hole oval (at -2.5 ${p.encoder_pads_position} ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "*.Mask") ${p.B})
     `;
     const momentary_switch_pads = `
-    (pad "S1" thru_hole oval (at -2.5 -7 ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "F.Mask") ${p.S1})
-    (pad "S2" thru_hole oval (at 2.5 -7 ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "F.Mask") ${p.S2})
+    (pad "S1" thru_hole oval (at -2.5 -7 ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "*.Mask") ${p.S1})
+    (pad "S2" thru_hole oval (at 2.5 -7 ${p.r}) (size 1.6 1.1) (drill oval 1 0.5) (layers "*.Cu" "*.Mask") ${p.S2})
     `;
     const plated_mp = `
     (pad "" thru_hole roundrect

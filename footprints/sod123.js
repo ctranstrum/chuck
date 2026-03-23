@@ -6,7 +6,7 @@ module.exports = {
     to: undefined,
     tht: false,
     smd: false,
-    via: "none",
+    via: "none", // can be pad, padfrom, padto, middle, middlefrom, middleto
     labels: false,
     label_rotation: 0,
   },
@@ -41,17 +41,25 @@ module.exports = {
       : "";
 
     // Vias
-    let vias = "";
-    if (p.via === "pad") {
-      vias = `
-        (pad 1 thru_hole circle (at -1.65 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.to})
-        (pad 2 thru_hole circle (at 1.65 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.from})
-      `;
-    } else if (p.via === "middle") {
-      vias = `
-        (pad 1 thru_hole circle (at -0.45 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.to})
-        (pad 2 thru_hole circle (at 0.45 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.from})
-      `;
+    let vias = "\n";
+    if (p.via.startsWith("pad")) {
+      if (p.via === "pad" || p.via === "padto") {
+        vias += `
+       (pad 1 thru_hole circle (at -1.65 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.to})`;
+      }
+      if (p.via === "pad" || p.via === "padfrom") {
+        vias += `
+        (pad 2 thru_hole circle (at 1.65 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.from})`;
+      }
+    } else if (p.via.startsWith("middle")) {
+      if (p.via === "middle" || p.via === "middleto") {
+        vias += `
+        (pad 1 thru_hole circle (at -0.45 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.to})`;
+      }
+      if (p.via === "middle" || p.via === "middlefrom") {
+        vias += `
+        (pad 2 thru_hole circle (at 0.45 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu) ${p.from})`;
+      }
     }
 
     let labels = "";

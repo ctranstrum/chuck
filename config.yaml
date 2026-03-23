@@ -189,6 +189,57 @@ points:
         colpin: D4
         rowpin: D7
 
+    rkjxt:
+      anchor: encoder
+      key:
+        tags: [rkjxt]
+        colpin: D10
+
+    rkjxt_A:
+      anchor:
+        ref: rkjxt
+        shift: [0, -3]
+      key:
+        tags: [rkjxt_diode]
+        push: A
+        rowpin: D13
+
+    rkjxt_B:
+      anchor:
+        ref: rkjxt_A
+        shift: [0, 3]
+      key:
+        tags: [rkjxt_diode]
+        push: B
+        rowpin: D14
+
+    rkjxt_C:
+      anchor:
+        ref: rkjxt_B
+        shift: [0, 3]
+      key:
+        tags: [rkjxt_diode]
+        push: C
+        rowpin: D15
+
+    rkjxt_D:
+      anchor:
+        ref: rkjxt_C
+        shift: [0, 3]
+      key:
+        tags: [rkjxt_diode]
+        push: D
+        rowpin: D17
+
+    rkjxt_PUSH:
+      anchor:
+        ref: rkjxt_D
+        shift: [0, 3]
+      key:
+        tags: [rkjxt_diode]
+        push: PUSH
+        rowpin: D18
+
     mcu:
       key.tags: [mcu]
       anchor:
@@ -2336,40 +2387,67 @@ pcbs:
           from: "{{colrow}}"
           to: "{{rowpin}}"
           smd: true
-          via: pad
+          via: padto
           labels: true
 
-      encoder_map:
-        what: text
-        where: encoder
-        adjust.shift: [0, hdy]
-        params:
-          side: B
-          text: "{{colpin}}-{{rowpin}}"
+      # If you want an encoder, this is the section to uncomment
+      #
+      # encoder_map:
+      #   what: text
+      #   where: encoder
+      #   adjust.shift: [0, hdy]
+      #   params:
+      #     side: B
+      #     text: "{{colpin}}-{{rowpin}}"
+      #
+      # encoder_diode:
+      #   what: sod123
+      #   where: encoder
+      #   adjust.shift: [0, 14]
+      #   params:
+      #     side: B
+      #     designator: SW
+      #     from: encdiode
+      #     to: "{{rowpin}}"
+      #     smd: true
+      #     via: pad
+      #     labels: true
+      #
+      # encoder:
+      #   what: encoder
+      #   where: encoder
+      #   params:
+      #     include_momentary_switch_pads: true
+      #     include_plate_hole_marking: true
+      #     include_silkscreen: true
+      #     S1: "{{colpin}}"
+      #     S2: encdiode
 
-      encoder_diode:
+      push_diodes:
         what: sod123
-        where: encoder
-        adjust:
-          shift: [0, 14]
+        where: rkjxt_diode
+        adjust.shift: [0, 15]
         params:
           side: B
           designator: SW
-          from: encdiode
+          from: "rkjxt_{{push}}"
           to: "{{rowpin}}"
           smd: true
           via: pad
           labels: true
 
-      encoder:
-        what: encoder
+      rkjxt:
+        what: rkjxt
         where: encoder
         params:
-          include_momentary_switch_pads: true
-          include_plate_hole_marking: true
-          include_silkscreen: true
-          S1: "{{colpin}}"
-          S2: encdiode
+          side: F
+          A: rkjxt_A
+          B: rkjxt_B
+          C: rkjxt_C
+          D: rkjxt_D
+          PUSH: rkjxt_PUSH
+          COM: "{{colpin}}"
+          ENC_COM: GND
 
       xiao_mcu_plus:
         what: xiaoplus
