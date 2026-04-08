@@ -2644,7 +2644,7 @@ pcbs:
         where: [resistor, capacitor]
         params:
           side: B
-          designator: DB
+          designator: RC
           from: "{{from}}"
           to: "{{to}}"
           label: "{{amt}}"
