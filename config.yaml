@@ -254,11 +254,88 @@ points:
         shift: [20, 13]
 
     reset:
-      key:
-        tags: [reset]
+      key.tags: [reset]
       anchor:
         ref: power
         shift: [0, -hdy]
+
+    debounce_A_cap:
+      key:
+        tags: [capacitor]
+        amt: "100nF"
+        from: GND
+        to: A_DB
+      anchor:
+        ref: reset
+        shift: [-7, -5]
+
+    debounce_A_8k:
+      key:
+        tags: [resistor]
+        amt: "8.2kΩ"
+        from: ENC_A
+        to: A_DB
+      anchor:
+        ref: debounce_A_cap
+        shift: [0, -3]
+
+    debounce_A_diode:
+      key:
+        tags: [diode]
+        from: ENC_A
+        to: A_DB
+      anchor:
+        ref: debounce_A_8k
+        shift: [0, -3]
+
+    debounce_A_10k:
+      key:
+        tags: [resistor]
+        amt: "10kΩ"
+        from: VCC
+        to: ENC_A
+      anchor:
+        ref: debounce_A_diode
+        shift: [0, -3]
+
+    debounce_B_cap:
+      key:
+        tags: [capacitor]
+        amt: "100nF"
+        from: GND
+        to: B_DB
+      anchor:
+        ref: debounce_A_10k
+        shift: [0, -3]
+
+    debounce_B_8k:
+      key:
+        tags: [resistor]
+        amt: "8.2kΩ"
+        from: ENC_B
+        to: B_DB
+      anchor:
+        ref: debounce_B_cap
+        shift: [0, -3]
+
+    debounce_B_diode:
+      key:
+        tags: [diode]
+        from: ENC_B
+        to: B_DB
+      anchor:
+        ref: debounce_B_8k
+        shift: [0, -3]
+
+    debounce_B_10k:
+      key:
+        tags: [resistor]
+        amt: "10kΩ"
+        from: VCC
+        to: ENC_B
+      anchor:
+        ref: debounce_B_diode
+        shift: [0, -3]
 
     battery:
       anchor:
@@ -802,6 +879,11 @@ outlines:
       name: _encoder_plate_cutout
       expand: 1
 
+  _rkjxt_plate_cutout:
+    - what: circle
+      radius: 10
+      where: rkjxt
+
   _diode:
     - what: rectangle
       size: [2.7, 1.65]
@@ -815,10 +897,17 @@ outlines:
       adjust:
         shift: [5, -4]
         resist: true
+    # - what: outline
+    #   name: _diode
+    #   where: encoder
+    #   adjust.shift: [0, 14]
     - what: outline
       name: _diode
-      where: encoder
-      adjust.shift: [0, 14]
+      where: rkjxt_diode
+      adjust.shift: [0, 15]
+    - what: outline
+      name: _diode
+      where: diode
 
   _diodes_cutout:
     - what: rectangle
@@ -827,10 +916,17 @@ outlines:
       adjust:
         shift: [5, -4]
         resist: true
+    # - what: rectangle
+    #   where: encoder
+    #   size: [5.2, 2.2]
+    #   adjust.shift: [0, 14]
     - what: rectangle
-      where: encoder
+      where: rkjxt_diode
       size: [5.2, 2.2]
-      adjust.shift: [0, 14]
+      adjust.shift: [0, 15]
+    - what: rectangle
+      where: diode
+      size: [5.2, 2.2]
 
   _return_diodes:
     - what: outline
@@ -862,7 +958,8 @@ outlines:
     - what: outline
       name: _switch_cutout
       where: switch
-    - _encoder_plate_cutout
+    - _rkjxt_plate_cutout
+    # - _encoder_plate_cutout
 
   _optional_left_switch_cutout:
     - what: outline
@@ -1056,6 +1153,94 @@ outlines:
       radius: 1
       adjust.shift: [-2.5, 7]
 
+  _rkjxt_pcb_holes:
+    - what: circle
+      where: rkjxt
+      radius: 0.55
+      adjust.shift: [-3.8, -1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [-1.5, -7.8]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [7.8, -1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [1.5, 7.8]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [-7.8, 1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [1, -6.98]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [-1, 5.78]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [-7.8, -1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [7.8, 1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [-1.5, 7.8]
+    - what: circle
+      where: rkjxt
+      radius: 0.5
+      adjust.shift: [6.86, -3.75]
+
+  _rkjxt_bottom_cutout:
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [-1.5, -7.8]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [7.8, -1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [1.5, 7.8]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [-7.8, 1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [1, -6.98]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [-1, 5.78]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [-7.8, -1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [7.8, 1.5]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [-1.5, 7.8]
+    - what: circle
+      where: rkjxt
+      radius: 0.8
+      adjust.shift: [6.86, -3.75]
+
   _pad_cutout:
     - what: circle
       where: pad_circle
@@ -1210,7 +1395,8 @@ outlines:
     - -_switches_swap_tool
     - -_xiao_light_guide
     - ^_switches_clip_cutout
-    - ^_encoder_plate_cutout_expanded
+    - ^_rkjxt_plate_cutout
+    # - ^_encoder_plate_cutout_expanded
     - ^_battery_cutout
     - ^_jst_cutout
     - ^_xiao_usb_cutout
@@ -1233,8 +1419,8 @@ outlines:
     - ^_socket_pcb_holes
     - ^_keycaps
     - ^_encoder_knob
-    - ^_encoder_pcb_holes
-    - ^_encoder_bottom_cutout
+    - ^_rkjxt_pcb_holes
+    - ^_rkjxt_bottom_cutout
     - ^_xiao_visualizer
     - ^_xiao_light_guide
     - ^_power_visualizer
@@ -1250,8 +1436,8 @@ outlines:
     - ^_all_bumpers
     - ^_diodes
     - ^_diodes_cutout
-    - ^_return_diodes
-    - ^_return_diodes_cutout
+    # - ^_return_diodes
+    # - ^_return_diodes_cutout
 
   _attic_outline_poly:
     - what: polygon
@@ -1634,17 +1820,17 @@ cases:
       extrude: 1.8
       shift: [0, 0, bottom_case_height - 1.8]
     - what: outline
-      name: _encoder_bottom_cutout
-      extrude: 2
+      name: _rkjxt_bottom_cutout
+      extrude: 1.8
       shift: [0, 0, bottom_case_height - 2]
     - what: outline
       name: _diodes_cutout
       extrude: 1.4
       shift: [0, 0, bottom_case_height - 1.4]
-    - what: outline
-      name: _return_diodes_cutout
-      extrude: 1.2
-      shift: [0, 0, bottom_case_height - 1.2]
+    # - what: outline
+    #   name: _return_diodes_cutout
+    #   extrude: 1.2
+    #   shift: [0, 0, bottom_case_height - 1.2]
     - what: outline
       name: _xiao_bottom_cutout
       extrude: 2.5
@@ -1720,8 +1906,11 @@ cases:
       name: _switches_plate_cutout
       extrude: top_case_height
     - what: outline
-      name: _encoder_plate_cutout_expanded
+      name: _rkjxt_plate_cutout
       extrude: 1.2
+    # - what: outline
+    #   name: _encoder_plate_cutout_expanded
+    #   extrude: 1.2
     - what: outline
       name: _switches_clip_cutout
       extrude: top_case_height - 1.3
@@ -2057,7 +2246,7 @@ cases:
       extrude: 1.6
       operation: subtract
     - what: outline
-      name: _encoder_pcb_holes
+      name: _rkjxt_pcb_holes
       extrude: 1.6
       operation: subtract
     - what: outline
@@ -2285,7 +2474,7 @@ pcbs:
 
       mounting_holes:
         what: mountinghole
-        where: screw
+        where: [screw, top_screw]
 
       board_logo:
         what: mushroom
@@ -2423,6 +2612,7 @@ pcbs:
       #     S1: "{{colpin}}"
       #     S2: encdiode
 
+      # Diodes for the RKJXT encoder
       push_diodes:
         what: sod123
         where: rkjxt_diode
@@ -2438,7 +2628,7 @@ pcbs:
 
       rkjxt:
         what: rkjxt
-        where: encoder
+        where: rkjxt
         params:
           side: F
           A: rkjxt_A
@@ -2449,6 +2639,27 @@ pcbs:
           COM: "{{colpin}}"
           ENC_COM: GND
 
+      smd0805s:
+        what: smd0805
+        where: [resistor, capacitor]
+        params:
+          side: B
+          designator: DB
+          from: "{{from}}"
+          to: "{{to}}"
+          label: "{{amt}}"
+
+      debounce_diodes:
+        what: sod123
+        where: [diode]
+        params:
+          side: B
+          designator: DB
+          from: "{{from}}"
+          to: "{{to}}"
+          smd: true
+          labels: true
+
       xiao_mcu_plus:
         what: xiaoplus
         where: mcu
@@ -2457,8 +2668,8 @@ pcbs:
           face_down: true
           include_battery_pads: false
           include_reset_pads: false
-          D8: ENC_B
-          D9: ENC_A
+          D8: B_DB
+          D9: A_DB
 
       xiao_note:
         what: text
@@ -2557,7 +2768,7 @@ pcbs:
 
       mounting_holes:
         what: mountinghole
-        where: screw
+        where: [screw, top_screw]
 
       board_logo:
         what: mushroom
