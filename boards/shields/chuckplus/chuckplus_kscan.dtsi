@@ -5,6 +5,7 @@
 
     kscan0: kscan_chuck {
         compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
 
         row-gpios
             = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D15
