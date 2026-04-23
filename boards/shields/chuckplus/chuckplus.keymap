@@ -589,17 +589,17 @@
 // ┃c stat ┃       ┃scrnsht┃scrn cp┃                                          ┃launchp┃  USB  ┃       ┃battery┃
    &ind_con  &none   GS(N4) GCS(N4)                                           HYPR(N4) &usb_sel &none &ind_bat
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃ prev  ┃ play  ┃ next  ┃       ┃        ┏━━━━━━━━┓        ┃mission┃  BT4  ┃  BT5  ┃       ┃       ┃
-  &none &kp C_PREV &kp C_PP &kp C_NEXT &none       &kp C_BRI_UP       &kp LC(UP) BT_(3) BT_(4)  &none   &none
-// ┃       ┃       ┃       ┃       ┃       ┃        ┃bright ↑┃        ┃control┃       ┃       ┃       ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ lock  ┃ mute  ┃caps lk┃numlock┃       ┃┃bright↓┃ flash  ┃bright↑┃┃studio ┃  BT1  ┃  BT2  ┃  BT3  ┃       ┃
-GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none &kp C_BRI_DN &flash 6 &kp C_BRI_UP &studio_unlock BT_(0) BT_(1) BT_(2) &none
-// ┃       ┃       ┃       ┃       ┃       ┃┗━━━━━━━┫ bright ┣━━━━━━━┛┃ unlock┃       ┃       ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃ ##### ┃ ##### ┃┃bright ↓┃┃ ##### ┃ ##### ┃
-                                    &trans  &trans &kp C_BRI_DN &trans &trans
-//                                 ┃       ┃       ┃┗━━━━━━━━┛┃       ┃       ┃
+// ┃       ┃ prev  ┃ play  ┃ next  ┃       ┃                          ┃mission┃  BT4  ┃  BT5  ┃       ┃       ┃
+  &none &kp C_PREV &kp C_PP &kp C_NEXT &none                          &kp LC(UP) BT_(3) BT_(4)  &none   &none
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃control┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ lock  ┃ mute  ┃caps lk┃numlock┃       ┃        ┃ FLASH  ┃        ┃studio ┃  BT1  ┃  BT2  ┃  BT3  ┃       ┃
+GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none           &flash 6         &studio_unlock BT_(0) BT_(1) BT_(2) &none
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃ bright ┃        ┃ unlock┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃ ##### ┃          ┃ ##### ┃ ##### ┃
+                                    &trans  &trans             &trans  &trans
+//                                 ┃       ┃       ┃          ┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
                                      &none   &none              &none   &none
             >;
@@ -611,23 +611,23 @@ GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none &kp C_BRI_DN &flash 6 &kp C_BRI_UP &s
             display-name = "flash mode"            ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
-// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃       ┃       ┃       ┃       ┃                                         ┃       ┃       ┃       ┃       ┃
-     &none   &none   &none   &none                                             &none   &none   &none   &none
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                         ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃       ┃       ┃       ┃       ┃        ┏━━━━━━━┓        ┃       ┃       ┃       ┃       ┃       ┃
-     &none   &none   &none   &none   &none            &none            &none   &none   &none   &none   &none
-// ┃       ┃       ┃       ┃       ┃       ┃        ┃       ┃        ┃       ┃       ┃       ┃       ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃       ┃       ┃       ┃       ┃┃       ┃       ┃       ┃┃       ┃       ┃       ┃       ┃       ┃
-     &none   &none   &none   &none   &none    &none   &none   &none    &none   &none   &none   &none   &none
-// ┃       ┃       ┃       ┃       ┃       ┃┗━━━━━━━┫       ┣━━━━━━━┛┃       ┃       ┃       ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃       ┃       ┃┃       ┃┃       ┃       ┃
-                                     &none   &none    &none    &none   &none
-//                                 ┃       ┃       ┃┗━━━━━━━┛┃       ┃       ┃
-//                                 ┗━━━━━━━┻━━━━━━━┛         ┗━━━━━━━┻━━━━━━━┛
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃                                          ┃       ┃       ┃       ┃       ┃
+     &none   &none   &none   &none                                              &none   &none   &none   &none
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+     &none   &none   &none   &none   &none                              &none   &none   &none   &none   &none
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃        ┃        ┃       ┃       ┃       ┃       ┃       ┃
+     &none   &none   &none   &none   &none            &none             &none   &none   &none   &none   &none
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃        ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃       ┃          ┃       ┃       ┃
                                      &none   &none              &none   &none
+//                                 ┃       ┃       ┃          ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none               &none   &none
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
