@@ -24,14 +24,18 @@ layers:
   - {t: C, h: Alt}
   - D
   - V
+  - MUTE
   - K
   - H
   - {t: ',', h: Alt, s: ;}
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: sticky ⇧, h: numpad, s: caps word}
-  - MUTE
   - {t: ␣, h: sym / nav}
+  - ''
+  - ''
+  - ''
+  - ''
   numpad:
   - Esc
   - ''
@@ -56,14 +60,18 @@ layers:
   - {t: ⌘C, h: Alt}
   - ^D
   - ⌘V
+  - ⏯
   - '*'
   - '1'
-  - {t: '2', h: Alt}
+  - '2'
   - '3'
   - '='
   - {type: held}
-  - ⏯
   - {t: '0', h: sym / nav}
+  - ''
+  - ''
+  - ''
+  - ''
   sym / nav:
   - '`'
   - '#'
@@ -78,24 +86,28 @@ layers:
   - {t: '!', h: ⌥}
   - {t: '=', h: ⌘}
   - {t: $, h: 🌐}
-  - PgUp
-  - ←
-  - ↑
-  - →
-  - ⌦
+  - {t: PgUp, h: 🌐}
+  - {t: ←, h: ⌘}
+  - {t: ↑, h: ⌥}
+  - {t: →, h: ^}
+  - {t: ⌦, h: ⇧}
   - '~'
   - '|'
   - {t: '&', h: Alt}
   - _
   - '?'
+  - ⏯
   - PgDn
   - Home
-  - ↓
+  - {t: ↓, h: Alt}
   - End
   - ↵
   - {t: '-', h: numpad}
-  - ⏭
   - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
   keybd / func:
   - {t: BT 1, h: clear 1}
   - {t: BT 2, h: clear 2}
@@ -120,15 +132,19 @@ layers:
   - connection status
   - battery status
   - Num 🔒
+  - flash
   - ZMK Studio
   - F1
   - F2
   - F3
   - F10
   - {type: held}
-  - ⏮
   - {type: held}
-  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  - ''
+  - ''
+  - ''
+  - ''
+  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [3, 12]
   k: B
@@ -169,21 +185,21 @@ combos:
 - p: [20, 21]
   k: '['
   l: [Colemak]
-- p: [24, 25]
+- p: [25, 26]
   k: ']'
   l: [Colemak]
 - p: [11, 22]
   k: <
   l: [Colemak]
   d: true
-- p: [14, 23]
+- p: [14, 24]
   k: '>'
   l: [Colemak]
   d: true
 - p: [5, 15]
   k: ↑
   l: [Colemak, numpad]
-- p: [15, 25]
+- p: [15, 26]
   k: ↓
   l: [Colemak, numpad]
 - p: [4, 14]
@@ -204,6 +220,42 @@ combos:
 - p: [3, 11]
   k: scroll →
   l: [flash mode]
+- p: [23, 31]
+  k: scroll ↑
+  l: [Colemak]
+- p: [23, 34]
+  k: scroll ↓
+  l: [Colemak]
+- p: [23, 32]
+  k: ^[
+  l: [Colemak]
+- p: [23, 33]
+  k: ^]
+  l: [Colemak]
+- p: [23, 31]
+  k: VOL UP
+  l: [numpad, sym / nav]
+- p: [23, 34]
+  k: VOL DN
+  l: [numpad, sym / nav]
+- p: [23, 32]
+  k: ⏮
+  l: [numpad, sym / nav]
+- p: [23, 33]
+  k: ⏭
+  l: [numpad, sym / nav]
+- p: [23, 31]
+  k: BRI UP
+  l: [keybd / func]
+- p: [23, 34]
+  k: BRI DN
+  l: [keybd / func]
+- p: [23, 32]
+  k: BRI DN
+  l: [keybd / func]
+- p: [23, 33]
+  k: BRI UP
+  l: [keybd / func]
 - p: [12, 13]
   k: flash
   l: [keybd / func]
