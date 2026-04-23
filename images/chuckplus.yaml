@@ -1,0 +1,369 @@
+layout: {zmk_keyboard: chuckplus}
+layers:
+  Colemak:
+  - Q
+  - W
+  - F
+  - P
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: A, h: ⇧}
+  - {t: R, h: ^}
+  - {t: S, h: ⌥}
+  - {t: T, h: ⌘}
+  - {t: G, h: 🌐}
+  - {t: M, h: 🌐}
+  - {t: N, h: ⌘}
+  - {t: E, h: ⌥}
+  - {t: I, h: ^}
+  - {t: O, h: ⇧}
+  - Z
+  - X
+  - {t: C, h: Alt}
+  - D
+  - V
+  - MUTE
+  - K
+  - H
+  - {t: ',', h: Alt, s: ;}
+  - {t: ., s: ':'}
+  - {t: /, s: \}
+  - {t: '-', h: numpad}
+  - {t: sticky shift, h: navigation, s: caps word}
+  - {t: ␣, h: symbols}
+  - {t: '*', h: symbols}
+  - ''
+  - ''
+  - ''
+  - ''
+  numpad:
+  - Esc
+  - ''
+  - screen shot
+  - screen copy
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - ^A
+  - {t: ⌫, h: ^}
+  - {t: ␣, h: ⌥}
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: 🌐}
+  - /
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - ^Z
+  - ^X
+  - {t: ^C, h: Alt}
+  - ^D
+  - ^V
+  - ⏯
+  - '*'
+  - '1'
+  - '2'
+  - '3'
+  - '='
+  - {type: held}
+  - navigation
+  - '0'
+  - .
+  - ''
+  - ''
+  - ''
+  - ''
+  navigation:
+  - Esc
+  - ''
+  - screen shot
+  - screen copy
+  - Esc
+  - ''
+  - ⌦
+  - ⌫
+  - {t: ⌘A, h: ⇧}
+  - {t: ⌫, h: ^}
+  - {t: ␣, h: ⌥}
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: 🌐}
+  - PgUp
+  - ←
+  - ↑
+  - →
+  - ↵
+  - ⌘Z
+  - ⌘X
+  - {t: ⌘C, h: Alt}
+  - ⌘D
+  - ⌘V
+  - ⏯
+  - PgDn
+  - Home
+  - ↓
+  - End
+  - ␣
+  - numpad
+  - {type: held}
+  - {t: ⇥, h: symbols}
+  - ␣
+  - ''
+  - ''
+  - ''
+  - ''
+  symbols:
+  - '`'
+  - '#'
+  - '%'
+  - '*'
+  - Esc
+  - ^U
+  - ⌦
+  - ⌫
+  - ^
+  - '@'
+  - '!'
+  - '='
+  - $
+  - {t: PgUp, h: 🌐}
+  - {t: ←, h: ⌘}
+  - {t: ↑, h: ⌥}
+  - {t: →, h: ^}
+  - ↵
+  - '~'
+  - '|'
+  - +
+  - '&'
+  - '?'
+  - ⏯
+  - PgDn
+  - Home
+  - {t: ↓, h: Alt}
+  - End
+  - ␣
+  - _
+  - {t: /, h: navigation}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  function:
+  - ''
+  - ''
+  - ''
+  - ''
+  - F7
+  - F8
+  - F9
+  - F12
+  - ⇧
+  - ^
+  - ⌥
+  - ⌘
+  - 🌐
+  - ''
+  - F4
+  - F5
+  - F6
+  - F11
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ⏯
+  - ''
+  - F1
+  - F2
+  - F3
+  - F10
+  - {type: held}
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  keyboard:
+  - connection status
+  - ''
+  - screen shot
+  - screen copy
+  - launch pad
+  - USB
+  - ''
+  - battery status
+  - ''
+  - ⏮
+  - ⏯
+  - ⏭
+  - ''
+  - mission control
+  - {t: BT 4, h: clear 4}
+  - {t: BT 5, h: clear 5}
+  - ''
+  - ''
+  - lock screen
+  - MUTE
+  - Caps 🔒
+  - Num 🔒
+  - ''
+  - flash
+  - ZMK Studio
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - ''
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+combos:
+- p: [0, 7]
+  k: ZMK Studio
+  l: [Colemak]
+  a: top
+  o: 1.0
+- p: [3, 12]
+  k: B
+  l: [Colemak]
+  d: true
+- p: [4, 13]
+  k: J
+  l: [Colemak]
+  d: true
+- p: [1, 2, 3]
+  k: Esc
+  l: [Colemak]
+  draw_separate: true
+- p: [0, 1]
+  k: Esc
+  l: [Colemak]
+- p: [4, 5, 6]
+  k: ⌫
+  l: [Colemak, numpad]
+  draw_separate: true
+- p: [6, 7]
+  k: ⌫
+  l: [Colemak, numpad]
+- p: [9, 10, 11]
+  k: ⇥
+  l: [Colemak]
+  draw_separate: true
+- p: [18, 19]
+  k: ⇥
+  l: [Colemak]
+- p: [14, 15, 16]
+  k: ↵
+  l: [Colemak, numpad]
+  draw_separate: true
+- p: [27, 28]
+  k: ↵
+  l: [Colemak, numpad]
+- p: [2, 3]
+  k: (
+  l: [Colemak]
+- p: [4, 5]
+  k: )
+  l: [Colemak]
+- p: [10, 11]
+  k: '{'
+  l: [Colemak]
+- p: [14, 15]
+  k: '}'
+  l: [Colemak]
+- p: [20, 21]
+  k: '['
+  l: [Colemak]
+- p: [25, 26]
+  k: ']'
+  l: [Colemak]
+- p: [11, 22]
+  k: <
+  l: [Colemak]
+  d: true
+- p: [14, 24]
+  k: '>'
+  l: [Colemak]
+  d: true
+- p: [12, 22]
+  k: mouse click
+  l: [flash mode]
+- p: [8, 18]
+  k: right click
+  l: [flash mode]
+- p: [5, 15]
+  k: mouse ↑
+  l: [flash mode]
+- p: [15, 26]
+  k: mouse ↓
+  l: [flash mode]
+- p: [4, 14]
+  k: mouse ←
+  l: [flash mode]
+- p: [6, 16]
+  k: mouse →
+  l: [flash mode]
+- p: [2, 10]
+  k: scroll ↑
+  l: [flash mode]
+- p: [10, 20]
+  k: scroll ↓
+  l: [flash mode]
+- p: [1, 9]
+  k: scroll ←
+  l: [flash mode]
+- p: [3, 11]
+  k: scroll →
+  l: [flash mode]
+- p: [23, 33]
+  k: scroll ↑
+  l: [Colemak]
+- p: [23, 36]
+  k: scroll ↓
+  l: [Colemak]
+- p: [23, 34]
+  k: ^[
+  l: [Colemak]
+- p: [23, 35]
+  k: ^]
+  l: [Colemak]
+- p: [23, 33]
+  k: VOL UP
+  l: [numpad, navigation, symbols, function]
+- p: [23, 36]
+  k: VOL DN
+  l: [numpad, navigation, symbols, function]
+- p: [23, 34]
+  k: ⏮
+  l: [numpad, navigation, symbols, function]
+- p: [23, 35]
+  k: ⏭
+  l: [numpad, navigation, symbols, function]
+- p: [23, 33]
+  k: BRI UP
+  l: [keyboard]
+- p: [23, 36]
+  k: BRI DN
+  l: [keyboard]
+- p: [23, 34]
+  k: BRI DN
+  l: [keyboard]
+- p: [23, 35]
+  k: BRI UP
+  l: [keyboard]
+- p: [12, 13]
+  k: flash
+  l: [keyboard]
+  d: true
