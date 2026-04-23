@@ -36,6 +36,9 @@
 // ┗━━━━┻━━━━┻━━━━┻━━━━╋━━━━╋━━━┻┳━╋━━╋━┳┻━━━╋━━━━╋━━━━┻━━━━┻━━━━┻━━━━┛
 //                     ┃ 29 ┃ 30 ┃ ┃36┃ ┃ 31 ┃ 32 ┃
 //                     ┗━━━━┻━━━━┛ ┗━━┛ ┗━━━━┻━━━━┛
+// Note that the joystick directions press both the center as well as the
+// direction pressed, so we have to use combos for them,
+// but not for a center push
 
 / {
     combos {
@@ -54,7 +57,7 @@
         };
 
         combo_j {
-            key-positions = <4 14>;
+            key-positions = <4 13>;
             bindings = <&kp J>;
             layers = <0>;
         };
@@ -90,19 +93,19 @@
         };
 
         combo_tab_pinky {
-            key-positions = <19 20>;
+            key-positions = <18 19>;
             bindings = <&kp TAB>;
             layers = <0>;
         };
 
         combo_return {
-            key-positions = <15 16 17>;
+            key-positions = <14 15 16>;
             bindings = <&kp RET>;
             layers = <0 1>;
         };
 
         combo_return_pinky {
-            key-positions = <30 31>;
+            key-positions = <27 28>;
             bindings = <&kp RET>;
             layers = <0 1>;
             require-prior-idle-ms = <150>;
@@ -129,71 +132,71 @@
         };
 
         combo_right_curly {
-            key-positions = <15 16>;
+            key-positions = <14 15>;
             bindings = <&kp RBRC>;
             layers = <0>;
             require-prior-idle-ms = <150>;
         };
 
         combo_left_bracket {
-            key-positions = <21 22>;
+            key-positions = <20 21>;
             bindings = <&kp LBKT>;
             layers = <0>;
             require-prior-idle-ms = <150>;
         };
 
         combo_right_bracket {
-            key-positions = <28 29>;
+            key-positions = <25 26>;
             bindings = <&kp RBKT>;
             layers = <0>;
             require-prior-idle-ms = <150>;
         };
 
         combo_less_than {
-            key-positions = <11 23>;
+            key-positions = <11 22>;
             bindings = <&kp LT>;
             layers = <0>;
         };
 
         combo_greater_than {
-            key-positions = <15 27>;
+            key-positions = <14 24>;
             bindings = <&kp GT>;
             layers = <0>;
             require-prior-idle-ms = <150>;
         };
 
         combo_mouse_click {
-            key-positions = <12 23>;
+            key-positions = <12 22>;
             bindings = <&mkp LCLK>;
             layers = <0>;
         };
 
         combo_mouse_right_click {
-            key-positions = <8 19>;
+            key-positions = <8 18>;
             bindings = <&mkp RCLK>;
             layers = <0>;
         };
 
         combo_mouse_up {
-            key-positions = <5 16>;
+            key-positions = <5 15>;
             bindings = <&mmv MOVE_UP>;
             layers = <0>;
         };
 
         combo_mouse_down {
-            key-positions = <16 29>;
+            key-positions = <15 26>;
             bindings = <&mmv MOVE_DOWN>;
             layers = <0>;
         };
 
         combo_mouse_left {
-            key-positions = <4 15>;
+            key-positions = <4 14>;
             bindings = <&mmv MOVE_LEFT>;
             layers = <0>;
         };
 
         combo_mouse_right {
-            key-positions = <6 17>;
+            key-positions = <6 16>;
             bindings = <&mmv MOVE_RIGHT>;
             layers = <0>;
         };
@@ -205,7 +208,7 @@
         };
 
         combo_scroll_down {
-            key-positions = <10 21>;
+            key-positions = <10 20>;
             bindings = <&msc SCRL_DOWN>;
             layers = <0>;
         };
@@ -222,11 +225,85 @@
             layers = <0>;
         };
 
+        // Joystick combos, because the hardware activates both the direction
+        // as well as the center push when you move the joystick
+        combo_joystick_scroll_up {
+            key-positions = <23 33>;
+            bindings = <&msc SCRL_UP>;
+            layers = <0>;
+        };
+
+        combo_joystick_scroll_down {
+            key-positions = <23 36>;
+            bindings = <&msc SCRL_DOWN>;
+            layers = <0>;
+        };
+
+        combo_joystick_tab_left {
+            key-positions = <23 34>;
+            bindings = <&kp LC(LBKT)>;
+            layers = <0>;
+        };
+
+        combo_joystick_tab_right {
+            key-positions = <23 35>;
+            bindings = <&kp LC(RBKT)>;
+            layers = <0>;
+        };
+
+        combo_joystick_vol_up {
+            key-positions = <23 33>;
+            bindings = <&kp C_VOL_UP>;
+            layers = <1 2 3 4>;
+        };
+
+        combo_joystick_vol_down {
+            key-positions = <23 36>;
+            bindings = <&kp C_VOL_DN>;
+            layers = <1 2 3 4>;
+        };
+
+        combo_joystick_prev {
+            key-positions = <23 34>;
+            bindings = <&kp C_PREV>;
+            layers = <1 2 3 4>;
+        };
+
+        combo_joystick_next {
+            key-positions = <23 35>;
+            bindings = <&kp C_NEXT>;
+            layers = <1 2 3 4>;
+        };
+
+        combo_joystick_bright_up {
+            key-positions = <23 33>;
+            bindings = <&kp C_BRI_UP>;
+            layers = <5>;
+        };
+
+        combo_joystick_bright_down {
+            key-positions = <23 36>;
+            bindings = <&kp C_BRI_DN>;
+            layers = <5>;
+        };
+
+        combo_joystick_bright_left {
+            key-positions = <23 34>;
+            bindings = <&kp C_BRI_DN>;
+            layers = <5>;
+        };
+
+        combo_joystick_bright_right {
+            key-positions = <23 35>;
+            bindings = <&kp C_BRI_UP>;
+            layers = <5>;
+        };
+
         // Combos are always executed on the central, so if we have a dongle
         // without an easily accessible reset button, we can use a combo to
         // put the central into bootloder mode
         combo_flash {
-            key-positions = <12 14>;
+            key-positions = <12 13>;
             bindings = <&flash 6>;  // The layer number of the flash layer
             layers = <5>;  // The layer number of the layer where this combo is active
         };
@@ -377,18 +454,19 @@
 // ┃   Q   ┃   W   ┃   F   ┃   P   ┃                                          ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃
      &kp Q   &kp W   &kp F   &kp P                                              &kp L   &kp U   &kp Y  &kp SQT
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃        ┏━━━━━━━━┓        ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
-     Sft A   Ctl R   Opt S   Cmd T   Glb G         &msc SCRL_UP         Glb M   Cmd N   Opt E   Ctl I   Sft O
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃        ┃SCROLL ↑┃        ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃┃ ← TAB ┃  MUTE  ┃ TAB → ┃┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
-     &kp Z   &kp X   Alt C   &kp D   &kp V GS(LBKT) &kp C_MUTE GS(RBKT) &kp K &kp H &hmcs RALT 0 &mdc    &msb
-// ┃       ┃       ┃ R Alt ┃       ┃       ┃┗━━━━━━━┫vol +/- ┣━━━━━━━┛┃       ┃       ┃ R Alt ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃   -   ┃ SHIFT ┃┃SCROLL ↓┃┃ SPACE ┃   *   ┃
-                           &lt 1 MINUS &lsscw 2 0 &msc SCRL_DOWN &lt 3 SPC &lt 3 STAR
-//                                 ┃  num  ┃  nav  ┃┗━━━━━━━━┛┃  sym  ┃  sym  ┃
+// ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                          ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
+     Sft A   Ctl R   Opt S   Cmd T   Glb G                              Glb M   Cmd N   Opt E   Ctl I   Sft O
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃        ┃  MUTE  ┃        ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
+     &kp Z   &kp X   Alt C   &kp D   &kp V          &kp C_MUTE          &kp K &kp H &hmcs RALT 0 &mdc    &msb
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃        ┃vol +/- ┃        ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   -   ┃ SHIFT ┃          ┃ SPACE ┃   *   ┃
+                                &lt 1 MINUS &lsscw 2 0      &lt 3 SPC &lt 3 STAR
+//                                 ┃  num  ┃  nav  ┃          ┃  sym  ┃  sym  ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
@@ -403,18 +481,19 @@
 // ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                          ┃   7   ┃   8   ┃   9   ┃   -   ┃
     &kp ESC  &none   GS(N4) GCS(N4)                                             &kp N7  &kp N8 &kp N9 &kp MINUS
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ CtrlA ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃        ┏━━━━━━━━┓        ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
-     C_(A) Ctl BSPC Opt SPC Cmd TAB Glb RET        &kp C_VOL_UP       &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
-// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃        ┃ VOL up ┃        ┃       ┃       ┃       ┃       ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃┃   ←   ┃  PLAY  ┃   →   ┃┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
-     C_(Z)   C_(X) Alt LC(C) C_(D)  C_(V) &kp C_PREV &kp C_PP &kp C_NEXT &kp STAR &kp N1 &kp N2 &kp N3 &kp EQUAL
-// ┃       ┃       ┃ R Alt ┃       ┃       ┃┗━━━━━━━┫ scroll ┣━━━━━━━┛┃       ┃       ┃       ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃ ##### ┃       ┃┃ VOL dn ┃┃   0   ┃   .   ┃
-                                    &trans   &mo 2 &kp C_VOL_DN &kp N0 &kp DOT
-//                                 ┃  num  ┃ func  ┃┗━━━━━━━━┛┃       ┃       ┃
+// ┃ CtrlA ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                          ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
+     C_(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                           &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃        ┃  PLAY  ┃        ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
+     C_(Z)   C_(X) Alt LC(C) C_(D)   C_(V)           &kp C_PP          &kp STAR &kp N1 &kp N2 &kp N3 &kp EQUAL
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃       ┃          ┃   0   ┃   .   ┃
+                                    &trans   &mo 2              &kp N0 &kp DOT
+//                                 ┃  num  ┃ func  ┃          ┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
@@ -429,18 +508,19 @@
 // ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                          ┃  Esc  ┃       ┃  Del  ┃ Bkspc ┃
     &kp ESC  &none   GS(N4) GCS(N4)                                            &kp ESC  &none  &kp DEL &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃        ┏━━━━━━━━┓        ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
- Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET        &kp C_VOL_UP      &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃        ┃ VOL up ┃        ┃       ┃       ┃       ┃       ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃┃   ←   ┃  PLAY  ┃   →   ┃┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
-     G_(Z)   G_(X) Alt LG(C) G_(D)  G_(V) &kp C_PREV &kp C_PP &kp C_NEXT &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
-// ┃       ┃       ┃ R Alt ┃       ┃       ┃┗━━━━━━━┫ scroll ┣━━━━━━━┛┃       ┃       ┃       ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃       ┃ ##### ┃┃ VOL dn ┃┃  Tab  ┃  SPC  ┃
-                                     &mo 1  &trans &kp C_VOL_DN &lt 3 TAB &kp SPC
-//                                 ┃ func  ┃       ┃┗━━━━━━━━┛┃ keybd ┃       ┃
+// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                          ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+ Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                          &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃        ┃  PLAY  ┃        ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+     G_(Z)   G_(X) Alt LG(C) G_(D)   G_(V)           &kp C_PP       &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃ ##### ┃          ┃  Tab  ┃  SPC  ┃
+                                     &mo 1   &trans           &lt 3 TAB &kp SPC
+//                                 ┃ func  ┃       ┃          ┃ keybd ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
@@ -455,18 +535,19 @@
 // ┃   `   ┃   #   ┃   %   ┃   *   ┃                                          ┃  Esc  ┃ CtrlU ┃  Del  ┃ Bkspc ┃
 &kp GRAVE &kp HASH &kp PRCNT &kp STAR                                          &kp ESC  C_(U)  &kp DEL &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃        ┏━━━━━━━━┓        ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
-&kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR       &kp C_VOL_UP      Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
-// ┃       ┃       ┃       ┃       ┃       ┃        ┃ VOL up ┃        ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃┃   ←   ┃  PLAY  ┃   →   ┃┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
-&kp TILDE &kp PIPE &kp PLUS &kp AMPS &kp QMARK &kp C_PREV &kp C_PP &kp C_NEXT &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
-// ┃       ┃       ┃       ┃       ┃       ┃┗━━━━━━━┫ scroll ┣━━━━━━━┛┃       ┃       ┃ R Alt ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃   _   ┃   /   ┃┃ VOL dn ┃┃ ##### ┃ ##### ┃
-                             &kp UNDER &lt 2 SLASH &kp C_VOL_DN &trans &trans
-//                                 ┃       ┃ keybd ┃┗━━━━━━━━┛┃       ┃       ┃
+// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+&kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                         Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃        ┃  PLAY  ┃        ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+&kp TILDE &kp PIPE &kp PLUS &kp AMPS &kp QMARK       &kp C_PP        &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   _   ┃   /   ┃          ┃ ##### ┃ ##### ┃
+                               &kp UNDER &lt 2 SLASH           &trans  &trans
+//                                 ┃       ┃ keybd ┃          ┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
@@ -481,18 +562,19 @@
 // ┃       ┃       ┃       ┃       ┃                                          ┃  F7   ┃  F8   ┃  F9   ┃  F12  ┃
      &none   &none   &none   &none                                             &kp F7  &kp F8  &kp F9  &kp F12
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃       ┃       ┃       ┃       ┃        ┏━━━━━━━━┓        ┃       ┃  F4   ┃  F5   ┃  F6   ┃  F11  ┃
-&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp GLOBE    &kp C_VOL_UP         &none  &kp F4  &kp F5  &kp F6  &kp F11
-// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃        ┃ VOL up ┃        ┃       ┃       ┃       ┃       ┃       ┃
-// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫┏━━━━━━━╋━━━━━━━━╋━━━━━━━┓┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃       ┃       ┃       ┃       ┃┃   ←   ┃  PLAY  ┃   →   ┃┃       ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
-     &none   &none   &none   &none  &none &kp C_PREV &kp C_PP &kp C_NEXT &none &kp F1   &kp F2 &kp F3  &kp F10
-// ┃       ┃       ┃       ┃       ┃       ┃┗━━━━━━━┫ scroll ┣━━━━━━━┛┃       ┃       ┃       ┃       ┃       ┃
-// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┣━━━━━━━━┫┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                 ┃ ##### ┃ ##### ┃┃ VOL dn ┃┃       ┃       ┃
-                                    &trans  &trans &kp C_VOL_DN &none   &none
-//                                 ┃       ┃       ┃┗━━━━━━━━┛┃       ┃       ┃
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃  F4   ┃  F5   ┃  F6   ┃  F11  ┃
+&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp GLOBE                         &none  &kp F4  &kp F5  &kp F6  &kp F11
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃  PLAY  ┃        ┃       ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
+     &none   &none   &none   &none   &none           &kp C_PP           &none  &kp F1  &kp F2  &kp F3  &kp F10
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃ ##### ┃          ┃       ┃       ┃
+                                    &trans  &trans              &none   &none
+//                                 ┃       ┃       ┃          ┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
@@ -519,6 +601,7 @@ GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none &kp C_BRI_DN &flash 6 &kp C_BRI_UP &s
                                     &trans  &trans &kp C_BRI_DN &trans &trans
 //                                 ┃       ┃       ┃┗━━━━━━━━┛┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
@@ -544,6 +627,7 @@ GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none &kp C_BRI_DN &flash 6 &kp C_BRI_UP &s
                                      &none   &none    &none    &none   &none
 //                                 ┃       ┃       ┃┗━━━━━━━┛┃       ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛         ┗━━━━━━━┻━━━━━━━┛
+                                     &none   &none              &none   &none
             >;
 
             sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
