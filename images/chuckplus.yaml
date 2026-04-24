@@ -81,8 +81,8 @@ layers:
   - ''
   - screen shot
   - screen copy
-  - Esc
   - ''
+  - Esc
   - ⌦
   - ⌫
   - {t: ⌘A, h: ⇧}
@@ -119,7 +119,7 @@ layers:
   - '#'
   - '%'
   - '*'
-  - Esc
+  - ^L
   - ^U
   - ⌦
   - ⌫
@@ -334,10 +334,10 @@ combos:
   k: scroll ↓
   l: [Colemak]
 - p: [23, 34]
-  k: ^[
+  k: ⌘⇧[
   l: [Colemak]
 - p: [23, 35]
-  k: ^]
+  k: ⌘⇧]
   l: [Colemak]
 - p: [23, 33]
   k: VOL UP
