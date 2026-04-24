@@ -241,13 +241,13 @@
 
         combo_joystick_tab_left {
             key-positions = <23 34>;
-            bindings = <&kp LC(LBKT)>;
+            bindings = <&kp LG(LS(LBKT))>;
             layers = <0>;
         };
 
         combo_joystick_tab_right {
             key-positions = <23 35>;
-            bindings = <&kp LC(RBKT)>;
+            bindings = <&kp LG(LS(RBKT))>;
             layers = <0>;
         };
 
@@ -469,7 +469,7 @@
                                      &none   &none              &none   &none
             >;
 
-            sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&key_rotation C_VOL_DN C_VOL_UP>;
         };
 
         num {
@@ -505,8 +505,8 @@
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                          ┃  Esc  ┃       ┃  Del  ┃ Bkspc ┃
-    &kp ESC  &none   GS(N4) GCS(N4)                                            &kp ESC  &none  &kp DEL &kp BSPC
+// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                          ┃       ┃  Esc  ┃  Del  ┃ Bkspc ┃
+    &kp ESC  &none   GS(N4) GCS(N4)                                             &none  &kp ESC &kp DEL &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                          ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
  Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                          &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
@@ -532,8 +532,8 @@
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                          ┃  Esc  ┃ CtrlU ┃  Del  ┃ Bkspc ┃
-&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                          &kp ESC  C_(U)  &kp DEL &kp BSPC
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                          ┃ CtrlL ┃ CtrlU ┃  Del  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                           C_(L)   C_(U)  &kp DEL &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
 &kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                         Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
@@ -604,7 +604,7 @@ GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none           &flash 6         &studio_un
                                      &none   &none              &none   &none
             >;
 
-            sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
+            sensor-bindings = <&key_rotation C_BRI_DN C_BRI_UP>;
         };
         flash {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓

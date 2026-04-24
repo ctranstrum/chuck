@@ -31,7 +31,7 @@
             , <&key_physical_attrs 100 100  228  188    2000   278   238> // C
             , <&key_physical_attrs 100 100  305  269    2250   355   319> // D
             , <&key_physical_attrs 100 100  410  277    2250   460   327> // V
-            , <&key_physical_attrs  50  50  524  327       0     0     0> // push
+            , <&key_physical_attrs  50  50  574  327       0     0     0> // push
             , <&key_physical_attrs 100 100  662  277 (-2250)   712   327> // K
             , <&key_physical_attrs 100 100  767  269 (-2250)   817   319> // H
             , <&key_physical_attrs 100 100  844  188 (-2000)   894   238> // ,
@@ -41,10 +41,10 @@
             , <&key_physical_attrs 100 100  445  444    3750   495   494> // shift
             , <&key_physical_attrs 100 100  627  444 (-3750)   677   494> // space
             , <&key_physical_attrs 100 100  706  384 (-3750)   756   434> // *
-            , <&key_physical_attrs  50  50  524  372       0     0     0> // up
-            , <&key_physical_attrs  50  50  469  327       0     0     0> // left
-            , <&key_physical_attrs  50  50  551  327       0     0     0> // right
-            , <&key_physical_attrs  50  50  524  382       0     0     0> // down
+            , <&key_physical_attrs  50  50  574  372       0     0     0> // up
+            , <&key_physical_attrs  50  50  519  327       0     0     0> // left
+            , <&key_physical_attrs  50  50  601  327       0     0     0> // right
+            , <&key_physical_attrs  50  50  574  382       0     0     0> // down
             ;
     };
 
@@ -78,7 +78,7 @@
             , <&key_physical_attrs 100 100  228  188    2000   278   238> // C
             , <&key_physical_attrs 100 100  305  269    2250   355   319> // D
             , <&key_physical_attrs 100 100  410  277    2250   460   327> // V
-            , <&key_physical_attrs  50  50  524  327       0     0     0> // push
+            , <&key_physical_attrs  50  50  574  327       0     0     0> // push
             , <&key_physical_attrs 100 100  662  277 (-2250)   712   327> // K
             , <&key_physical_attrs 100 100  767  269 (-2250)   817   319> // H
             , <&key_physical_attrs 100 100  844  188 (-2000)   894   238> // ,
@@ -87,10 +87,10 @@
             , <&key_physical_attrs 100 100  366  384    3750   416   434> // -
             , <&key_physical_attrs 100 100  445  444    3750   495   494> // shift
             , <&key_physical_attrs 100 100  627  444 (-3750)   677   494> // space
-            , <&key_physical_attrs  50  50  524  372       0     0     0> // up
-            , <&key_physical_attrs  50  50  469  327       0     0     0> // left
-            , <&key_physical_attrs  50  50  551  327       0     0     0> // right
-            , <&key_physical_attrs  50  50  524  382       0     0     0> // down
+            , <&key_physical_attrs  50  50  574  372       0     0     0> // up
+            , <&key_physical_attrs  50  50  519  327       0     0     0> // left
+            , <&key_physical_attrs  50  50  601  327       0     0     0> // right
+            , <&key_physical_attrs  50  50  574  382       0     0     0> // down
             ;
     };
 
@@ -124,7 +124,7 @@
             , <&key_physical_attrs 100 100  228  188    2000   278   238> // C
             , <&key_physical_attrs 100 100  305  269    2250   355   319> // D
             , <&key_physical_attrs 100 100  410  277    2250   460   327> // V
-            , <&key_physical_attrs  50  50  524  327       0     0     0> // push
+            , <&key_physical_attrs  50  50  574  327       0     0     0> // push
             , <&key_physical_attrs 100 100  662  277 (-2250)   712   327> // K
             , <&key_physical_attrs 100 100  767  269 (-2250)   817   319> // H
             , <&key_physical_attrs 100 100  844  188 (-2000)   894   238> // ,
@@ -133,10 +133,10 @@
             , <&key_physical_attrs 100 100  445  444    3750   495   494> // shift
             , <&key_physical_attrs 100 100  627  444 (-3750)   677   494> // space
             , <&key_physical_attrs 100 100  706  384 (-3750)   756   434> // *
-            , <&key_physical_attrs  50  50  524  372       0     0     0> // up
-            , <&key_physical_attrs  50  50  469  327       0     0     0> // left
-            , <&key_physical_attrs  50  50  551  327       0     0     0> // right
-            , <&key_physical_attrs  50  50  524  382       0     0     0> // down
+            , <&key_physical_attrs  50  50  574  372       0     0     0> // up
+            , <&key_physical_attrs  50  50  519  327       0     0     0> // left
+            , <&key_physical_attrs  50  50  601  327       0     0     0> // right
+            , <&key_physical_attrs  50  50  574  382       0     0     0> // down
             ;
     };
 
@@ -170,7 +170,7 @@
             , <&key_physical_attrs 100 100  228  188    2000   278   238> // C
             , <&key_physical_attrs 100 100  305  269    2250   355   319> // D
             , <&key_physical_attrs 100 100  410  277    2250   460   327> // V
-            , <&key_physical_attrs  50  50  524  327       0     0     0> // push
+            , <&key_physical_attrs  50  50  574  327       0     0     0> // push
             , <&key_physical_attrs 100 100  662  277 (-2250)   712   327> // K
             , <&key_physical_attrs 100 100  767  269 (-2250)   817   319> // H
             , <&key_physical_attrs 100 100  844  188 (-2000)   894   238> // ,
@@ -178,10 +178,10 @@
             , <&key_physical_attrs 100 100 1072  257 (-1000)  1122   307> // /
             , <&key_physical_attrs 100 100  445  444    3750   495   494> // shift
             , <&key_physical_attrs 100 100  627  444 (-3750)   677   494> // space
-            , <&key_physical_attrs  50  50  524  372       0     0     0> // up
-            , <&key_physical_attrs  50  50  469  327       0     0     0> // left
-            , <&key_physical_attrs  50  50  551  327       0     0     0> // right
-            , <&key_physical_attrs  50  50  524  382       0     0     0> // down
+            , <&key_physical_attrs  50  50  574  372       0     0     0> // up
+            , <&key_physical_attrs  50  50  519  327       0     0     0> // left
+            , <&key_physical_attrs  50  50  601  327       0     0     0> // right
+            , <&key_physical_attrs  50  50  574  382       0     0     0> // down
             ;
     };
 
