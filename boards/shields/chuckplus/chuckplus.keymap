@@ -108,7 +108,7 @@
             key-positions = <27 28>;
             bindings = <&kp RET>;
             layers = <0 1>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_left_paren {
@@ -121,35 +121,35 @@
             key-positions = <4 5>;
             bindings = <&kp RPAR>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_left_curly {
             key-positions = <10 11>;
             bindings = <&kp LBRC>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_right_curly {
             key-positions = <14 15>;
             bindings = <&kp RBRC>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_left_bracket {
             key-positions = <20 21>;
             bindings = <&kp LBKT>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_right_bracket {
             key-positions = <25 26>;
             bindings = <&kp RBKT>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_less_than {
@@ -162,7 +162,7 @@
             key-positions = <14 24>;
             bindings = <&kp GT>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
         };
 
         combo_mouse_click {
@@ -322,7 +322,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -332,7 +332,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <175>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&mcs>;
