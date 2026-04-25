@@ -60,8 +60,10 @@
 
     encoder: encoder {
         compatible = "alps,ec11";
-        a-gpios = <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        // Eh, the rkjxt seems to have A and B pulses opposite of the EC11,
+        // so we lie about which is which so we get clockwise to be clockwise
+        a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <2>;
         status = "disabled";
     };

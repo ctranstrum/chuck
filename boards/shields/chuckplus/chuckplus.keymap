@@ -469,7 +469,7 @@
                                      &none   &none              &none   &none
             >;
 
-            sensor-bindings = <&key_rotation C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
         };
 
         num {
@@ -604,7 +604,7 @@ GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM &none           &flash 6         &studio_un
                                      &none   &none              &none   &none
             >;
 
-            sensor-bindings = <&key_rotation C_BRI_DN C_BRI_UP>;
+            sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
         };
         flash {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
