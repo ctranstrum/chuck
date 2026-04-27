@@ -383,7 +383,7 @@ points:
         distance: mirrored_distance
 
     pinky_home_screw:
-      key.tags: [screw]
+      key.tags: [screw, rect_screw]
       anchor:
         ref: matrix_pinky_home
         shift: [-hdx / 2, hdy + 1.6]
