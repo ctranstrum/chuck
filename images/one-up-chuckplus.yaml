@@ -233,10 +233,10 @@ combos:
   k: ^]
   l: [Colemak]
 - p: [23, 31]
-  k: VOL UP
+  k: 🔊
   l: [numpad, sym / nav]
 - p: [23, 34]
-  k: VOL DN
+  k: 🔉
   l: [numpad, sym / nav]
 - p: [23, 32]
   k: ⏮
@@ -245,16 +245,16 @@ combos:
   k: ⏭
   l: [numpad, sym / nav]
 - p: [23, 31]
-  k: BRI UP
+  k: 🔆
   l: [keybd / func]
 - p: [23, 34]
-  k: BRI DN
+  k: 🔅
   l: [keybd / func]
 - p: [23, 32]
-  k: BRI DN
+  k: 🔅
   l: [keybd / func]
 - p: [23, 33]
-  k: BRI UP
+  k: 🔆
   l: [keybd / func]
 - p: [12, 13]
   k: flash

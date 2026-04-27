@@ -334,16 +334,16 @@ combos:
   k: scroll ↓
   l: [Colemak]
 - p: [23, 34]
-  k: ⌘⇧[
+  k: tab ←
   l: [Colemak]
 - p: [23, 35]
-  k: ⌘⇧]
+  k: tab →
   l: [Colemak]
 - p: [23, 33]
-  k: VOL UP
+  k: 🔊
   l: [numpad, navigation, symbols, function]
 - p: [23, 36]
-  k: VOL DN
+  k: 🔉
   l: [numpad, navigation, symbols, function]
 - p: [23, 34]
   k: ⏮
@@ -352,16 +352,16 @@ combos:
   k: ⏭
   l: [numpad, navigation, symbols, function]
 - p: [23, 33]
-  k: BRI UP
+  k: 🔆
   l: [keyboard]
 - p: [23, 36]
-  k: BRI DN
+  k: 🔅
   l: [keyboard]
 - p: [23, 34]
-  k: BRI DN
+  k: 🔅
   l: [keyboard]
 - p: [23, 35]
-  k: BRI UP
+  k: 🔆
   l: [keyboard]
 - p: [12, 13]
   k: flash
