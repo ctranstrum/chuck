@@ -29,8 +29,8 @@ building the Charlieflex.
 | 30-32        | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                       | 30-32     |
 | 1            | Bourns [PEC11L-4115F-S0020][encoder]\* EC11 encoder with a [knob][case-knob] of your choice        |           |
 |              | Bourns [PES12-42S][smallencoder] low profile EC12 encoder with a [knob][case-knob] of your choice  | 1         |
-| 9 (1)        | [M2 x 6mm countersunk screws][screws6mm]                                                           | 12        |
-| 9 (1)        | [M2 hex nuts][hexnuts]                                                                             | 12        |
+| 9 (3)        | [M2 x 6mm countersunk screws][screws6mm]                                                           | 12        |
+| 9 (3)        | [M2 hex nuts][hexnuts]                                                                             | 12        |
 | 3            | [M2 x 10mm countersunk screws][screws10mm]                                                         |           |
 | 3            | [M2 heat-set inserts 3mm x 3mm][heatset]                                                           |           |
 | 10 (8)       | [6mm x 1.5mm bumpons][bumpons]                                                                     | 10        |
@@ -360,7 +360,7 @@ Repeat for the other two heat-set inserts.
 
 Set the top plate upside down and insert the hex nuts into place in the case.
 Note that there are 9 hex nuts used for the wireless case, and 12 for the wired version.
-If you are using the rectangle case, you will use only one hex nut for this step.
+If you are using the rectangle case, you will use only 3 hex nuts for this step.
 
 ![hex nuts](images/hex-nuts.jpg)
 
@@ -376,7 +376,8 @@ in preparation for the next step.
 Place the bottom of the case upside down in place on the exposed bottom of the board.
 Insert and secure the nine 6mm countersunk screws.
 Three on the left side, three on the right side, and three on the bottom.
-If using the rectangle case, there is just a single screw needed at the bottom center.
+If using the rectangle case, there are just three screws needed:
+one at the bottom center and one on each (left/right) side.
 
 For the wireless build,
 leave the center screw hole and the two top screw holes empty for now.

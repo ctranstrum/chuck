@@ -1,11 +1,10 @@
-// copy and paste into https://jscad.app to export the STL file
 "use strict";
 const jscad = require("@jscad/modeling");
 const { union, subtract } = jscad.booleans;
-const { cuboid, cylinder, roundedCylinder } = jscad.primitives;
+const { cuboid, cylinder, roundedCylinder, torus } = jscad.primitives;
 const { translateX, translateY, translateZ } = jscad.transforms;
 
-const segments = 120;
+const segments = 180;
 
 function main() {
   const knob = roundedCylinder({
@@ -52,7 +51,17 @@ function main() {
 
   const shaft = translateZ(8.9, subtract(union(cyl, opening), notch));
 
-  return [subtract(knob, hollow, shaft, floor, ceiling)];
+  const bevel = translateZ(
+    11,
+    torus({
+      innerRadius: 1,
+      outerRadius: 14,
+      innerSegments: segments,
+      outerSegments: segments,
+    }),
+  );
+
+  return [subtract(knob, hollow, shaft, floor, ceiling, bevel)];
 }
 
 module.exports = { main };

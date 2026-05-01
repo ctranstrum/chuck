@@ -141,3 +141,18 @@ you have the ability to go with a shorter knob:
 - [encoder_knob-10mm.stl](encoder_knob-10mm.stl)
 
 All of the encoder files can be printed as-is with no supports.
+
+## Bumpons
+
+If you have access to a soft filament,
+you may want to consider printing the bumpons
+rather than buying them.
+I used TPU 85A and found it very usable.
+I also tried TPU 95A and would not recommend it.
+It's probably easier to get consistent results buying the bumpons,
+but here are some 3D-printable options:
+
+- [cylindrical bumpon](bumper-cylinter.stl)
+- [round bumpon](bumper-round.stl)
+- [beveled bumpon](bumper-bevel.stl)
+- [concentric bumpon](bumper-donut.stl)
