@@ -8,6 +8,7 @@ requires:
 features:
   - keys
   - encoder
+  - studio
 siblings:
   - chuckplus_unibody
   - chuckplus_peripheral

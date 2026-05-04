@@ -8,6 +8,7 @@ requires:
 features:
   - keys
   - encoder
+  - studio
 siblings:
   - charlieflex_unibody
   - charlieflex_peripheral
