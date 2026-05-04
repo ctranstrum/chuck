@@ -55,6 +55,7 @@ parse_config:
     COMMA: ","
     C_BRI_DN: 🔅
     C_BRI_UP: 🔆
+    C_MUTE: 🔇
     C_NEXT: ⏭
     C_PP: ⏯
     C_PREV: ⏮
