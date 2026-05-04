@@ -24,7 +24,7 @@ layers:
   - {t: C, h: Alt}
   - D
   - V
-  - MUTE
+  - 🔇
   - K
   - H
   - {t: ',', h: Alt, s: ;}
@@ -128,7 +128,7 @@ layers:
   - F6
   - F11
   - lock screen
-  - MUTE
+  - 🔇
   - connection status
   - battery status
   - Num 🔒

@@ -24,7 +24,7 @@ layers:
   - {t: C, h: Alt}
   - D
   - V
-  - MUTE
+  - 🔇
   - K
   - H
   - {t: ',', h: Alt, s: ;}
@@ -210,7 +210,7 @@ layers:
   - ''
   - ''
   - lock screen
-  - MUTE
+  - 🔇
   - Caps 🔒
   - Num 🔒
   - ''

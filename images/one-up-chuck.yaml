@@ -30,7 +30,7 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: sticky ⇧, h: numpad, s: caps word}
-  - MUTE
+  - 🔇
   - {t: ␣, h: sym / nav}
   numpad:
   - Esc
@@ -116,7 +116,7 @@ layers:
   - F6
   - F11
   - lock screen
-  - MUTE
+  - 🔇
   - connection status
   - battery status
   - Num 🔒
