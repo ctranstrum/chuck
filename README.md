@@ -76,6 +76,18 @@ However, the basic layout of the remaining keys didn't change much from what
 I had before, so if you want a split layout and more keys than the Charlieflex offers,
 maybe the [Lintilla][lintilla] is for you.
 
+## Descendants
+
+I found some issues with running a charlieplex matrix on a wireless board where
+battery levels can impact the performance of the diodes, which need very precise
+cutoffs to interpret the keys being pressed; it made some of my 3-key combos a little
+unreliable in practice.
+
+So I went back to the drawing board and discovered an extra two usable pins on the xiao ble.
+Using those allowed me to build the [Patagona gigas][patagona], with 32 keys and a five-way switch,
+along with the [Patagona chaski][patagona], with 42 keys,
+the same number of keys used by the [Lintilla][lintilla].
+
 ## Builds
 
 ![Charlieflex Choc v2 Keyboard](images/chuck-chocv2.jpg)
@@ -109,6 +121,7 @@ if you tend to use the keyboard directly on your lap.
 [ldsa]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [lintilla]: https://github.com/ctranstrum/lintilla
 [ohl]: LICENSE.txt
+[patagona]: https://github.com/ctranstrum/patagona
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [rp2040]: https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
 [shiokaze]: https://nuphy.com/collections/keycaps/products/shiokaze-nsa-dye-sub-pbt-keycaps
